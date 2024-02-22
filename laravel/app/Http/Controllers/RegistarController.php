@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
-class RegistarController
-{
+use App\Http\Controllers\Controller;
 
+class RegistarController extends Controller
+{
+    public function GetPageRegister() {
+        return view('User\Register');
+    }
 }

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio\index');
 });
+Route::get('/home', function () {
+    return view('inicio\index');
+});
+Route::get('/inicio', function () {
+    return view('inicio\index');
+});
+Route::get('/Login', [LoginController::class, 'GetPageLogin']);
+Route::get('/Register', [RegistarController::class, 'GetPageRegister']);
+Route::get('/login', [LoginController::class, 'GetPageLogin']);
+Route::get('/register', [RegistarController::class, 'GetPageRegister']);
