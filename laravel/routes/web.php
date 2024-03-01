@@ -22,6 +22,9 @@ Route::get('/home', function () {
 Route::get('/inicio', function () {
     return view('inicio\index');
 });
+Route::get('/test', function () {
+    return view('inicio\test');
+});
 Route::get('/Login', [LoginController::class, 'GetPageLogin']);
 Route::get('/Register', [RegistarController::class, 'GetPageRegister']);
 Route::get('/login', [LoginController::class, 'GetPageLogin']);

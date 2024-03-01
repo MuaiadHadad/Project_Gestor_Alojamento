@@ -33,6 +33,6 @@
             </form>
         </div>
     </div>
-    <script src="Js_Register/js.js"></script>
+    <script src="/Js_Register/js.js"></script>
 </body>
 </html>

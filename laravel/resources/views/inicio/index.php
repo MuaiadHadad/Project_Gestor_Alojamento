@@ -37,6 +37,13 @@
 <link rel="alternate" type="text/xml+oembed" href="https://www.estgoh.ipc.pt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.estgoh.ipc.pt%2Festudantes%2F&amp;format=xml">
 <meta name="generator" content="WPML ver:4.3.16 stt:1,41;">
 <link rel="shortcut icon" href="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2-1.svg">
+    <!-- Css adicional -->
+    <link rel="stylesheet" href="nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="/Style_Page_1/Style_Card_sel.css">
+    <link rel="stylesheet" href="/Style_Page_1/Style_Search_bar.css">
+    <link rel="stylesheet" href="/Style_Page_1/Style_Filter.css">
+    <link rel="stylesheet" href="/Style_Page_1/hr_style.css">
+    <!-- /Css adicional -->
 <style type="text/css" id="wp-custom-css">
 			@media (max-width: 767px)
 .module-site-header .top-menu {
@@ -548,7 +555,25 @@ Politécnico de Coimbra</div>
 
 		</div>
 	</div>
-</section></div>
+</section>
+</div>
+    <div class="sub-menu js-subMenu">
+        <ul class="level-1">
+            <li id="527">
+                <a href="https://www.estgoh.ipc.pt/estudantes/" class="is-active">Alojamentos</a>
+            </li>
+            <li id="444">
+                <a id="Filter_bot" class="">Filerar</a>
+            </li>
+
+            <li id="543">
+                <a  class="">Login</a>
+            </li>
+            <li id="545">
+                <a  class="">Sobre</a>
+            </li>
+        </ul>
+    </div>
 </header>
 
 
@@ -587,10 +612,143 @@ Politécnico de Coimbra</div>
 
   </section>
   <article id="main" class="article-content">
-<section class="module module-card-list">
-	<div class="container">
+      <section class="module module--list" id="Filter" style="display: none;">
+          <h2 class="divider gradient">Filtrar</h2>
+              <div class="container_range_preco">
+                  <label class="label" style="margin-right: 70px">preco:</label>
+              <div class="values">
+            <span id="range_min_preco">
+                0
+            </span>
+                  <span> &dash; </span>
+                  <span id="range_max_preco">
+                100
+            </span>
+              </div>
+              <div class="container">
+                  <div class="slider-track-prco"></div>
+                  <input type="range" min="0" max="1000" value="100" id="slider_min_preco" oninput="slideOne()">
+                  <input type="range" min="0" max="1000" value="500" id="slider_max_preco" oninput="slideTwo()">
+              </div>
+          </div>
 
+          <div class="container_range_preco">
+              <label class="label">Destancia:</label>
+              <div class="values">
+            <span id="range_min_dis">
+                0
+            </span>
+                  <span> &dash; </span>
+                  <span id="range_max_dis">
+                100
+            </span>
+              </div>
+              <div class="container">
+                  <div class="slider-track-Dis"></div>
+                  <input type="range" min="0" max="1000" value="100" id="slider_min_dis" oninput="slideTr()">
+                  <input type="range" min="0" max="1000" value="500" id="slider_max_dis" oninput="slideFr()">
+              </div>
+          </div>
+          <div class="container_range_preco">
+          <label class="label">Nº Quartos:</label>
+          <div class="container_mais_menos">
+                  <div class="button col col-1">
+                      <button id="minus-btn">-</button>
+                  </div>
+                  <div class="number col col-2">
+                      <h1 id="count">0</h1>
+                  </div>
+                  <div class="button col col-1">
+                      <button id="plus-btn">+</button>
+                  </div>
+          </div>
+          </div>
+          <div class="container_range_preco">
+          <label class="label">Sexso:</label>
+          <label class="toggle">
+              <span class="toggle-label">Masculino</span>
+              <input class="toggle-checkbox" type="checkbox">
+              <div class="toggle-switch"></div>
+          </label>
+              <label class="toggle">
+                  <span class="toggle-label">Feminino</span>
+                  <input class="toggle-checkbox" type="checkbox">
+                  <div class="toggle-switch"></div>
+              </label>
+              <label class="toggle">
+                  <span class="toggle-label">Misto</span>
+                  <input class="toggle-checkbox" type="checkbox">
+                  <div class="toggle-switch"></div>
+              </label>
+          </div>
+          <div class="container_range_preco">
+          <label class="label">Com Recibo:</label>
+          <label class="toggle">
+              <input class="toggle-checkbox" type="checkbox">
+              <div class="toggle-switch"></div>
+          </label>
+          </div>
+          <div class="container_botao_sub">
+          <button class="botao_sub_aplic" id="button_aplic_filter">Aplicar</button>
+          </div>
+
+          <section class="module module--list" id="Filter_aplicado" style="display: none;">
+              <h2 class="divider gradient">Filtered</h2>
+
+          </section>
+
+      </section>
+<section class="module module-card-list" id="prencipal">
+	<div class="container">
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Search...">
+            <button id="search-button">Search</button>
+        </div>
 	</div>
+    <h2 class="divider gradient">As ofertas</h2>
+    <div class="container">
+    <div class="card" id="card1">
+        <div class="card-image" ><img class="card-image" src="\test_photo\img1.jpg"></div>
+        <div class="card-text">
+            <span class="date">4 days ago</span>
+            <h2>Post One</h2>
+            <p>Lorem ipsum dolor sit demoise amet consectetur, Ducimusele, repudiandae temporibus omnis illum maxime quod deserunt eligendi dolor</p>
+        </div>
+    </div>
+    <div class="card" id="card2">
+        <div class="card-image" ><img class="card-image" src="\test_photo\img2.jpg"></div>
+        <div class="card-text">
+            <span class="date">1 week ago</span>
+            <h2>Post Two</h2>
+            <p>Adipisicing elit. Ducimus, repudiandae corrupti tialeno des ameto temporibus omnis provident illum maxime quod. Lorem ipsum dolor</p>
+        </div>
+    </div>
+    <div class="card" id="card3">
+        <div class="card-image" ><img class="card-image" src="\test_photo\img3.jpg"></div>
+        <div class="card-text">
+            <span class="date">3 week ago</span>
+            <h2>Post Three</h2>
+            <p>Repudiandae repudiandae de corrupti amet temporibus omnis si provident illum maxime. Ducimus, lorem ipsum dolor adipisicing elit</p>
+        </div>
+    </div>
+        <div class="card" id="card4">
+            <div class="card-image"><img class="card-image" src="\test_photo\img4.jpg"></div>
+            <div class="card-text">
+                <span class="date">3 week ago</span>
+                <h2>Post Three</h2>
+                <p>Repudiandae repudiandae de corrupti amet temporibus omnis si provident illum maxime. Ducimus, lorem ipsum dolor adipisicing elit</p>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+            <span class="next" onclick="plusSlides(1)">&#10095;</span>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="">
+            </div>
+        </div>
+
+    </div>
 </section>
  </article>
 </main>
@@ -977,7 +1135,178 @@ var dynamic = {"ajax":"https:\/\/www.estgoh.ipc.pt\/wp-admin\/admin-ajax.php","o
 /* ]]> */
 </script>
 <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
-			</footer>
+                <script>
+                    const cards = document.querySelectorAll(".card");
+                    const FilterButton = document.getElementById("Filter_bot");
+                    const FilterSecao = document.getElementById("Filter");
+                    const PrincibalSecao = document.getElementById("prencipal");
+                    const FilteAplicadoSecao = document.getElementById("Filter_aplicado");
+                    const FilterAplicButton = document.getElementById("button_aplic_filter");
+                    /*_________________________________mais menos__________________________________________________*/
+                    FilterAplicButton.addEventListener("click", function() {
+                        if (FilteAplicadoSecao.style.display === "none") {
+                            FilteAplicadoSecao.style.display = "block";
+                        } else {
+                            FilteAplicadoSecao.style.display = "none";
+                        }
+                    });
+                    /*_________________________________mais menos__________________________________________________*/
+                    let minusBtn = document.getElementById("minus-btn");
+                    let count = document.getElementById("count");
+                    let plusBtn = document.getElementById("plus-btn");
+
+                    let countNum = 1;
+                    count.innerHTML = countNum;
+
+                    minusBtn.addEventListener("click", () => {
+                        if(countNum>1) {
+                            countNum -= 1;
+                            count.innerHTML = countNum;
+                        }
+                    });
+
+                    plusBtn.addEventListener("click", () => {
+                        if(countNum<10){
+                            countNum += 1;
+                            count.innerHTML = countNum;
+                        }
+                    });
+                    /*_________________________________Preco__________________________________________________*/
+                    window.onload = function(){
+                        slideOne();
+                        slideTwo();
+                        slideTr();
+                        slideFr();
+
+                    }
+
+                    let sliderOne = document.getElementById("slider_min_preco");
+                    let sliderTwo = document.getElementById("slider_max_preco");
+                    let displayValOne = document.getElementById("range_min_preco");
+                    let displayValTwo = document.getElementById("range_max_preco");
+                    let minGap = 0;
+                    let sliderTrack_preco = document.querySelector(".slider-track-prco");
+                    let sliderMaxValue = document.getElementById("slider_min_preco").max;
+
+                    function slideOne(){
+                        if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+                            sliderOne.value = parseInt(sliderTwo.value) - minGap;
+                        }
+                        displayValOne.textContent = sliderOne.value;
+                        fillColor_preco();
+                    }
+                    function slideTwo(){
+                        if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+                            sliderTwo.value = parseInt(sliderOne.value) + minGap;
+                        }
+                        displayValTwo.textContent = sliderTwo.value;
+                        fillColor_preco();
+                    }
+                    function fillColor_preco(){
+                        percent1_preco = (sliderOne.value / sliderMaxValue) * 100;
+                        percent2_preco = (sliderTwo.value / sliderMaxValue) * 100;
+                        sliderTrack_preco.style.background = `linear-gradient(to right, #dadae5 ${percent1_preco}% , #000000 ${percent1_preco}% , #000000 ${percent2_preco}%, #dadae5 ${percent2_preco}%)`;
+                    }
+                    /*____________________________________Distance_______________________________________________*/
+                    let sliderOne_dis = document.getElementById("slider_min_dis");
+                    let sliderTwo_dis = document.getElementById("slider_max_dis");
+                    let displayValOne_dis = document.getElementById("range_min_dis");
+                    let displayValTwo_dis = document.getElementById("range_max_dis");
+                    let minGap_dis = 0;
+                    let sliderTrack_dis = document.querySelector(".slider-track-Dis");
+                    let sliderMaxValue_dis = document.getElementById("slider_min_dis").max;
+
+                    function slideTr(){
+                        if(parseInt(sliderTwo_dis.value) - parseInt(sliderOne_dis.value) <= minGap_dis){
+                            sliderOne_dis.value = parseInt(sliderTwo_dis.value) - minGap_dis;
+                        }
+                        displayValOne_dis.textContent = sliderOne_dis.value;
+                        fillColor_dis();
+                    }
+                    function slideFr(){
+                        if(parseInt(sliderTwo_dis.value) - parseInt(sliderOne_dis.value) <= minGap_dis){
+                            sliderTwo_dis.value = parseInt(sliderOne_dis.value) + minGap_dis;
+                        }
+                        displayValTwo_dis.textContent = sliderTwo_dis.value;
+                        fillColor_dis();
+                    }
+                    function fillColor_dis(){
+                        percent1_Dis = (sliderOne_dis.value / sliderMaxValue_dis) * 100;
+                        percent2_Dis = (sliderTwo_dis.value / sliderMaxValue_dis) * 100;
+                        sliderTrack_dis.style.background = `linear-gradient(to right, #dadae5 ${percent1_Dis}% , #000000 ${percent1_Dis}% , #000000 ${percent2_Dis}%, #dadae5 ${percent2_Dis}%)`;
+                    }
+                    /*____________________________________Distance_______________________________________________*/
+                    FilterButton.addEventListener("click", function() {
+                        if (FilterSecao.style.display === "none") {
+                            FilterSecao.style.display = "block";
+                            PrincibalSecao.style.display = "none";
+                        } else {
+                            FilterSecao.style.display = "none";
+                            PrincibalSecao.style.display = "block";
+                        }
+                    });
+                    cards.forEach(card => {
+                        card.addEventListener("mouseover", function() {
+                            this.classList.add("rgb");
+                        });
+
+                        card.addEventListener("mouseout", function() {
+                            this.classList.remove("rgb");
+                        });
+                    });
+                    const cardS = document.querySelectorAll(".card");
+                    const modal = document.getElementById("myModal");
+                    const modalImg = document.getElementById("modalImage");
+                    const closeBtn = document.querySelector(".close");
+
+                    cardS.forEach((card, index) => {
+                        card.addEventListener("click", function() {
+                            modalImg.src = this.querySelector(".card-image img").src; // Ajuste aqui para acessar a imagem dentro do elemento .card-image
+                            modal.style.display = "block";
+                            slideIndex = index; // Define o slideIndex para o índice do card clicado
+                        });
+                    });
+
+                    closeBtn.addEventListener("click", function() {
+                        modal.style.display = "none";
+                    });
+
+                    window.addEventListener("click", function(event) {
+                        if (event.target === modal) {
+                            modal.style.display = "none";
+                        }
+                    });
+
+                    document.addEventListener("keydown", function(event) {
+                        if (event.key === "ArrowLeft") {
+                            plusSlides(-1);
+                        } else if (event.key === "ArrowRight") {
+                            plusSlides(1);
+                        }
+                    });
+
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+
+                    function showSlides(n) {
+                        const slides = document.querySelectorAll(".card");
+                        if (slides.length === 0) {
+                            return;
+                        }
+                        slideIndex = (n + slides.length) % slides.length;
+                        modalImg.src = slides[slideIndex].querySelector(".card-image img").src; // Ajuste aqui para acessar a imagem dentro do elemento .card-image
+                    }
+
+                    showSlides(slideIndex);
+                    VanillaTilt.init(document.querySelectorAll(".card"),{
+                        glare: true,
+                        reverse: true,
+                        "max-glare": 0.15
+                    });
+
+                </script>
+            </footer>
 
 
 
