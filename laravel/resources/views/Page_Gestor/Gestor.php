@@ -7,34 +7,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="alternate" hreflang="en" href="https://www.estgoh.ipc.pt/category/uncategorized/?lang=en">
-    <link rel="alternate" hreflang="pt-pt" href="https://www.estgoh.ipc.pt/category/sem-categoria/">
+    <link rel="alternate" hreflang="pt-pt" href="https://www.estgoh.ipc.pt/estudantes/">
     <!-- Search Engine Optimization by Rank Math - https://s.rankmath.com/home -->
-    <title>Sem categoria - ESTGOH</title>
-    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
-    <link rel="canonical" href="https://www.estgoh.ipc.pt/category/sem-categoria/">
-    <link rel="next" href="https://www.estgoh.ipc.pt/category/sem-categoria/page/2/">
+    <title>Alojamentos - ESTGOH</title>
+    <meta name="robots" content="nofollow, noindex">
     <meta property="og:locale" content="pt_PT">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Sem categoria - ESTGOH">
-    <meta property="og:url" content="https://www.estgoh.ipc.pt/category/sem-categoria/">
+    <meta property="og:title" content="Estudantes - ESTGOH">
+    <meta property="og:description" content="Author estgoh_root">
+    <meta property="og:url" content="https://www.estgoh.ipc.pt/estudantes/">
     <meta property="og:site_name" content="ESTGOH">
+    <meta property="og:updated_time" content="2021-05-17T09:39:35+00:00">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sem categoria - ESTGOH">
-    <script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","@id":"https://www.estgoh.ipc.pt/#organization","name":"ESTGOH","url":"https://www.estgoh.ipc.pt","logo":{"@type":"ImageObject","@id":"https://www.estgoh.ipc.pt/#logo","url":"https://www.estgoh.ipc.pt/wp-content/uploads/2021/04/ESTGOH-AZUL.png","caption":"ESTGOH","inLanguage":"pt-PT","width":"1800","height":"1683"}},{"@type":"WebSite","@id":"https://www.estgoh.ipc.pt/#website","url":"https://www.estgoh.ipc.pt","name":"ESTGOH","publisher":{"@id":"https://www.estgoh.ipc.pt/#organization"},"inLanguage":"pt-PT"},{"@type":"CollectionPage","@id":"https://www.estgoh.ipc.pt/category/sem-categoria/#webpage","url":"https://www.estgoh.ipc.pt/category/sem-categoria/","name":"Sem categoria - ESTGOH","isPartOf":{"@id":"https://www.estgoh.ipc.pt/#website"},"inLanguage":"pt-PT"},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":"1","url":"https://www.estgoh.ipc.pt/sem-categoria/iii-feira-do-emprego-estgoh/"},{"@type":"ListItem","position":"2","url":"https://www.estgoh.ipc.pt/sem-categoria/matriculas-online-1-a-vez/"},{"@type":"ListItem","position":"3","url":"https://www.estgoh.ipc.pt/sem-categoria/bolsa-programa-superior/"},{"@type":"ListItem","position":"4","url":"https://www.estgoh.ipc.pt/sem-categoria/6045/"},{"@type":"ListItem","position":"5","url":"https://www.estgoh.ipc.pt/sem-categoria/horario-verao-funcionamento-estgoh/"},{"@type":"ListItem","position":"6","url":"https://www.estgoh.ipc.pt/sem-categoria/candidaturas-prr-fundo-ambiental/"},{"@type":"ListItem","position":"7","url":"https://www.estgoh.ipc.pt/sem-categoria/conferencia-de-marketing-25-de-maio-16h00/"},{"@type":"ListItem","position":"8","url":"https://www.estgoh.ipc.pt/sem-categoria/webinars-sobre-metodologia-de-trabalho-cientifico/"},{"@type":"ListItem","position":"9","url":"https://www.estgoh.ipc.pt/sem-categoria/conferencia-de-marketing-8-de-maio-14h15m/"},{"@type":"ListItem","position":"10","url":"https://www.estgoh.ipc.pt/sem-categoria/ii-feira-do-emprego-estgoh-17-de-abril/"}],"mainEntityOfPage":{"@id":"https://www.estgoh.ipc.pt/category/sem-categoria/#webpage"}}]}</script>
+    <meta name="twitter:title" content="Estudantes - ESTGOH">
+    <meta name="twitter:description" content="Author estgoh_root">
+    <script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["EducationalOrganization","Organization"],"@id":"https://www.estgoh.ipc.pt/#organization","name":"ESTGOH","url":"https://www.estgoh.ipc.pt","logo":{"@type":"ImageObject","@id":"https://www.estgoh.ipc.pt/#logo","url":"https://www.estgoh.ipc.pt/wp-content/uploads/2021/04/ESTGOH-AZUL.png","caption":"ESTGOH","inLanguage":"pt-PT","width":"1800","height":"1683"}},{"@type":"WebSite","@id":"https://www.estgoh.ipc.pt/#website","url":"https://www.estgoh.ipc.pt","name":"ESTGOH","publisher":{"@id":"https://www.estgoh.ipc.pt/#organization"},"inLanguage":"pt-PT"},{"@type":"Person","@id":"https://www.estgoh.ipc.pt/author/estgoh_root/","name":"estgoh_root","url":"https://www.estgoh.ipc.pt/author/estgoh_root/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/d9acbb8e7e803a69e459487a52009d2c?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/d9acbb8e7e803a69e459487a52009d2c?s=96&amp;d=mm&amp;r=g","caption":"estgoh_root","inLanguage":"pt-PT"},"sameAs":["http://193.137.79.42/estgoh"],"worksFor":{"@id":"https://www.estgoh.ipc.pt/#organization"}},{"@type":"WebPage","@id":"https://www.estgoh.ipc.pt/estudantes/#webpage","url":"https://www.estgoh.ipc.pt/estudantes/","name":"Estudantes - ESTGOH","datePublished":"2020-09-07T12:09:20+00:00","dateModified":"2021-05-17T09:39:35+00:00","author":{"@id":"https://www.estgoh.ipc.pt/author/estgoh_root/"},"isPartOf":{"@id":"https://www.estgoh.ipc.pt/#website"},"inLanguage":"pt-PT"},{"@type":"Article","headline":"Estudantes - ESTGOH","datePublished":"2020-09-07T12:09:20+00:00","dateModified":"2021-05-17T09:39:35+00:00","author":{"@type":"Person","name":"estgoh_root"},"publisher":{"@id":"https://www.estgoh.ipc.pt/#organization"},"name":"Estudantes - ESTGOH","@id":"https://www.estgoh.ipc.pt/estudantes/#richSnippet","isPartOf":{"@id":"https://www.estgoh.ipc.pt/estudantes/#webpage"},"inLanguage":"pt-PT","mainEntityOfPage":{"@id":"https://www.estgoh.ipc.pt/estudantes/#webpage"}}]}</script>
     <!-- /Rank Math WordPress SEO plugin -->
     <link rel="dns-prefetch" href="//s.w.org">
-    <link rel="alternate" type="application/rss+xml" title="Feed de categorias ESTGOH » Sem categoria" href="https://www.estgoh.ipc.pt/category/sem-categoria/feed/">
     <link rel="stylesheet" id="wp-block-library-css" href="https://www.estgoh.ipc.pt/wp-includes/css/dist/block-library/style.min.css?ver=5.7.11" type="text/css" media="all">
     <link rel="stylesheet" id="wp-block-library-theme-css" href="https://www.estgoh.ipc.pt/wp-includes/css/dist/block-library/theme.min.css?ver=5.7.11" type="text/css" media="all">
     <link rel="stylesheet" id="ipc-style-css" href="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/css/app.min.css?ver=1.4.1" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://www.estgoh.ipc.pt/wp-includes/css/dashicons.min.css?ver=5.7.11" type="text/css" media="all">
+    <link rel="stylesheet" id="multiple-authors-widget-css-css" href="https://www.estgoh.ipc.pt/wp-content/plugins/publishpress-authors/src/assets/css/multiple-authors-widget.css?ver=3.11.0" type="text/css" media="all">
     <link rel="https://api.w.org/" href="https://www.estgoh.ipc.pt/wp-json/">
-    <link rel="alternate" type="application/json" href="https://www.estgoh.ipc.pt/wp-json/wp/v2/categories/1">
+    <link rel="alternate" type="application/json" href="https://www.estgoh.ipc.pt/wp-json/wp/v2/pages/527">
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.estgoh.ipc.pt/xmlrpc.php?rsd">
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.estgoh.ipc.pt/wp-includes/wlwmanifest.xml">
     <meta name="generator" content="WordPress 5.7.11">
+    <link rel="shortlink" href="https://www.estgoh.ipc.pt/?p=527">
+    <link rel="alternate" type="application/json+oembed" href="https://www.estgoh.ipc.pt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.estgoh.ipc.pt%2Festudantes%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://www.estgoh.ipc.pt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.estgoh.ipc.pt%2Festudantes%2F&amp;format=xml">
     <meta name="generator" content="WPML ver:4.3.16 stt:1,41;">
     <link rel="shortcut icon" href="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2-1.svg">
+    <!-- Css adicional -->
+    <link rel="stylesheet" href="nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="/Style_Page_1/Style_Card_sel.css">
+    <link rel="stylesheet" href="/Style_Page_1/Style_Search_bar.css">
+    <link rel="stylesheet" href="/Style_Page_1/Style_Filter.css">
+    <link rel="stylesheet" href="/Style_Page_1/hr_style.css">
+    <link rel="stylesheet" href="/Style_Page_Gestor/Tabela.css">
+    <link rel="stylesheet" href="/Style_Page_Gestor/buttons_Style.css">
+    <link rel="stylesheet" href="/Style_Page_Gestor/dicionar_Style.css">
+    <link rel="stylesheet" href="/Style_Page_Gestor/Chat_Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- /Css adicional -->
     <style type="text/css" id="wp-custom-css">
         @media (max-width: 767px)
         .module-site-header .top-menu {
@@ -54,10 +71,10 @@
 
         gtag('config', 'G-S8K4L35SF4');
     </script>
-    <style></style>
     <meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <style></style>
 </head>
-<body class=" list">
+<body class="">
 <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-edgeless cc-bottom cc-right cc-color-override-1074119104 cc-invisible" style="display: none;">
     <!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Este website utiliza cookies próprios e de terceiros para melhorar sua experiência de navegação. Ao continuar a navegação, assumimos sua aprovação. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="" rel="noopener noreferrer nofollow" target="_blank">Saber mais</a></span>
     <div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">✕</a></div>
@@ -522,7 +539,7 @@
         <i class="icon icon-cross-white"></i>
     </button>
 </section>
-<header class="module module-site-header no-margin site-header--no-image">
+<header class="module module-site-header no-margin site-header--image-bg">
     <nav id="topbar-navigation" class="top-menu" style="display: flex; flex-wrap: wrap" aria-label="Top Bar">
         <div class="inner" style="max-width: 100%">
             <div class="menu-menu-topbar-container">
@@ -541,8 +558,8 @@
     <div class="top-row">
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
-                <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2-1.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: black !important" class="title-sm-main">Escola Superior de
+                <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
+                <div style="color: white !important;" class="title-sm-main">Escola Superior de
                     Tecnologia e Gestão
                     Politécnico de Coimbra
                 </div>
@@ -575,142 +592,424 @@
             </div>
         </section>
     </div>
+    <div class="sub-menu js-subMenu">
+        <ul class="level-1">
+            <li id="527">
+                <a href="https://www.estgoh.ipc.pt/estudantes/" class="is-active">username-user</a>
+            </li>
+            <li id="542">
+                <a  class="">Profil</a>
+            </li>
+            <li class="current_page_item" id="332">
+                <a href="" class="">Alojamento</a>
+                <ul class="level-2" data-item-id="653">
+                    <li id="332">
+                        <a id="Adcionar_bot">Adicionar</a>
+                    </li>
+                    <li class="level-2-link">
+                        <a id="Remover_bot" class="">Remover</a>
+                    </li>
+                    <li class="level-2-link">
+                        <a class="" href="">Editar</a>
+                    </li>
+                    <li class="level-2-link">
+                        <a id="Conversa_bot" class="">Conversas</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="543">
+                <a  class="">Logout</a>
+            </li>
+        </ul>
+    </div>
 </header>
-<main class="main-section">
+<main id="primary" class="main-section">
+    <section class="module module-page--header site-header--image-bg ">
+        <div class="page-title">
+            <h1 class="title-lg">Alojamentos Estgoh</h1>
+            <style>
+                .module-page--header .breadcrumbs a {
+                    color: black;
+                }
+                .module-page--header .breadcrumbs a:hover,
+                .module-page--header.breadcrumbs a:focus {
+                    color: black;
+                }
+                .module-page--header.site-header--image-bg .breadcrumbs a {
+                    color: white;
+                }
+                .module-page--header.site-header--image-bg .breadcrumbs a:hover,
+                .module-page--header.site-header--image-bg .breadcrumbs a:focus {
+                    color: white;
+                }
+            </style>
+            <div class="breadcrumbs"><a href="https://www.estgoh.ipc.pt/" rel="v:url" property="v:title">Início</a> / <span class="current">Alojamentos</span></div>
+            <!-- .breadcrumbs -->
+        </div>
+        <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
+            <!--<div class="image" style="background-image: url(https://www.estgoh.ipc.pt/wp-content/uploads/2020/11/ESTGOH_26-scaled-aspect-ratio-720-480-720x480.jpg)"></div>-->
+        </div>
+    </section>
     <article id="main" class="article-content">
-        <section class="module module-page--header site-header--image-bg ">
-            <div class="page-title">
-                <h1 class="title-lg">Sem categoria</h1>
-                <style>
-                    .module-page--header .breadcrumbs a {
-                        color: black;
-                    }
-                    .module-page--header .breadcrumbs a:hover,
-                    .module-page--header.breadcrumbs a:focus {
-                        color: black;
-                    }
-                    .module-page--header.site-header--image-bg .breadcrumbs a {
-                        color: white;
-                    }
-                    .module-page--header.site-header--image-bg .breadcrumbs a:hover,
-                    .module-page--header.site-header--image-bg .breadcrumbs a:focus {
-                        color: white;
-                    }
-                </style>
-                <div class="breadcrumbs"><a href="https://www.estgoh.ipc.pt/" rel="v:url" property="v:title">Início</a> / <span class="current"><a class="inline-block" href="https://www.estgoh.ipc.pt/category">Magazine</a> / Sem categoria</span></div>
-                <!-- .breadcrumbs -->
+        <section class="module module--list" id="Adicionar_selctor" style="display: none;">
+            <h2 class="divider gradient">Adicionar Alojamento</h2>
+            <div class="container_add">
+                <label class="label" style="margin-right: 50px">Nome:</label>
+                <input type="text" class="input_adicionar" placeholder="Nome">
             </div>
-            <div class="image-bg" style="background-image: url(https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/placeholder-wide.jpg)">
-                <!--<div class="image" style="background-image: url(https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/placeholder-three-by-two.jpg)"></div>-->
+            <div class="container_add">
+                <label class="label" style="margin-left: 11px" >Descrição:</label>
+                <input type="text" class="input_adicionar" placeholder="Descrição">
+            </div>
+            <div class="container_add">
+                <label class="label">Endreco:</label>
+                <input type="text" class="input_adicionar" placeholder="Endreco...">
+                <label class="label">Codigo-postal:</label>
+                <input type="text" class="input_adicionar" placeholder="3200">
+                <label class="label">-</label>
+                <input type="text" class="input_adicionar" placeholder="200">
+            </div>
+            <div class="container_range_preco">
+                <label class="label">Destancia:</label>
+                <div class="values">
+							<span id="range_min_dis">
+							0
+							</span>
+                    <span> &dash; </span>
+                    <span id="range_max_dis">
+							100
+							</span>
+                    <span id="M_or_Km"> m </span>
+                </div>
+                <div class="container">
+                    <div class="slider-track-Dis"></div>
+                    <input type="range" min="0" max="5000" value="100" id="slider_min_dis" oninput="slideTr()">
+                </div>
+            </div>
+            <div class="container_range_preco">
+                <label class="label">Nº Quartos:</label>
+                <div class="container_mais_menos">
+                    <div class="button col col-1">
+                        <button id="minus-btn">-</button>
+                    </div>
+                    <div class="number col col-2">
+                        <h1 id="count">0</h1>
+                    </div>
+                    <div class="button col col-1">
+                        <button id="plus-btn">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container_add">
+                <label class="label" >Sexso:</label>
+                <label class="toggle" style="margin-left:55px">
+                    <span class="toggle-label" >Masculino:</span>
+                    <input class="toggle-checkbox" type="checkbox">
+                    <div class="toggle-switch"></div>
+                </label>
+                <label class="toggle">
+                    <span class="toggle-label">Feminino:</span>
+                    <input class="toggle-checkbox" type="checkbox">
+                    <div class="toggle-switch"></div>
+                </label>
+                <label class="toggle">
+                    <span class="toggle-label">Misto:</span>
+                    <input class="toggle-checkbox" type="checkbox">
+                    <div class="toggle-switch"></div>
+                </label>
+            </div>
+            <div class="container_add">
+                <label class="label">Servicos:</label>
+                <label class="toggle">
+                    <span class="toggle-label">Com Recibo:</span>
+                    <input class="toggle-checkbox" type="checkbox">
+                    <div class="toggle-switch"></div>
+                </label>
+                <label class="toggle">
+                    <span class="toggle-label">Wifi/Net:</span>
+                    <input class="toggle-checkbox" type="checkbox">
+                    <div class="toggle-switch"></div>
+                </label>
+                <label class="toggle">
+                    <span class="toggle-label">Elvador:</span>
+                    <input class="toggle-checkbox" type="checkbox">
+                    <div class="toggle-switch"></div>
+                </label>
+            </div>
+            <div class="container_botao_sub">
+                <button class="botao_sub_aplic" id="button_sub_adicionar">Adicionar</button>
             </div>
         </section>
-        <section class="module module-card-list">
+        <section class="module module--list" id="nada" style="display: none;">
+            <h2 class="divider gradient">Filtrar</h2>
+        </section>
+        <section class="module module--list" id="Remover_alojamento" style="display: none;">
+            <section class="table__header">
+                <h1>Remover</h1>
+                <div class="input-group" id="search_remover">
+                    <input type="search" placeholder="Search Data...">
+                    <img src="images/search.png" alt="">
+                </div>
+            </section>
+            <section class="table__body">
+                <table id="tabela_remover">
+                    <thead>
+                    <tr>
+                        <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Nº Quartos Livre <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Data de postagem <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Remover</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> 2 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td>
+                            <p class="status delivered">Ativo</p>
+                        </td>
+                        <td> <strong> $128.90 </strong></td>
+                        <td>
+                            <button class="icon-btn add-btn">
+                                <div class="btn-txt">Remove</div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> 1 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td>
+                            <p class="status pending">pending</p>
+                        </td>
+                        <td> <strong> $300 </strong></td>
+                        <td>
+                            <button class="icon-btn add-btn">
+                                <div class="btn-txt">Remove</div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> 3 </td>
+                        <td> 18 Dec, 2023 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td>
+                            <p class="status cancelled">Desativo</p>
+                        </td>
+                        <td> <strong> $200 </strong></td>
+                        <td>
+                            <button class="icon-btn add-btn">
+                                <div class="btn-txt">Remove</div>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+        <section class="module module--list" id="Conversa" style="display: none;">
             <div class="container">
-                <div class="inner">
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/iii-feira-do-emprego-estgoh/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/12/site_3-aspect-ratio-720-480-720x480.png" alt="III Feira do Emprego – ESTGOH">
-                        </div>
-                        <span class="label-sm">12 Dez 2023</span>
-                        <div class="text-editor">
-                            <p>III Feira do Emprego – ESTGOH </p>
-                        </div>
-                    </a>
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/matriculas-online-1-a-vez/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/08/Matriculas-Online__2023_site-aspect-ratio-720-480-720x480.png" alt="Matrículas Online – 1.ª vez">
-                        </div>
-                        <span class="label-sm">25 Ago 2023</span>
-                        <div class="text-editor">
-                            <p>Matrículas Online – 1.ª vez </p>
-                        </div>
-                    </a>
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/bolsa-programa-superior/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/08/Programa-Superior-2023_site-aspect-ratio-720-480-1-720x480.png" alt="Bolsa Programa +Superior">
-                        </div>
-                        <span class="label-sm">22 Ago 2023</span>
-                        <div class="text-editor">
-                            <p>Bolsa Programa +Superior </p>
-                        </div>
-                    </a>
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/6045/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/08/Unidades-Curriculares-Isoladas_1semestre2023_site-aspect-ratio-720-480-720x480.png" alt="Unidades Curriculares Isoladas – 1.º Semestre">
-                        </div>
-                        <span class="label-sm">21 Ago 2023</span>
-                        <div class="text-editor">
-                            <p>Unidades Curriculares Isoladas – 1.º Semestre </p>
-                        </div>
-                    </a>
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/horario-verao-funcionamento-estgoh/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/08/icones_horario-verao-aspect-ratio-720-480-720x480.png" alt="Horário de funcionamento da ESTGOH">
-                        </div>
-                        <span class="label-sm">2 Ago 2023</span>
-                        <div class="text-editor">
-                            <p>Horário de funcionamento da ESTGOH </p>
-                        </div>
-                    </a>
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/candidaturas-prr-fundo-ambiental/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/06/Candidaturas-PRR-Fundo-Ambiental-aspect-ratio-720-480-720x480.png" alt="Candidaturas PRR Fundo Ambiental">
-                        </div>
-                        <span class="label-sm">22 Jun 2023</span>
-                        <div class="text-editor">
-                            <p>Candidaturas PRR Fundo Ambiental </p>
-                        </div>
-                    </a>
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/conferencia-de-marketing-25-de-maio-16h00/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/05/ciclo-conferencias_25-maio-_site-aspect-ratio-720-480-720x480.png" alt="Conferência de Marketing – 25 de Maio – 16h00">
-                        </div>
-                        <span class="label-sm">17 Mai 2023</span>
-                        <div class="text-editor">
-                            <p>Conferência de Marketing – 25 de Maio – 16h00 </p>
-                        </div>
-                    </a>
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/webinars-sobre-metodologia-de-trabalho-cientifico/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/05/ciclo-conferencias_metodologia-de-trabalho_site-aspect-ratio-720-480-720x480.png" alt="Webinars sobre metodologia de trabalho científico">
-                        </div>
-                        <span class="label-sm">4 Mai 2023</span>
-                        <div class="text-editor">
-                            <p>Webinars sobre metodologia de trabalho científico </p>
-                        </div>
-                    </a>
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/conferencia-de-marketing-8-de-maio-14h15m/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/04/2_conferencia_site-aspect-ratio-720-480-720x480.png" alt="Conferência de Marketing – 8 de maio – 14h15m">
-                        </div>
-                        <span class="label-sm">28 Abr 2023</span>
-                        <div class="text-editor">
-                            <p>Conferência de Marketing – 8 de maio – 14h15m </p>
-                        </div>
-                    </a>
-                    <a href="https://www.estgoh.ipc.pt/sem-categoria/ii-feira-do-emprego-estgoh-17-de-abril/" class="card-item card-simple carousel-item">
-                        <div class="image">
-                            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/04/cartaz_Feira-do-Emprego_2023_site-aspect-ratio-720-480-3-720x480.png" alt="II Feira do Emprego – ESTGOH – 17 de abril">
-                        </div>
-                        <span class="label-sm">12 Abr 2023</span>
-                        <div class="text-editor">
-                            <p>II Feira do Emprego – ESTGOH – 17 de abril </p>
-                        </div>
-                    </a>
-                    <div class="container">
-                        <div class="helper-pagination">
-                            <ul class="page-numbers">
-                                <li><span aria-current="page" class="page-numbers current">1</span></li>
-                                <li><a class="page-numbers" href="https://www.estgoh.ipc.pt/category/sem-categoria/page/2/">2</a></li>
-                                <li><a class="page-numbers" href="https://www.estgoh.ipc.pt/category/sem-categoria/page/3/">3</a></li>
-                                <li><span class="page-numbers dots">…</span></li>
-                                <li><a class="page-numbers" href="https://www.estgoh.ipc.pt/category/sem-categoria/page/5/">5</a></li>
-                                <li><a class="next page-numbers" href="https://www.estgoh.ipc.pt/category/sem-categoria/page/2/">Next</a></li>
-                            </ul>
+                <div class="row clearfix">
+                    <div class="col-lg-12">
+                        <div class="card_chat chat-app">
+                            <div id="plist" class="people-list">
+                                <div class="input-group">
+                                    <label>
+                                        <input type="text" class="input_adicionar" placeholder="search..." id="searchInput">
+                                    </label>
+                                </div>
+                                <ul class="list-unstyled chat-list mt-2 mb-0">
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Vincent Porter</div>
+                                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix active">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Aiden Chavez</div>
+                                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Mike Thomas</div>
+                                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Christian Kelly</div>
+                                            <div class="status"> <i class="fa fa-circle offline"></i> left 10 hours ago </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Monica Ward</div>
+                                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                                        <div class="about">
+                                            <div class="name">Dean Henry</div>
+                                            <div class="status"> <i class="fa fa-circle offline"></i> offline since Oct 28 </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="chat">
+                                <div class="chat-header clearfix">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                            </a>
+                                            <div class="chat-about">
+                                                <h2 class="m-b-0">Aiden Chavez</h2>
+                                                <small>Last seen: 2 hours ago</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-history">
+                                    <ul class="m-b-0">
+                                        <li class="clearfix">
+                                            <div class="message-data text-right">
+                                                <span class="message-data-time">10:10 AM, Today</span>
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                            </div>
+                                            <div class="message other-message float-right"> Hi Aiden, how are you? How is the project coming along? </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="message-data">
+                                                <span class="message-data-time">10:12 AM, Today</span>
+                                            </div>
+                                            <div class="message my-message">Are we meeting today?</div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="message-data">
+                                                <span class="message-data-time">10:15 AM, Today</span>
+                                            </div>
+                                            <div class="message my-message">Project has been already finished and I have results to show you.</div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="message-data">
+                                                <span class="message-data-time">10:15 AM, Today</span>
+                                            </div>
+                                            <div class="message my-message">Project has been already finished and I have results to show you.</div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="message-data">
+                                                <span class="message-data-time">10:15 AM, Today</span>
+                                            </div>
+                                            <div class="message my-message">Project has been already finished and I have results to show you.</div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="chat-message clearfix">
+
+                                    <div class="input-group mb-0">
+                                        <div class="input-group mb-0">
+                                            <label>
+                                                <button class="button_send"> <i class="fa fa-send"></i></button>
+                                                <input type="text" class="input_adicionar" placeholder="Enter text here...">
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section class="module module--list" id="prencipal">
+            <section class="table__header">
+                <h1>Meus Apartamentos</h1>
+                <div class="input-group" id="search_Principal">
+                    <input  type="search" placeholder="Search Data...">
+                    <img src="images/search.png" alt="">
+                </div>
+            </section>
+            <section class="table__body">
+                <table id="tabela_Principal">
+                    <thead>
+                    <tr>
+                        <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> NºQuartos Livre <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Data de postagem <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> 2 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td>
+                            <p class="status delivered">Ativo</p>
+                        </td>
+                        <td> <strong> $128.90 </strong></td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> 1 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td>
+                            <p class="status pending">pending</p>
+                        </td>
+                        <td> <strong> $300 </strong></td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> 3 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td>
+                            <p class="status cancelled">Desativo</p>
+                        </td>
+                        <td> <strong> $200 </strong></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
         </section>
     </article>
 </main>
@@ -1085,23 +1384,280 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/vendor.min.js?ver=1709432728" id="vendor-js"></script>
-    <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/custom-plugins.min.js?ver=1709432728" id="custom-plugins-js"></script>
+    <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/vendor.min.js?ver=1708280857" id="vendor-js"></script>
+    <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/custom-plugins.min.js?ver=1708280857" id="custom-plugins-js"></script>
     <script type="text/javascript" id="script-js-extra">
         /* <![CDATA[ */
         var dynamic = {"ajax":"https:\/\/www.estgoh.ipc.pt\/wp-admin\/admin-ajax.php","origin":"https:\/\/www.estgoh.ipc.pt","assets":"https:\/\/www.estgoh.ipc.pt\/wp-content\/themes\/ipc-multisite-theme-1.4\/dist\/","keys":{"google_maps":""},"privacyLink":"","privacyText":"Este website utiliza cookies pr\u00f3prios e de terceiros para melhorar sua experi\u00eancia de navega\u00e7\u00e3o. Ao continuar a navega\u00e7\u00e3o, assumimos sua aprova\u00e7\u00e3o.","translations":{"all":"All","error":"Error","success":"Success","required_field":"This field is required.","invalid_email":"Invalid email. (e.g. joao@ipc.pt)","loading":"loading","unexpected_error":"An unexpected error occurred on the server. Please try again later"}};
         /* ]]> */
     </script>
-    <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1709432728" id="script-js"></script>
+    <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
+    <script>
+        const removerLink = document.getElementById("Remover_bot");
+        const removerAlojamento = document.getElementById("Remover_alojamento");
+        const prencipal = document.getElementById("prencipal");
+        const AdicionarLink = document.getElementById("Adcionar_bot");
+        const AdicionarAlojamento = document.getElementById("Adicionar_selctor");
+        const ConversaLink = document.getElementById("Conversa_bot");
+        const Conversa_selctor = document.getElementById("Conversa");
+
+
+        removerLink.addEventListener("click", function() {
+            if (removerAlojamento.style.display === 'block') {
+                removerAlojamento.style.display = 'none';
+                AdicionarAlojamento.style.display = 'none';
+                Conversa_selctor.style.display = 'none';
+                prencipal.style.display = 'block';
+            } else {
+                removerAlojamento.style.display = 'block';
+                prencipal.style.display = 'none';
+                Conversa_selctor.style.display = 'none';
+                AdicionarAlojamento.style.display = 'none';
+            }
+        });
+        //________________________Table #1 Principal_______________________________________
+        const tabela_Principal= document.getElementById('tabela_Principal');
+        const search_Principal = document.getElementById('search_Principal');
+        const search = search_Principal.querySelector('.input-group input'),
+            table_rows = tabela_Principal.querySelectorAll('tbody tr'),
+            table_headings = tabela_Principal.querySelectorAll('thead th');
+
+
+        // 1. Searching for specific data of HTML table
+        search.addEventListener('input', searchTable);
+
+        function searchTable() {
+            table_rows.forEach((row, i) => {
+                let table_data = row.textContent.toLowerCase(),
+                    search_data = search.value.toLowerCase();
+
+                row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
+                row.style.setProperty('--delay', i / 25 + 's');
+            })
+
+            document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
+                visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
+            });
+        }
+
+        // 2. Sorting | Ordering data of HTML table
+
+        table_headings.forEach((head, i) => {
+            let sort_asc = true;
+            head.onclick = () => {
+                table_headings.forEach(head => head.classList.remove('active'));
+                head.classList.add('active');
+
+                document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
+                table_rows.forEach(row => {
+                    row.querySelectorAll('td')[i].classList.add('active');
+                })
+
+                head.classList.toggle('asc', sort_asc);
+                sort_asc = head.classList.contains('asc') ? false : true;
+
+                sortTable(tabela_Principal,i, sort_asc);
+            }
+        })
+
+
+        function sortTable(tabela,column, sort_asc) {
+            [...table_rows].sort((a, b) => {
+                let first_row = a.querySelectorAll('td')[column].textContent.toLowerCase(),
+                    second_row = b.querySelectorAll('td')[column].textContent.toLowerCase();
+
+                return sort_asc ? (first_row < second_row ? 1 : -1) : (first_row < second_row ? -1 : 1);
+            })
+                .map(sorted_row => tabela.querySelector('tbody').appendChild(sorted_row));
+        }
+        //________________________Table #2 Remover_______________________________________
+        const tabela_Remover = document.getElementById('tabela_remover');
+        const search_remover = document.getElementById('search_remover');
+        const search_re = search_remover.querySelector('.input-group input'),
+            table_rows_re = tabela_Remover.querySelectorAll('tbody tr'),
+            table_headings_re = tabela_Remover.querySelectorAll('thead th');
+
+
+        // 1. Searching for specific data of HTML table
+        search_re.addEventListener('input', searchTable_re);
+
+        function searchTable_re() {
+            table_rows_re.forEach((row, i) => {
+                let table_data = row.textContent.toLowerCase(),
+                    search_data = search_re.value.toLowerCase();
+
+                row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
+                row.style.setProperty('--delay', i / 25 + 's');
+            })
+
+            document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
+                visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
+            });
+        }
+
+        // 2. Sorting | Ordering data of HTML table
+
+        table_headings_re.forEach((head, i) => {
+            let sort_asc = true;
+            head.onclick = () => {
+                table_headings_re.forEach(head => head.classList.remove('active'));
+                head.classList.add('active');
+
+                document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
+                table_rows_re.forEach(row => {
+                    row.querySelectorAll('td')[i].classList.add('active');
+                })
+
+                head.classList.toggle('asc', sort_asc);
+                sort_asc = head.classList.contains('asc') ? false : true;
+
+                sortTable_re(tabela_Remover,i, sort_asc);
+            }
+        })
+
+
+        function sortTable_re(tabela_re,column, sort_asc) {
+            [...table_rows_re].sort((a, b) => {
+                let first_row = a.querySelectorAll('td')[column].textContent.toLowerCase(),
+                    second_row = b.querySelectorAll('td')[column].textContent.toLowerCase();
+
+                return sort_asc ? (first_row < second_row ? 1 : -1) : (first_row < second_row ? -1 : 1);
+            })
+                .map(sorted_row => tabela_re.querySelector('tbody').appendChild(sorted_row));
+        }
+        //---------------------------------------------------------------------------------------------------
+
+
+        AdicionarLink.addEventListener("click", function() {
+            if (AdicionarAlojamento.style.display === 'block') {
+                removerAlojamento.style.display = 'none';
+                AdicionarAlojamento.style.display = 'none';
+                Conversa_selctor.style.display = 'none';
+                prencipal.style.display = 'block';
+            } else {
+                AdicionarAlojamento.style.display = 'block';
+                prencipal.style.display = 'none';
+                Conversa_selctor.style.display = 'none';
+                removerAlojamento.style.display = 'none';
+            }
+        });
+        window.onload = function(){
+            slideTr();
+        }
+        let sliderTwo_dis = document.getElementById("slider_min_dis");
+        let displayValTwo_dis = document.getElementById("range_max_dis");
+        let minGap_dis = 0;
+        let sliderTrack_dis = document.querySelector(".slider-track-Dis");
+        let sliderMaxValue_dis = document.getElementById("slider_min_dis").max;
+
+        function slideTr(){
+            if(sliderTwo_dis.value>1000){
+                document.getElementById("M_or_Km").textContent="Km";
+                displayValTwo_dis.textContent=sliderTwo_dis.value/1000;
+            }else{
+                displayValTwo_dis.textContent = sliderTwo_dis.value;
+            }
+            fillColor_dis();
+        }
+        function fillColor_dis(){
+
+            percent2_Dis = (sliderTwo_dis.value / sliderMaxValue_dis) * 100;
+            sliderTrack_dis.style.background = `linear-gradient(to right, #000000 ${percent2_Dis}%, #dadae5 ${percent2_Dis}%)`;
+        }
+        let minusBtn = document.getElementById("minus-btn");
+        let count = document.getElementById("count");
+        let plusBtn = document.getElementById("plus-btn");
+
+        let countNum = 1;
+        count.innerHTML = countNum;
+
+        minusBtn.addEventListener("click", () => {
+            if(countNum>1) {
+                countNum -= 1;
+                count.innerHTML = countNum;
+            }
+        });
+
+        plusBtn.addEventListener("click", () => {
+            if(countNum<10){
+                countNum += 1;
+                count.innerHTML = countNum;
+            }
+        });
+        let title = document.querySelectorAll(".chat-list-header");
+        let totalHeight = 0;
+
+        for(let i = 0; i < title.length; i++){
+            let totalHeight = 0;
+            title[i].addEventListener("click", function(){
+                let result = this.nextElementSibling;
+                let activeSibling = this.nextElementSibling.classList.contains('active');
+                this.classList.toggle('active');
+                result.classList.toggle("active");
+                if(!activeSibling) {
+                    for( i= 0; i < result.children.length; i++) {
+                        totalHeight = totalHeight +  result.children[i].scrollHeight + 40;
+                    }
+                } else {
+                    totalHeight = 0;
+                }
+                result.style.maxHeight =  totalHeight + "px";
+            });
+        }
+
+        const themeColors = document.querySelectorAll('.theme-color');
+
+        themeColors.forEach(themeColor => {
+            themeColor.addEventListener('click', (e) => {
+                themeColors.forEach(c => c.classList.remove('active'));
+                const theme = themeColor.getAttribute('data-color');
+                document.body.setAttribute('data-theme', theme);
+                themeColor.classList.add('active');
+            });
+        });
+
+        ConversaLink.addEventListener("click", function() {
+            if (Conversa_selctor.style.display === 'block') {
+                removerAlojamento.style.display = 'none';
+                AdicionarAlojamento.style.display = 'none';
+                Conversa_selctor.style.display = 'none';
+                prencipal.style.display = 'block';
+            } else {
+                Conversa_selctor.style.display = 'block';
+                removerAlojamento.style.display = 'none';
+                prencipal.style.display = 'none';
+                AdicionarAlojamento.style.display = 'none';
+            }
+        });
+        document.getElementById("searchInput").addEventListener("input", function() {
+            var input, filter, ul, li, name, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            ul = document.querySelector('.chat-list');
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                name = li[i].querySelector('.name');
+                if (name) {
+                    txtValue = name.textContent || name.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = '';
+                    } else {
+                        li[i].style.display = 'none';
+                    }
+                }
+            }
+        });
+    </script>
 </footer>
 </body>
 <editor-card style="position:absolute;top:0px;left:0px;z-index:auto;display: block !important">
     <div dir="ltr" style="all: initial;">
-        <div style="color: initial; font: initial; font-palette: initial; font-synthesis: initial; forced-color-adjust: initial; position: absolute; text-orientation: initial; text-rendering: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; animation-composition: initial; animation: initial; app-region: initial; appearance: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; color-scheme: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; empty-cells: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: initial; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask: initial; mask-type: initial; math-depth: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-size-adjust: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; white-space: initial; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; widows: initial; width: initial; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;">
+        <div style="color: initial; font: initial; font-palette: initial; font-synthesis: initial; forced-color-adjust: initial; position: absolute; text-orientation: initial; text-rendering: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; animation-composition: initial; animation: initial; app-region: initial; appearance: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; color-scheme: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; empty-cells: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: initial; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask: initial; mask-type: initial; math-depth: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-size-adjust: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; white-space: initial; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; -webkit-user-modify: initial; widows: initial; width: initial; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;">
             <link rel="stylesheet" href="chrome-extension://gpaiobkfhnonedkhhfjpmhdalgeoebfa/fonts/fabric-icons.css">
             <div style="all: initial;"></div>
         </div>
-        <div style="color: initial; font: initial; font-palette: initial; font-synthesis: initial; forced-color-adjust: initial; position: absolute; text-orientation: initial; text-rendering: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; animation-composition: initial; animation: initial; app-region: initial; appearance: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; color-scheme: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; empty-cells: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: initial; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask: initial; mask-type: initial; math-depth: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-size-adjust: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; white-space: initial; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; widows: initial; width: initial; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;">
+        <div style="color: initial; font: initial; font-palette: initial; font-synthesis: initial; forced-color-adjust: initial; position: absolute; text-orientation: initial; text-rendering: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; animation-composition: initial; animation: initial; app-region: initial; appearance: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; color-scheme: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; empty-cells: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: initial; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask: initial; mask-type: initial; math-depth: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-size-adjust: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; white-space: initial; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; -webkit-user-modify: initial; widows: initial; width: initial; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;">
             <link rel="stylesheet" href="chrome-extension://gpaiobkfhnonedkhhfjpmhdalgeoebfa/fonts/fabric-icons.css">
         </div>
     </div>
