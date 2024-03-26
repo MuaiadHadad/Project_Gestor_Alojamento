@@ -40,17 +40,17 @@
     <meta name="generator" content="WPML ver:4.3.16 stt:1,41;">
     <link rel="shortcut icon" href="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2-1.svg">
     <!-- Css adicional -->
-    <link rel="stylesheet" href="nouislider/nouislider.min.css">
-    <link rel="stylesheet" href="/Style_Page_1/Style_Card_sel.css">
-    <link rel="stylesheet" href="/Style_Page_1/Style_Search_bar.css">
-    <link rel="stylesheet" href="/Style_Page_1/Style_Filter.css">
     <link rel="stylesheet" href="/Style_Page_1/hr_style.css">
     <link rel="stylesheet" href="/Style_Page_Gestor/Tabela.css">
-    <link rel="stylesheet" href="/Style_Page_Gestor/buttons_Style.css">
-    <link rel="stylesheet" href="/Style_Page_Gestor/dicionar_Style.css">
-    <link rel="stylesheet" href="/Style_Page_Gestor/Chat_Style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link href="/Style_Page_1/bootstrap.min.css" rel="stylesheet">
+    <link href="/Style_Page_1/global.css" rel="stylesheet">
+    <link href="/Style_Page_1/list.css" rel="stylesheet">
+    <link href="/Style_Page_1/element.css" rel="stylesheet">
+    <link href="css/agent.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Style_Page_1/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    <script src="/Style_Page_1/jquery-2.1.1.min.js"></script>
+    <script src="/Style_Page_1/bootstrap.min.js"></script>
     <!-- /Css adicional -->
     <style type="text/css" id="wp-custom-css">
         @media (max-width: 767px)
@@ -487,47 +487,7 @@
     <div class="sub-footer">
         <div class="container">
             <div class="logo-container">
-                <!--
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.cisco.com/c/pt_pt/training-events.html">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cisco.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.lpi.org/">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/lpi.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="http://www.oet.pt/">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/oet.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.occ.pt/pt/">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/occ.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="http://www.cnc.min-financas.pt/">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cnc.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.cmvm.pt/pt/Pages/home.aspx">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cmvm.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.act.gov.pt/(pt-PT)/Paginas/default.aspx">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/ACT.jpg">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.b-on.pt/">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/bon.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/eduroam.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://ecoescolas.abae.pt/escola/escola-superior-de-tecnologia-e-gestao-de-oliveira-do-hospital-do-politecnico-de-coimbra/">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/ecoescolas.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.geoparkestrela.pt/">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2021/01/Logotipo-geopark.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2021/04/logos_CTESP.png">
-                    </a>
-                    <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
-                    <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/03/logos_PRR-2.png">
-                    </a>
-                    -->
+
             </div>
             <div class="links">
                 <a href="https://www.estgoh.ipc.pt/sugestoes/">Sugestões, elogios e reclamações</a>
@@ -560,13 +520,24 @@
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
                 <div style="color: white !important;" class="title-sm-main">Escola Superior de
-                    Tecnologia e Gestão
-                    Politécnico de Coimbra
+Tecnologia e Gestão
+Politécnico de Coimbra
                 </div>
             </a>
             <ul class="site-options">
-                <li><a><i class="icon icon-search js-layerSearchToggle"></i></a></li>
-                <li><a class="js-fullMenuOpen"><i class="icon icon-burger"></i></a></li>
+
+                <li class="dropdown-menu-user-div-container">
+                    <img src="/Style_Page_1/img/13.jpg" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                    <i  class="fa fa-inverse">Muaiad Hadad</i>
+                    <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
+                </li>
+                <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
+            </ul>
+        </div>
+        <div class="dropdown-menu-user-div" style="left: 76%">
+            <ul>
+                <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
         </div>
         <section class="module module-search module-layer-search">
@@ -575,16 +546,12 @@
                     <h2 class="title-lg">Pesquisa</h2>
                     <form id="searchform" method="get" action="https://www.estgoh.ipc.pt/">
                         <div class="form-row">
-                            <button type="button" class="btn btn-border js-toggleSearchType" data-type="formative-offer">Oferta formativa</button>
-                            <button type="button" class="btn btn-border js-toggleSearchType" data-type="general">Outros</button>
-                            <input type="hidden" name="search-type" value="">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group form-search is-disabled">
+                            <div class="form-group form-search is-enable">
                                 <i class="icon icon-search"></i>
-                                <input type="text" name="s" placeholder="Pesquisar" disabled="">
+                                <input type="text" name="s" placeholder="Pesquisar" >
                                 <input type="hidden" name="sentence" value="1">
-                                <button type="submit" class="btn btn-full" disabled="">Pesquisar</button>
+                                <button type="submit" class="btn btn-full" >Pesquisar</button>
+
                             </div>
                         </div>
                     </form>
@@ -592,39 +559,9 @@
             </div>
         </section>
     </div>
-    <div class="sub-menu js-subMenu">
-        <ul class="level-1">
-            <li id="527">
-                <a href="https://www.estgoh.ipc.pt/estudantes/" class="is-active">username-user</a>
-            </li>
-            <li id="542">
-                <a  class="">Profil</a>
-            </li>
-            <li class="current_page_item" id="332">
-                <a href="" class="">Alojamento</a>
-                <ul class="level-2" data-item-id="653">
-                    <li id="332">
-                        <a id="Adcionar_bot">Adicionar</a>
-                    </li>
-                    <li class="level-2-link">
-                        <a id="Remover_bot" class="">Remover</a>
-                    </li>
-                    <li class="level-2-link">
-                        <a class="" href="">Editar</a>
-                    </li>
-                    <li class="level-2-link">
-                        <a id="Conversa_bot" class="">Conversas</a>
-                    </li>
-                </ul>
-            </li>
-            <li id="543">
-                <a  class="">Logout</a>
-            </li>
-        </ul>
-    </div>
 </header>
 <main id="primary" class="main-section">
-    <section class="module module-page--header site-header--image-bg ">
+    <section class="module module-page--header site-header--image-bg" style="height: 310px ">
         <div class="page-title">
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
@@ -643,317 +580,47 @@
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="https://www.estgoh.ipc.pt/" rel="v:url" property="v:title">Início</a> / <span class="current">Alojamentos</span></div>
+            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Gestor</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
             <!--<div class="image" style="background-image: url(https://www.estgoh.ipc.pt/wp-content/uploads/2020/11/ESTGOH_26-scaled-aspect-ratio-720-480-720x480.jpg)"></div>-->
         </div>
+
     </section>
+
     <article id="main" class="article-content">
-        <section class="module module--list" id="Adicionar_selctor" style="display: none;">
-            <h2 class="divider gradient">Adicionar Alojamento</h2>
-            <div class="container_add">
-                <label class="label" style="margin-right: 50px">Nome:</label>
-                <input type="text" class="input_adicionar" placeholder="Nome">
-            </div>
-            <div class="container_add">
-                <label class="label" style="margin-left: 11px" >Descrição:</label>
-                <input type="text" class="input_adicionar" placeholder="Descrição">
-            </div>
-            <div class="container_add">
-                <label class="label">Endreco:</label>
-                <input type="text" class="input_adicionar" placeholder="Endreco...">
-                <label class="label">Codigo-postal:</label>
-                <input type="text" class="input_adicionar" placeholder="3200">
-                <label class="label">-</label>
-                <input type="text" class="input_adicionar" placeholder="200">
-            </div>
-            <div class="container_range_preco">
-                <label class="label">Destancia:</label>
-                <div class="values">
-							<span id="range_min_dis">
-							0
-							</span>
-                    <span> &dash; </span>
-                    <span id="range_max_dis">
-							100
-							</span>
-                    <span id="M_or_Km"> m </span>
-                </div>
-                <div class="container">
-                    <div class="slider-track-Dis"></div>
-                    <input type="range" min="0" max="5000" value="100" id="slider_min_dis" oninput="slideTr()">
-                </div>
-            </div>
-            <div class="container_range_preco">
-                <label class="label">Nº Quartos:</label>
-                <div class="container_mais_menos">
-                    <div class="button col col-1">
-                        <button id="minus-btn">-</button>
-                    </div>
-                    <div class="number col col-2">
-                        <h1 id="count">0</h1>
-                    </div>
-                    <div class="button col col-1">
-                        <button id="plus-btn">+</button>
-                    </div>
-                </div>
-            </div>
-            <div class="container_add">
-                <label class="label" >Sexso:</label>
-                <label class="toggle" style="margin-left:55px">
-                    <span class="toggle-label" >Masculino:</span>
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-                <label class="toggle">
-                    <span class="toggle-label">Feminino:</span>
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-                <label class="toggle">
-                    <span class="toggle-label">Misto:</span>
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-            </div>
-            <div class="container_add">
-                <label class="label">Servicos:</label>
-                <label class="toggle">
-                    <span class="toggle-label">Com Recibo:</span>
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-                <label class="toggle">
-                    <span class="toggle-label">Wifi/Net:</span>
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-                <label class="toggle">
-                    <span class="toggle-label">Elvador:</span>
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-            </div>
-            <div class="container_botao_sub">
-                <button class="botao_sub_aplic" id="button_sub_adicionar">Adicionar</button>
-            </div>
-        </section>
-        <section class="module module--list" id="nada" style="display: none;">
-            <h2 class="divider gradient">Filtrar</h2>
-        </section>
-        <section class="module module--list" id="Remover_alojamento" style="display: none;">
-            <section class="table__header">
-                <h1>Remover</h1>
-                <div class="input-group" id="search_remover">
-                    <input type="search" placeholder="Search Data...">
-                    <img src="images/search.png" alt="">
-                </div>
+        <section class="table__body">
+        <div class="center_home_1i1 clearfix" style="width: 25%;">
+            <select class="form-control" id="selector_list">
+                <option value="utilizadores">Lista de Utilizadores</option>
+                <option value="anuncios">Lista dos anúncios</option>
+                <option value="pedidos">Lista dos pedidos</option>
+            </select>
+        </div>
             </section>
-            <section class="table__body">
-                <table id="tabela_remover">
-                    <thead>
-                    <tr>
-                        <th> ID <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Nº Quartos Livre <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data de postagem <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
-                        <th>Remover</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td> 1 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> 2 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td>
-                            <p class="status delivered">Ativo</p>
-                        </td>
-                        <td> <strong> $128.90 </strong></td>
-                        <td>
-                            <button class="icon-btn add-btn">
-                                <div class="btn-txt">Remove</div>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> 1 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td>
-                            <p class="status pending">pending</p>
-                        </td>
-                        <td> <strong> $300 </strong></td>
-                        <td>
-                            <button class="icon-btn add-btn">
-                                <div class="btn-txt">Remove</div>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> 3 </td>
-                        <td> 18 Dec, 2023 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td>
-                            <p class="status cancelled">Desativo</p>
-                        </td>
-                        <td> <strong> $200 </strong></td>
-                        <td>
-                            <button class="icon-btn add-btn">
-                                <div class="btn-txt">Remove</div>
-                            </button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </section>
-        </section>
-
-        <section class="module module--list" id="Conversa" style="display: none;">
-            <div class="container">
-                <div class="row clearfix">
-                    <div class="col-lg-12">
-                        <div class="card_chat chat-app">
-                            <div id="plist" class="people-list">
-                                <div class="input-group">
-                                    <label>
-                                        <input type="text" class="input_adicionar" placeholder="search..." id="searchInput">
-                                    </label>
-                                </div>
-                                <ul class="list-unstyled chat-list mt-2 mb-0">
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Vincent Porter</div>
-                                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix active">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Aiden Chavez</div>
-                                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Mike Thomas</div>
-                                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Christian Kelly</div>
-                                            <div class="status"> <i class="fa fa-circle offline"></i> left 10 hours ago </div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Monica Ward</div>
-                                            <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Dean Henry</div>
-                                            <div class="status"> <i class="fa fa-circle offline"></i> offline since Oct 28 </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="chat">
-                                <div class="chat-header clearfix">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
-                                            </a>
-                                            <div class="chat-about">
-                                                <h2 class="m-b-0">Aiden Chavez</h2>
-                                                <small>Last seen: 2 hours ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="chat-history">
-                                    <ul class="m-b-0">
-                                        <li class="clearfix">
-                                            <div class="message-data text-right">
-                                                <span class="message-data-time">10:10 AM, Today</span>
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                                            </div>
-                                            <div class="message other-message float-right"> Hi Aiden, how are you? How is the project coming along? </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <div class="message-data">
-                                                <span class="message-data-time">10:12 AM, Today</span>
-                                            </div>
-                                            <div class="message my-message">Are we meeting today?</div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <div class="message-data">
-                                                <span class="message-data-time">10:15 AM, Today</span>
-                                            </div>
-                                            <div class="message my-message">Project has been already finished and I have results to show you.</div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <div class="message-data">
-                                                <span class="message-data-time">10:15 AM, Today</span>
-                                            </div>
-                                            <div class="message my-message">Project has been already finished and I have results to show you.</div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <div class="message-data">
-                                                <span class="message-data-time">10:15 AM, Today</span>
-                                            </div>
-                                            <div class="message my-message">Project has been already finished and I have results to show you.</div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                                <div class="chat-message clearfix">
-
-                                    <div class="input-group mb-0">
-                                        <div class="input-group mb-0">
-                                            <label>
-                                                <button class="button_send"> <i class="fa fa-send"></i></button>
-                                                <input type="text" class="input_adicionar" placeholder="Enter text here...">
-                                            </label>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <section class="module module--list" id="lista_utilizadores">
+            <div class="popular_1 text-center clearfix">
+                <div class="col-sm-12">
+                    <h1 class="mgt"> Lista de Utilizadores</h1>
+                </div>
+                <div class="h-divider">
+                    <div class="shadow"></div>
                 </div>
             </div>
-        </section>
 
-        <section class="module module--list" id="prencipal">
             <section class="table__header">
-                <h1>Meus Apartamentos</h1>
-                <div class="input-group" id="search_Principal">
-                    <input  type="search" placeholder="Search Data...">
-                    <img src="images/search.png" alt="">
+                <div class="center_home_1i1 clearfix">
+                    <h5 class="mgt text-center">
+                        <a class="button_1 block mgt" href="/gestor/Adicionar_Gestor">
+                            <i class="fa fa-user-plus"></i>
+                            Adicionar Gestor
+                        </a>
+                    </h5>
+                </div>
+                <div class="input-group" id="search_Principal" style="right: 50%; left: -8%;">
+                    <input  type="search" placeholder="Pesquisar utilizadores...">
+                    <i class="fa fa-search fa-2x"></i>
                 </div>
             </section>
             <section class="table__body">
@@ -962,12 +629,10 @@
                     <tr>
                         <th> ID <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> NºQuartos Livre <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data de postagem <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Email <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> ِAtivar/Inativar</th>
+                        <th> Remover </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -975,37 +640,259 @@
                         <td> 1 </td>
                         <td> Zinzu Chan Lee</td>
                         <td> Seoul n43 </td>
-                        <td> 2 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
                         <td>
                             <p class="status delivered">Ativo</p>
                         </td>
-                        <td> <strong> $128.90 </strong></td>
+                        <td>
+                            <i class="fa fa-toggle-on fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-user-times fa-3x"></i>
+                        </td>
                     </tr>
                     <tr>
                         <td> 2 </td>
                         <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> 1 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
+                        <td> aeadhadad5@gmail.com </td>
                         <td>
                             <p class="status pending">pending</p>
                         </td>
-                        <td> <strong> $300 </strong></td>
+                        <td>
+                            <i class="fa fa-toggle-off fa-3x"><p style="visibility: hidden">ativo</p></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-user-times fa-3x"></i>
+                        </td>
                     </tr>
                     <tr>
                         <td> 3</td>
                         <td> Zinzu Chan Lee</td>
                         <td> Seoul n43 </td>
-                        <td> 3 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
                         <td>
                             <p class="status cancelled">Desativo</p>
                         </td>
-                        <td> <strong> $200 </strong></td>
+                        <td>
+                            <i class="fa fa-toggle-on fa-3x"><p style="visibility: hidden">ban</p></i>
+
+                        </td>
+                        <td>
+                            <i class="fa fa-user-times fa-3x"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 4</td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td>
+                            <p class="status cancelled">Desativo</p>
+                        </td>
+                        <td>
+                            <i class="fa fa-toggle-off fa-3x"></i>
+
+                        </td>
+                        <td>
+                            <i class="fa fa-user-times fa-3x"></i>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </section>
+
+        <section class="module module--list" id="lista_anuncios" style="display: none;">
+            <div class="popular_1 text-center clearfix">
+                <div class="col-sm-12">
+                    <h1 class="mgt"> Lista dos anúncios</h1>
+                </div>
+                <div class="h-divider">
+                    <div class="shadow"></div>
+                </div>
+            </div>
+            <section class="table__header">
+                <div class="center_home_1i1 clearfix" style="visibility: hidden">
+                    <h5 class="mgt text-center"><a class="button_1 block mgt" href="detail.html"><i class="fa fa-user-plus"></i> Filtrar</a></h5>
+                </div>
+                <div class="input-group" id="search_tabela_List_anuncios" style="right: 50%; left: -8%;">
+                    <input  type="search" placeholder="Pesquisar anúncio...">
+                    <i class="fa fa-search fa-2x"></i>
+                </div>
+            </section>
+            <section class="table__body">
+                <table id="tabela_List_anuncios">
+                    <thead>
+                    <tr>
+                        <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> proprietário <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Data de postagem <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Consultar</th>
+                        <th> Inativar/Reativar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> Muaiad </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> <strong> $128.90 </strong></td>
+                        <td>
+                            <p class="status delivered">Ativo</p>
+                        </td>
+                        <td>
+                            <i class="fa fa-eye fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-toggle-off fa-3x"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> Muaiad </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> <strong> $128.90 </strong></td>
+                        <td>
+                            <p class="status cancelled">Ativo</p>
+                        </td>
+                        <td>
+                            <i class="fa fa-eye fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-toggle-on fa-3x"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> Muaiad </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> <strong> $128.90 </strong></td>
+                        <td>
+                            <p class="status cancelled">Ativo</p>
+                        </td>
+                        <td>
+                            <i class="fa fa-eye fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-toggle-off fa-3x"></i>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </section>
+        <section class="module module--list" id="lista_pedidos" style="display: none;">
+            <div class="popular_1 text-center clearfix">
+                <div class="col-sm-12">
+                    <h1 class="mgt"> Lista dos pedidos</h1>
+                    <p>aprovaar ou reprovar dos anúncios</p>
+                </div>
+                <div class="h-divider">
+                    <div class="shadow"></div>
+                </div>
+            </div>
+            <section class="table__header">
+                <div class="center_home_1i1 clearfix" style="visibility: hidden">
+                    <h5 class="mgt text-center"><a class="button_1 block mgt" href="detail.html"><i class="fa fa-user-plus"></i> Filtrar</a></h5>
+                </div>
+                <div class="input-group" id="search_tabela_List_pedidos" style="right: 50%; left: -8%;">
+                    <input  type="search" placeholder="Pesquisar pedido...">
+                    <i class="fa fa-search fa-2x"></i>
+                </div>
+            </section>
+            <section class="table__body">
+                <table id="tabela_List_pedidos">
+                    <thead>
+                    <tr>
+                        <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> proprietário <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Data de postagem <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Consultar</th>
+                        <th> Aprovaar</th>
+                        <th> Reprovar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> Muaiad </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> <strong> $128.90 </strong></td>
+                        <td>
+                            <p class="status delivered">Ativo</p>
+                        </td>
+                        <td>
+                            <i class="fa fa-eye fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-check-square-o fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-times fa-3x"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> Muaiad </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> <strong> $128.90 </strong></td>
+                        <td>
+                            <p class="status cancelled">Ativo</p>
+                        </td>
+                        <td>
+                            <i class="fa fa-eye fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-check-square-o fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-times fa-3x"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Zinzu Chan Lee</td>
+                        <td> Seoul n43 </td>
+                        <td> Muaiad </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> 17 Dec, 2022 </td>
+                        <td> <strong> $1000 </strong></td>
+                        <td>
+                            <p class="status cancelled">Ativo</p>
+                        </td>
+                        <td>
+                            <i class="fa fa-eye fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-check-square-o fa-3x"></i>
+                        </td>
+                        <td>
+                            <i class="fa fa-times fa-3x"></i>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -1014,48 +901,6 @@
     </article>
 </main>
 <footer class="module module-site-footer">
-    <!--
-        <div class="sub-footer">
-        <div class="big-cards">
-                <a class="card-item card-full"  href="http://193.137.79.42/estgoh/escola/">
-            <span class="ctx">
-                <span class="title-sm">
-                    Escola					</span>
-                <i class="icon icon-arrow-white"></i>
-            </span>
-
-            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/09/ESTGOH_42-scaled-aspect-ratio-520-289-1-720x480.jpg" alt="">
-        </a>
-                <a class="card-item card-full"  href="http://193.137.79.42/estgoh/oferta-formativa/">
-            <span class="ctx">
-                <span class="title-sm">
-                    Oferta Formativa					</span>
-                <i class="icon icon-arrow-white"></i>
-            </span>
-
-            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/11/estudantes5-aspect-ratio-520-289-720x480.jpg" alt="">
-        </a>
-                <a class="card-item card-full"  href="http://193.137.79.42/estgoh/acesso-ao-ensino-superior/">
-            <span class="ctx">
-                <span class="title-sm">
-                    Acesso ao Ensino Superior					</span>
-                <i class="icon icon-arrow-white"></i>
-            </span>
-
-            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/09/ESTGOH_28-scaled-aspect-ratio-520-289-720x480.jpg" alt="">
-        </a>
-                <a class="card-item card-full"  href="http://193.137.79.42/estgoh/alunos/">
-            <span class="ctx">
-                <span class="title-sm">
-                    Alunos					</span>
-                <i class="icon icon-arrow-white"></i>
-            </span>
-
-            <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/09/ESTGOH_17-scaled-aspect-ratio-520-289-720x480.jpg" alt="">
-        </a>
-        </div>
-        </div>
-        -->
     <div class="big-footer">
         <div class="container">
             <a class="main-logo" href="#">
@@ -1335,47 +1180,6 @@
         <div class="sub-footer">
             <div class="container">
                 <div class="logo-container">
-                    <!--
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.cisco.com/c/pt_pt/training-events.html">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cisco.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.lpi.org/">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/lpi.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="http://www.oet.pt/">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/oet.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.occ.pt/pt/">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/occ.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="http://www.cnc.min-financas.pt/">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cnc.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.cmvm.pt/pt/Pages/home.aspx">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cmvm.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.act.gov.pt/(pt-PT)/Paginas/default.aspx">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/ACT.jpg">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.b-on.pt/">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/bon.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/eduroam.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://ecoescolas.abae.pt/escola/escola-superior-de-tecnologia-e-gestao-de-oliveira-do-hospital-do-politecnico-de-coimbra/">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/ecoescolas.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.geoparkestrela.pt/">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2021/01/Logotipo-geopark.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2021/04/logos_CTESP.png">
-                        </a>
-                        <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
-                        <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/03/logos_PRR-2.png">
-                        </a>
-                        -->
                 </div>
                 <div class="links">
                     <a href="https://www.estgoh.ipc.pt/sugestoes/">Sugestões, elogios e reclamações</a>
@@ -1384,6 +1188,7 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="/Style_Page_Gestor/Gestor.js"></script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/vendor.min.js?ver=1708280857" id="vendor-js"></script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/custom-plugins.min.js?ver=1708280857" id="custom-plugins-js"></script>
     <script type="text/javascript" id="script-js-extra">
@@ -1393,273 +1198,9 @@
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
     <script>
-        const removerLink = document.getElementById("Remover_bot");
-        const removerAlojamento = document.getElementById("Remover_alojamento");
-        const prencipal = document.getElementById("prencipal");
-        const AdicionarLink = document.getElementById("Adcionar_bot");
-        const AdicionarAlojamento = document.getElementById("Adicionar_selctor");
-        const ConversaLink = document.getElementById("Conversa_bot");
-        const Conversa_selctor = document.getElementById("Conversa");
 
-
-        removerLink.addEventListener("click", function() {
-            if (removerAlojamento.style.display === 'block') {
-                removerAlojamento.style.display = 'none';
-                AdicionarAlojamento.style.display = 'none';
-                Conversa_selctor.style.display = 'none';
-                prencipal.style.display = 'block';
-            } else {
-                removerAlojamento.style.display = 'block';
-                prencipal.style.display = 'none';
-                Conversa_selctor.style.display = 'none';
-                AdicionarAlojamento.style.display = 'none';
-            }
-        });
-        //________________________Table #1 Principal_______________________________________
-        const tabela_Principal= document.getElementById('tabela_Principal');
-        const search_Principal = document.getElementById('search_Principal');
-        const search = search_Principal.querySelector('.input-group input'),
-            table_rows = tabela_Principal.querySelectorAll('tbody tr'),
-            table_headings = tabela_Principal.querySelectorAll('thead th');
-
-
-        // 1. Searching for specific data of HTML table
-        search.addEventListener('input', searchTable);
-
-        function searchTable() {
-            table_rows.forEach((row, i) => {
-                let table_data = row.textContent.toLowerCase(),
-                    search_data = search.value.toLowerCase();
-
-                row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
-                row.style.setProperty('--delay', i / 25 + 's');
-            })
-
-            document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
-                visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
-            });
-        }
-
-        // 2. Sorting | Ordering data of HTML table
-
-        table_headings.forEach((head, i) => {
-            let sort_asc = true;
-            head.onclick = () => {
-                table_headings.forEach(head => head.classList.remove('active'));
-                head.classList.add('active');
-
-                document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
-                table_rows.forEach(row => {
-                    row.querySelectorAll('td')[i].classList.add('active');
-                })
-
-                head.classList.toggle('asc', sort_asc);
-                sort_asc = head.classList.contains('asc') ? false : true;
-
-                sortTable(tabela_Principal,i, sort_asc);
-            }
-        })
-
-
-        function sortTable(tabela,column, sort_asc) {
-            [...table_rows].sort((a, b) => {
-                let first_row = a.querySelectorAll('td')[column].textContent.toLowerCase(),
-                    second_row = b.querySelectorAll('td')[column].textContent.toLowerCase();
-
-                return sort_asc ? (first_row < second_row ? 1 : -1) : (first_row < second_row ? -1 : 1);
-            })
-                .map(sorted_row => tabela.querySelector('tbody').appendChild(sorted_row));
-        }
-        //________________________Table #2 Remover_______________________________________
-        const tabela_Remover = document.getElementById('tabela_remover');
-        const search_remover = document.getElementById('search_remover');
-        const search_re = search_remover.querySelector('.input-group input'),
-            table_rows_re = tabela_Remover.querySelectorAll('tbody tr'),
-            table_headings_re = tabela_Remover.querySelectorAll('thead th');
-
-
-        // 1. Searching for specific data of HTML table
-        search_re.addEventListener('input', searchTable_re);
-
-        function searchTable_re() {
-            table_rows_re.forEach((row, i) => {
-                let table_data = row.textContent.toLowerCase(),
-                    search_data = search_re.value.toLowerCase();
-
-                row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
-                row.style.setProperty('--delay', i / 25 + 's');
-            })
-
-            document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
-                visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
-            });
-        }
-
-        // 2. Sorting | Ordering data of HTML table
-
-        table_headings_re.forEach((head, i) => {
-            let sort_asc = true;
-            head.onclick = () => {
-                table_headings_re.forEach(head => head.classList.remove('active'));
-                head.classList.add('active');
-
-                document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
-                table_rows_re.forEach(row => {
-                    row.querySelectorAll('td')[i].classList.add('active');
-                })
-
-                head.classList.toggle('asc', sort_asc);
-                sort_asc = head.classList.contains('asc') ? false : true;
-
-                sortTable_re(tabela_Remover,i, sort_asc);
-            }
-        })
-
-
-        function sortTable_re(tabela_re,column, sort_asc) {
-            [...table_rows_re].sort((a, b) => {
-                let first_row = a.querySelectorAll('td')[column].textContent.toLowerCase(),
-                    second_row = b.querySelectorAll('td')[column].textContent.toLowerCase();
-
-                return sort_asc ? (first_row < second_row ? 1 : -1) : (first_row < second_row ? -1 : 1);
-            })
-                .map(sorted_row => tabela_re.querySelector('tbody').appendChild(sorted_row));
-        }
-        //---------------------------------------------------------------------------------------------------
-
-
-        AdicionarLink.addEventListener("click", function() {
-            if (AdicionarAlojamento.style.display === 'block') {
-                removerAlojamento.style.display = 'none';
-                AdicionarAlojamento.style.display = 'none';
-                Conversa_selctor.style.display = 'none';
-                prencipal.style.display = 'block';
-            } else {
-                AdicionarAlojamento.style.display = 'block';
-                prencipal.style.display = 'none';
-                Conversa_selctor.style.display = 'none';
-                removerAlojamento.style.display = 'none';
-            }
-        });
-        window.onload = function(){
-            slideTr();
-        }
-        let sliderTwo_dis = document.getElementById("slider_min_dis");
-        let displayValTwo_dis = document.getElementById("range_max_dis");
-        let minGap_dis = 0;
-        let sliderTrack_dis = document.querySelector(".slider-track-Dis");
-        let sliderMaxValue_dis = document.getElementById("slider_min_dis").max;
-
-        function slideTr(){
-            if(sliderTwo_dis.value>1000){
-                document.getElementById("M_or_Km").textContent="Km";
-                displayValTwo_dis.textContent=sliderTwo_dis.value/1000;
-            }else{
-                displayValTwo_dis.textContent = sliderTwo_dis.value;
-            }
-            fillColor_dis();
-        }
-        function fillColor_dis(){
-
-            percent2_Dis = (sliderTwo_dis.value / sliderMaxValue_dis) * 100;
-            sliderTrack_dis.style.background = `linear-gradient(to right, #000000 ${percent2_Dis}%, #dadae5 ${percent2_Dis}%)`;
-        }
-        let minusBtn = document.getElementById("minus-btn");
-        let count = document.getElementById("count");
-        let plusBtn = document.getElementById("plus-btn");
-
-        let countNum = 1;
-        count.innerHTML = countNum;
-
-        minusBtn.addEventListener("click", () => {
-            if(countNum>1) {
-                countNum -= 1;
-                count.innerHTML = countNum;
-            }
-        });
-
-        plusBtn.addEventListener("click", () => {
-            if(countNum<10){
-                countNum += 1;
-                count.innerHTML = countNum;
-            }
-        });
-        let title = document.querySelectorAll(".chat-list-header");
-        let totalHeight = 0;
-
-        for(let i = 0; i < title.length; i++){
-            let totalHeight = 0;
-            title[i].addEventListener("click", function(){
-                let result = this.nextElementSibling;
-                let activeSibling = this.nextElementSibling.classList.contains('active');
-                this.classList.toggle('active');
-                result.classList.toggle("active");
-                if(!activeSibling) {
-                    for( i= 0; i < result.children.length; i++) {
-                        totalHeight = totalHeight +  result.children[i].scrollHeight + 40;
-                    }
-                } else {
-                    totalHeight = 0;
-                }
-                result.style.maxHeight =  totalHeight + "px";
-            });
-        }
-
-        const themeColors = document.querySelectorAll('.theme-color');
-
-        themeColors.forEach(themeColor => {
-            themeColor.addEventListener('click', (e) => {
-                themeColors.forEach(c => c.classList.remove('active'));
-                const theme = themeColor.getAttribute('data-color');
-                document.body.setAttribute('data-theme', theme);
-                themeColor.classList.add('active');
-            });
-        });
-
-        ConversaLink.addEventListener("click", function() {
-            if (Conversa_selctor.style.display === 'block') {
-                removerAlojamento.style.display = 'none';
-                AdicionarAlojamento.style.display = 'none';
-                Conversa_selctor.style.display = 'none';
-                prencipal.style.display = 'block';
-            } else {
-                Conversa_selctor.style.display = 'block';
-                removerAlojamento.style.display = 'none';
-                prencipal.style.display = 'none';
-                AdicionarAlojamento.style.display = 'none';
-            }
-        });
-        document.getElementById("searchInput").addEventListener("input", function() {
-            var input, filter, ul, li, name, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            ul = document.querySelector('.chat-list');
-            li = ul.getElementsByTagName('li');
-
-            for (i = 0; i < li.length; i++) {
-                name = li[i].querySelector('.name');
-                if (name) {
-                    txtValue = name.textContent || name.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        li[i].style.display = '';
-                    } else {
-                        li[i].style.display = 'none';
-                    }
-                }
-            }
-        });
     </script>
+
 </footer>
 </body>
-<editor-card style="position:absolute;top:0px;left:0px;z-index:auto;display: block !important">
-    <div dir="ltr" style="all: initial;">
-        <div style="color: initial; font: initial; font-palette: initial; font-synthesis: initial; forced-color-adjust: initial; position: absolute; text-orientation: initial; text-rendering: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; animation-composition: initial; animation: initial; app-region: initial; appearance: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; color-scheme: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; empty-cells: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: initial; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask: initial; mask-type: initial; math-depth: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-size-adjust: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; white-space: initial; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; -webkit-user-modify: initial; widows: initial; width: initial; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;">
-            <link rel="stylesheet" href="chrome-extension://gpaiobkfhnonedkhhfjpmhdalgeoebfa/fonts/fabric-icons.css">
-            <div style="all: initial;"></div>
-        </div>
-        <div style="color: initial; font: initial; font-palette: initial; font-synthesis: initial; forced-color-adjust: initial; position: absolute; text-orientation: initial; text-rendering: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; animation-composition: initial; animation: initial; app-region: initial; appearance: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; color-scheme: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; empty-cells: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: initial; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask: initial; mask-type: initial; math-depth: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-size-adjust: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; white-space: initial; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; -webkit-user-modify: initial; widows: initial; width: initial; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;">
-            <link rel="stylesheet" href="chrome-extension://gpaiobkfhnonedkhhfjpmhdalgeoebfa/fonts/fabric-icons.css">
-        </div>
-    </div>
-</editor-card>
 </html>

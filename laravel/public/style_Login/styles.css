@@ -1,57 +1,47 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-}
-
-.container {
+.container-login {
     position: relative;
-    width: 400px;
+    width: 40%;
     background-color: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
+    left: 30%;
+    right: 60%;
+    align-items: center;
 }
 
-.form-box {
+.form-box-login  {
     width: 100%;
-    padding: 30px;
+    padding: 20px;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.form-box h2 {
-    font-size: 2rem;
+.form-box-login  h2 {
+    font-size: 200px;
     color: #333;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.input-group {
+.input-group-login {
     margin-bottom: 20px;
 }
 
-.input-group label {
+.input-group-login label {
     display: block;
-    font-size: 1.1rem;
+    font-size: 20px;
     color: #333;
     margin-bottom: 5px;
 }
 
-.input-group input[type="text"],
-.input-group input[type="password"] {
+.input-group-login input[type="text"],
+.input-group-login input[type="password"] {
     width: 100%;
     padding: 10px;
-    font-size: 1.1rem;
+    font-size: 20px;
     color: #333;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -60,7 +50,7 @@ body {
 button[type="submit"] {
     padding: 10px 45%;
     position: relative;
-    font-size: 1.2rem;
+    font-size: 20px;
     color: #fff;
     background-color: #333;
     border: none;
@@ -68,27 +58,27 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
-    background-color: #444;
+button [type="submit"]:hover {
+    background-color: #ffffff;
 }
-.input-group {
+.input-group-login  {
     margin-bottom: 15px;
 }
 
-.input-group label {
+.input-group-login  label {
     display: block;
     margin-bottom: 5px;
 }
 
-.input-group input {
+.input-group-login  input {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.error-message {
+.error-message-login  {
     color: #ff0000;
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 20px;
 }

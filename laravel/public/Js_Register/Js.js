@@ -46,3 +46,9 @@ function appendErrorMessage(message, fieldId) {
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('registrationForm').addEventListener('submit', validateForm);
 });
+const toast = document.querySelector(".toast");
+const closeIcon = document.querySelector(".close");
+
+closeIcon.addEventListener("click", () => {
+    toast.style.display = "none";
+});

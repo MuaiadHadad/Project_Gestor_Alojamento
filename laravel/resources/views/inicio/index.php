@@ -1,5 +1,4 @@
 <html class="no-js" lang="pt-pt" prefix="og: https://ogp.me/ns#" data-lt-installed="true">
-<script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/content/location/location.js" id="nimlmejbmnecnaghgmbahmbaddhjbecg"></script><script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/libs/extend-native-history-api.js"></script><script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/libs/requests.js"></script>
 <head>
     <style data-merge-styles="true"></style>
     <style data-merge-styles="true"></style>
@@ -40,11 +39,14 @@
     <meta name="generator" content="WPML ver:4.3.16 stt:1,41;">
     <link rel="shortcut icon" href="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2-1.svg">
     <!-- Css adicional -->
-    <link rel="stylesheet" href="nouislider/nouislider.min.css">
-    <link rel="stylesheet" href="/Style_Page_1/Style_Card_sel.css">
-    <link rel="stylesheet" href="/Style_Page_1/Style_Search_bar.css">
-    <link rel="stylesheet" href="/Style_Page_1/Style_Filter.css">
-    <link rel="stylesheet" href="/Style_Page_1/hr_style.css">
+    <link href="/Style_Page_1/bootstrap.min.css" rel="stylesheet">
+    <link href="/Style_Page_1/global.css" rel="stylesheet">
+    <link href="/Style_Page_1/list.css" rel="stylesheet">
+    <link href="/Style_Page_1/element.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Style_Page_1/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    <script src="/Style_Page_1/jquery-2.1.1.min.js"></script>
+    <script src="/Style_Page_1/bootstrap.min.js"></script>
     <!-- /Css adicional -->
     <style type="text/css" id="wp-custom-css">
         @media (max-width: 767px)
@@ -557,9 +559,20 @@
 Tecnologia e Gestão
 Politécnico de Coimbra</div>
             </a>
+
             <ul class="site-options">
-                <li><a><i class="icon icon-search js-layerSearchToggle"></i></a></li>
-                <li><a class="js-fullMenuOpen"><i class="icon icon-burger"></i></a></li>
+                <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
+                <li class="dropdown-menu-user-div-container">
+                    <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
+                    <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
+                </li>
+                <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
+            </ul>
+        </div>
+        <div class="dropdown-menu-user-div">
+            <ul>
+                <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
+                <li><a href="/register"><i class="fa fa-user-plus"></i> Registar</a></li>
             </ul>
         </div>
         <section class="module module-search module-layer-search">
@@ -568,16 +581,12 @@ Politécnico de Coimbra</div>
                     <h2 class="title-lg">Pesquisa</h2>
                     <form id="searchform" method="get" action="https://www.estgoh.ipc.pt/">
                         <div class="form-row">
-                            <button type="button" class="btn btn-border js-toggleSearchType" data-type="formative-offer">Oferta formativa</button>
-                            <button type="button" class="btn btn-border js-toggleSearchType" data-type="general">Outros</button>
-                            <input type="hidden" name="search-type" value="">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group form-search is-disabled">
+                            <div class="form-group form-search is-enable">
                                 <i class="icon icon-search"></i>
-                                <input type="text" name="s" placeholder="Pesquisar" disabled="">
+                                <input type="text" name="s" placeholder="Pesquisar" >
                                 <input type="hidden" name="sentence" value="1">
-                                <button type="submit" class="btn btn-full" disabled="">Pesquisar</button>
+                                <button type="submit" class="btn btn-full" >Pesquisar</button>
+
                             </div>
                         </div>
                     </form>
@@ -585,25 +594,10 @@ Politécnico de Coimbra</div>
             </div>
         </section>
     </div>
-    <div class="sub-menu js-subMenu">
-        <ul class="level-1">
-            <li id="527">
-                <a href="https://www.estgoh.ipc.pt/estudantes/" class="is-active">Alojamentos</a>
-            </li>
-            <li id="444">
-                <a id="Filter_bot" class="">Filerar</a>
-            </li>
-            <li id="543">
-                <a  class="">Login</a>
-            </li>
-            <li id="545">
-                <a  class="">Sobre</a>
-            </li>
-        </ul>
-    </div>
+
 </header>
 <main id="primary" class="main-section">
-    <section class="module module-page--header site-header--image-bg ">
+    <section class="module module-page--header site-header--image-bg " style="height: 310px ">
         <div class="page-title">
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
@@ -622,238 +616,155 @@ Politécnico de Coimbra</div>
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="https://www.estgoh.ipc.pt/" rel="v:url" property="v:title">Início</a> / <span class="current">Alojamentos</span></div>
+            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Início</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
             <!--<div class="image" style="background-image: url(https://www.estgoh.ipc.pt/wp-content/uploads/2020/11/ESTGOH_26-scaled-aspect-ratio-720-480-720x480.jpg)"></div>-->
         </div>
     </section>
+    <section id="center" class="center_list clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="center_home_1 clearfix">
+                    <div class="center_home_1i clearfix">
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <input placeholder="Preço" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <input placeholder="Distância por Metros" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <select class="form-control" name="property">
+                                    <option value="">Tipo de Propriedade</option>
+                                    <option value="family-house">Casa</option>
+                                    <option value="apartment">Apartamento</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center_home_1i clearfix">
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <select class="form-control" name="beds" id="beds">
+                                    <option value="">Quartos</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <select class="form-control" name="beds" id="beds">
+                                    <option value="">Género</option>
+                                    <option value="1">Masculino</option>
+                                    <option value="2">Feminino</option>
+                                    <option value="3">feminino e masculino</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <h5 class="mgt text-center"><a class="button_1 block mgt" href="detail.html"><i class="fa fa-filter"></i> Filtrar</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <article id="main" class="article-content">
-        <section class="module module--list" id="Filter" style="display: none;">
-            <h2 class="divider gradient">Filtrar</h2>
-            <div class="container_range_preco">
-                <label class="label" style="margin-right: 70px">preco:</label>
-                <div class="values">
-                     <span id="range_min_preco">
-                     0
-                     </span>
-                    <span> &dash; </span>
-                    <span id="range_max_preco">
-                     100
-                     </span>
-                </div>
-                <div class="container">
-                    <div class="slider-track-prco"></div>
-                    <input type="range" min="0" max="1000" value="100" id="slider_min_preco" oninput="slideOne()">
-                    <input type="range" min="0" max="1000" value="500" id="slider_max_preco" oninput="slideTwo()">
-                </div>
-            </div>
-            <div class="container_range_preco">
-                <label class="label">Destancia:</label>
-                <div class="values">
-                     <span id="range_min_dis">
-                     0
-                     </span>
-                    <span> &dash; </span>
-                    <span id="range_max_dis">
-                     100
-                     </span>
-                </div>
-                <div class="container">
-                    <div class="slider-track-Dis"></div>
-                    <input type="range" min="0" max="1000" value="100" id="slider_min_dis" oninput="slideTr()">
-                    <input type="range" min="0" max="1000" value="500" id="slider_max_dis" oninput="slideFr()">
-                </div>
-            </div>
-            <div class="container_range_preco">
-                <label class="label">Nº Quartos:</label>
-                <div class="container_mais_menos">
-                    <div class="button col col-1">
-                        <button id="minus-btn">-</button>
-                    </div>
-                    <div class="number col col-2">
-                        <h1 id="count">0</h1>
-                    </div>
-                    <div class="button col col-1">
-                        <button id="plus-btn">+</button>
-                    </div>
-                </div>
-            </div>
-            <div class="container_range_preco">
-                <label class="label">Sexso:</label>
-                <label class="toggle">
-                    <span class="toggle-label">Masculino</span>
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-                <label class="toggle">
-                    <span class="toggle-label">Feminino</span>
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-                <label class="toggle">
-                    <span class="toggle-label">Misto</span>
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-            </div>
-            <div class="container_range_preco">
-                <label class="label">Com Recibo:</label>
-                <label class="toggle">
-                    <input class="toggle-checkbox" type="checkbox">
-                    <div class="toggle-switch"></div>
-                </label>
-            </div>
-            <div class="container_botao_sub">
-                <button class="botao_sub_aplic" id="button_aplic_filter">Aplicar</button>
-            </div>
-            <section class="module module--list" id="Filter_aplicado" style="display: none;">
-                <h2 class="divider gradient">Filtered</h2>
-            </section>
-        </section>
-        <section class="module module-card-list" id="prencipal">
+
+        <section id="popular">
             <div class="container">
-                <div class="search-container">
-                    <input type="text" id="search-box" placeholder="Search...">
-                    <button id="search-button">Search</button>
-                </div>
-            </div>
-            <h2 class="divider gradient">As ofertas</h2>
-            <div class="container">
-                <div class="card" id="card1">
-                    <div class="card-front">
-                        <div class="card-image" ><img class="card-image" src="\test_photo\img1.jpg"></div>
-                        <div class="card-text">
-                            <span class="date">4 days ago</span>
-                            <h2>Post One</h2>
-                            <p>Lorem ipsum dolor sit demoise amet consectetur, Ducimusele, repudiandae temporibus omnis illum maxime quod deserunt eligendi dolor</p>
-                            <button class="botao_mais">Mais</button>
+                <div class="row">
+                    <div class="popular_1 text-center clearfix">
+                        <div class="col-sm-12">
+                            <h1 class="mgt"> Lista de Propriedades</h1>
+                            <p>Encontre quarto com melhor classificação para você.</p>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <div class="card-back-text">
-                            <p>Telefone: 123-456-7890</p>
-                            <p>Descrição: 123 Street, City, Country</p>
-                            <p>Endereço: 123 Street, City, Country</p>
-                            <p>Destancia: 123 Street, City, Country</p>
-                            <p>Sexso: 123 Street, City, Country</p>
-                            <p>Equipamentos</p>
-                            <p>Wifi:</p>
-                            <p>Elvador:</p>
-                            <p>Recibo:</p>
-                            <button class="botao_menos">Menos</button>
+
+                    <div class="popular_2 clearfix">
+                        <div class="col-sm-4">
+                            <div class="popular_2i clearfix">
+                                <div class="popular_2i1 clearfix">
+                                    <a href="detail.html"><img src="/Style_Page_1/img/2.jpg" class="iw" alt="abc"></a>	   </div>
+                                <div class="popular_2i2 clearfix">
+                                    <h5 class="mgt"><a href="detail.html">FOR RENT</a></h5>
+                                </div>
+                            </div>
+                            <div class="popular_2i3 clearfix">
+                                <h5 class="mgt"><a href="detail.html">Energy Certificate For EU <i class="fa fa-check-square col_1"></i></a></h5>
+                                <h4 class="col_1">$13,599 / <span class="col_2">Month</span></h4>
+                                <h6><i class="fa fa-hotel col_2"></i> 3 Beds <span><i class="fa fa-university col_2"></i>700 m</span></h6>
+                                <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="popular_2i clearfix">
+                                <div class="popular_2i1 clearfix">
+                                    <a href="detail.html"><img src="/Style_Page_1/img/3.jpg" class="iw" alt="abc"></a>	   </div>
+                                <div class="popular_2i2 clearfix">
+                                    <h5 class="mgt"><a href="detail.html">FOR SALE</a></h5>
+                                </div>
+                            </div>
+                            <div class="popular_2i3 clearfix">
+                                <h5 class="mgt"><a href="detail.html">Modern Family Home <i class="fa fa-check-square col_1"></i></a></h5>
+                                <h4 class="col_1">$11,550 / <span class="col_2">Month</span></h4>
+                                <h6><i class="fa fa-hotel col_2"></i> 3 Beds <span><i class="fa fa-university col_2"></i>500 m</span></h6>
+                                <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="popular_2i clearfix">
+                                <div class="popular_2i1 clearfix">
+                                    <a href="detail.html"><img src="/Style_Page_1/img/4.jpg" class="iw" alt="abc"></a>	   </div>
+                                <div class="popular_2i2 clearfix">
+                                    <h5 class="mgt"><a href="detail.html">FOR RENT</a></h5>
+                                </div>
+                            </div>
+                            <div class="popular_2i3 clearfix">
+                                <h5 class="mgt"><a href="detail.html">Real Luxury Villa <i class="fa fa-check-square col_1"></i></a></h5>
+                                <h4 class="col_1">$10,599 / <span class="col_2">Month</span></h4>
+                                <h6><i class="fa fa-hotel col_2"></i> 3 Beds <span><i class="fa fa-university col_2"></i>1 Km</span></h6>
+                                <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-info-circle"></i> Detalhes </a></h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card" id="card2">
-                    <div class="card-front">
-                        <div class="card-image" ><img class="card-image" src="\test_photo\img2.jpg"></div>
-                        <div class="card-text">
-                            <span class="date">1 week ago</span>
-                            <h2>Post Two</h2>
-                            <p>Adipisicing elit. Ducimus, repudiandae corrupti tialeno des ameto temporibus omnis provident illum maxime quod. Lorem ipsum dolor</p>
-                            <button class="botao_mais">Mais</button>
+                    <div class="product_1_last text-center clearfix">
+                        <div class="col-sm-12">
+                            <ul>
+                                <li><a href="detail.html"><i class="fa fa-chevron-left"></i>..</a></li>
+                                <li class="act"><a href="detail.html">1</a></li>
+                                <li><a href="detail.html">2</a></li>
+                                <li><a href="detail.html">3</a></li>
+                                <li><a href="detail.html">4</a></li>
+                                <li><a href="detail.html">5</a></li>
+                                <li><a href="detail.html">6</a></li>
+                                <li><a href="#">..<i class="fa fa-chevron-right"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <div class="card-back-text">
-                            <p>Telefone: 123-456-7890</p>
-                            <p>Descrição: 123 Street, City, Country</p>
-                            <p>Endereço: 123 Street, City, Country</p>
-                            <p>Destancia: 123 Street, City, Country</p>
-                            <p>Sexso: 123 Street, City, Country</p>
-                            <p>Equipamentos</p>
-                            <p>Wifi:</p>
-                            <p>Elvador:</p>
-                            <p>Recibo:</p>
-                            <button class="botao_menos">Menos</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" id="card3">
-                    <div class="card-image" ><img class="card-image" src="\test_photo\img3.jpg"></div>
-                    <div class="card-text">
-                        <span class="date">3 week ago</span>
-                        <h2>Post Three</h2>
-                        <p>Repudiandae repudiandae de corrupti amet temporibus omnis si provident illum maxime. Ducimus, lorem ipsum dolor adipisicing elit</p>
-                    </div>
-                </div>
-                <div class="card" id="card4">
-                    <div class="card-image"><img class="card-image" src="\test_photo\img4.jpg"></div>
-                    <div class="card-text">
-                        <span class="date">3 week ago</span>
-                        <h2>Post Three</h2>
-                        <p>Repudiandae repudiandae de corrupti amet temporibus omnis si provident illum maxime. Ducimus, lorem ipsum dolor adipisicing elit</p>
-                    </div>
-                </div>
-                <div id="myModal" class="modal">
-                    <span class="close">&times;</span>
-                    <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
-                    <span class="next" onclick="plusSlides(1)">&#10095;</span>
-                    <div class="modal-content">
-                        <img id="modalImage" src="" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="helper-pagination">
-                    <ul class="page-numbers">
-                        <li><span aria-current="page" class="page-numbers current">1</span></li>
-                        <li><a class="page-numbers" href="https://www.estgoh.ipc.pt/category/sem-categoria/page/2/">2</a></li>
-                        <li><a class="page-numbers" href="https://www.estgoh.ipc.pt/category/sem-categoria/page/3/">3</a></li>
-                        <li><span class="page-numbers dots">…</span></li>
-                        <li><a class="page-numbers" href="https://www.estgoh.ipc.pt/category/sem-categoria/page/5/">5</a></li>
-                        <li><a class="next page-numbers" href="https://www.estgoh.ipc.pt/category/sem-categoria/page/2/">Next</a></li>
-                    </ul>
                 </div>
             </div>
         </section>
     </article>
 </main>
 <footer class="module module-site-footer">
-    <!--
-       <div class="sub-footer">
-           <div class="big-cards">
-                           <a class="card-item card-full"  href="http://193.137.79.42/estgoh/escola/">
-                       <span class="ctx">
-                           <span class="title-sm">
-                               Escola					</span>
-                           <i class="icon icon-arrow-white"></i>
-                       </span>
-
-                       <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/09/ESTGOH_42-scaled-aspect-ratio-520-289-1-720x480.jpg" alt="">
-                   </a>
-                           <a class="card-item card-full"  href="http://193.137.79.42/estgoh/oferta-formativa/">
-                       <span class="ctx">
-                           <span class="title-sm">
-                               Oferta Formativa					</span>
-                           <i class="icon icon-arrow-white"></i>
-                       </span>
-
-                       <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/11/estudantes5-aspect-ratio-520-289-720x480.jpg" alt="">
-                   </a>
-                           <a class="card-item card-full"  href="http://193.137.79.42/estgoh/acesso-ao-ensino-superior/">
-                       <span class="ctx">
-                           <span class="title-sm">
-                               Acesso ao Ensino Superior					</span>
-                           <i class="icon icon-arrow-white"></i>
-                       </span>
-
-                       <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/09/ESTGOH_28-scaled-aspect-ratio-520-289-720x480.jpg" alt="">
-                   </a>
-                           <a class="card-item card-full"  href="http://193.137.79.42/estgoh/alunos/">
-                       <span class="ctx">
-                           <span class="title-sm">
-                               Alunos					</span>
-                           <i class="icon icon-arrow-white"></i>
-                       </span>
-
-                       <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/09/ESTGOH_17-scaled-aspect-ratio-520-289-720x480.jpg" alt="">
-                   </a>
-                   </div>
-       </div>
-       -->
     <div class="big-footer">
         <div class="container">
             <a class="main-logo" href="#">
@@ -1042,22 +953,22 @@ Politécnico de Coimbra</div>
                     <li>
                         <span class="level-1-a title-lg ">Contactos</span>
                         <div>
-                            <p><strong>ESTGOH&nbsp;</strong><br>
+                            <a><strong>ESTGOH&nbsp;</strong><br>
                                 Escola Superior de Tecnologia e Gestão de Oliveira do Hospital<br>
                                 Rua General Santos Costa, n.º 4<br>
                                 3400-124 Oliveira do Hospital
-                            </p>
-                            <p><strong>Telefones/Telemóvel:</strong><br>
+                            </a>
+                            <a><strong>Telefones/Telemóvel:</strong><br>
                                 238 605 170 – Geral (<em>Chamada para a rede fixa nacional</em>)<br>
                                 238 605 176 – Serviços Académicos (<em>Chamada para a rede fixa nacional</em>)
-                            </p>
-                            <p><strong>E-mail:</strong><br>
+                            </a>
+                            <a><strong>E-mail:</strong><br>
                                 geral@estgoh.ipc.pt – Geral<br>
                                 academicos@estgoh.ipc.pt – Serviços Académicos
-                            </p>
-                            <p><strong>Localização:</strong><br>
+                            </a>
+                            <a><strong>Localização:</strong><br>
                                 Cordenadas: 40°21’39.8″N 7°51’39.9″W
-                            </p>
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -1133,47 +1044,6 @@ Politécnico de Coimbra</div>
         <div class="sub-footer">
             <div class="container">
                 <div class="logo-container">
-                    <!--
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.cisco.com/c/pt_pt/training-events.html">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cisco.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.lpi.org/">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/lpi.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="http://www.oet.pt/">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/oet.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.occ.pt/pt/">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/occ.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="http://www.cnc.min-financas.pt/">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cnc.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.cmvm.pt/pt/Pages/home.aspx">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cmvm.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.act.gov.pt/(pt-PT)/Paginas/default.aspx">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/ACT.jpg">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.b-on.pt/">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/bon.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/eduroam.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://ecoescolas.abae.pt/escola/escola-superior-de-tecnologia-e-gestao-de-oliveira-do-hospital-do-politecnico-de-coimbra/">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/ecoescolas.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.geoparkestrela.pt/">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2021/01/Logotipo-geopark.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2021/04/logos_CTESP.png">
-                       </a>
-                       <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
-                       <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/03/logos_PRR-2.png">
-                       </a>
-                       -->
                 </div>
                 <div class="links">
                     <a href="https://www.estgoh.ipc.pt/sugestoes/">Sugestões, elogios e reclamações</a>
@@ -1190,205 +1060,30 @@ Politécnico de Coimbra</div>
         /* ]]> */
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
+    <script src="/Style_Page_1/classie.js"></script>
     <script>
-        const cards = document.querySelectorAll(".card");
-        const FilterButton = document.getElementById("Filter_bot");
-        const FilterSecao = document.getElementById("Filter");
-        const PrincibalSecao = document.getElementById("prencipal");
-        const FilteAplicadoSecao = document.getElementById("Filter_aplicado");
-        const FilterAplicButton = document.getElementById("button_aplic_filter");
-        /*_________________________________mais menos__________________________________________________*/
-        FilterAplicButton.addEventListener("click", function() {
-            if (FilteAplicadoSecao.style.display === "none") {
-                FilteAplicadoSecao.style.display = "block";
-            } else {
-                FilteAplicadoSecao.style.display = "none";
-            }
-        });
-        /*_________________________________mais menos__________________________________________________*/
-        let minusBtn = document.getElementById("minus-btn");
-        let count = document.getElementById("count");
-        let plusBtn = document.getElementById("plus-btn");
+        document.addEventListener("DOMContentLoaded", function() {
+            var userDropdown = document.querySelector('.dropdown-menu-user-div-container');
+            var dropdownMenu = document.querySelector('.dropdown-menu-user-div');
 
-        let countNum = 1;
-        count.innerHTML = countNum;
-
-        minusBtn.addEventListener("click", () => {
-            if(countNum>1) {
-                countNum -= 1;
-                count.innerHTML = countNum;
-            }
-        });
-
-        plusBtn.addEventListener("click", () => {
-            if(countNum<10){
-                countNum += 1;
-                count.innerHTML = countNum;
-            }
-        });
-        /*_________________________________Preco__________________________________________________*/
-        window.onload = function(){
-            slideOne();
-            slideTwo();
-            slideTr();
-            slideFr();
-
-        }
-
-        let sliderOne = document.getElementById("slider_min_preco");
-        let sliderTwo = document.getElementById("slider_max_preco");
-        let displayValOne = document.getElementById("range_min_preco");
-        let displayValTwo = document.getElementById("range_max_preco");
-        let minGap = 0;
-        let sliderTrack_preco = document.querySelector(".slider-track-prco");
-        let sliderMaxValue = document.getElementById("slider_min_preco").max;
-
-        function slideOne(){
-            if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
-                sliderOne.value = parseInt(sliderTwo.value) - minGap;
-            }
-            displayValOne.textContent = sliderOne.value;
-            fillColor_preco();
-        }
-        function slideTwo(){
-            if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
-                sliderTwo.value = parseInt(sliderOne.value) + minGap;
-            }
-            displayValTwo.textContent = sliderTwo.value;
-            fillColor_preco();
-        }
-        function fillColor_preco(){
-            percent1_preco = (sliderOne.value / sliderMaxValue) * 100;
-            percent2_preco = (sliderTwo.value / sliderMaxValue) * 100;
-            sliderTrack_preco.style.background = `linear-gradient(to right, #dadae5 ${percent1_preco}% , #000000 ${percent1_preco}% , #000000 ${percent2_preco}%, #dadae5 ${percent2_preco}%)`;
-        }
-        /*____________________________________Distance_______________________________________________*/
-        let sliderOne_dis = document.getElementById("slider_min_dis");
-        let sliderTwo_dis = document.getElementById("slider_max_dis");
-        let displayValOne_dis = document.getElementById("range_min_dis");
-        let displayValTwo_dis = document.getElementById("range_max_dis");
-        let minGap_dis = 0;
-        let sliderTrack_dis = document.querySelector(".slider-track-Dis");
-        let sliderMaxValue_dis = document.getElementById("slider_min_dis").max;
-
-        function slideTr(){
-            if(parseInt(sliderTwo_dis.value) - parseInt(sliderOne_dis.value) <= minGap_dis){
-                sliderOne_dis.value = parseInt(sliderTwo_dis.value) - minGap_dis;
-            }
-            displayValOne_dis.textContent = sliderOne_dis.value;
-            fillColor_dis();
-        }
-        function slideFr(){
-            if(parseInt(sliderTwo_dis.value) - parseInt(sliderOne_dis.value) <= minGap_dis){
-                sliderTwo_dis.value = parseInt(sliderOne_dis.value) + minGap_dis;
-            }
-            displayValTwo_dis.textContent = sliderTwo_dis.value;
-            fillColor_dis();
-        }
-        function fillColor_dis(){
-            percent1_Dis = (sliderOne_dis.value / sliderMaxValue_dis) * 100;
-            percent2_Dis = (sliderTwo_dis.value / sliderMaxValue_dis) * 100;
-            sliderTrack_dis.style.background = `linear-gradient(to right, #dadae5 ${percent1_Dis}% , #000000 ${percent1_Dis}% , #000000 ${percent2_Dis}%, #dadae5 ${percent2_Dis}%)`;
-        }
-        /*____________________________________Distance_______________________________________________*/
-        FilterButton.addEventListener("click", function() {
-            if (FilterSecao.style.display === "none") {
-                FilterSecao.style.display = "block";
-                PrincibalSecao.style.display = "none";
-            } else {
-                FilterSecao.style.display = "none";
-                PrincibalSecao.style.display = "block";
-            }
-        });
-        cards.forEach(card => {
-            card.addEventListener("mouseover", function() {
-                this.classList.add("rgb");
+            userDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
             });
 
-            card.addEventListener("mouseout", function() {
-                this.classList.remove("rgb");
+            // Fechar o menu quando clicar fora dele
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('show');
             });
-            const button = card.querySelector('.botao_mais');
-            const cardfront = card.querySelector('.card-front');
-            const cardback = card.querySelector('.card-back');
-            const buttonMenos = card.querySelector('.botao_menos');
-            button.addEventListener('click', function() {
-                if (cardfront.style.display === 'none') {
-                    cardfront.style.display = 'block';
-                    cardback.style.display = 'none';
-                } else {
-                    cardfront.style.display = 'none';
-                    cardback.style.display = 'block';
-                }
+
+            // Evitar que o menu feche quando se clica dentro dele
+            dropdownMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
             });
-            buttonMenos.addEventListener('click', function() {
-                cardfront.style.display = 'block'; // Exibe o card frontal
-                cardback.style.display = 'none'; // Oculta o card de trás
-            });
-        });
-        const cardS = document.querySelectorAll(".card");
-        const modal = document.getElementById("myModal");
-        const modalImg = document.getElementById("modalImage");
-        const closeBtn = document.querySelector(".close");
-
-        cardS.forEach((card, index) => {
-            card.querySelector('.card-image img').addEventListener("click", function() {
-                modalImg.src = this.src;
-                modal.style.display = "block";
-                slideIndex = index;
-            });
-        });
-
-        closeBtn.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-
-        window.addEventListener("click", function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "ArrowLeft") {
-                plusSlides(-1);
-            } else if (event.key === "ArrowRight") {
-                plusSlides(1);
-            }
-        });
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            const slides = document.querySelectorAll(".card");
-            if (slides.length === 0) {
-                return;
-            }
-            slideIndex = (n + slides.length) % slides.length;
-            modalImg.src = slides[slideIndex].querySelector(".card-image img").src; // Ajuste aqui para acessar a imagem dentro do elemento .card-image
-        }
-
-        showSlides(slideIndex);
-        VanillaTilt.init(document.querySelectorAll(".card"),{
-            glare: true,
-            reverse: true,
-            "max-glare": 0.15
         });
 
     </script>
+    <script src="/Style_Page_1/cbpAnimatedHeader.js"></script>
 </footer>
 </body>
-<editor-card style="position:absolute;top:0px;left:0px;z-index:auto;display: block !important">
-    <div dir="ltr" style="all: initial;">
-        <div style="color: initial; font: initial; font-palette: initial; font-synthesis: initial; forced-color-adjust: initial; position: absolute; text-orientation: initial; text-rendering: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; animation-composition: initial; animation: initial; app-region: initial; appearance: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; color-scheme: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; empty-cells: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: initial; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask: initial; mask-type: initial; math-depth: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-size-adjust: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; white-space: initial; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; -webkit-user-modify: initial; widows: initial; width: initial; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;">
-            <link rel="stylesheet" href="chrome-extension://gpaiobkfhnonedkhhfjpmhdalgeoebfa/fonts/fabric-icons.css">
-            <div style="all: initial;"></div>
-        </div>
-        <div style="color: initial; font: initial; font-palette: initial; font-synthesis: initial; forced-color-adjust: initial; position: absolute; text-orientation: initial; text-rendering: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; animation-composition: initial; animation: initial; app-region: initial; appearance: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; color-scheme: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; empty-cells: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: initial; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask: initial; mask-type: initial; math-depth: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-size-adjust: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; white-space: initial; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; -webkit-user-modify: initial; widows: initial; width: initial; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;">
-            <link rel="stylesheet" href="chrome-extension://gpaiobkfhnonedkhhfjpmhdalgeoebfa/fonts/fabric-icons.css">
-        </div>
-    </div>
-</editor-card>
 </html>

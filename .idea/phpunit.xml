@@ -3,6 +3,8 @@
   <component name="PHPUnit">
     <option name="directories">
       <list>
+        <option value="$PROJECT_DIR$/Sprint/Sprint 1/Entrega/laravel/tests/Unit" />
+        <option value="$PROJECT_DIR$/Sprint/Sprint 1/Entrega/laravel/tests/Feature" />
         <option value="$PROJECT_DIR$/laravel/tests/Unit" />
         <option value="$PROJECT_DIR$/laravel/tests/Feature" />
       </list>
