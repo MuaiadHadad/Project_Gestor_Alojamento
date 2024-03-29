@@ -87,11 +87,13 @@ display:inline-block;
 color:#000;
 padding:15px 30px 15px 30px;
 margin-top:10px;
-border:1px solid #03a9f4;
+float:right ;
+border:1px solid #030709;
+    border-radius: 15px;
   }
 .button:hover{
 color:#fff;
-background:#03a9f4;
+background: #030709;
   }
 .button_1{
 background: #030709;

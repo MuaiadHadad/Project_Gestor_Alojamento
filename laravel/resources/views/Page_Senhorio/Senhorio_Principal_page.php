@@ -601,7 +601,7 @@
             </div>
             <section class="table__header">
                 <div class="center_home_1i1 clearfix">
-                    <h5 class="mgt text-center"><a class="button_1 block mgt" href="/adicionar_Propriedades"><i class="fa fa-home" aria-hidden="true"></i> Adicionar Propriedade</a></h5>
+                    <h5 class="mgt text-center"><a class="button_1 block mgt" href="/Senhorio/Adicionar"><i class="fa fa-home" aria-hidden="true"></i> Adicionar Propriedade</a></h5>
                 </div>
                 <div class="input-group" id="search_tabela_List_anuncios" style="right: 50%; left: -8%;">
                     <input  type="search" placeholder="Pesquisar anúncio...">
@@ -875,22 +875,22 @@
                     <li>
                         <span class="level-1-a title-lg ">Contactos</span>
                         <div>
-                            <p><strong>ESTGOH&nbsp;</strong><br>
+                            <a><strong>ESTGOH&nbsp;</strong><br>
                                 Escola Superior de Tecnologia e Gestão de Oliveira do Hospital<br>
                                 Rua General Santos Costa, n.º 4<br>
                                 3400-124 Oliveira do Hospital
-                            </p>
-                            <p><strong>Telefones/Telemóvel:</strong><br>
+                            </a>
+                            <a><strong>Telefones/Telemóvel:</strong><br>
                                 238 605 170 – Geral (<em>Chamada para a rede fixa nacional</em>)<br>
                                 238 605 176 – Serviços Académicos (<em>Chamada para a rede fixa nacional</em>)
-                            </p>
-                            <p><strong>E-mail:</strong><br>
+                            </a>
+                            <a><strong>E-mail:</strong><br>
                                 geral@estgoh.ipc.pt – Geral<br>
                                 academicos@estgoh.ipc.pt – Serviços Académicos
-                            </p>
-                            <p><strong>Localização:</strong><br>
+                            </a>
+                            <a><strong>Localização:</strong><br>
                                 Cordenadas: 40°21’39.8″N 7°51’39.9″W
-                            </p>
+                            </a>
                         </div>
                     </li>
                 </ul>

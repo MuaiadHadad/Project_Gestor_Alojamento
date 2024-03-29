@@ -241,6 +241,10 @@
       <path value="$PROJECT_DIR$/Sprint/Sprint 1/Entrega/laravel/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/Sprint/Sprint 1/Entrega/laravel/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/Sprint/Sprint 1/Entrega/laravel/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/laravel/vendor/alexpechkarev/geometry-library" />
+      <path value="$PROJECT_DIR$/laravel/vendor/alexpechkarev/google-maps" />
+      <path value="$PROJECT_DIR$/laravel/vendor/jbroadway/urlify" />
+      <path value="$PROJECT_DIR$/laravel/vendor/voku/stop-words" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
@@ -250,7 +254,6 @@
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/Sprint/Sprint 1/Entrega/laravel/phpunit.xml" custom_loader_path="$PROJECT_DIR$/Sprint/Sprint 1/Entrega/laravel/vendor/autoload.php" use_configuration_file="true" />
-      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/laravel/phpunit.xml" custom_loader_path="$PROJECT_DIR$/laravel/vendor/autoload.php" use_configuration_file="true" />
     </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">

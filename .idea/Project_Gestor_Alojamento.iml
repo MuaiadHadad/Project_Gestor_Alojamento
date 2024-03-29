@@ -14,6 +14,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Sprint/Sprint 1/Entrega/laravel/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/Sprint/Sprint 1/Entrega/laravel/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Sprint/Sprint 1/Entrega/laravel/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
@@ -241,6 +243,10 @@
       <excludeFolder url="file://$MODULE_DIR$/Sprint/Sprint 1/Entrega/laravel/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/Sprint/Sprint 1/Entrega/laravel/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/Sprint/Sprint 1/Entrega/laravel/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/alexpechkarev/geometry-library" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/alexpechkarev/google-maps" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/jbroadway/urlify" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/voku/stop-words" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

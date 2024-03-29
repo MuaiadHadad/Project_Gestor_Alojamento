@@ -7,32 +7,32 @@ Licence: <a href="https://www.templateonweb.com/license">Website Template Licenc
 */
 /*********************property****************/
 .center_about{
-margin-top:80px; 
+margin-top:80px;
 padding-top:80px;
-padding-bottom:80px; 
+padding-bottom:80px;
 background: #03a9f414;
  }
 #prop{
 padding-top:50px;
-padding-bottom:50px; 
+padding-bottom:50px;
 background:#fafafa;
  }
 .submit_1 hr{
-border-color:#eee; 
+border-color:#eee;
  }
 .submit_1{
 background:#fff;
 padding:40px 40px;
-margin-top:30px; 
+margin-top:30px;
  }
 .submit_1 .form-control{
 margin-top:15px;
 height:50px;
-font-size:16px; 
+font-size:16px;
 border-radius:0;
  }
 .submit_1 .form_o{
-height:150px; 
+height:150px;
  }
 .submit_1 h5{
 margin-top:20px;
@@ -54,7 +54,7 @@ padding:60px 60px 70px 60px;
 .submit_2{
 background:#fff;
 padding:40px 40px;
-margin-top:30px; 
+margin-top:30px;
  }
 .submit_2i h5 .span_1{
  margin-left:5px;
@@ -70,8 +70,14 @@ margin-top:20px;
 margin-bottom:0;
  }
 .submit_3{
-margin-top:30px; 
+margin-top:30px;
  }
+.img_upload{
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    padding-left: 20px;
+}
 /*********************property_end****************/
 
 

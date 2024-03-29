@@ -49,6 +49,9 @@ Route::get('/Senhorio/Profile', function () {
 Route::get('/Senhorio/chat', function () {
     return view('Page_Senhorio\conversation');
 });
+Route::get('/Senhorio/Adicionar', function () {
+    return view('Page_Senhorio\Adicionar_alojamento');
+});
 Route::get('/Login', [LoginController::class, 'GetPageLogin']);
 Route::get('/Register', [RegistarController::class, 'GetPageRegister']);
 Route::get('/login', [LoginController::class, 'GetPageLogin']);
