@@ -9,9 +9,11 @@ async function initMapQuarto() {
         center: coimbraQuarto,
         zoom: 15
     });
+    const icon = "https://img.icons8.com/emoji/48/school-emoji.png";
     var estgoh_q = { lat: 40.361008858094266, lng: -7.861192556524104 };
     new google.maps.Marker({
         position: estgoh_q,
+        icon:icon,
         map: mapQuarto
     });
     directionsServiceQuarto =  new google.maps.DistanceMatrixService();
@@ -27,8 +29,10 @@ function placeOriginMarkerQuarto(locationQuarto) {
     if (originMarkerQuarto && originMarkerQuarto.setMap) {
         originMarkerQuarto.setMap(null);
     }
+    const icon_casa_q = "https://img.icons8.com/plasticine/75/order-delivered.png";
     originMarkerQuarto = new google.maps.Marker({
         position: locationQuarto,
+        icon:icon_casa_q,
         map: mapQuarto
     });
     calcularDistanciaQuarto(originMarkerQuarto.getPosition());

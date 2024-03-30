@@ -49,7 +49,6 @@
     <script src="/Style_Page_1/bootstrap.min.js"></script>
     <link href="/Style_Page_1/detail.css" rel="stylesheet">
     <link href="/Style_Page_1/Icons.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b5d62d4901.js" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmzQm0wv8bboIXCkTqBzveXvra3oJJet0"></script>
     <script src="/Style_Page_1/map_quarto.js"></script>
 
@@ -520,9 +519,7 @@
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: white !important;" class="title-sm-main">Escola Superior de
-                    Tecnologia e Gestão
-                    Politécnico de Coimbra</div>
+                <div style="color: white !important;" class="title-sm-main">Escola Superior de <br>Tecnologia e Gestão<br>Politécnico de Coimbra</div>
             </a>
 
             <ul class="site-options">
@@ -780,7 +777,7 @@
                                     <hr>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Wi-Fi col_1"></i> Wi-Fi </h5>
+                                            <h5 class="mgt"><i class="icon Wi-Fi col_1"><i class="icon no"></i></i> Wi-Fi </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
                                             <h5 class="mgt"><i class="icon Elevador col_1"></i> Elevador</h5>
@@ -802,6 +799,21 @@
                                     <h4 class="mgt">Local</h4>
                                     <hr>
                                     <div id="map" style="height: 400px; width: 100%;"></div>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Informação de contacto</h4>
+                                    <hr>
+                                    <div class="list_detail_1r clearfix">
+                                        <div class="list_detail_1r1 clearfix">
+                                            <img src="/Style_Page_1/img/13.jpg" class="img-circle" alt="abc">
+                                            <h4 class="mgt"><a href="#">Mauris Massa</a></h4>
+                                            <h5>
+                                                <i class="fa fa-phone col_1"></i> (91) 123 456 7890 /
+                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>aeadhadad@gmai.com
+                                            </h5>
+                                            <h5 class="mgt"><a class="button mgt" href="#">Conectar</a></h5>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

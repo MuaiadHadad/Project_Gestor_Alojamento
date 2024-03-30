@@ -52,8 +52,11 @@ Route::get('/Senhorio/chat', function () {
 Route::get('/Senhorio/Adicionar', function () {
     return view('Page_Senhorio\Adicionar_alojamento');
 });
-Route::get('/inicio/detalhe', function () {
+Route::get('/inicio/detalhe/quarto', function () {
     return view('inicio\detalhe_quarto');
+});
+Route::get('/inicio/detalhe/casa', function () {
+    return view('inicio\detalhe_casa');
 });
 Route::get('/Login', [LoginController::class, 'GetPageLogin']);
 Route::get('/Register', [RegistarController::class, 'GetPageRegister']);

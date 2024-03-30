@@ -9,9 +9,11 @@ async function initMap() {
         center: coimbra,
         zoom: 15
     });
+    const icon_m = "https://img.icons8.com/emoji/48/school-emoji.png";
     var estgoh_m = { lat: 40.361008858094266, lng: -7.861192556524104 };
      new google.maps.Marker({
         position: estgoh_m,
+        icon:icon_m,
         map: map
     });
     directionsService =  new google.maps.DistanceMatrixService();
@@ -27,8 +29,10 @@ function placeOriginMarker(location) {
     if (originMarker && originMarker.setMap) {
         originMarker.setMap(null);
     }
+    const icon_casa_m = "https://img.icons8.com/plasticine/75/order-delivered.png";
     originMarker = new google.maps.Marker({
         position: location,
+        icon:icon_casa_m,
         map: map
     });
     calcularDistancia(originMarker.getPosition());

@@ -555,9 +555,7 @@
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: white !important;" class="title-sm-main">Escola Superior de
-Tecnologia e Gestão
-Politécnico de Coimbra</div>
+                <div style="color: white !important;" class="title-sm-main">Escola Superior de <br>Tecnologia e Gestão<br>Politécnico de Coimbra</div>
             </a>
 
             <ul class="site-options">
@@ -699,7 +697,7 @@ Politécnico de Coimbra</div>
                     </div>
 
                     <div class="popular_2 clearfix">
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="popular_2i clearfix">
                                 <div class="popular_2i1 clearfix">
                                     <a href="detail.html"><img src="/Style_Page_1/img/2.jpg" class="iw" alt="abc"></a>	   </div>
@@ -708,13 +706,14 @@ Politécnico de Coimbra</div>
                                 </div>
                             </div>
                             <div class="popular_2i3 clearfix">
-                                <h5 class="mgt"><a href="detail.html">Energy Certificate For EU <i class="fa fa-check-square col_1"></i></a></h5>
+                                <h5 class="mgt"><a href="detail.html">Energy Certificat <i class="fa fa-check-square col_1"></i></a></h5>
                                 <h4 class="col_1">$13,599 / <span class="col_2">Month</span></h4>
                                 <h6><i class="fa fa-hotel col_2"></i> 3 Beds <span><i class="fa fa-university col_2"></i>700 m</span></h6>
-                                <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                                <h5 class="inline"><a class="button_1" href="/inicio/detalhe/quarto"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                                <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="popular_2i clearfix">
                                 <div class="popular_2i1 clearfix">
                                     <a href="detail.html"><img src="/Style_Page_1/img/3.jpg" class="iw" alt="abc"></a>	   </div>
@@ -727,9 +726,10 @@ Politécnico de Coimbra</div>
                                 <h4 class="col_1">$11,550 / <span class="col_2">Month</span></h4>
                                 <h6><i class="fa fa-hotel col_2"></i> 3 Beds <span><i class="fa fa-university col_2"></i>500 m</span></h6>
                                 <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                                <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="popular_2i clearfix">
                                 <div class="popular_2i1 clearfix">
                                     <a href="detail.html"><img src="/Style_Page_1/img/4.jpg" class="iw" alt="abc"></a>	   </div>
@@ -742,9 +742,27 @@ Politécnico de Coimbra</div>
                                 <h4 class="col_1">$10,599 / <span class="col_2">Month</span></h4>
                                 <h6><i class="fa fa-hotel col_2"></i> 3 Beds <span><i class="fa fa-university col_2"></i>1 Km</span></h6>
                                 <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-info-circle"></i> Detalhes </a></h5>
+                                <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="popular_2i clearfix">
+                                <div class="popular_2i1 clearfix">
+                                    <a href="detail.html"><img src="/Style_Page_1/img/4.jpg" class="iw" alt="abc"></a>	   </div>
+                                <div class="popular_2i2 clearfix">
+                                    <h5 class="mgt"><a href="detail.html">FOR RENT</a></h5>
+                                </div>
+                            </div>
+                            <div class="popular_2i3 clearfix">
+                                <h5 class="mgt"><a href="detail.html">Real Luxury Villa <i class="fa fa-check-square col_1"></i></a></h5>
+                                <h4 class="col_1">$10,599 / <span class="col_2">Month</span></h4>
+                                <h6><i class="fa fa-hotel col_2"></i> 3 Beds <span><i class="fa fa-university col_2"></i>1 Km</span></h6>
+                                <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-info-circle"></i> Detalhes </a></h5>
+                                <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
                             </div>
                         </div>
                     </div>
+
                     <div class="product_1_last text-center clearfix">
                         <div class="col-sm-12">
                             <ul>
