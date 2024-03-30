@@ -9,6 +9,11 @@ async function initMapQuarto() {
         center: coimbraQuarto,
         zoom: 15
     });
+    var estgoh_q = { lat: 40.361008858094266, lng: -7.861192556524104 };
+    new google.maps.Marker({
+        position: estgoh_q,
+        map: mapQuarto
+    });
     directionsServiceQuarto =  new google.maps.DistanceMatrixService();
     directionsDisplayQuarto = new google.maps.DirectionsRenderer();
     directionsDisplayQuarto.setMap(mapQuarto);
@@ -30,7 +35,7 @@ function placeOriginMarkerQuarto(locationQuarto) {
 }
 
 function calcularDistanciaQuarto(originQuarto) {
-    var estgohQuarto = { lat: 40.3586, lng: -7.8574 };
+    var estgohQuarto = { lat: 40.361008858094266, lng: -7.861192556524104 };
     directionsServiceQuarto.getDistanceMatrix(
         {
             origins: [originQuarto],

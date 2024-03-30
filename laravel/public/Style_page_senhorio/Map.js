@@ -9,6 +9,11 @@ async function initMap() {
         center: coimbra,
         zoom: 15
     });
+    var estgoh_m = { lat: 40.361008858094266, lng: -7.861192556524104 };
+     new google.maps.Marker({
+        position: estgoh_m,
+        map: map
+    });
     directionsService =  new google.maps.DistanceMatrixService();
     directionsDisplay = new google.maps.DirectionsRenderer();
     directionsDisplay.setMap(map);
@@ -30,7 +35,7 @@ function placeOriginMarker(location) {
 }
 
 function calcularDistancia(origin) {
-    var estgoh = { lat: 40.3586, lng: -7.8574 };
+    var estgoh = { lat: 40.361008858094266, lng: -7.861192556524104 };
     let  infoWindow = new google.maps.InfoWindow({
         position: origin,
     });

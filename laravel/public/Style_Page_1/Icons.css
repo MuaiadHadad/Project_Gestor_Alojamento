@@ -1,0 +1,115 @@
+.icon{
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+.cama {
+    background-image: url("https://img.icons8.com/ios-filled/100/empty-bed.png");
+}
+.roupa-cama{
+    background-image: url("https://img.icons8.com/ios/100/pillow.png");
+}
+.mesa-cama{
+    background-image: url("https://img.icons8.com/external-nawicon-detailed-outline-nawicon/64/external-bedside-table-bedroom-nawicon-detailed-outline-nawicon.png");
+}
+.lambada{
+    background-image: url("https://img.icons8.com/ios/100/pillow.pnghttps://img.icons8.com/ios/100/desk-lamp.png");
+}
+.mesa-estudo {
+    background-image: url("https://img.icons8.com/external-icongeek26-glyph-icongeek26/64/external-Study-Table-interior-icongeek26-glyph-icongeek26-2.png");
+}
+.Janelas {
+     background-image: url("https://img.icons8.com/ios/100/open-window.png");
+ }
+.Varanda {
+      background-image: url("https://img.icons8.com/ios/100/balcony.png");
+  }
+.Cabinet {
+    background-image: url("https://img.icons8.com/pastel-glyph/64/cabinet--v2.png");
+}
+.banho {
+    background-image: url("https://img.icons8.com/pastel-glyph/64/bath--v2.png");
+}
+.Forno {
+    background-image: url("https://img.icons8.com/ios/100/microwave.png");
+}
+.Fogao {
+    background-image: url("https://img.icons8.com/ios/100/gas-stove.png");
+}
+.Caldeira {
+    background-image: url("https://img.icons8.com/external-dreamstale-lineal-dreamstale/64/external-water-boiler-electronic-appliances-dreamstale-lineal-dreamstale.png");
+}
+.Micro-ondas {
+    background-image: url("https://img.icons8.com/dotty/80/microwave.png");
+}
+.Pratos {
+    background-image: url("https://img.icons8.com/ios/100/dishes-shelf.png");
+}
+.Utensilios {
+    background-image: url("https://img.icons8.com/external-becris-lineal-becris/64/external-kitchen-utensils-kitchen-cooking-becris-lineal-becris-1.png");
+}
+.Frigorífico {
+    background-image: url("https://img.icons8.com/ios/100/fridge.png");
+}
+.Placa {
+    background-image: url("https://img.icons8.com/ios/100/kitchen-room.png");
+}
+.cafe{
+    background-image: url("https://img.icons8.com/dotty/80/coffee-maker.png");
+}
+.estar{
+    background-image: url("https://img.icons8.com/ios/100/furniture.png");
+}
+.Sofas{
+    background-image: url("https://img.icons8.com/ios/100/living-room.png");
+}
+.Televisao{
+    background-image: url("https://img.icons8.com/dotty/80/tv.png");
+}
+.jantar{
+    background-image: url("https://img.icons8.com/ios-filled/100/restaurant-table.png");
+}
+.Chuveiro{
+    background-image: url("https://img.icons8.com/ios/100/shower.png");
+}
+.Toalhas{
+    background-image: url("https://img.icons8.com/pastel-glyph/64/towels--v1.png");
+}
+.lavar{
+    background-image: url("https://img.icons8.com/ios/100/washing-machine.png");
+}
+.sacar{
+    background-image: url("https://img.icons8.com/ios/100/clothes.png");
+}
+.central{
+    background-image: url("https://img.icons8.com/ios/100/heating-room.png");
+}
+.passar{
+    background-image: url("https://img.icons8.com/dotty/80/ironing.png");
+}
+.Aquecedor{
+    background-image: url("https://img.icons8.com/ios/100/water-heater.png");
+}
+.Wi-Fi{
+    background-image: url("https://img.icons8.com/ios/100/wifi--v1.png");
+}
+.Elevador{
+    background-image: url("https://img.icons8.com/ios/100/elevator.png");
+}
+.Despesas{
+    background-image: url("https://img.icons8.com/ios/100/paycheque.png");
+}
+.Recibo{
+    background-image: url("https://img.icons8.com/dotty/80/receipt.png");
+}
+.limpeza{
+    background-image: url("https://img.icons8.com/ios/100/housekeeping.png");
+}
+.no {
+    position: relative;
+    background-image: url('https://img.icons8.com/ios/100/line--v1.png');
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
