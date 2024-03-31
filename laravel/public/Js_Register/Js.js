@@ -52,3 +52,4 @@ const closeIcon = document.querySelector(".close");
 closeIcon.addEventListener("click", () => {
     toast.style.display = "none";
 });
+

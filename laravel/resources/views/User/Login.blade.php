@@ -514,10 +514,13 @@
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: white !important; text-align: left" class="title-sm-main">Escola Superior de <br>Tecnologia e Gestão <br>Politécnico de Coimbra</div>
+                <div style="color: white !important;" class="title-sm-main">Escola Superior de
+Tecnologia e Gestão
+Politécnico de Coimbra</div>
             </a>
 
             <ul class="site-options">
+                <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
                 <li class="dropdown-menu-user-div-container">
                     <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
@@ -572,7 +575,7 @@
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">validação</span></div>
+            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Login</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
@@ -581,46 +584,42 @@
     </section>
 
     <article id="main" class="article-content">
-        <div style="position: absolute; right: 10px;">
-            <div class="toast">
-                <div class="toast-content">
-                    <i class="fa fa-solid fa-check check"></i>
-
-                    <div class="message">
-                        <span class="text text-1">Success</span>
-                        <span class="text text-2">A sua conta foi ativada com sucesso!</span>
+        <div style="position: absolute; right: 20px; width: 28%;">
+            @if(session('Error')!=null)
+                <div class="toast">
+                    <div class="toast-content" style="height: 100%">
+                        <i class="fa fa-solid fa-remove error"></i>
+                        <div class="message">
+                            <span class="text text-1">Error</span>
+                            <span class="text text-2">{{session('Error')}}</span>
+                        </div>
                     </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress error active"></div>
                 </div>
-                <i class="fa fa-solid fa-close close"></i>
-                <div class="progress active"></div>
-            </div>
-
-            <div class="toast">
-                <div class="toast-content">
-                    <i class="fa fa-solid fa-remove error"></i>
-                    <div class="message">
-                        <span class="text text-1">Error</span>
-                        <span class="text text-2">O código está errado!</span>
-                    </div>
-                </div>
-                <i class="fa fa-solid fa-close close"></i>
-                <div class="progress error active"></div>
-            </div>
+            @endif
         </div>
         <div class="container-main">
-            <div class="container-login">
-                <div ID="Sub" class="form-box-login ">
-                    <img src="https://comum.rcaap.pt/retrieve/104938" alt="">
-                    <form action="#">
-                        <div class="input-group-login ">
-                            <label style="text-align: center" for="username">Codigo de validação</label>
-                            <input style="text-align: center" type="text" id="CODIGO" name="CODIGO" pattern="[A-Za-z0-9]{6}" placeholder="AZ7GN1" title="O código deve conter 6 caracteres alfanuméricos." required>
-                            <a href="#""><i class="fa fa-mail-forward"></i> Enviar código novamente</a>
-                        </div>
-                        <button id="Sub_validar" type="submit">Validar</button>
-                    </form>
-                </div>
+        <div class="container-login">
+            <div class="form-box-login ">
+                <img src="https://comum.rcaap.pt/retrieve/104938">
+                <form action="/login" method="POST">
+                    @csrf
+                    <div class="input-group-login ">
+                        <label for="Email">Email</label>
+                        <input type="text" id="Email" name="Email" required>
+                    </div>
+                    <div class="input-group-login ">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                        <a href="#"><i class="fa fa-send"></i> Forget Password</a>
+                    </div>
+
+                    <button type="submit">Login</button>
+
+                </form>
             </div>
+        </div>
         </div>
     </article>
 </main>
@@ -920,6 +919,7 @@
         /* ]]> */
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
+    <script src="/Style_Page_1/classie.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var userDropdown = document.querySelector('.dropdown-menu-user-div-container');
@@ -940,9 +940,36 @@
                 e.stopPropagation();
             });
         });
+        const  toast_valid = document.querySelector(".toast");
+        const closeIcon_valid = document.querySelector(".close");
+        const progress_valid = document.querySelector(".progress");
 
+        let timer1_valid, timer2_valid;
+        document.addEventListener("DOMContentLoaded", function() {
+            toast_valid.classList.add("active");
+            progress_valid.classList.add("active");
+
+            timer1_valid = setTimeout(() => {
+                toast_valid.classList.remove("active");
+            }, 5000); //1s = 1000 milliseconds
+
+            timer2_valid = setTimeout(() => {
+                progress_valid.classList.remove("active");
+            }, 5300);
+
+            closeIcon_valid.addEventListener("click", () => {
+                toast_valid.classList.remove("active");
+
+                setTimeout(() => {
+                    progress_valid.classList.remove("active");
+                }, 300);
+
+                clearTimeout(timer1_valid);
+                clearTimeout(timer2_valid);
+            });
+        });
     </script>
-    <script src="/Js_Register/Validation_Page.js"></script>
+    <script src="/Style_Page_1/cbpAnimatedHeader.js"></script>
 </footer>
 </body>
 </html>

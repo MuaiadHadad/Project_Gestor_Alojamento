@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistarController;
+use App\Http\Controllers\ValidationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,9 +39,6 @@ Route::get('/Gestor/profile', function () {
 Route::get('/gestor/Adicionar_Gestor', function () {
     return view('Page_Gestor\Adicionar_Gestor');
 });
-Route::get('/validation', function () {
-    return view('User\validation');
-});
 Route::get('/Senhorio', function () {
     return view('Page_Senhorio\Senhorio_Principal_page');
 });
@@ -58,7 +57,16 @@ Route::get('/inicio/detalhe/quarto', function () {
 Route::get('/inicio/detalhe/casa', function () {
     return view('inicio\detalhe_casa');
 });
+Route::get('/email', function () {
+    return view('User\Email');
+});
+
+Route::get('/validation', [ValidationController::class, 'GetPagevalidation']);
 Route::get('/Login', [LoginController::class, 'GetPageLogin']);
 Route::get('/Register', [RegistarController::class, 'GetPageRegister']);
 Route::get('/login', [LoginController::class, 'GetPageLogin']);
 Route::get('/register', [RegistarController::class, 'GetPageRegister']);
+Route::post('/registrar', [RegistarController::class, 'registrar']);
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/validate-code', [ValidationController::class, 'validateCode']);
+Route::get('/Reenviar-code/{email}', [ValidationController::class, 'ReenviarCode'])->name('reenviar.codigo');

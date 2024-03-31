@@ -514,13 +514,10 @@
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: white !important;" class="title-sm-main">Escola Superior de
-Tecnologia e Gestão
-Politécnico de Coimbra</div>
+                <div style="color: white !important; text-align: left" class="title-sm-main">Escola Superior de <br>Tecnologia e Gestão <br>Politécnico de Coimbra</div>
             </a>
 
             <ul class="site-options">
-                <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
                 <li class="dropdown-menu-user-div-container">
                     <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
@@ -558,7 +555,6 @@ Politécnico de Coimbra</div>
 <main id="primary" class="main-section">
     <section class="module module-page--header site-header--image-bg " style="height: 310px ">
         <div class="page-title">
-
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
                 .module-page--header .breadcrumbs a {
@@ -576,7 +572,7 @@ Politécnico de Coimbra</div>
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Registar</span></div>
+            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">validação</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
@@ -585,44 +581,50 @@ Politécnico de Coimbra</div>
     </section>
 
     <article id="main" class="article-content">
-        <div style="position: absolute; right: 455px; width: 28%">
-            <div class="toast" style="height: max-content">
-                <div class="toast-content" >
-                    <i class="fa fa-solid fa-info-circle fa-2x info"></i>
-
-                    <div class="message" >
-                        <span class="text text-1">Aluno</span>
-                        <span class="text text-2">Se você um aluno tem de registar com o vosso endereço eletrónico de escola “A2020…@alunos.estgoh.ipc.pt”!</span>
+        <div style="position: absolute; right: 40px;">
+        @if(session('Error')!=null)
+                <div class="toast">
+                    <div class="toast-content">
+                        <i class="fa fa-solid fa-remove error"></i>
+                        <div class="message">
+                            <span class="text text-1">Error</span>
+                            <span class="text text-2">{{session('Error')}}</span>
+                        </div>
                     </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress error active"></div>
                 </div>
-                <i class="fa fa-solid fa-close close"></i>
-                <div class="progress info active"></div>
-            </div>
+        @endif
+        </div>
+        <div style="position: absolute; right: 20px; width: 28%;">
+            @if(session('success')!=null)
+                <div class="toast" >
+                    <div class="toast-content" style="height: 100%">
+                        <i class="fa fa-solid fa-check check"></i>
+
+                        <div class="message">
+                            <span class="text text-1">Success</span>
+                            <span class="text text-2">{{session('success')}}</span>
+                        </div>
+                    </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress active"></div>
+                </div>
+            @endif
         </div>
         <div class="container-main">
             <div class="container-login">
-                <div class="form-box-login">
-                    <img src="https://comum.rcaap.pt/retrieve/104938">
-                    <form action="#" id="registrationForm" >
-                        <div class="input-group-login">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" required>
+                <div ID="Sub" class="form-box-login ">
+                    <img src="https://comum.rcaap.pt/retrieve/104938" alt="">
+                    <form action="/validate-code" method="POST">
+                        @csrf
+                        <div class="input-group-login ">
+                            <label style="text-align: center" for="username">Codigo de validação</label>
+                            <input style="text-align: center" type="text" id="CODIGO" name="CODIGO" pattern="[A-Za-z0-9]{6}" placeholder="AZ7GN1" title="O código deve conter 6 caracteres alfanuméricos." required>
+                            <input type="hidden" name="Email" value="{{ session('Email')}}">
+                            <a href="{{ route('reenviar.codigo', ['email' => session('Email')]) }}"><i class="fa fa-mail-forward"></i> Enviar código novamente</a>
                         </div>
-                        <div class="input-group-login">
-                            <label for="Email">Email</label>
-                            <input type="text" id="Email" required>
-                        </div>
-                        <div class="input-group-login">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" required>
-                        </div>
-                        <div class="input-group-login">
-                            <label for="Re-password">Re-password</label>
-                            <input type="password" id="Re-password" required>
-                        </div>
-                        <div style="width: 96%">
-                        <button  type="submit">Registar</button>
-                        </div>
+                        <button id="Sub_validar" type="submit">Validar</button>
                     </form>
                 </div>
             </div>
@@ -925,8 +927,6 @@ Politécnico de Coimbra</div>
         /* ]]> */
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
-    <script src="/Style_Page_1/classie.js"></script>
-    <script src="/Js_Register/Js.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var userDropdown = document.querySelector('.dropdown-menu-user-div-container');
@@ -948,9 +948,35 @@ Politécnico de Coimbra</div>
             });
         });
 
+        const  toast_valid = document.querySelector(".toast");
+        const closeIcon_valid = document.querySelector(".close");
+        const progress_valid = document.querySelector(".progress");
+
+        let timer1_valid, timer2_valid;
+        document.addEventListener("DOMContentLoaded", function() {
+            toast_valid.classList.add("active");
+            progress_valid.classList.add("active");
+
+            timer1_valid = setTimeout(() => {
+                toast_valid.classList.remove("active");
+            }, 5000); //1s = 1000 milliseconds
+
+            timer2_valid = setTimeout(() => {
+                progress_valid.classList.remove("active");
+            }, 5300);
+
+            closeIcon_valid.addEventListener("click", () => {
+                toast_valid.classList.remove("active");
+
+                setTimeout(() => {
+                    progress_valid.classList.remove("active");
+                }, 300);
+
+                clearTimeout(timer1_valid);
+                clearTimeout(timer2_valid);
+            });
+        });
     </script>
-    <script src="/Js_Register/js.js"></script>
-    <script src="/Style_Page_1/cbpAnimatedHeader.js"></script>
 </footer>
 </body>
 </html>

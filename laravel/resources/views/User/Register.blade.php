@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html class="no-js" lang="pt-pt" prefix="og: https://ogp.me/ns#" data-lt-installed="true">
 <head>
     <style data-merge-styles="true"></style>
@@ -558,6 +559,7 @@ Politécnico de Coimbra</div>
 <main id="primary" class="main-section">
     <section class="module module-page--header site-header--image-bg " style="height: 310px ">
         <div class="page-title">
+
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
                 .module-page--header .breadcrumbs a {
@@ -575,7 +577,7 @@ Politécnico de Coimbra</div>
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Login</span></div>
+            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Registar</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
@@ -584,26 +586,77 @@ Politécnico de Coimbra</div>
     </section>
 
     <article id="main" class="article-content">
-        <div class="container-main">
-        <div class="container-login">
-            <div class="form-box-login ">
-                <img src="https://comum.rcaap.pt/retrieve/104938">
-                <form action="#">
-                    <div class="input-group-login ">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" required>
-                    </div>
-                    <div class="input-group-login ">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" required>
-                        <a href="#""><i class="fa fa-send"></i> Forget Password</a>
-                    </div>
+        <div style="position: absolute; right: 455px; width: 28%">
+            @if(isset($Code) && $Code == 200)
+                <div class="toast">
+                    <div class="toast-content">
+                        <i class="fa fa-solid fa-check check"></i>
 
-                    <button type="submit">Login</button>
+                        <div class="message">
+                            <span class="text text-1">Success</span>
+                            <span class="text text-2">Foi registado com sucesso!</span>
+                        </div>
+                    </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress active"></div>
+                </div>
+                <br>
+            @endif
+            @if(isset($Code) && $Code == 400)
+                    <div class="toast">
+                        <div class="toast-content">
+                            <i class="fa fa-solid fa-remove error"></i>
+                            <div class="message">
+                                <span class="text text-1">Error</span>
+                                <span class="text text-2">Este e-mail já existe!</span>
+                            </div>
+                        </div>
+                        <i class="fa fa-solid fa-close close"></i>
+                        <div class="progress error active"></div>
+                    </div>
+                <br>
+            @endif
+            <div class="toast" style="height: max-content">
+                <div class="toast-content" >
+                    <i class="fa fa-solid fa-info-circle fa-2x info"></i>
 
-                </form>
+                    <div class="message" >
+                        <span class="text text-1">Aluno</span>
+                        <span class="text text-2">Se você um aluno tem de registar com o vosso endereço eletrónico de escola “A2020…@alunos.estgoh.ipc.pt”!</span>
+                    </div>
+                </div>
+                <i class="fa fa-solid fa-close close"></i>
+                <div class="progress info active"></div>
             </div>
         </div>
+        <div class="container-main">
+            <div class="container-login">
+                <div class="form-box-login">
+                    <img src="https://comum.rcaap.pt/retrieve/104938">
+                    <form action="/registrar" method="post" >
+                        @csrf
+                        <div class="input-group-login">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="input-group-login">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="input-group-login">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="input-group-login">
+                            <label for="password_confirmation">Re-password</label>
+                            <input type="password" id="password_confirmation" name="password_confirmation" required>
+                        </div>
+                        <div style="width: 96%">
+                            <button type="submit">Registar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </article>
 </main>
@@ -904,6 +957,7 @@ Politécnico de Coimbra</div>
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
     <script src="/Style_Page_1/classie.js"></script>
+    <script src="/Js_Register/Js.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var userDropdown = document.querySelector('.dropdown-menu-user-div-container');
@@ -926,6 +980,7 @@ Politécnico de Coimbra</div>
         });
 
     </script>
+    <script src="/Js_Register/js.js"></script>
     <script src="/Style_Page_1/cbpAnimatedHeader.js"></script>
 </footer>
 </body>
