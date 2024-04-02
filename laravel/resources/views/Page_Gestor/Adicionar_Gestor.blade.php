@@ -1,4 +1,5 @@
 <html class="no-js" lang="pt-pt" prefix="og: https://ogp.me/ns#" data-lt-installed="true">
+<script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/content/location/location.js" id="nimlmejbmnecnaghgmbahmbaddhjbecg"></script><script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/libs/extend-native-history-api.js"></script><script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/libs/requests.js"></script>
 <head>
     <style data-merge-styles="true"></style>
     <style data-merge-styles="true"></style>
@@ -39,12 +40,17 @@
     <meta name="generator" content="WPML ver:4.3.16 stt:1,41;">
     <link rel="shortcut icon" href="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2-1.svg">
     <!-- Css adicional -->
+    <link rel="stylesheet" href="/Style_Page_1/hr_style.css">
+    <link rel="stylesheet" href="/Style_Page_Gestor/Tabela.css">
     <link href="/Style_Page_1/bootstrap.min.css" rel="stylesheet">
     <link href="/Style_Page_1/global.css" rel="stylesheet">
+    <link href="/Style_Page_1/list.css" rel="stylesheet">
     <link href="/Style_Page_1/element.css" rel="stylesheet">
+    <link href="css/agent.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/Style_Page_1/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Style_Page_1/jquery-2.1.1.min.js"></script>
+    <script src="/Style_Page_1/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/style_Login/styles.css">
     <!-- /Css adicional -->
     <style type="text/css" id="wp-custom-css">
@@ -79,9 +85,9 @@
     <div class="container">
         <div class="main-logo big">
             <a class="main-logo big" href="https://www.estgoh.ipc.pt">
-               <span>
-               <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo">
-               </span>
+					<span>
+					<img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo">
+					</span>
             </a>
         </div>
         <nav>
@@ -514,24 +520,24 @@
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: white !important;" class="title-sm-main">Escola Superior de
-Tecnologia e Gestão
-Politécnico de Coimbra</div>
+                <div style="color: white !important;" class="title-sm-main">Escola Superior de<br>Tecnologia e Gestão<br>Politécnico de Coimbra</div>
             </a>
-
             <ul class="site-options">
-                <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
+
                 <li class="dropdown-menu-user-div-container">
-                    <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
+                    @foreach($Data as $user)
+                        <img src="{{asset('storage/'.$user->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                    @endforeach
+                    <i  class="fa fa-inverse">{{session('Email')}}</i>
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
             </ul>
         </div>
-        <div class="dropdown-menu-user-div">
+        <div class="dropdown-menu-user-div" style="left: 80%">
             <ul>
-                <li><a href="/login#"><i class="fa fa-sign-in"></i> Login</a></li>
-                <li><a href="/register"><i class="fa fa-user-plus"></i> Registar</a></li>
+                <li><a href="/gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
         </div>
         <section class="module module-search module-layer-search">
@@ -553,10 +559,9 @@ Politécnico de Coimbra</div>
             </div>
         </section>
     </div>
-
 </header>
 <main id="primary" class="main-section">
-    <section class="module module-page--header site-header--image-bg " style="height: 310px ">
+    <section class="module module-page--header site-header--image-bg" style="height: 310px ">
         <div class="page-title">
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
@@ -575,7 +580,7 @@ Politécnico de Coimbra</div>
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Login</span></div>
+            <div class="breadcrumbs"><a href="/gestor" rel="v:url" property="v:title">Gestor</a> / <span class="current">Profile</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
@@ -584,14 +589,14 @@ Politécnico de Coimbra</div>
     </section>
 
     <article id="main" class="article-content">
-        <div style="position: absolute; right: 20px; width: 28%;">
-            @if(session('Error')!=null)
+        <div style="position: absolute; right: 20px; width: 28%">
+            @if(session('error')!=null)
                 <div class="toast">
                     <div class="toast-content" style="height: 100%">
                         <i class="fa fa-solid fa-remove error"></i>
                         <div class="message">
                             <span class="text text-1">Error</span>
-                            <span class="text text-2">{{session('Error')}}</span>
+                            <span class="text text-2">{{session('error')}}</span>
                         </div>
                     </div>
                     <i class="fa fa-solid fa-close close"></i>
@@ -599,26 +604,54 @@ Politécnico de Coimbra</div>
                 </div>
             @endif
         </div>
-        <div class="container-main">
-        <div class="container-login">
-            <div class="form-box-login ">
-                <img src="https://comum.rcaap.pt/retrieve/104938">
-                <form action="/login" method="POST">
-                    @csrf
-                    <div class="input-group-login ">
-                        <label for="Email">Email</label>
-                        <input type="text" id="Email" name="Email" required>
-                    </div>
-                    <div class="input-group-login ">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                        <a href="/Forget"><i class="fa fa-send"></i> Forget Password</a>
+        <div style="position: absolute; right: 20px; width: 28%;">
+            @if(session('success')!=null)
+                <div class="toast" >
+                    <div class="toast-content" style="height: 100%">
+                        <i class="fa fa-solid fa-check check"></i>
 
+                        <div class="message">
+                            <span class="text text-1">Success</span>
+                            <span class="text text-2">{{session('success')}}</span>
+                        </div>
                     </div>
-                    <button type="submit">Login</button>
-                </form>
-            </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress active"></div>
+                </div>
+            @endif
         </div>
+        <div class="container-main" >
+            <div class="container-login">
+                <div class="form-box-login">
+                    <h1 class="mgt" style="text-align: center">Adicionar um Gestor</h1>
+                    <div class="h-divider" style="top:-35px">
+                        <div class="shadow"></div>
+                    </div>
+                    <form action="/AddGestor" id="registrationForm" method="post">
+                        @csrf
+                        <div class="input-group-login">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="input-group-login">
+                            <label for="Email">Email</label>
+                            <input type="text" id="Email" name="Email" required>
+                        </div>
+                    <div class="modal-container" style="width: 100%; height: 60px">
+                        <input id="modal-toggle" type="checkbox">
+                        <label class="modal-btn" for="modal-toggle" style="width: 100%;">Adicionar</label>
+                        <label class="modal-backdrop" for="modal-toggle"></label>
+                        <div class="modal-content">
+                            <label class="modal-close" for="modal-toggle">&#x2715;</label>
+                            <h2 style="font-size:50px;text-align: left">Alert <i style="color: red" class="fa fa-warning"></i></h2><hr />
+                            <p>Quere mesmo adicionar este Gestor?</p>
+                            <button type="submit" style="top: 20%">OK</button>
+                        </div>
+                    </div>
+                </form>
+
+                </div>
+            </div>
         </div>
     </article>
 </main>
@@ -811,22 +844,22 @@ Politécnico de Coimbra</div>
                     <li>
                         <span class="level-1-a title-lg ">Contactos</span>
                         <div>
-                            <a><strong>ESTGOH&nbsp;</strong><br>
+                            <p><strong>ESTGOH&nbsp;</strong><br>
                                 Escola Superior de Tecnologia e Gestão de Oliveira do Hospital<br>
                                 Rua General Santos Costa, n.º 4<br>
                                 3400-124 Oliveira do Hospital
-                            </a>
-                            <a><strong>Telefones/Telemóvel:</strong><br>
+                            </p>
+                            <p><strong>Telefones/Telemóvel:</strong><br>
                                 238 605 170 – Geral (<em>Chamada para a rede fixa nacional</em>)<br>
                                 238 605 176 – Serviços Académicos (<em>Chamada para a rede fixa nacional</em>)
-                            </a>
-                            <a><strong>E-mail:</strong><br>
+                            </p>
+                            <p><strong>E-mail:</strong><br>
                                 geral@estgoh.ipc.pt – Geral<br>
                                 academicos@estgoh.ipc.pt – Serviços Académicos
-                            </a>
-                            <a><strong>Localização:</strong><br>
+                            </p>
+                            <p><strong>Localização:</strong><br>
                                 Cordenadas: 40°21’39.8″N 7°51’39.9″W
-                            </a>
+                            </p>
                         </div>
                     </li>
                 </ul>
@@ -910,6 +943,7 @@ Politécnico de Coimbra</div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="/Style_Page_Gestor/adicionar_gestor.js"></script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/vendor.min.js?ver=1708280857" id="vendor-js"></script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/custom-plugins.min.js?ver=1708280857" id="custom-plugins-js"></script>
     <script type="text/javascript" id="script-js-extra">
@@ -918,27 +952,7 @@ Politécnico de Coimbra</div>
         /* ]]> */
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
-    <script src="/Style_Page_1/classie.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var userDropdown = document.querySelector('.dropdown-menu-user-div-container');
-            var dropdownMenu = document.querySelector('.dropdown-menu-user-div');
-
-            userDropdown.addEventListener('click', function(e) {
-                e.stopPropagation();
-                dropdownMenu.classList.toggle('show');
-            });
-
-            // Fechar o menu quando clicar fora dele
-            document.addEventListener('click', function() {
-                dropdownMenu.classList.remove('show');
-            });
-
-            // Evitar que o menu feche quando se clica dentro dele
-            dropdownMenu.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-        });
         const  toast_valid = document.querySelector(".toast");
         const closeIcon_valid = document.querySelector(".close");
         const progress_valid = document.querySelector(".progress");
@@ -966,9 +980,8 @@ Politécnico de Coimbra</div>
                 clearTimeout(timer1_valid);
                 clearTimeout(timer2_valid);
             });
-        });
-    </script>
-    <script src="/Style_Page_1/cbpAnimatedHeader.js"></script>
+        });    </script>
+
 </footer>
 </body>
 </html>

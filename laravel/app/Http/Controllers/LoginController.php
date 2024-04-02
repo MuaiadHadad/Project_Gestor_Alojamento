@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function GetPageLogin()
@@ -16,18 +17,24 @@ class LoginController extends Controller
         $Email = $request->input('Email');
         $password = $request->input('password');
 
-        // Consulta ao banco de dados para verificar as credenciais do usuário
         $user = DB::table('user')->where('Email', $Email)->first();
 
         if (!$user || !password_verify($password, $user->Password)) {
             return back()->with(['Error' => 'O e-mail ou palavra passa está incorreto!']);
         }
         if($user->Estado =="Ativo"){
+            $activationToken = Str::random(60);
+            DB::table('user')->where('Email',  $user->Email)->update([
+                'ActivationToken' => $activationToken
+            ]);
+            session(['ActivationToken' => $activationToken]);
+            session(['tipo_usuario' => $user->Tipo]);
+            session(['Email' => $user->Email]);
             if ($user->Tipo == 'aluno') {
-                return redirect()->route('/aluno');
+                return redirect('/aluno');
             }
             if ($user->Tipo == 'senhorio') {
-                return redirect()->route('/Senhorio');
+                return redirect('/Senhorio');
             }
             if ($user->Tipo == 'gestor') {
                 return redirect('/gestor');
@@ -38,5 +45,15 @@ class LoginController extends Controller
             return redirect('/validation')->with('Email', $Email);
         }
 
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/inicio');
     }
 }

@@ -527,8 +527,10 @@ Politécnico de Coimbra
             <ul class="site-options">
 
                 <li class="dropdown-menu-user-div-container">
-                    <img src="/Style_Page_1/img/13.jpg" class="img-circle" alt="abc" style="width: 45px; height: 45px">
-                    <i  class="fa fa-inverse">Muaiad Hadad</i>
+                    @foreach($Data as $user)
+                        <img src="{{asset('storage/'.$user->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                    @endforeach
+                    <i  class="fa fa-inverse">{{session('Email')}}</i>
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
@@ -590,6 +592,37 @@ Politécnico de Coimbra
     </section>
 
     <article id="main" class="article-content">
+        <div style="position: absolute; right: 40px;">
+            @if(session('error')!=null)
+                <div class="toast">
+                    <div class="toast-content">
+                        <i class="fa fa-solid fa-remove error"></i>
+                        <div class="message">
+                            <span class="text text-1">Error</span>
+                            <span class="text text-2">{{session('error')}}</span>
+                        </div>
+                    </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress error active"></div>
+                </div>
+            @endif
+        </div>
+        <div style="position: absolute; right: 20px; width: 28%;">
+            @if(session('success')!=null)
+                <div class="toast" >
+                    <div class="toast-content" style="height: 100%">
+                        <i class="fa fa-solid fa-check check"></i>
+
+                        <div class="message">
+                            <span class="text text-1">Success</span>
+                            <span class="text text-2">{{session('success')}}</span>
+                        </div>
+                    </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress active"></div>
+                </div>
+            @endif
+        </div>
         <section class="table__body">
         <div class="center_home_1i1 clearfix" style="width: 25%;">
             <select class="form-control" id="selector_list">
@@ -610,6 +643,7 @@ Politécnico de Coimbra
             </div>
 
             <section class="table__header">
+
                 <div class="center_home_1i1 clearfix">
                     <h5 class="mgt text-center">
                         <a class="button_1 block mgt" href="/gestor/Adicionar_Gestor">
@@ -630,70 +664,35 @@ Politécnico de Coimbra
                         <th> ID <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Email <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> ِAtivar/Inativar</th>
+                        <th> Estado(ِAtivar/Inativar) <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Remover </th>
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($utilizadores as $utilizador)
                     <tr>
-                        <td> 1 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
+                        <td>{{ $utilizador->id }}</td>
+                        <td>{{ $utilizador->UserName }}</td>
+                        <td>{{ $utilizador->Email }}</td>
                         <td>
-                            <p class="status delivered">Ativo</p>
+                            <form action="/Gestor/{{ $utilizador->id }}/EstadoUser" method="POST">
+                                @csrf
+                                <button type="submit" style="left: 40px; top: 5px" class="status {{ $utilizador->Estado == 'Ativo' ? 'delivered' : ($utilizador->Estado == 'Desativo' ? 'cancelled' : 'pending') }}">
+                                {{ $utilizador->Estado == 'Ativo' ? 'Ativo' : ($utilizador->Estado == 'Desativo' ? 'Desativo' : 'Pending') }}
+                            </button>
+                            </form>
                         </td>
                         <td>
-                            <i class="fa fa-toggle-on fa-3x"></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-user-times fa-3x"></i>
+                            <form action="/Gestor/{{ $utilizador->id }}/RemoverUser" method="POST">
+                                @csrf
+                                <button  type="submit">
+                                    <i style=" top: 10px" class="fa fa-user-times fa-3x"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> aeadhadad5@gmail.com </td>
-                        <td>
-                            <p class="status pending">pending</p>
-                        </td>
-                        <td>
-                            <i class="fa fa-toggle-off fa-3x"><p style="visibility: hidden">ativo</p></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-user-times fa-3x"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td>
-                            <p class="status cancelled">Desativo</p>
-                        </td>
-                        <td>
-                            <i class="fa fa-toggle-on fa-3x"><p style="visibility: hidden">ban</p></i>
+                    @endforeach
 
-                        </td>
-                        <td>
-                            <i class="fa fa-user-times fa-3x"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 4</td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td>
-                            <p class="status cancelled">Desativo</p>
-                        </td>
-                        <td>
-                            <i class="fa fa-toggle-off fa-3x"></i>
-
-                        </td>
-                        <td>
-                            <i class="fa fa-user-times fa-3x"></i>
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
             </section>
@@ -1199,6 +1198,34 @@ Politécnico de Coimbra
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
     <script>
 
+        const  toast_valid = document.querySelector(".toast");
+        const closeIcon_valid = document.querySelector(".close");
+        const progress_valid = document.querySelector(".progress");
+
+        let timer1_valid, timer2_valid;
+        document.addEventListener("DOMContentLoaded", function() {
+            toast_valid.classList.add("active");
+            progress_valid.classList.add("active");
+
+            timer1_valid = setTimeout(() => {
+                toast_valid.classList.remove("active");
+            }, 5000); //1s = 1000 milliseconds
+
+            timer2_valid = setTimeout(() => {
+                progress_valid.classList.remove("active");
+            }, 5300);
+
+            closeIcon_valid.addEventListener("click", () => {
+                toast_valid.classList.remove("active");
+
+                setTimeout(() => {
+                    progress_valid.classList.remove("active");
+                }, 300);
+
+                clearTimeout(timer1_valid);
+                clearTimeout(timer2_valid);
+            });
+        });
     </script>
 
 </footer>

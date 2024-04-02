@@ -1,5 +1,4 @@
 <html class="no-js" lang="pt-pt" prefix="og: https://ogp.me/ns#" data-lt-installed="true">
-<script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/content/location/location.js" id="nimlmejbmnecnaghgmbahmbaddhjbecg"></script><script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/libs/extend-native-history-api.js"></script><script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/libs/requests.js"></script>
 <head>
     <style data-merge-styles="true"></style>
     <style data-merge-styles="true"></style>
@@ -40,17 +39,13 @@
     <meta name="generator" content="WPML ver:4.3.16 stt:1,41;">
     <link rel="shortcut icon" href="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2-1.svg">
     <!-- Css adicional -->
-    <link rel="stylesheet" href="/Style_Page_1/hr_style.css">
-    <link rel="stylesheet" href="/Style_Page_Gestor/Tabela.css">
     <link href="/Style_Page_1/bootstrap.min.css" rel="stylesheet">
     <link href="/Style_Page_1/global.css" rel="stylesheet">
-    <link href="/Style_Page_1/list.css" rel="stylesheet">
     <link href="/Style_Page_1/element.css" rel="stylesheet">
-    <link href="css/agent.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/Style_Page_1/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-    <script src="/Style_Page_1/jquery-2.1.1.min.js"></script>
-    <script src="/Style_Page_1/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style_Login/styles.css">
     <!-- /Css adicional -->
     <style type="text/css" id="wp-custom-css">
         @media (max-width: 767px)
@@ -84,9 +79,9 @@
     <div class="container">
         <div class="main-logo big">
             <a class="main-logo big" href="https://www.estgoh.ipc.pt">
-					<span>
-					<img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo">
-					</span>
+               <span>
+               <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo">
+               </span>
             </a>
         </div>
         <nav>
@@ -519,25 +514,21 @@
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: white !important;" class="title-sm-main">Escola Superior de
-Tecnologia e Gestão
-Politécnico de Coimbra
-                </div>
+                <div style="color: white !important; text-align: left" class="title-sm-main">Escola Superior de <br>Tecnologia e Gestão <br>Politécnico de Coimbra</div>
             </a>
-            <ul class="site-options">
 
+            <ul class="site-options">
                 <li class="dropdown-menu-user-div-container">
-                    <img src="/Style_Page_1/img/13.jpg" class="img-circle" alt="abc" style="width: 45px; height: 45px">
-                    <i  class="fa fa-inverse">Muaiad Hadad</i>
+                    <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
             </ul>
         </div>
-        <div class="dropdown-menu-user-div" style="left: 80%">
+        <div class="dropdown-menu-user-div">
             <ul>
-                <li><a href="/login"><i class="fa fa-indent"></i> Profile</a></li>
-                <li><a href="/register"><i class="fa fa-sign-out"></i> Logout</a></li>
+                <li><a href="/login#"><i class="fa fa-sign-in"></i> Login</a></li>
+                <li><a href="/register"><i class="fa fa-user-plus"></i> Registar</a></li>
             </ul>
         </div>
         <section class="module module-search module-layer-search">
@@ -559,9 +550,10 @@ Politécnico de Coimbra
             </div>
         </section>
     </div>
+
 </header>
 <main id="primary" class="main-section">
-    <section class="module module-page--header site-header--image-bg" style="height: 310px ">
+    <section class="module module-page--header site-header--image-bg " style="height: 310px ">
         <div class="page-title">
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
@@ -580,7 +572,7 @@ Politécnico de Coimbra
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="/gestor" rel="v:url" property="v:title">Gestor</a> / <span class="current">Profile</span></div>
+            <div class="breadcrumbs"><a href="/login" rel="v:url" property="v:title">Login</a> / <span class="current">Forget</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
@@ -590,107 +582,51 @@ Politécnico de Coimbra
 
     <article id="main" class="article-content">
         <div style="position: absolute; right: 30px;">
-            <div class="toast">
-                <div class="toast-content">
-                    <i class="fa fa-solid fa-check check"></i>
-
-                    <div class="message">
-                        <span class="text text-1">Success</span>
-                        <span class="text text-2">Os seus Dados foram alterados com sucesso!</span>
+            @if(session('Error')!=null)
+                <div class="toast">
+                    <div class="toast-content">
+                        <i class="fa fa-solid fa-remove error"></i>
+                        <div class="message">
+                            <span class="text text-1">Error</span>
+                            <span class="text text-2">{{session('Error')}}</span>
+                        </div>
                     </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress error active"></div>
                 </div>
-                <i class="fa fa-solid fa-close close"></i>
-                <div class="progress active"></div>
-            </div>
+            @endif
+        </div>
+        <div style="position: absolute; right: 20px; width: 28%;">
+            @if(session('success')!=null)
+                <div class="toast" >
+                    <div class="toast-content" style="height: 100%">
+                        <i class="fa fa-solid fa-check check"></i>
 
-            <div class="toast">
-                <div class="toast-content">
-                    <i class="fa fa-solid fa-remove error"></i>
-                    <div class="message">
-                        <span class="text text-1">Error</span>
-                        <span class="text text-2">Não foi possível alterar os seus dados!</span>
+                        <div class="message">
+                            <span class="text text-1">Success</span>
+                            <span class="text text-2">{{session('success')}}</span>
+                        </div>
                     </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress active"></div>
                 </div>
-                <i class="fa fa-solid fa-close close"></i>
-                <div class="progress error active"></div>
+            @endif
+        </div>
+        <div class="container-main">
+            <div class="container-login">
+                <div ID="Sub" class="form-box-login ">
+                    <img src="https://comum.rcaap.pt/retrieve/104938" alt="">
+                    <form action="/RecuperarPassword" method="POST">
+                        @csrf
+                        <div class="input-group-login ">
+                            <label style="text-align: center" for="username">E-mail</label>
+                            <input style="text-align: center" type="text" id="Email" name="Email" placeholder="a...@gmail.com" required>
+                        </div>
+                        <button style="width: 100%" type="submit">Recuperar</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <section id="center" class="clearfix center_agent">
-            <div class="container clearfix">
-                <div class="row">
-                    <div class="center_agent_1 clearfix">
-                        <div class="col-sm-3" id="upload_foto" style="display: none">
-                            <div class="drop-zone">
-                                <span class="drop-zone__prompt"><i class="fa fa-dropbox fa-5x"></i><br>Adicionar nova foto</span>
-                                <input type="file" src="/Style_Page_1/img/24.jpg"  name="myFile" class="drop-zone__input" style=" display: none;">
-                            </div>
-                        </div>
-                        <div class="col-sm-3" id="foto" style="display: block">
-                            <div class="center_agent_1l clearfix">
-                                <a href="#"><img src="/Style_Page_1/img/24.jpg" class="iw" alt="abc"></a>
-                            </div>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="center_agent_1r clearfix">
-                                <div id="div_profile" style="display: block;">
-                                    <br>
-                                <h4 id="username" class="mgt">Mauris massa</h4>
-                                <h5 id="email"><i class="fa fa-envelope"></i> info@gmail.com</h5>
-                                <h5 id="password"><i class="fa fa-key"></i> ***********</h5>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div  class="center_home_1i1 clearfix" style="width: 30%">
-                                        <h5 class="mgt text-center"><a id="Edit" class="button_1 block mgt" onclick="toggleEdit()">
-                                                <i class="fa fa-pencil" ></i> Editar perfil</a></h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div id="div_edit" style="display: none; width: 100%;">
-                                            <h5><i class="fa fa-user"></i> Novo Nome:</h5>
-                                            <label>
-                                                <input placeholder="Nome Nome" value="Muaiad Hadad" class="form-control" type="text">
-                                            </label>
-                                            <h5><i class="fa fa-envelope"></i> Novo Email:</h5>
-                                            <label>
-                                                <input placeholder="Novo Email" value="aeadhadad5@gmail.com" class="form-control" type="text">
-                                            </label>
-                                            <h5><i class="fa fa-key"></i> Antigo password:</h5>
-                                            <label>
-                                                <input type="password" class="form-control" placeholder="Antigo password" required="">
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div id="div_edit_part2" style="display: none; width: 100%;">
-                                    <div class="col-md-6">
-                                        <h5><i class="fa fa-keyboard-o"></i> Novo password:</h5>
-                                        <label>
-                                            <input type="password" class="form-control" placeholder="Novo password" required="">
-                                        </label>
-                                        <h5><i class="fa fa-keyboard-o"></i> Re Novo password:</h5>
-                                        <label>
-                                            <input type="password" class="form-control" placeholder="Re Novo password" required="">
-                                        </label>
-                                        <br>
-                                        <div id="Edit_Sub" class="center_home_1i1 clearfix" style="width: 50%;">
-                                            <br>
-                                            <h5 class="mgt text-center">
-                                                <a class="button_1 block mgt" onclick="toggleEdit()"><i class="fa fa-check"></i> Editar perfil</a>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-
-                        </div>
-                </div>
-            </div>
-        </section>
     </article>
 </main>
 <footer class="module module-site-footer">
@@ -882,22 +818,22 @@ Politécnico de Coimbra
                     <li>
                         <span class="level-1-a title-lg ">Contactos</span>
                         <div>
-                            <p><strong>ESTGOH&nbsp;</strong><br>
+                            <a><strong>ESTGOH&nbsp;</strong><br>
                                 Escola Superior de Tecnologia e Gestão de Oliveira do Hospital<br>
                                 Rua General Santos Costa, n.º 4<br>
                                 3400-124 Oliveira do Hospital
-                            </p>
-                            <p><strong>Telefones/Telemóvel:</strong><br>
+                            </a>
+                            <a><strong>Telefones/Telemóvel:</strong><br>
                                 238 605 170 – Geral (<em>Chamada para a rede fixa nacional</em>)<br>
                                 238 605 176 – Serviços Académicos (<em>Chamada para a rede fixa nacional</em>)
-                            </p>
-                            <p><strong>E-mail:</strong><br>
+                            </a>
+                            <a><strong>E-mail:</strong><br>
                                 geral@estgoh.ipc.pt – Geral<br>
                                 academicos@estgoh.ipc.pt – Serviços Académicos
-                            </p>
-                            <p><strong>Localização:</strong><br>
+                            </a>
+                            <a><strong>Localização:</strong><br>
                                 Cordenadas: 40°21’39.8″N 7°51’39.9″W
-                            </p>
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -981,7 +917,6 @@ Politécnico de Coimbra
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="/Style_Page_Gestor/profile.js"></script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/vendor.min.js?ver=1708280857" id="vendor-js"></script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/custom-plugins.min.js?ver=1708280857" id="custom-plugins-js"></script>
     <script type="text/javascript" id="script-js-extra">
@@ -991,9 +926,55 @@ Politécnico de Coimbra
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var userDropdown = document.querySelector('.dropdown-menu-user-div-container');
+            var dropdownMenu = document.querySelector('.dropdown-menu-user-div');
 
+            userDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // Fechar o menu quando clicar fora dele
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('show');
+            });
+
+            // Evitar que o menu feche quando se clica dentro dele
+            dropdownMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+
+        const  toast_valid = document.querySelector(".toast");
+        const closeIcon_valid = document.querySelector(".close");
+        const progress_valid = document.querySelector(".progress");
+
+        let timer1_valid, timer2_valid;
+        document.addEventListener("DOMContentLoaded", function() {
+            toast_valid.classList.add("active");
+            progress_valid.classList.add("active");
+
+            timer1_valid = setTimeout(() => {
+                toast_valid.classList.remove("active");
+            }, 5000); //1s = 1000 milliseconds
+
+            timer2_valid = setTimeout(() => {
+                progress_valid.classList.remove("active");
+            }, 5300);
+
+            closeIcon_valid.addEventListener("click", () => {
+                toast_valid.classList.remove("active");
+
+                setTimeout(() => {
+                    progress_valid.classList.remove("active");
+                }, 300);
+
+                clearTimeout(timer1_valid);
+                clearTimeout(timer2_valid);
+            });
+        });
     </script>
-
 </footer>
 </body>
 </html>

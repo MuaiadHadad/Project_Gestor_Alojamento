@@ -30,20 +30,22 @@ class RegistarController extends Controller
             'Email' => $request->email,
             'Password' => bcrypt($request->password),
             'Estado' => $estado,
-            'Tipo' => $tipoUtilizador
+            'Tipo' => $tipoUtilizador,
+            'Avatar'=> 'avatars/User-avatar.svg.png'
         ]);
 
-        $this->enviarEmail('Codigo de ativação de sua aconta', $estado,$request->email);
+        $this->enviarEmail('Codigo de ativação de sua aconta',$request->username , $estado,$request->email);
 
         return view('User\Register')->with('Code','200');
     }
 
-    public function enviarEmail($titulo,$mass,$email){
+    public function enviarEmail($titulo,$nome,$mass,$email){
         $subject = $titulo;
         $contentData = [
             'mensagem' => $mass,
+            'nome'=>$nome
         ];
 
-        Mail::to($email)->send(new EstadoEmail($subject, $mass,'User\Email'));
+        Mail::to($email)->send(new EstadoEmail($subject, $contentData,'User\Email'));
     }
 }

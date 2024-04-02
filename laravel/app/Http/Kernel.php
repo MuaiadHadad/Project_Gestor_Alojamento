@@ -3,6 +3,10 @@
 namespace App\Http;
 
 use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\CheckGestor;
+use App\Http\Middleware\CheckSenhorio;
+use App\Http\Middleware\CheckTipoUsuario;
+use App\Http\Middleware\CheckUser;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use App\Http\Middleware\RedirectIfAuthenticated;
