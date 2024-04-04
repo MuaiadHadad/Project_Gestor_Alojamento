@@ -152,8 +152,7 @@ uploadAreaPorQuarto.addEventListener('drop', function(e) {
 
 // Lidar com os arquivos selecionados
 fileInputPorQuarto.addEventListener('change', function() {
-    var files = this.files;
-    handleFilesPorQuarto(files);
+    handleFilesPorQuarto(this.files);
 });
 
 // Função para lidar com os arquivos

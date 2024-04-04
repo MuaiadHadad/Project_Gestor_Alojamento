@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistarController;
 use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\ForgetPasswordController;
+use App\Http\Controllers\SenhorioControllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,20 +33,7 @@ Route::get('/inicio/detalhe/casa', function () {
     return view('inicio\detalhe_casa');
 });
 
-    Route::get('/Senhorio', function () {
-        if(session('tipo_usuario')=="senhorio"){
-            return view('Page_Senhorio\Senhorio_Principal_page');
-        }else{
-            abort(403, 'Acesso não autorizado.');
-        }
-    });
-    Route::get('/Senhorio/Profile', function () {
-        if(session('tipo_usuario')=="senhorio"){
-            return view('Page_Senhorio\Profile_Senhorio');
-        }else{
-            abort(403, 'Acesso não autorizado.');
-        }
-    });
+
     Route::get('/Senhorio/chat', function () {
         if(session('tipo_usuario')=="senhorio"){
             return view('Page_Senhorio\conversation');
@@ -53,14 +41,10 @@ Route::get('/inicio/detalhe/casa', function () {
             abort(403, 'Acesso não autorizado.');
         }
     });
-    Route::get('/Senhorio/Adicionar', function () {
-        if(session('tipo_usuario')=="senhorio"){
-            return view('Page_Senhorio\Adicionar_alojamento');
-        }else{
-            abort(403, 'Acesso não autorizado.');
-        }
-    });
-
+Route::post('/Senhorio/Adicionar/AddQuarto', [SenhorioControllers::class, 'AddQuarto']);
+Route::get('/Senhorio/Adicionar', [SenhorioControllers::class, 'GetPageAddHome']);
+Route::get('/Senhorio/Profile', [SenhorioControllers::class, 'GetPageProfSenhorio']);
+Route::get('/Senhorio', [SenhorioControllers::class, 'GetPageSenhorio']);
 
 Route::post('/user/{id}/update', [GestorControllers::class, 'updateProfile']);
 Route::get('/Gestor/profile', [GestorControllers::class, 'GetPageProfGestor']);

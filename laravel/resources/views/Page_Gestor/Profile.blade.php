@@ -526,8 +526,9 @@
                 <li class="dropdown-menu-user-div-container">
                     @foreach($utilizadores as $utilizador)
                     <img src="{{asset('storage/'.$utilizador->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                        <i  class="fa fa-inverse">{{$utilizador->Email}}</i>
                     @endforeach
-                    <i  class="fa fa-inverse">{{session('Email')}}</i>
+
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>

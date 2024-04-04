@@ -519,16 +519,15 @@
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: white !important;" class="title-sm-main">Escola Superior de
-Tecnologia e Gestão
-Politécnico de Coimbra
-                </div>
+                <div style="color: white !important;" class="title-sm-main">Escola Superior de<br>Tecnologia e Gestão<br>Politécnico de Coimbra</div>
             </a>
             <ul class="site-options">
 
                 <li class="dropdown-menu-user-div-container">
-                    <img src="/Style_Page_1/img/13.jpg" class="img-circle" alt="abc" style="width: 45px; height: 45px">
-                    <i  class="fa fa-inverse">Muaiad Hadad</i>
+                    @foreach($utilizadores as $utilizador)
+                        <img src="{{asset('storage/'.$utilizador->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                        <i style="color: white">{{$utilizador->Email}}</i>
+                    @endforeach
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
@@ -590,104 +589,117 @@ Politécnico de Coimbra
 
     <article id="main" class="article-content">
         <div style="position: absolute; right: 30px;">
-            <div class="toast">
-                <div class="toast-content">
-                    <i class="fa fa-solid fa-check check"></i>
-
-                    <div class="message">
-                        <span class="text text-1">Success</span>
-                        <span class="text text-2">Os seus Dados foram alterados com sucesso!</span>
+            @if(session('error')!=null)
+                <div class="toast">
+                    <div class="toast-content">
+                        <i class="fa fa-solid fa-remove error"></i>
+                        <div class="message">
+                            <span class="text text-1">Error</span>
+                            <span class="text text-2">{{session('error')}}</span>
+                        </div>
                     </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress error active"></div>
                 </div>
-                <i class="fa fa-solid fa-close close"></i>
-                <div class="progress active"></div>
-            </div>
+            @endif
+        </div>
+        <div style="position: absolute; right: 30px;">
+            @if(session('success')!=null)
+                <div class="toast" >
+                    <div class="toast-content" style="height: 100%">
+                        <i class="fa fa-solid fa-check check"></i>
 
-            <div class="toast">
-                <div class="toast-content">
-                    <i class="fa fa-solid fa-remove error"></i>
-                    <div class="message">
-                        <span class="text text-1">Error</span>
-                        <span class="text text-2">Não foi possível alterar os seus dados!</span>
+                        <div class="message">
+                            <span class="text text-1">Success</span>
+                            <span class="text text-2">{{session('success')}}</span>
+                        </div>
                     </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress active"></div>
                 </div>
-                <i class="fa fa-solid fa-close close"></i>
-                <div class="progress error active"></div>
-            </div>
+            @endif
         </div>
         <section id="center" class="clearfix center_agent">
             <div class="container clearfix">
                 <div class="row">
-                    <div class="center_agent_1 clearfix">
-                        <div class="col-sm-3" id="upload_foto" style="display: none">
-                            <div class="drop-zone">
-                                <span class="drop-zone__prompt"><i class="fa fa-dropbox fa-5x"></i><br>Adicionar nova foto</span>
-                                <input type="file" src="/Style_Page_1/img/24.jpg"  name="myFile" class="drop-zone__input" style=" display: none;">
-                            </div>
-                        </div>
-                        <div class="col-sm-3" id="foto" style="display: block">
-                            <div class="center_agent_1l clearfix">
-                                <a href="#"><img src="/Style_Page_1/img/24.jpg" class="iw" alt="abc"></a>
-                            </div>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="center_agent_1r clearfix">
-                                <div id="div_profile" style="display: block;">
-                                    <br>
-                                <h4 id="username" class="mgt">Mauris massa</h4>
-                                <h5 id="email"><i class="fa fa-envelope"></i> info@gmail.com</h5>
-                                <h5 id="password"><i class="fa fa-key"></i> ***********</h5>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <div  class="center_home_1i1 clearfix" style="width: 30%">
-                                        <h5 class="mgt text-center"><a id="Edit" class="button_1 block mgt" onclick="toggleEdit()">
-                                                <i class="fa fa-pencil" ></i> Editar perfil</a></h5>
+                    @foreach($utilizadores as $utilizador)
+                        <form action="/user/{{ $utilizador->id }}/update" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="center_agent_1 clearfix">
+                                <div class="col-sm-3" id="upload_foto" style="display: none">
+                                    <div class="drop-zone">
+                                        <span class="drop-zone__prompt"><i class="fa fa-dropbox fa-5x"></i><br>Adicionar nova foto</span>
+                                        <input name="avatar" type="file" class="drop-zone__input" style=" display: none;">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div id="div_edit" style="display: none; width: 100%;">
-                                            <h5><i class="fa fa-user"></i> Novo Nome:</h5>
-                                            <label>
-                                                <input placeholder="Nome Nome" value="Muaiad Hadad" class="form-control" type="text">
-                                            </label>
-                                            <h5><i class="fa fa-envelope"></i> Novo Email:</h5>
-                                            <label>
-                                                <input placeholder="Novo Email" value="aeadhadad5@gmail.com" class="form-control" type="text">
-                                            </label>
-                                            <h5><i class="fa fa-key"></i> Antigo password:</h5>
-                                            <label>
-                                                <input type="password" class="form-control" placeholder="Antigo password" required="">
-                                            </label>
-                                        </div>
+                                <div class="col-sm-3" id="foto" style="display: block">
+                                    <div class="center_agent_1l clearfix">
+                                        <a href="#"><img src="{{asset('storage/'.$utilizador->Avatar)}}" class="iw" alt="abc"></a>
                                     </div>
-                                    <div id="div_edit_part2" style="display: none; width: 100%;">
-                                    <div class="col-md-6">
-                                        <h5><i class="fa fa-keyboard-o"></i> Novo password:</h5>
-                                        <label>
-                                            <input type="password" class="form-control" placeholder="Novo password" required="">
-                                        </label>
-                                        <h5><i class="fa fa-keyboard-o"></i> Re Novo password:</h5>
-                                        <label>
-                                            <input type="password" class="form-control" placeholder="Re Novo password" required="">
-                                        </label>
-                                        <br>
-                                        <div id="Edit_Sub" class="center_home_1i1 clearfix" style="width: 50%;">
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="center_agent_1r clearfix">
+                                        <div id="div_profile" style="display: block;">
                                             <br>
-                                            <h5 class="mgt text-center">
-                                                <a class="button_1 block mgt" onclick="toggleEdit()"><i class="fa fa-check"></i> Editar perfil</a>
-                                            </h5>
+
+                                            <h4 id="username" class="mgt">{{ $utilizador->UserName }}</h4>
+                                            <h5 id="email"><i class="fa fa-envelope"></i> {{ $utilizador->Email }}</h5>
+                                            <h5 id="password"><i class="fa fa-key"></i> ***********</h5>
+
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <div  class="center_home_1i1 clearfix" style="width: 30%">
+                                                <h5 class="mgt text-center"><a id="Edit" class="button_1 block mgt" onclick="toggleEdit()">
+                                                        <i class="fa fa-pencil" ></i> Editar perfil</a></h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div id="div_edit" style="display: none; width: 100%;">
+
+                                                    <h5><i class="fa fa-user"></i> Novo Nome:</h5>
+                                                    <label>
+                                                        <input value="{{ $utilizador->UserName }}" class="form-control" name="username" type="text">
+                                                    </label>
+                                                    <h5><i class="fa fa-envelope"></i> Novo Email:</h5>
+                                                    <label>
+                                                        <input value="{{ $utilizador->Email }}" class="form-control" name="Email" type="text">
+                                                    </label>
+                                                    <h5><i class="fa fa-key"></i> Antigo password:</h5>
+                                                    <label>
+                                                        <input name="passwordold" type="password" class="form-control" placeholder="Antigo password">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div id="div_edit_part2" style="display: none; width: 100%;">
+                                                <div class="col-md-6">
+                                                    <h5><i class="fa fa-keyboard-o"></i> Novo password:</h5>
+                                                    <label>
+                                                        <input name="passwordnovo" type="password" class="form-control" placeholder="Novo password" >
+                                                    </label>
+                                                    <h5><i class="fa fa-keyboard-o"></i> Re Novo password:</h5>
+                                                    <label>
+                                                        <input type="password" class="form-control" placeholder="Re Novo password">
+                                                    </label>
+                                                    <br>
+                                                    <div id="Edit_Sub" class="center_home_1i1 clearfix" style="width: 50%;">
+                                                        <br>
+                                                        <h5 class="mgt text-center">
+                                                            <button type="submit" class="button_1 block mgt"><i class="fa fa-check"></i> Editar perfil</button>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                </div>
-                            </div>
-                            </div>
 
-                        </div>
+                            </div>
+                        </form>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -991,7 +1003,34 @@ Politécnico de Coimbra
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
     <script>
+        const  toast_valid = document.querySelector(".toast");
+        const closeIcon_valid = document.querySelector(".close");
+        const progress_valid = document.querySelector(".progress");
 
+        let timer1_valid, timer2_valid;
+        document.addEventListener("DOMContentLoaded", function() {
+            toast_valid.classList.add("active");
+            progress_valid.classList.add("active");
+
+            timer1_valid = setTimeout(() => {
+                toast_valid.classList.remove("active");
+            }, 5000); //1s = 1000 milliseconds
+
+            timer2_valid = setTimeout(() => {
+                progress_valid.classList.remove("active");
+            }, 5300);
+
+            closeIcon_valid.addEventListener("click", () => {
+                toast_valid.classList.remove("active");
+
+                setTimeout(() => {
+                    progress_valid.classList.remove("active");
+                }, 300);
+
+                clearTimeout(timer1_valid);
+                clearTimeout(timer2_valid);
+            });
+        });
     </script>
 
 </footer>

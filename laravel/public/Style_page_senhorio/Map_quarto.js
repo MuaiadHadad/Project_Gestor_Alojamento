@@ -60,7 +60,9 @@ function calcularDistanciaQuarto(originQuarto) {
                 for (var j = 0; j < results.length; j++) {
                     var element = results[j];
                     var distance = element.distance.text;
-                    document.getElementById('localPorQuarto').innerHTML = distance+" info"+ originQuarto;
+                    document.getElementById('Distancia').value = element.distance.text;
+                    document.getElementById('letLag').value = originQuarto;
+                    document.getElementById('localPorQuarto').innerHTML = distance;
                 }
             }
         } else {

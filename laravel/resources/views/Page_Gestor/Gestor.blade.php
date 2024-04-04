@@ -519,18 +519,14 @@
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: white !important;" class="title-sm-main">Escola Superior de
-Tecnologia e Gestão
-Politécnico de Coimbra
-                </div>
+                <div style="color: white !important;" class="title-sm-main">Escola Superior de<br>Tecnologia e Gestão<br>Politécnico de Coimbra</div>
             </a>
             <ul class="site-options">
-
                 <li class="dropdown-menu-user-div-container">
                     @foreach($Data as $user)
                         <img src="{{asset('storage/'.$user->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                         <i  class="fa fa-inverse">{{$user->Email}}</i>
                     @endforeach
-                    <i  class="fa fa-inverse">{{session('Email')}}</i>
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
