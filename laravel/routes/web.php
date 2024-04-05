@@ -41,7 +41,12 @@ Route::get('/inicio/detalhe/casa', function () {
             abort(403, 'Acesso não autorizado.');
         }
     });
+Route::post('/Senhorio/{id}/RemoverQuarto', [SenhorioControllers::class, 'RemoverQuarto']);
+Route::post('/Senhorio/{id}/RemoverCasa', [SenhorioControllers::class, 'RemoverCasa']);
+Route::post('/Senhorio/{id}/EstadoQuarto', [SenhorioControllers::class, 'MudarestadoQuarto']);
+Route::post('/Senhorio/{id}/EstadoCasa', [SenhorioControllers::class, 'MudarestadoCasa']);
 Route::post('/Senhorio/Adicionar/AddQuarto', [SenhorioControllers::class, 'AddQuarto']);
+Route::post('/Senhorio/Adicionar/AddCasa', [SenhorioControllers::class, 'AddCasa']);
 Route::get('/Senhorio/Adicionar', [SenhorioControllers::class, 'GetPageAddHome']);
 Route::get('/Senhorio/Profile', [SenhorioControllers::class, 'GetPageProfSenhorio']);
 Route::get('/Senhorio', [SenhorioControllers::class, 'GetPageSenhorio']);

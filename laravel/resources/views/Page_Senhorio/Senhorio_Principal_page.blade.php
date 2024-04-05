@@ -40,13 +40,11 @@
     <meta name="generator" content="WPML ver:4.3.16 stt:1,41;">
     <link rel="shortcut icon" href="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2-1.svg">
     <!-- Css adicional -->
-    <link rel="stylesheet" href="/Style_Page_1/hr_style.css">
     <link rel="stylesheet" href="/Style_Page_Gestor/Tabela.css">
     <link href="/Style_Page_1/bootstrap.min.css" rel="stylesheet">
     <link href="/Style_Page_1/global.css" rel="stylesheet">
     <link href="/Style_Page_1/list.css" rel="stylesheet">
     <link href="/Style_Page_1/element.css" rel="stylesheet">
-    <link href="css/agent.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/Style_Page_1/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
     <script src="/Style_Page_1/jquery-2.1.1.min.js"></script>
@@ -593,6 +591,38 @@
     </section>
 
     <article id="main" class="article-content">
+        <div style="position: absolute; right: 10px; width: 28%">
+            @if(session('error')!=null)
+                <div class="toast">
+                    <div class="toast-content" style="height: 100%">
+                        <i class="fa fa-solid fa-remove error"></i>
+                        <div class="message">
+                            <span class="text text-1">Error</span>
+                            <span class="text text-2">{{session('error')}}</span>
+                        </div>
+                    </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress error active"></div>
+                </div>
+            @endif
+        </div>
+        <div style="position: absolute; right: 30px;">
+            @if(session('success')!=null)
+                <div class="toast" >
+                    <div class="toast-content" style="height: 100%">
+                        <i class="fa fa-solid fa-check check"></i>
+
+                        <div class="message">
+                            <span class="text text-1">Success</span>
+                            <span class="text text-2">{{session('success')}}</span>
+                        </div>
+                    </div>
+                    <i class="fa fa-solid fa-close close"></i>
+                    <div class="progress active"></div>
+                </div>
+            @endif
+        </div>
+        <br>
         <section class="module module--list" id="Lista_apartamento">
             <div class="popular_1 text-center clearfix">
                 <div class="col-sm-12">
@@ -616,72 +646,76 @@
                     <thead>
                     <tr>
                         <th> ID<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Nome<span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Título<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Endereço<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Código-postal<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data de postagem<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Data expirou<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Preço<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Estado<span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Estado(Inativar/Reativar)<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Consultar</th>
-                        <th> Inativar/Reativar</th>
+                        <th> Remover</th>
                     </tr>
                     </thead>
                     <tbody>
+                    @if($Quarto !=null)
+                    @foreach($Quarto as $dadosQuarto)
                     <tr>
-                        <td> 1 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> 3202-815 </td>
-                        <td> 15-02-2024</td>
-                        <td> 15-02-2024 </td>
-                        <td> <strong> $128.90 </strong></td>
+                        <td> {{ $dadosQuarto->idnow }} </td>
+                        <td> {{ $dadosQuarto->Titulo }}</td>
+                        <td> {{ $dadosQuarto->Endereco }} </td>
+                        <td> {{ $dadosQuarto->Codigo_postal }} </td>
+                        <td> {{ $dadosQuarto->data_fim }}</td>
+                        <td> {{ $dadosQuarto->Preço }}€</td>
                         <td>
-                            <p style="left: 10%" class="status delivered">Ativo</p>
+                        <form action="/Senhorio/{{ $dadosQuarto->idnow }}/EstadoQuarto" method="POST">
+                            @csrf
+                            <button type="submit" style="left: 40px; top: 5px" class="status {{ $dadosQuarto->estado == 'Ativo' ? 'delivered' : ($dadosQuarto->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
+                                {{ $dadosQuarto->estado == 'Ativo' ? 'Ativo' : ($dadosQuarto->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
+                            </button>
+                        </form>
                         </td>
                         <td>
                            <a href="#"> <i class="fa fa-eye fa-3x"></i></a>
                         </td>
                         <td>
-                            <i class="fa fa-toggle-off fa-3x"></i>
+                            <form action="/Senhorio/{{ $dadosQuarto->idnow }}/RemoverQuarto" method="POST">
+                                @csrf
+                                <button type="submit" class="fa fa-trash fa-2x" style="top: 2px"></button>
+                            </form>
                         </td>
                     </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> 3202-815 </td>
-                        <td> 15-02-2024</td>
-                        <td> 15-02-2024 </td>
-                        <td> <strong> $128.90 </strong></td>
-                        <td>
-                            <p style="left: 10%" class="status delivered">Ativo</p>
-                        </td>
-                        <td>
-                            <i class="fa fa-eye fa-3x"></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-toggle-off fa-3x"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> 3202-815 </td>
-                        <td> 15-02-2024</td>
-                        <td> 15-02-2024 </td>
-                        <td> <strong> $128.90 </strong></td>
-                        <td>
-                            <p style="left: 10%" class="status delivered">Ativo</p>
-                        </td>
-                        <td>
-                            <i class="fa fa-eye fa-3x"></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-toggle-off fa-3x"></i>
-                        </td>
-                    </tr>
+                    @endforeach
+                    @endif
+                    @if($Casa !=null)
+                        @foreach($Casa as $dadosCasa)
+                            <tr>
+                                <td> {{ $dadosCasa->idnow }} </td>
+                                <td> {{ $dadosCasa->Titulo }}</td>
+                                <td> {{ $dadosCasa->Endereco }} </td>
+                                <td> {{ $dadosCasa->Codigo_postal }} </td>
+                                <td> {{ $dadosCasa->Data_fim }}</td>
+                                <td> {{ $dadosCasa->Preço }}€</td>
+                                <td>
+                                    <form action="/Senhorio/{{ $dadosCasa->idnow }}/EstadoCasa" method="POST">
+                                        @csrf
+                                        <button type="submit" style="left: 40px; top: 5px" class="status {{ $dadosCasa->estado == 'Ativo' ? 'delivered' : ($dadosCasa->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
+                                            {{ $dadosCasa->estado == 'Ativo' ? 'Ativo' : ($dadosCasa->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a href="#"> <i class="fa fa-eye fa-3x"></i></a>
+                                </td>
+                                <td>
+                                    <form action="/Senhorio/{{ $dadosCasa->idnow }}/RemoverCasa" method="POST">
+                                        @csrf
+                                    <button type="submit" class="fa fa-trash fa-2x" style="top: 2px"></button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </section>
@@ -987,7 +1021,34 @@
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
     <script>
+        const  toast_valid = document.querySelector(".toast");
+        const closeIcon_valid = document.querySelector(".close");
+        const progress_valid = document.querySelector(".progress");
 
+        let timer1_valid, timer2_valid;
+        document.addEventListener("DOMContentLoaded", function() {
+            toast_valid.classList.add("active");
+            progress_valid.classList.add("active");
+
+            timer1_valid = setTimeout(() => {
+                toast_valid.classList.remove("active");
+            }, 5000); //1s = 1000 milliseconds
+
+            timer2_valid = setTimeout(() => {
+                progress_valid.classList.remove("active");
+            }, 5300);
+
+            closeIcon_valid.addEventListener("click", () => {
+                toast_valid.classList.remove("active");
+
+                setTimeout(() => {
+                    progress_valid.classList.remove("active");
+                }, 300);
+
+                clearTimeout(timer1_valid);
+                clearTimeout(timer2_valid);
+            });
+        });
     </script>
 
 </footer>

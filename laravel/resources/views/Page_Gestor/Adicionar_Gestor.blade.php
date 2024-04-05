@@ -561,7 +561,7 @@
     </div>
 </header>
 <main id="primary" class="main-section">
-    <section class="module module-page--header site-header--image-bg" style="height: 310px ">
+    <section class="module module-page--header site-header--image-bg" style="height: 330px ">
         <div class="page-title">
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>

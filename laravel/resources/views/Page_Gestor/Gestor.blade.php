@@ -721,12 +721,10 @@
                         <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
                         <th> proprietário <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data de postagem <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Estado(Inativar/Reativar) <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Consultar</th>
-                        <th> Inativar/Reativar</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -740,42 +738,6 @@
                         <td> <strong> $128.90 </strong></td>
                         <td>
                             <p class="status delivered">Ativo</p>
-                        </td>
-                        <td>
-                            <i class="fa fa-eye fa-3x"></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-toggle-off fa-3x"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> Muaiad </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> <strong> $128.90 </strong></td>
-                        <td>
-                            <p class="status cancelled">Ativo</p>
-                        </td>
-                        <td>
-                            <i class="fa fa-eye fa-3x"></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-toggle-on fa-3x"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> Muaiad </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> <strong> $128.90 </strong></td>
-                        <td>
-                            <p class="status cancelled">Ativo</p>
                         </td>
                         <td>
                             <i class="fa fa-eye fa-3x"></i>
@@ -816,10 +778,8 @@
                         <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
                         <th> proprietário <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data de postagem <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Estado <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Consultar</th>
                         <th> Aprovaar</th>
                         <th> Reprovar</th>
@@ -834,9 +794,6 @@
                         <td> 17 Dec, 2022 </td>
                         <td> 17 Dec, 2022 </td>
                         <td> <strong> $128.90 </strong></td>
-                        <td>
-                            <p class="status delivered">Ativo</p>
-                        </td>
                         <td>
                             <i class="fa fa-eye fa-3x"></i>
                         </td>

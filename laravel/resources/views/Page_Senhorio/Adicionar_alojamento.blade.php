@@ -627,7 +627,7 @@
         </div>
 <section id="prop">
     <div class="container">
-        <div class="row">
+        <from class="row">
             <div class="submit_1 mgt clearfix" id="TypeOfRent">
                 <h4 class="mgt col_1">Seleciona o método de alugamento</h4>
                 <hr>
@@ -656,8 +656,8 @@
                     <div class="col-sm-6 space_all">
                         <div class="submit_1i1 clearfix">
                             <h5>Tipo</h5>
-                            <select class="form-control" name="Tipo">
-                                <option>Selecione Tipo</option>
+                            <select class="form-control" name="Tipo" required>
+                                <option value="Apartamento">Selecione Tipo</option>
                                 <option value="Casa">Casa</option>
                                 <option value="Apartamento">Apartamento</option>
                                 <option value="Estúdio">Estúdio</option>
@@ -667,8 +667,8 @@
                     <div class="col-sm-6 space_right">
                         <div class="submit_1i1 clearfix">
                             <h5>Género de residência</h5>
-                            <select class="form-control" name="sexo">
-                                <option>Selecione Sexo</option>
+                            <select class="form-control" name="sexo" required>
+                                <option value="M/F">Selecione Sexo</option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Feminino">Feminino</option>
                                 <option value="M/F">Masculino e Feminino</option>
@@ -679,13 +679,13 @@
                         <div class="col-sm-6 space_left">
                             <div class="submit_1i1 clearfix">
                                 <h5>Preço</h5>
-                                <input name="preco" class="form-control" placeholder="EUR" type="text">
+                                <input name="preco" class="form-control" placeholder="EUR" type="text" required>
                             </div>
                         </div>
                         <div class="col-sm-6 space_right">
                             <div class="submit_1i1 clearfix">
                                 <h5>Area M<sub>2</sub> do quarto</h5>
-                                <input name="area" class="form-control" placeholder="m2" type="text">
+                                <input name="area" class="form-control" placeholder="m2" type="text" required>
                             </div>
                         </div>
                     </div>
@@ -711,7 +711,7 @@
                         <span class="span_1"><i class="fa fa-cloud-upload"></i></span>
                         <h5>Clique aqui ou solte os arquivos para fazer upload</h5>
                     </div>
-                    <input type="file" name="photos[]" id="fileInput" multiple="multiple" style="display: none;">
+                    <input type="file" name="photos[]" id="fileInput" multiple="multiple" style="display: none;" required>
                     <hr>
                     <div  id="fileListPorQuarto"></div>
                 </div>
@@ -722,13 +722,13 @@
                         <div class="col-sm-6 space_left">
                             <div class="submit_1i1 clearfix">
                                 <h5 class="mgt">Endereço</h5>
-                                <input name="Endereco" class="form-control" placeholder="Digite seu endereço" type="text">
+                                <input name="Endereco" class="form-control" placeholder="Digite seu endereço" type="text" required>
                             </div>
                         </div>
                         <div class="col-sm-6 space_right">
                             <div class="submit_1i1 clearfix">
                                 <h5 class="mgt">Nº Andar</h5>
-                                <input name="N_andar" class="form-control" placeholder="Digite seu Nº Andar" type="text">
+                                <input name="N_andar" class="form-control" placeholder="Digite seu Nº Andar" type="text" required>
                             </div>
                         </div>
                     </div>
@@ -737,15 +737,14 @@
                         <div class="col-sm-6 space_left">
                             <div class="submit_1i1 clearfix">
                                 <h5 class="mgt">Código-postal</h5>
-                                <input name="Codigo_postal" class="form-control" placeholder="Digite seu Código-postal" type="text">
+                                <input name="Codigo_postal" class="form-control" placeholder="Digite seu Código-postal" type="text" required>
                             </div>
                         </div>
                     </div>
                     <hr>
                     <div class="submit_1i clearfix">
                         <h5 class="mgt"><i class="fa fa-map-marker"></i> Distância </h5>
-                        <select class="form-control" id="slectorDistnciaPorQuarto">
-                            <option>Selecione método de medir distância</option>
+                        <select class="form-control" id="slectorDistnciaPorQuarto" required>
                             <option value="distancia_por_mapPorQuarto">Google MAP</option>
                             <option value="distancia_manualPorQuarto" >Manualmente</option>
                         </select>
@@ -759,7 +758,7 @@
                             </div>
                         </div>
                     </div>
-                    <div style="display: none" id="distancia_por_mapPorQuarto">
+                    <div style="display: block" id="distancia_por_mapPorQuarto">
                         <hr>
                         <div>
                             <label for="start">Clique no mapa para definir o local:</label>
@@ -832,13 +831,13 @@
                         <div class="col-sm-6 space_left">
                             <div class="submit_1i1 clearfix">
                                 <h5 class="mgt">Nome</h5>
-                                <input name="nome" class="form-control" placeholder="Digite seu nome" type="text">
+                                <input name="nome" class="form-control" placeholder="Digite seu nome" type="text"  required>
                             </div>
                         </div>
                         <div class="col-sm-6 space_right">
                             <div class="submit_1i1 clearfix">
                                 <h5 class="mgt">Email</h5>
-                                <input name="email" class="form-control" placeholder="Digite seu e-mail" type="text">
+                                <input name="email" class="form-control" placeholder="Digite seu e-mail" type="text"  required>
                             </div>
                         </div>
                     </div>
@@ -846,77 +845,81 @@
                         <div class="col-sm-6 space_left">
                             <div class="submit_1i1 clearfix">
                                 <h5>Telefone</h5>
-                                <input name="tel" class="form-control" placeholder="Digite seu telefone" type="text">
+                                <input name="tel" class="form-control" placeholder="Digite seu telefone" type="text"  required>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="submit_3 clearfix">
-                    <button type="submit" class="mgt"><a class="button mgt">Adicionar propriedade</a></button>
+                    <button style="float: right" type="submit" class="mgt"><a class="button mgt">Adicionar propriedade</a></button>
                 </div>
             </form>
             </div>
             <!-------------------------------------Casa------------------------------------------>
-            <div id="Casacompleta" style="display: block">
-            <div class="submit_1 clearfix">
+            <div id="Casacompleta"  style="display: block">
+                <form action="/Senhorio/Adicionar/AddCasa" method="POST" enctype="multipart/form-data">
+                    @csrf
+                <div class="submit_1 clearfix">
                 <h4 class="mgt col_1">Descrição e preço do imóvel</h4>
                 <hr>
-                <h5>Título da propriedade</h5>
-                <input class="form-control" placeholder="Property Title" type="text">
-                <h5>Descrição da Propriedade</h5>
-                <textarea placeholder="Property Description" class="form-control form_o"></textarea>
 
-                    <div class="col-sm-4 space_all">
-                        <div class="submit_1i1 clearfix">
-                            <h5>Tipo</h5>
-                            <select class="form-control">
-                                <option>Selecione Tipo</option>
-                                <option>Casa</option>
-                                <option>Apartamento</option>
-                                <option>Estúdio</option>
-                            </select>
-                        </div>
+                <h5>Título da propriedade</h5>
+                <input name="title" class="form-control" placeholder="Property Title" type="text" required>
+                <h5>Descrição da Propriedade</h5>
+                <textarea name="descricao" placeholder="Property Description" class="form-control form_o"></textarea>
+                <div class="submit_1i clearfix">
+                <div class="col-sm-6 space_all">
+                    <div class="submit_1i1 clearfix">
+                        <h5>Tipo</h5>
+                        <select class="form-control" name="Tipo" required>
+                            <option value="Apartamento">Selecione Tipo</option>
+                            <option value="Casa">Casa</option>
+                            <option value="Apartamento">Apartamento</option>
+                            <option value="Estúdio">Estúdio</option>
+                        </select>
                     </div>
-                    <div class="col-sm-4 space_right">
-                        <div class="submit_1i1 clearfix">
-                            <h5>Género de residência</h5>
-                            <select class="form-control">
-                                <option>Selecione Sexo</option>
-                                <option>Masculino</option>
-                                <option>Feminino</option>
-                                <option>Masculino e Feminino</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="col-sm-6 space_right">
+                    <div class="submit_1i1 clearfix">
+                        <h5>Género de residência</h5>
+                        <select class="form-control" name="sexo" required>
+                            <option value="M/F">Selecione Sexo</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="M/F">Masculino e Feminino</option>
+                        </select>
                     </div>
+                </div>
                 <div style="display: block" id="Selector_quartos">
-                    <div class="col-sm-4 space_right">
+                    <div class="col-sm-6 space_all">
                         <div class="submit_1i1 clearfix">
                             <h5>Quantos quartos</h5>
-                            <select class="form-control" id="N_quartos">
+                            <select class="form-control" id="N_quartos" name="n_quartos"  required>
                                 <option>Selecione Nº Quartos</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
                             </select>
                         </div>
                     </div>
+                </div>
                 </div>
                 <div class="submit_1i clearfix">
                     <div class="col-sm-6 space_left">
                         <div class="submit_1i1 clearfix">
                             <h5>Preço</h5>
-                            <input class="form-control" placeholder="EUR" type="text">
+                            <input name="preco" class="form-control" placeholder="EUR" type="text" required>
                         </div>
                     </div>
                     <div class="col-sm-6 space_right">
                         <div class="submit_1i1 clearfix">
-                            <h5>Area M<sub>2</sub></h5>
-                            <input class="form-control" placeholder="m2" type="text">
+                            <h5>Area M<sub>2</sub> do quarto</h5>
+                            <input name="area" class="form-control" placeholder="m2" type="text" required>
                         </div>
                     </div>
                 </div>
@@ -931,7 +934,7 @@
                 <span class="span_1"><i class="fa fa-cloud-upload"></i></span>
                 <h5>Clique aqui ou solte os arquivos para fazer upload</h5>
             </div>
-            <input type="file" id="fileInputQuarto" multiple style="display: none;">
+            <input name="photos[]" multiple="multiple" type="file" id="fileInputQuarto" multiple style="display: none;">
 
             <hr>
             <div  id="fileList"></div>
@@ -943,13 +946,13 @@
                     <div class="col-sm-6 space_left">
                         <div class="submit_1i1 clearfix">
                             <h5 class="mgt">Endereço</h5>
-                            <input class="form-control" placeholder="Digite seu endereço" type="text">
+                            <input name="Endereco" class="form-control" placeholder="Digite seu endereço" type="text" required>
                         </div>
                     </div>
                     <div class="col-sm-6 space_right">
                         <div class="submit_1i1 clearfix">
                             <h5 class="mgt">Nº Andar</h5>
-                            <input class="form-control" placeholder="Digite seu Nº Andar" type="text">
+                            <input name="N_andar" class="form-control" placeholder="Digite seu Nº Andar" type="text" required>
                         </div>
                     </div>
                 </div>
@@ -958,7 +961,7 @@
                     <div class="col-sm-6 space_left">
                         <div class="submit_1i1 clearfix">
                             <h5 class="mgt">Código-postal</h5>
-                            <input class="form-control" placeholder="Digite seu Código-postal" type="text">
+                            <input name="Codigo_postal" class="form-control" placeholder="Digite seu Código-postal" type="text" required>
                         </div>
                     </div>
                 </div>
@@ -966,7 +969,6 @@
                 <div class="submit_1i clearfix">
                     <h5 class="mgt"><i class="fa fa-map-marker"></i> Distância </h5>
                     <select class="form-control" id="slectorDistncia">
-                        <option>Selecione método de medir distância</option>
                         <option value="distancia_por_map">Google MAP</option>
                         <option value="distancia_manual" >Manualmente</option>
                     </select>
@@ -980,7 +982,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: none" id="distancia_por_map">
+                <div style="display: block" id="distancia_por_map">
                 <hr>
                 <div>
                     <label for="start">Clique no mapa para definir o local:</label>
@@ -988,92 +990,95 @@
                 </div>
                 <div id="map" style="height: 400px; width: 100%;"></div>
                 <hr>
+                    <input type="hidden" id="Distancia_casa" name="Distancia" value="">
+                    <input type="hidden" id="letLag_casa" name="letLag" value="">
                 <h5 class="mgt"><i class="fa fa-map-marker"></i> Distância é <a id="local"></a></h5>
                 </div>
             </div>
-            <div class="submit_2 clearfix">
-                <h4 class="mgt col_1">Características da Propriedade</h4>
-                <hr>
-                <br>
-                <h4 class="mgt col_1"><i class="fa fa-cutlery" aria-hidden="true"></i> Cozinha</h4>
-                <div class="submit_2i clearfix">
-                    <h5><input type="checkbox"> <span class="span_1">Forno</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Fogão</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1"> Caldeira de água</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Máquina de café</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Placa</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Micro-ondas</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Pratos e talheres</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Utensílios de cozinha</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Frigorífico</span></h5>
+                <div class="submit_2 clearfix">
+                    <h4 class="mgt col_1">Características da Propriedade</h4>
+                    <hr>
+                    <br>
+                    <h4 class="mgt col_1"><i class="fa fa-cutlery" aria-hidden="true"></i> Cozinha</h4>
+                    <div class="submit_2i clearfix">
+                        <h5><input name="Forno" type="checkbox"> <span class="span_1">Forno</span></h5>
+                        <h5><input name="Fogao" type="checkbox"> <span class="span_1">Fogão</span></h5>
+                        <h5><input name="Caldeira" type="checkbox"> <span class="span_1"> Caldeira de água</span></h5>
+                        <h5><input name="Maq_cafe" type="checkbox"> <span class="span_1">Máquina de café</span></h5>
+                        <h5><input name="Placa" type="checkbox"> <span class="span_1">Placa</span></h5>
+                        <h5><input name="Micro-ondas" type="checkbox"> <span class="span_1">Micro-ondas</span></h5>
+                        <h5><input name="Pratos" type="checkbox"> <span class="span_1">Pratos e talheres</span></h5>
+                        <h5><input name="Utensilios" type="checkbox"> <span class="span_1">Utensílios de cozinha</span></h5>
+                        <h5><input name="Frigorifico" type="checkbox"> <span class="span_1">Frigorífico</span></h5>
+                    </div>
+                    <hr>
+                    <br>
+                    <h4 class="mgt col_1"><i class="fa fa-television" aria-hidden="true"></i> Sala</h4>
+                    <div class="submit_2i clearfix">
+                        <h5><input name="estar_partilhada" type="checkbox"> <span class="span_1">Área de estar partilhada</span></h5>
+                        <h5><input name="Sofas" type="checkbox"> <span class="span_1">Sofás</span></h5>
+                        <h5><input name="Televisao" type="checkbox"> <span class="span_1"> Televisão</span></h5>
+                        <h5><input name="Mesa_jantar" type="checkbox"> <span class="span_1">Mesa de jantar com cadeiras</span></h5>
+                    </div>
+                    <hr>
+                    <br>
+                    <h4 class="mgt col_1"><i class="fa fa-bath" aria-hidden="true"></i> Casa de banho</h4>
+                    <div class="submit_2i clearfix">
+                        <h5><input name="Chuveiro" type="checkbox"> <span class="span_1">Chuveiro</span></h5>
+                        <h5><input name="Toalhas" type="checkbox"> <span class="span_1">Toalhas</span></h5>
+                    </div>
+                    <hr>
+                    <br>
+                    <h4 class="mgt col_1"><i class="fa fa-th" aria-hidden="true"></i> Outros</h4>
+                    <div class="submit_2i clearfix">
+                        <h5><input name="Maquina_lavar_roupa" type="checkbox"> <span class="span_1">Máquina de lavar roupa</span></h5>
+                        <h5><input name="Maquina_sacar_roupa" type="checkbox"> <span class="span_1">Máquina de sacar roupa </span></h5>
+                        <h5><input name="Aquecimento_central" type="checkbox"> <span class="span_1"> Aquecimento central </span></h5>
+                        <h5><input name="passar_Ferro" type="checkbox"> <span class="span_1">máquina passar Ferro </span></h5>
+                        <h5><input name="Aquecedor_eletrico" type="checkbox"> <span class="span_1">Aquecedor elétrico </span></h5>
+                    </div>
+                    <hr>
+                    <br>
+                    <h4 class="mgt col_1"><i class="fa fa-wrench" aria-hidden="true"></i> Serviços</h4>
+                    <div class="submit_2i clearfix">
+                        <h5><input name="Wi-Fi" type="checkbox"> <span class="span_1">Wi-Fi </span></h5>
+                        <h5><input name="Elevador" type="checkbox"> <span class="span_1">Elevador </span></h5>
+                        <h5><input name="Despesas" type="checkbox"> <span class="span_1"> Despesas incluídas </span></h5>
+                        <h5><input name="Recibo" type="checkbox"> <span class="span_1">Recibo </span></h5>
+                        <h5><input name="limpeza" type="checkbox"> <span class="span_1">limpeza </span></h5>
+                    </div>
                 </div>
-                <hr>
-                <br>
-                <h4 class="mgt col_1"><i class="fa fa-television" aria-hidden="true"></i> Sala</h4>
-                <div class="submit_2i clearfix">
-                    <h5><input type="checkbox"> <span class="span_1">Área de estar partilhada</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Sofás</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1"> Televisão</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Mesa de jantar com cadeiras</span></h5>
-                </div>
-                <hr>
-                <br>
-                <h4 class="mgt col_1"><i class="fa fa-bath" aria-hidden="true"></i> Casa de banho</h4>
-                <div class="submit_2i clearfix">
-                    <h5><input type="checkbox"> <span class="span_1">Chuveiro</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Toalhas</span></h5>
-                </div>
-                <hr>
-                <br>
-                <h4 class="mgt col_1"><i class="fa fa-th" aria-hidden="true"></i> Outros</h4>
-                <div class="submit_2i clearfix">
-                    <h5><input type="checkbox"> <span class="span_1">Máquina de lavar roupa</span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Máquina de sacar roupa </span></h5>
-                    <h5><input type="checkbox"> <span class="span_1"> Aquecimento central </span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">máquina passar Ferro </span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Aquecedor elétrico </span></h5>
-                </div>
-                <hr>
-                <br>
-                <h4 class="mgt col_1"><i class="fa fa-wrench" aria-hidden="true"></i> Serviços</h4>
-                <div class="submit_2i clearfix">
-                    <h5><input type="checkbox"> <span class="span_1">Wi-Fi </span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Elevador </span></h5>
-                    <h5><input type="checkbox"> <span class="span_1"> Despesas incluídas </span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">Recibo </span></h5>
-                    <h5><input type="checkbox"> <span class="span_1">limpeza </span></h5>
-                </div>
-            </div>
                 <div class="submit_1 clearfix">
-                <h4 class="mgt col_1">Informações de contato</h4>
-                <hr>
-                <div class="submit_1i clearfix">
-                    <div class="col-sm-6 space_left">
-                        <div class="submit_1i1 clearfix">
-                            <h5 class="mgt">Nome</h5>
-                            <input class="form-control" placeholder="Digite seu nome" type="text">
+                    <h4 class="mgt col_1">Informações de contato</h4>
+                    <hr>
+                    <div class="submit_1i clearfix">
+                        <div class="col-sm-6 space_left">
+                            <div class="submit_1i1 clearfix">
+                                <h5 class="mgt">Nome</h5>
+                                <input name="nome" class="form-control" placeholder="Digite seu nome" type="text"  required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 space_right">
+                            <div class="submit_1i1 clearfix">
+                                <h5 class="mgt">Email</h5>
+                                <input name="email" class="form-control" placeholder="Digite seu e-mail" type="text"  required>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 space_right">
-                        <div class="submit_1i1 clearfix">
-                            <h5 class="mgt">Email</h5>
-                            <input class="form-control" placeholder="Digite seu e-mail" type="text">
+                    <div class="submit_1i clearfix">
+                        <div class="col-sm-6 space_left">
+                            <div class="submit_1i1 clearfix">
+                                <h5>Telefone</h5>
+                                <input name="tel" class="form-control" placeholder="Digite seu telefone" type="text"  required>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="submit_1i clearfix">
-                    <div class="col-sm-6 space_left">
-                        <div class="submit_1i1 clearfix">
-                            <h5>Telefone</h5>
-                            <input class="form-control" placeholder="Digite seu telefone" type="text">
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="submit_3 clearfix">
-                <h5 class="mgt"><a class="button mgt" href="#">Adicionar propriedade</a></h5>
+                <button style="float: right" type="submit" class="mgt"><a class="button mgt">Adicionar propriedade</a></button>
             </div>
         </div>
+        </from>
     </div>
     </div>
 </section>

@@ -63,7 +63,9 @@ function calcularDistancia(origin) {
                 for (var j = 0; j < results.length; j++) {
                     var element = results[j];
                     var distance = element.distance.text;
-                    document.getElementById('local').innerHTML = distance+" info"+ origin;
+                    document.getElementById('Distancia_casa').value = element.distance.text;
+                    document.getElementById('letLag_casa').value = origin;
+                    document.getElementById('local').innerHTML = distance;
                 }
             }
         } else {

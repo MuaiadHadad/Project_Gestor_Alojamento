@@ -21,20 +21,21 @@ document.getElementById('N_quartos').addEventListener('change', function() {
                 <div class="col-sm-6 space_right">
                     <div class="submit_1i1 clearfix">
                         <h5>Area M<sub>2</sub></h5>
-                        <input class="form-control" placeholder="m2" type="text">
+                        <input name="area_` + i + `" class="form-control" placeholder="m2" type="text">
                     </div>
                 </div>
             </div>
             <div class="submit_2i clearfix">
-                <h5><input type="checkbox"> <span class="span_1">roupa de cama</span></h5>
-                <h5><input type="checkbox"> <span class="span_1">cama</span></h5>
-                <h5><input type="checkbox"> <span class="span_1">mesa cabeceira</span></h5>
-                <h5><input type="checkbox"> <span class="span_1">Candeeiro de mesa do estudo</span></h5>
-                <h5><input type="checkbox"> <span class="span_1">Mesa do estudo</span></h5>
-                <h5><input type="checkbox"> <span class="span_1">Janelas</span></h5>
-                <h5><input type="checkbox"> <span class="span_1">Varanda</span></h5>
-                <h5><input type="checkbox"> <span class="span_1">Armário</span></h5>
-                <h5><input type="checkbox"> <span class="span_1">Casa de banho privativa</span></h5>
+                <h5><input name="roupa_de_cama_` + i + `" type="checkbox"> <span class="span_1">roupa de cama</span></h5>
+                <h5><input name="cama_` + i + `" type="checkbox"> <span class="span_1">cama</span></h5>
+                <h5><input name="mesa_cabeceira_` + i + `" type="checkbox"> <span class="span_1">mesa cabeceira</span></h5>
+                <h5><input name="Candeeiro_de_mesa_do_estudo_` + i + `" type="checkbox"> <span class="span_1">Candeeiro de mesa do estudo</span></h5>
+                <h5><input name="Mesa_do_estudo_` + i + `" type="checkbox"> <span class="span_1">Mesa do estudo</span></h5>
+                <h5><input name="Janelas_` + i + `" type="checkbox"> <span class="span_1">Janelas</span></h5>
+                <h5><input name="Varanda_` + i + `" type="checkbox"> <span class="span_1">Varanda</span></h5>
+                <h5><input name="Armario_` + i + `" type="checkbox"> <span class="span_1">Armário</span></h5>
+                <h5><input name="Casa_de_banho_privativa_` + i + `" type="checkbox"> <span class="span_1">Casa de banho privativa</span></h5>
+            <input name="n_quartos_cont" value="` + selecionado + `" type="hidden">
             </div>
             </div>
         `;
