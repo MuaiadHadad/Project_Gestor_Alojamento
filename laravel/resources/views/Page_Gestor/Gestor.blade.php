@@ -728,24 +728,52 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @if($Casa !=null)
+                        @foreach($Casa as $dadosCasa)
                     <tr>
-                        <td> 1 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> Muaiad </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> <strong> $128.90 </strong></td>
+                        <td>  {{ $dadosCasa->idnow }} </td>
+                        <td>  {{ $dadosCasa->Titulo }}</td>
+                        <td> {{ $dadosCasa->Endereco }}</td>
+                        <td> {{ $dadosCasa->UserName }} </td>
+                        <td> {{ $dadosCasa->Data_fim }} </td>
+                        <td> <strong>  {{ $dadosCasa->Preço }}€ </strong></td>
                         <td>
-                            <p class="status delivered">Ativo</p>
+                            <form action="/Gestor/{{ $dadosCasa->idnow }}/EstadoCasa" method="POST">
+                                @csrf
+                                <button type="submit" style="left: 40px; top: 5px" class="status {{ $dadosCasa->estado == 'Ativo' ? 'delivered' : ($dadosCasa->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
+                                    {{ $dadosCasa->estado == 'Ativo' ? 'Ativo' : ($dadosCasa->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
+                                </button>
+                            </form>
                         </td>
                         <td>
                             <i class="fa fa-eye fa-3x"></i>
                         </td>
-                        <td>
-                            <i class="fa fa-toggle-off fa-3x"></i>
-                        </td>
                     </tr>
+                        @endforeach
+                    @endif
+                    @if($Quartos !=null)
+                        @foreach($Quartos as $dadosQuartos)
+                            <tr>
+                                <td>  {{ $dadosQuartos->idnow }} </td>
+                                <td>  {{ $dadosQuartos->Titulo }}</td>
+                                <td> {{ $dadosQuartos->Endereco }}</td>
+                                <td> {{ $dadosQuartos->UserName }} </td>
+                                <td> {{ $dadosQuartos->data_fim }} </td>
+                                <td> <strong>  {{ $dadosQuartos->Preço }}€ </strong></td>
+                                <td>
+                                    <form action="/Gestor/{{ $dadosQuartos->idnow }}/EstadoQuarto" method="POST">
+                                        @csrf
+                                        <button type="submit" style="left: 40px; top: 5px" class="status {{ $dadosQuartos->estado == 'Ativo' ? 'delivered' : ($dadosQuartos->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
+                                            {{ $dadosQuartos->estado == 'Ativo' ? 'Ativo' : ($dadosQuartos->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <i class="fa fa-eye fa-3x"></i>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </section>
@@ -786,14 +814,15 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @if($DataQuartoPending !=null)
+                        @foreach($DataQuartoPending as $dadosCasa)
                     <tr>
-                        <td> 1 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> Muaiad </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> <strong> $128.90 </strong></td>
+                        <td> {{ $dadosCasa->idnow }} </td>
+                        <td> {{ $dadosCasa->Titulo }}</td>
+                        <td>{{ $dadosCasa->Endereco }} </td>
+                        <td> {{ $dadosCasa->UserName }} </td>
+                        <td> {{ $dadosCasa->data_fim }} </td>
+                        <td> <strong> {{ $dadosCasa->Preço }}€ </strong></td>
                         <td>
                             <i class="fa fa-eye fa-3x"></i>
                         </td>
@@ -804,48 +833,29 @@
                             <i class="fa fa-times fa-3x"></i>
                         </td>
                     </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> Muaiad </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> <strong> $128.90 </strong></td>
-                        <td>
-                            <p class="status cancelled">Ativo</p>
-                        </td>
-                        <td>
-                            <i class="fa fa-eye fa-3x"></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-check-square-o fa-3x"></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-times fa-3x"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td> Zinzu Chan Lee</td>
-                        <td> Seoul n43 </td>
-                        <td> Muaiad </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> 17 Dec, 2022 </td>
-                        <td> <strong> $1000 </strong></td>
-                        <td>
-                            <p class="status cancelled">Ativo</p>
-                        </td>
-                        <td>
-                            <i class="fa fa-eye fa-3x"></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-check-square-o fa-3x"></i>
-                        </td>
-                        <td>
-                            <i class="fa fa-times fa-3x"></i>
-                        </td>
-                    </tr>
+                        @endforeach
+                    @endif
+                    @if($DataCasaPending !=null)
+                        @foreach($DataCasaPending as $dadosCasa)
+                            <tr>
+                                <td> {{ $dadosCasa->idnow }} </td>
+                                <td> {{ $dadosCasa->Titulo }}</td>
+                                <td>{{ $dadosCasa->Endereco }} </td>
+                                <td> {{ $dadosCasa->UserName }} </td>
+                                <td> {{ $dadosCasa->Data_fim }} </td>
+                                <td> <strong> {{ $dadosCasa->Preço }}€ </strong></td>
+                                <td>
+                                    <i class="fa fa-eye fa-3x"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-check-square-o fa-3x"></i>
+                                </td>
+                                <td>
+                                    <i class="fa fa-times fa-3x"></i>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </section>

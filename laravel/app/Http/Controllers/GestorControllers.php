@@ -12,7 +12,58 @@ class GestorControllers extends Controller{
             $token=session('ActivationToken');
             $user = DB::table('user')->where('ActivationToken', $token)->get();
             $utilizadores = DB::table('user')->get();
-            return view('Page_Gestor\Gestor', ['utilizadores' => $utilizadores, 'Data'=>$user]);
+            $QuartosPending =DB::table('quarto')
+                ->join('banho', 'banho.id_quarto', '=', 'quarto.id')
+                ->join('contato', 'contato.id_quarto', '=', 'quarto.id')
+                ->join('cozinha', 'cozinha.id_quarto', '=', 'quarto.id')
+                ->join('endreco', 'endreco.id_quarto', '=', 'quarto.id')
+                ->join('quartos_de_casa', 'quartos_de_casa.id_quarto', '=', 'quarto.id')
+                ->join('sala', 'sala.id_quarto', '=', 'quarto.id')
+                ->join('servicos', 'servicos.id_quarto', '=', 'quarto.id')
+                ->join('outros', 'outros.id_quarto', '=', 'quarto.id')
+                ->join('user', 'user.id', '=', 'quarto.id_user')
+                ->where('quarto.estado', 'pending')
+                ->select('user.*','quarto.id as idnow','quarto.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'quartos_de_casa.*'
+                    , 'sala.*', 'servicos.*', 'outros.*')->get();
+            $CasaPending =DB::table('casa_completa')
+                ->join('banho', 'banho.id_casa', '=', 'casa_completa.id')
+                ->join('contato', 'contato.id_casa', '=', 'casa_completa.id')
+                ->join('cozinha', 'cozinha.id_casa', '=', 'casa_completa.id')
+                ->join('endreco', 'endreco.id_casa', '=', 'casa_completa.id')
+                ->join('sala', 'sala.id_casa', '=', 'casa_completa.id')
+                ->join('servicos', 'servicos.id_casa', '=', 'casa_completa.id')
+                ->join('outros', 'outros.id_casa', '=', 'casa_completa.id')
+                ->join('user', 'user.id', '=', 'casa_completa.id_user')
+                ->where('casa_completa.estado','pending')
+                ->select('user.*','casa_completa.id as idnow','casa_completa.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'sala.*', 'servicos.*', 'outros.*')->get();
+            $Quartos =DB::table('quarto')
+                ->join('banho', 'banho.id_quarto', '=', 'quarto.id')
+                ->join('contato', 'contato.id_quarto', '=', 'quarto.id')
+                ->join('cozinha', 'cozinha.id_quarto', '=', 'quarto.id')
+                ->join('endreco', 'endreco.id_quarto', '=', 'quarto.id')
+                ->join('quartos_de_casa', 'quartos_de_casa.id_quarto', '=', 'quarto.id')
+                ->join('sala', 'sala.id_quarto', '=', 'quarto.id')
+                ->join('servicos', 'servicos.id_quarto', '=', 'quarto.id')
+                ->join('outros', 'outros.id_quarto', '=', 'quarto.id')
+                ->join('user', 'user.id', '=', 'quarto.id_user')
+                ->select('user.*','quarto.id as idnow','quarto.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'quartos_de_casa.*'
+                    , 'sala.*', 'servicos.*', 'outros.*')->get();
+            $Casa =DB::table('casa_completa')
+                ->join('banho', 'banho.id_casa', '=', 'casa_completa.id')
+                ->join('contato', 'contato.id_casa', '=', 'casa_completa.id')
+                ->join('cozinha', 'cozinha.id_casa', '=', 'casa_completa.id')
+                ->join('endreco', 'endreco.id_casa', '=', 'casa_completa.id')
+                ->join('sala', 'sala.id_casa', '=', 'casa_completa.id')
+                ->join('servicos', 'servicos.id_casa', '=', 'casa_completa.id')
+                ->join('outros', 'outros.id_casa', '=', 'casa_completa.id')
+                ->join('user', 'user.id', '=', 'casa_completa.id_user')
+                ->select('user.*','casa_completa.id as idnow','casa_completa.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'sala.*', 'servicos.*', 'outros.*')->get();
+            return view('Page_Gestor\Gestor', ['utilizadores' => $utilizadores, 'Data'=>$user,'DataCasaPending'=>$CasaPending,
+                'DataQuartoPending'=>$QuartosPending,'Quartos'=>$Quartos,'Casa'=>$Casa]);
         }else{
             abort(403, 'Acesso não autorizado.');
         }
@@ -128,5 +179,35 @@ class GestorControllers extends Controller{
             ]);
             return redirect()->back()->with('success', 'Perfil do usuário atualizado com sucesso!');
 
+    }
+    public function MudarestadoQuarto($id){
+        $quarto = DB::table('quarto')->where('id', $id)->first();
+
+        if (!$quarto) {
+            return redirect()->back()->with('error',  'Quarto não encontrado');
+        }
+        if($quarto->estado=='pending'){
+            return redirect()->back()->with('error',  'Ainda não pode mudar o estado deste Propriedade');
+        }
+        $novoEstado = $quarto->estado == 'Ativo' ? 'Desativo' : ($quarto->estado == 'Desativo' ? 'Ativo' : 'Ativo');
+
+        DB::table('quarto')->where('id', $id)->update(['estado' => $novoEstado]);
+
+        return redirect()->back()->with('success', 'Estado do Quarto alterado com sucesso!');
+    }
+    public function MudarestadoCasa($id){
+        $Casa = DB::table('casa_completa')->where('id', $id)->first();
+
+        if (!$Casa) {
+            return redirect()->back()->with('error',  'Quarto não encontrado');
+        }
+        if($Casa->estado=='pending'){
+            return redirect()->back()->with('error',  'Ainda não pode mudar o estado deste Propriedade');
+        }
+        $novoEstado = $Casa->estado == 'Ativo' ? 'Desativo' : ($Casa->estado == 'Desativo' ? 'Ativo' : 'Ativo');
+
+        DB::table('casa_completa')->where('id', $id)->update(['estado' => $novoEstado]);
+
+        return redirect()->back()->with('success', 'Estado do Casa alterado com sucesso!');
     }
 }

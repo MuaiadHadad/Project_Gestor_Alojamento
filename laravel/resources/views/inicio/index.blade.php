@@ -47,11 +47,6 @@
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
     <script src="/Style_Page_1/jquery-2.1.1.min.js"></script>
     <script src="/Style_Page_1/bootstrap.min.js"></script>
-    <link href="/Style_Page_1/detail.css" rel="stylesheet">
-    <link href="/Style_Page_1/Icons.css" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmzQm0wv8bboIXCkTqBzveXvra3oJJet0"></script>
-    <script src="/Style_Page_1/map_quarto.js"></script>
-
     <!-- /Css adicional -->
     <style type="text/css" id="wp-custom-css">
         @media (max-width: 767px)
@@ -75,7 +70,7 @@
     <meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
     <style></style>
 </head>
-<body class="" onload="initMap()">
+<body class="">
 <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-edgeless cc-bottom cc-right cc-color-override-1074119104 cc-invisible" style="display: none;">
     <!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Este website utiliza cookies próprios e de terceiros para melhorar sua experiência de navegação. Ao continuar a navegação, assumimos sua aprovação. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="" rel="noopener noreferrer nofollow" target="_blank">Saber mais</a></span>
     <div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">✕</a></div>
@@ -488,6 +483,47 @@
     <div class="sub-footer">
         <div class="container">
             <div class="logo-container">
+                <!--
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.cisco.com/c/pt_pt/training-events.html">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cisco.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.lpi.org/">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/lpi.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="http://www.oet.pt/">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/oet.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.occ.pt/pt/">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/occ.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="http://www.cnc.min-financas.pt/">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cnc.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.cmvm.pt/pt/Pages/home.aspx">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/cmvm.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.act.gov.pt/(pt-PT)/Paginas/default.aspx">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/ACT.jpg">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.b-on.pt/">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/bon.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/eduroam.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://ecoescolas.abae.pt/escola/escola-superior-de-tecnologia-e-gestao-de-oliveira-do-hospital-do-politecnico-de-coimbra/">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/ecoescolas.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="https://www.geoparkestrela.pt/">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2021/01/Logotipo-geopark.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2021/04/logos_CTESP.png">
+                   </a>
+                   <a target="_blank" style="display: inline-block; width: fit-content;" class="footer-logo-link" href="#">
+                   <img style="height: 16px;" class="logos-2020" src="https://www.estgoh.ipc.pt/wp-content/uploads/2023/03/logos_PRR-2.png">
+                   </a>
+                   -->
             </div>
             <div class="links">
                 <a href="https://www.estgoh.ipc.pt/sugestoes/">Sugestões, elogios e reclamações</a>
@@ -521,7 +557,18 @@
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
                 <div style="color: white !important;" class="title-sm-main">Escola Superior de <br>Tecnologia e Gestão<br>Politécnico de Coimbra</div>
             </a>
-
+            @if($DadosUser!=null)
+            <ul class="site-options">
+                <li class="dropdown-menu-user-div-container">
+                    @foreach($DadosUser as $user)
+                        <img src="{{asset('storage/'.$user->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                        <i  class="fa fa-inverse">{{$user->Email}}</i>
+                    @endforeach
+                    <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
+                </li>
+                <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
+            </ul>
+            @else
             <ul class="site-options">
                 <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
                 <li class="dropdown-menu-user-div-container">
@@ -530,12 +577,39 @@
                 </li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
             </ul>
+            @endif
         </div>
         <div class="dropdown-menu-user-div">
+            @if($DadosUser!=null)
+                @foreach($DadosUser as $user)
+                @if($user->Tipo=='senhorio')
+                    <ul>
+                        <li><a href="/Senhorio/Profile"><i class="fa fa-indent"></i> Profile</a></li>
+                        <li><a href="/Senhorio"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                        <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    </ul>
+                @endif
+                    @if($user->Tipo=='gestor')
+                        <ul>
+                            <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
+                            <li><a href="/gestor"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    @endif
+                    @if($user->Tipo=='Aluno')
+                        <ul>
+                            <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
+                            <li><a href="/gestor"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    @endif
+                @endforeach
+            @else
             <ul>
                 <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
                 <li><a href="/register"><i class="fa fa-user-plus"></i> Registar</a></li>
             </ul>
+            @endif
         </div>
         <section class="module module-search module-layer-search">
             <div class="container">
@@ -559,7 +633,7 @@
 
 </header>
 <main id="primary" class="main-section">
-    <section class="module module-page--header site-header--image-bg " style="height: 280px ">
+    <section class="module module-page--header site-header--image-bg " style="height: 310px ">
         <div class="page-title">
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
@@ -578,263 +652,150 @@
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">detalhe</span></div>
+            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Início</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
             <!--<div class="image" style="background-image: url(https://www.estgoh.ipc.pt/wp-content/uploads/2020/11/ESTGOH_26-scaled-aspect-ratio-720-480-720x480.jpg)"></div>-->
         </div>
     </section>
-    <article id="main" class="article-content">
-        <section id="center" class="clearfix center_detail">
-            <div class="center clearfix">
-                <div id="carousel" class="carousel slide carousel-fade">
-                    <!-- Carousel items -->
-                    <div class="carousel-inner">
-                        <div data-slide-no="0" class="item carousel-item active">
-                            <img src="/Style_Page_1/img/21.jpg" alt="">
+    <section id="center" class="center_list clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="center_home_1 clearfix">
+                    <div class="center_home_1i clearfix">
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <input placeholder="Preço" class="form-control" type="text">
+                            </div>
                         </div>
-                        <div data-slide-no="1" class="item carousel-item">
-                            <img src="/Style_Page_1/img/22.jpg" alt="">
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <input placeholder="Distância por Metros" class="form-control" type="text">
+                            </div>
                         </div>
-                        <div data-slide-no="2" class="item carousel-item">
-                            <img src="/Style_Page_1/img/23.jpg" alt="">
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <select class="form-control" name="property">
+                                    <option value="">Tipo de Propriedade</option>
+                                    <option value="family-house">Casa</option>
+                                    <option value="apartment">Apartamento</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <!-- Carousel nav -->
-                    <a class="left carousel-control kb_control_left" href="#carousel" role="button" data-slide="prev">
-                        <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <!-- Right-Button -->
-                    <a class="right carousel-control kb_control_right" href="#carousel" role="button" data-slide="next">
-                        <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="list_detail" style="background: rgba(0,0,0,0.02)">
-            <div class="container clearfix">
-                <div class="row">
-                    <div class="list_detail_1 clearfix" >
-                        <div class="col-sm-16">
-                            <div class="list_detail_1l clearfix" >
-                                <div class="list_detail_1l1 clearfix" >
-                                    <h3 class="mgt">2299€ / <span class="span_1">Por mês</span> <span class="span_2">Aluguel</span></h3>
-                                    <p><i class="fa fa-map-marker"></i> 538 Country St. Lorem City, GM 3220-201</p>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <h4 class="mgt">Informações da propriedade</h4>
-                                    <hr>
-                                    <div class="list_detail_1l2i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt">Distância</h5>
-                                            <h6 class="col_1">3</h6>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt">Sexo</h5>
-                                            <h6 class="col_1">1</h6>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt">Área total</h5>
-                                            <h6 class="col_1">Yes</h6>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt">Número de Quartos</h5>
-                                            <h6 class="col_1">Yes</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <div class="list_detail_1l2 clearfix">
-                                        <h4 class="mgt">Informações da propriedade</h4>
-                                        <hr>
-                                        <div class="list_detail_1l2i clearfix">
-                                            <div class="col-sm-3 space_left">
-                                                <h5 class="mgt">Área total do quarto</h5>
-                                                <h6 class="col_1">3</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon roupa-cama col_1"><i class="icon no"></i></i> roupa de cama </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon cama col_1"></i> cama</h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon mesa-cama col_1"><i class="icon no"></i></i> mesa cabeceira </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon lambada col_1"></i> Candeeiro</h5>
-                                        </div>
-                                    </div>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon mesa-estudo col_1"></i> Mesa do estudo </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Janelas col_1"></i> Janelas</h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Varanda col_1"></i> Varanda </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Cabinet col_1"></i> Armário  </h5>
-                                        </div>
-                                    </div>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon banho col_1"></i> Casa de banho privativa </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <h4 class="mgt">Descrição</h4>
-                                    <hr>
-                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitursodales ligula in libero.Sed dignissim lacinia nunc.</p>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <h4 class="mgt">Cozinha</h4>
-                                    <hr>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Forno col_1"></i> Forno </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Fogao col_1"></i> Fogão</h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Caldeira col_1"></i> Caldeira de água </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon cafe col_1"></i>Máquina de café</h5>
-                                        </div>
-                                    </div>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Placa col_1"></i> Placa </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Micro-ondas col_1"></i> Micro-ondas</h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Pratos col_1"></i> Pratos e talheres </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Utensilios col_1"></i> Utensílios de cozinha  </h5>
-                                        </div>
-                                    </div>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon mesa-estudo col_1"></i> Frigorífico </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <h4 class="mgt">Sala</h4>
-                                    <hr>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon estar col_1"></i> Área de estar partilhada </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Sofas col_1"></i> Sofás</h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Televisao col_1"></i> Televisão </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon jantar col_1"></i> Mesa de jantar com cadeiras  </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <h4 class="mgt">Casa de banho</h4>
-                                    <hr>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Chuveiro col_1"></i> Chuveiro </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Toalhas col_1"></i> Toalhas</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <h4 class="mgt">Outros</h4>
-                                    <hr>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon lavar col_1"></i> Máquina de lavar roupa </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon sacar col_1"></i> Máquina de sacar roupa</h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon central col_1"></i> Aquecimento central </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon passar col_1"></i> máquina passar Ferro</h5>
-                                        </div>
-                                    </div>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Aquecedor col_1"></i> Aquecedor elétrico </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <h4 class="mgt">Serviços</h4>
-                                    <hr>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Wi-Fi col_1"><i class="icon no"></i></i> Wi-Fi </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Elevador col_1"></i> Elevador</h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Despesas col_1"></i> Despesas incluídas </h5>
-                                        </div>
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Recibo col_1"></i> Recibo</h5>
-                                        </div>
-                                    </div>
-                                    <div class="home_inner_i clearfix">
-                                        <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon limpeza col_1"></i> limpeza </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <h4 class="mgt">Local</h4>
-                                    <hr>
-                                    <div id="map" style="height: 400px; width: 100%;"></div>
-                                </div>
-                                <div class="list_detail_1l2 clearfix">
-                                    <h4 class="mgt">Informação de contacto</h4>
-                                    <hr>
-                                    <div class="list_detail_1r clearfix">
-                                        <div class="list_detail_1r1 clearfix">
-                                            <img src="/Style_Page_1/img/13.jpg" class="img-circle" alt="abc">
-                                            <h4 class="mgt"><a href="#">Mauris Massa</a></h4>
-                                            <h5>
-                                                <i class="fa fa-phone col_1"></i> (91) 123 456 7890 /
-                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>aeadhadad@gmai.com
-                                            </h5>
-                                            <h5 class="mgt"><a class="button mgt" href="#">Conectar</a></h5>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="center_home_1i clearfix">
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <select class="form-control" name="beds" id="beds">
+                                    <option value="">Quartos</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <select class="form-control" name="beds" id="beds">
+                                    <option value="">Género</option>
+                                    <option value="1">Masculino</option>
+                                    <option value="2">Feminino</option>
+                                    <option value="3">feminino e masculino</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="center_home_1i1 clearfix">
+                                <h5 class="mgt text-center"><a class="button_1 block mgt" href="detail.html"><i class="fa fa-filter"></i> Filtrar</a></h5>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <article id="main" class="article-content">
+
+        <section id="popular">
+            <div class="container">
+                <div class="row">
+                    <div class="popular_1 text-center clearfix">
+                        <div class="col-sm-12">
+                            <h1 class="mgt"> Lista de Propriedades</h1>
+                            <p>Encontre quarto com melhor classificação para você.</p>
+                        </div>
+                    </div>
+
+                    <div class="popular_2 clearfix">
+
+                        @if($DataQuartoAtive !=null)
+                            @foreach($DataQuartoAtive as $QuartoAtive)
+                                <div class="col-sm-3">
+                                    <div class="popular_2i clearfix">
+                                        <div class="popular_2i1 clearfix">
+                                            <a href="detail.html"><img src="{{asset('storage/'.$QuartoAtive->Path)}}" class="iw" alt="abc"></a>	   </div>
+                                        <div class="popular_2i2 clearfix">
+                                            <h5 class="mgt"><a href="detail.html">{{ $QuartoAtive->Tipo }}</a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="popular_2i3 clearfix">
+                                        <h5 class="mgt"><a href="detail.html">{{ $QuartoAtive->Titulo }} <i class="fa fa-check-square col_1"></i></a></h5>
+                                        <h4 class="col_1">{{ $QuartoAtive->Preço }}€ / <span class="col_2">Month</span></h4>
+                                        <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
+                                            @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
+                                        <h5 class="inline"><a class="button_1" href="/inicio/{{$QuartoAtive->idnow}}/quarto"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                                        <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                            @if($DataCasaAtive !=null)
+                                @foreach($DataCasaAtive as $QuartoAtive)
+                                    <div class="col-sm-3">
+                                        <div class="popular_2i clearfix">
+                                            <div class="popular_2i1 clearfix">
+                                                <a href="detail.html"><img src="{{asset('storage/'.$QuartoAtive->Path)}}" class="iw" alt="abc"></a>	   </div>
+                                            <div class="popular_2i2 clearfix">
+                                                <h5 class="mgt"><a href="detail.html">{{ $QuartoAtive->Tipo }}</a></h5>
+                                            </div>
+                                        </div>
+                                        <div class="popular_2i3 clearfix">
+                                            <h5 class="mgt"><a href="detail.html">{{ $QuartoAtive->Titulo }} <i class="fa fa-check-square col_1"></i></a></h5>
+                                            <h4 class="col_1">{{ $QuartoAtive->Preço }}€ / <span class="col_2">Month</span></h4>
+                                            <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
+                                                @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
+                                            <h5 class="inline"><a class="button_1" href="/inicio/detalhe/quarto"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                                            <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                    </div>
+
+                    <div class="product_1_last text-center clearfix">
+                        <div class="col-sm-12">
+                            <ul>
+                                <li><a href="detail.html"><i class="fa fa-chevron-left"></i>..</a></li>
+                                <li class="act"><a href="detail.html">1</a></li>
+                                <li><a href="detail.html">2</a></li>
+                                <li><a href="detail.html">3</a></li>
+                                <li><a href="detail.html">4</a></li>
+                                <li><a href="detail.html">5</a></li>
+                                <li><a href="detail.html">6</a></li>
+                                <li><a href="#">..<i class="fa fa-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </article>
 </main>

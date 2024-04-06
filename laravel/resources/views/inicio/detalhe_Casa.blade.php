@@ -521,21 +521,59 @@
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
                 <div style="color: white !important;" class="title-sm-main">Escola Superior de <br>Tecnologia e Gestão<br>Politécnico de Coimbra</div>
             </a>
-
-            <ul class="site-options">
-                <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
-                <li class="dropdown-menu-user-div-container">
-                    <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
-                    <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
-                </li>
-                <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
-            </ul>
+            @if($DadosUser!=null)
+                <ul class="site-options">
+                    <li class="dropdown-menu-user-div-container">
+                        @foreach($DadosUser as $user)
+                            <img src="{{asset('storage/'.$user->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                            <i  class="fa fa-inverse">{{$user->Email}}</i>
+                        @endforeach
+                        <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
+                    </li>
+                    <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
+                </ul>
+            @else
+                <ul class="site-options">
+                    <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
+                    <li class="dropdown-menu-user-div-container">
+                        <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
+                        <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
+                    </li>
+                    <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
+                </ul>
+            @endif
         </div>
         <div class="dropdown-menu-user-div">
-            <ul>
-                <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
-                <li><a href="/register"><i class="fa fa-user-plus"></i> Registar</a></li>
-            </ul>
+            @if($DadosUser!=null)
+                @foreach($DadosUser as $user)
+                    @if($user->Tipo=='senhorio')
+                        <ul>
+                            <li><a href="/Senhorio/Profile"><i class="fa fa-indent"></i> Profile</a></li>
+                            <li><a href="/Senhorio"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    @endif
+                    @if($user->Tipo=='gestor')
+                        <ul>
+                            <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
+                            <li><a href="/gestor"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    @endif
+                    @if($user->Tipo=='Aluno')
+                        <ul>
+                            <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
+                            <li><a href="/gestor"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    @endif
+                @endforeach
+            @else
+                <ul>
+                    <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
+                    <li><a href="/register"><i class="fa fa-user-plus"></i> Registar</a></li>
+                </ul>
+            @endif
         </div>
         <section class="module module-search module-layer-search">
             <div class="container">
@@ -638,8 +676,24 @@
                                             <h6 class="col_1">1</h6>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt">Área total do quarto</h5>
+                                            <h5 class="mgt">Área total</h5>
                                             <h6 class="col_1">Yes</h6>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt">Número de Quartos</h5>
+                                            <h6 class="col_1">Yes</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <div class="list_detail_1l2 clearfix">
+                                        <h4 class="mgt">Informações da propriedade</h4>
+                                        <hr>
+                                        <div class="list_detail_1l2i clearfix">
+                                            <div class="col-sm-3 space_left">
+                                                <h5 class="mgt">Área total do quarto</h5>
+                                                <h6 class="col_1">3</h6>
+                                            </div>
                                         </div>
                                     </div>
                                     <hr>
@@ -817,8 +871,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
-            </div>
         </section>
     </article>
 </main>

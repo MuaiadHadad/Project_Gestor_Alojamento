@@ -535,8 +535,8 @@
         </div>
         <div class="dropdown-menu-user-div" style="left: 80%">
             <ul>
-                <li><a href="/login"><i class="fa fa-indent"></i> Profile</a></li>
-                <li><a href="/register"><i class="fa fa-sign-out"></i> Logout</a></li>
+                <li><a href="/Senhorio/Profile"><i class="fa fa-indent"></i> Profile</a></li>
+                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
         </div>
         <section class="module module-search module-layer-search">

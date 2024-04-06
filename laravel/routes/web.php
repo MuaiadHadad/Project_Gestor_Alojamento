@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GestorControllers;
+use App\Http\Controllers\PaginaInicialControllers;
 use App\Http\Middleware\CheckGestor;
 
 use Illuminate\Support\Facades\Route;
@@ -19,12 +20,6 @@ use App\Http\Controllers\SenhorioControllers;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
-    return view('inicio\index');
-});
-Route::get('/inicio', function () {
-    return view('inicio\index');
-});
 
 Route::get('/inicio/detalhe/quarto', function () {
     return view('inicio\detalhe_quarto');
@@ -41,6 +36,12 @@ Route::get('/inicio/detalhe/casa', function () {
             abort(403, 'Acesso não autorizado.');
         }
     });
+
+Route::get('/', [PaginaInicialControllers::class, 'GetPageInicial']);
+Route::get('/inicio', [PaginaInicialControllers::class, 'GetPageInicial']);
+Route::get('/inicio/{id}/quarto', [PaginaInicialControllers::class, 'GetPageDetalheQuarto']);
+Route::post('/inicio/{id}/casa', [PaginaInicialControllers::class, 'GetPageDetalheCasa']);
+
 Route::post('/Senhorio/{id}/RemoverQuarto', [SenhorioControllers::class, 'RemoverQuarto']);
 Route::post('/Senhorio/{id}/RemoverCasa', [SenhorioControllers::class, 'RemoverCasa']);
 Route::post('/Senhorio/{id}/EstadoQuarto', [SenhorioControllers::class, 'MudarestadoQuarto']);
@@ -51,6 +52,8 @@ Route::get('/Senhorio/Adicionar', [SenhorioControllers::class, 'GetPageAddHome']
 Route::get('/Senhorio/Profile', [SenhorioControllers::class, 'GetPageProfSenhorio']);
 Route::get('/Senhorio', [SenhorioControllers::class, 'GetPageSenhorio']);
 
+Route::post('/Gestor/{id}/EstadoQuarto', [GestorControllers::class, 'MudarestadoQuarto']);
+Route::post('/Gestor/{id}/EstadoCasa', [GestorControllers::class, 'MudarestadoCasa']);
 Route::post('/user/{id}/update', [GestorControllers::class, 'updateProfile']);
 Route::get('/Gestor/profile', [GestorControllers::class, 'GetPageProfGestor']);
 Route::get('/gestor/profile', [GestorControllers::class, 'GetPageProfGestor']);
