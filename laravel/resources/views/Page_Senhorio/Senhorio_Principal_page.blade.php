@@ -653,6 +653,7 @@
                         <th> Preço<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Estado(Inativar/Reativar)<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Consultar</th>
+                        <th> Editar</th>
                         <th> Remover</th>
                     </tr>
                     </thead>
@@ -667,20 +668,20 @@
                         <td> {{ $dadosQuarto->data_fim }}</td>
                         <td> {{ $dadosQuarto->Preço }}€</td>
                         <td>
-                        <form action="/Senhorio/{{ $dadosQuarto->idnow }}/EstadoQuarto" method="POST">
-                            @csrf
-                            <button type="submit" style="left: 40px; top: 5px" class="status {{ $dadosQuarto->estado == 'Ativo' ? 'delivered' : ($dadosQuarto->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
+                            <h5  style="left: 40px;" class="status {{ $dadosQuarto->estado == 'Ativo' ? 'delivered' : ($dadosQuarto->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
                                 {{ $dadosQuarto->estado == 'Ativo' ? 'Ativo' : ($dadosQuarto->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
-                            </button>
-                        </form>
+                            </h5>
                         </td>
                         <td>
-                           <a href="#"> <i class="fa fa-eye fa-3x"></i></a>
+                           <a href="inicio/{{ $dadosQuarto->idnow }}/quarto"> <i class="fa fa-eye fa-2x"></i></a>
+                        </td>
+                        <td>
+                            <a href="inicio/{{ $dadosQuarto->idnow }}/quarto"><i class="fa fa-edit fa-2x"></i></a>
                         </td>
                         <td>
                             <form action="/Senhorio/{{ $dadosQuarto->idnow }}/RemoverQuarto" method="POST">
                                 @csrf
-                                <button type="submit" class="fa fa-trash fa-2x" style="top: 2px"></button>
+                                <button type="submit" class="fa fa-trash fa-2x" style="top: 1px"></button>
                             </form>
                         </td>
                     </tr>
@@ -696,15 +697,16 @@
                                 <td> {{ $dadosCasa->Data_fim }}</td>
                                 <td> {{ $dadosCasa->Preço }}€</td>
                                 <td>
-                                    <form action="/Senhorio/{{ $dadosCasa->idnow }}/EstadoCasa" method="POST">
-                                        @csrf
-                                        <button type="submit" style="left: 40px; top: 5px" class="status {{ $dadosCasa->estado == 'Ativo' ? 'delivered' : ($dadosCasa->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
+                                        <h5 style="left: 40px;" class="status {{ $dadosCasa->estado == 'Ativo' ? 'delivered' : ($dadosCasa->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
                                             {{ $dadosCasa->estado == 'Ativo' ? 'Ativo' : ($dadosCasa->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
-                                        </button>
-                                    </form>
+                                        </h5>
                                 </td>
                                 <td>
-                                    <a href="#"> <i class="fa fa-eye fa-3x"></i></a>
+
+                                    <a href="inicio/{{ $dadosCasa->idnow }}/casa"> <i class="fa fa-eye fa-2x"></i></a>
+                                </td>
+                                <td>
+                                    <a href="inicio/{{ $dadosQuarto->idnow }}/quarto"> <i class="fa fa-edit fa-2x"></i></a>
                                 </td>
                                 <td>
                                     <form action="/Senhorio/{{ $dadosCasa->idnow }}/RemoverCasa" method="POST">

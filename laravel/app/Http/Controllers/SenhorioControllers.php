@@ -135,10 +135,10 @@ class SenhorioControllers extends Controller{
             'let' => $request->input('letLag'),
             'id_quarto' => $propertyId,
         ]);
-        for($i=0; $i <count($request->file('photos'));$i++){
-            $filename = $request->file('photos')[$i]->store('upload', 'public');
+        foreach ($request->file('photos') as $photo) {
+            $filename = $photo->store('upload', 'public');
             DB::table('midia_de_casa')->insert([
-                'Path' =>   $filename,
+                'Path' => $filename,
                 'id_quarto' => $propertyId,
             ]);
         }
@@ -245,10 +245,10 @@ class SenhorioControllers extends Controller{
             'let' => $request->input('letLag'),
             'id_casa' => $propertyId,
         ]);
-        for($i=0; $i <count($request->file('photos'));$i++){
-            $filename = $request->file('photos')[$i]->store('upload', 'public');
+        foreach ($request->file('photos') as $photo) {
+            $filename = $photo->store('upload', 'public');
             DB::table('midia_de_casa')->insert([
-                'Path' =>   $filename,
+                'Path' => $filename,
                 'id_casa' => $propertyId,
             ]);
         }
@@ -277,36 +277,6 @@ class SenhorioControllers extends Controller{
             'id_casa' => $propertyId,
         ]);
         return redirect()->back()->with('success', 'A sua propriedade foi adicionada com sucesso!');
-    }
-    public function MudarestadoQuarto($id){
-        $quarto = DB::table('quarto')->where('id', $id)->first();
-
-        if (!$quarto) {
-            return redirect()->back()->with('error',  'Quarto não encontrado');
-        }
-        if($quarto->estado=='pending'){
-            return redirect()->back()->with('error',  'Ainda não pode mudar o estado deste Propriedade');
-        }
-        $novoEstado = $quarto->estado == 'Ativo' ? 'Desativo' : ($quarto->Estado == 'Desativo' ? 'Ativo' : 'Ativo');
-
-        DB::table('quartos')->where('id', $id)->update(['estado' => $novoEstado]);
-
-        return redirect()->back()->with('success', 'Estado do Quarto alterado com sucesso!');
-    }
-    public function MudarestadoCasa($id){
-        $Casa = DB::table('casa_completa')->where('id', $id)->first();
-
-        if (!$Casa) {
-            return redirect()->back()->with('error',  'Quarto não encontrado');
-        }
-        if($Casa->estado=='pending'){
-            return redirect()->back()->with('error',  'Ainda não pode mudar o estado deste Propriedade');
-        }
-        $novoEstado = $Casa->estado == 'Ativo' ? 'Desativo' : ($Casa->Estado == 'Desativo' ? 'Ativo' : 'Ativo');
-
-        DB::table('quartos')->where('id', $id)->update(['estado' => $novoEstado]);
-
-        return redirect()->back()->with('success', 'Estado do Casa alterado com sucesso!');
     }
     public function RemoverCasa($id){
         $casa = DB::table('casa_completa')->where('id', $id)->first();

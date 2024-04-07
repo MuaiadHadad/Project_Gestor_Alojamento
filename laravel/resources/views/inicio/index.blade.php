@@ -580,7 +580,7 @@
             @endif
         </div>
         <div class="dropdown-menu-user-div">
-            @if($DadosUser!=null)
+            @if( isset($DadosUser) && $DadosUser!=null)
                 @foreach($DadosUser as $user)
                 @if($user->Tipo=='senhorio')
                     <ul>
@@ -662,24 +662,27 @@
     <section id="center" class="center_list clearfix">
         <div class="container">
             <div class="row">
+                <form action="/inicio" method="POST">
+                    @csrf
                 <div class="center_home_1 clearfix">
                     <div class="center_home_1i clearfix">
                         <div class="col-sm-4">
                             <div class="center_home_1i1 clearfix">
-                                <input placeholder="Preço" class="form-control" type="text">
+                                <input name="preco" placeholder="Preço" class="form-control" type="text">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="center_home_1i1 clearfix">
-                                <input placeholder="Distância por Metros" class="form-control" type="text">
+                                <input name="destance" placeholder="Distância por Metros" class="form-control" type="text">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="center_home_1i1 clearfix">
-                                <select class="form-control" name="property">
-                                    <option value="">Tipo de Propriedade</option>
-                                    <option value="family-house">Casa</option>
-                                    <option value="apartment">Apartamento</option>
+                                <select name="Tipo" class="form-control" name="property">
+                                    <option value="Tipo">Tipo de Propriedade</option>
+                                    <option value="Casa">Casa</option>
+                                    <option value="Apartamento">Apartamento</option>
+                                    <option value="Estúdio">Estúdio</option>
                                 </select>
                             </div>
                         </div>
@@ -687,8 +690,8 @@
                     <div class="center_home_1i clearfix">
                         <div class="col-sm-4">
                             <div class="center_home_1i1 clearfix">
-                                <select class="form-control" name="beds" id="beds">
-                                    <option value="">Quartos</option>
+                                <select name="n_quaros" class="form-control" name="beds" id="beds">
+                                    <option value="n_quaros">Quartos</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -704,17 +707,17 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="center_home_1i1 clearfix">
-                                <select class="form-control" name="beds" id="beds">
-                                    <option value="">Género</option>
-                                    <option value="1">Masculino</option>
-                                    <option value="2">Feminino</option>
-                                    <option value="3">feminino e masculino</option>
+                                <select name="Sexo" class="form-control" name="beds" id="beds">
+                                    <option value="Sexo">Género</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="M/F">feminino e masculino</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="center_home_1i1 clearfix">
-                                <h5 class="mgt text-center"><a class="button_1 block mgt" href="detail.html"><i class="fa fa-filter"></i> Filtrar</a></h5>
+                                <button style="width: 100%" class="mgt text-center"><a class="button_1 block mgt"><i class="fa fa-filter"></i> Filtrar</a></button>
                             </div>
                         </div>
                     </div>
@@ -723,7 +726,81 @@
         </div>
     </section>
     <article id="main" class="article-content">
+        @if(isset($resultadosCasa) || isset($resultadosQuarto))
+            <section id="popular">
+                <div class="container">
+                    <div class="row">
+                        <div class="popular_1 text-center clearfix">
+                            <div class="col-sm-12">
+                                <h1 class="mgt"> Lista de Propriedades Filtrada</h1>
+                                <p>Encontre quarto com melhor classificação para você.</p>
+                            </div>
+                        </div>
 
+                        <div class="popular_2 clearfix">
+                            @if(isset($resultadosQuarto) && $resultadosQuarto !=null)
+                                @foreach($resultadosQuarto as $QuartoAtive)
+                                    <div class="col-sm-3">
+                                        <div class="popular_2i clearfix">
+                                            <div class="popular_2i1 clearfix">
+
+                                                <a href="/inicio/{{$QuartoAtive->idnow}}/quarto"><img src="{{asset('storage/'.$QuartoAtive->Path)}}" class="iw" alt="abc"></a>	   </div>
+                                            <div class="popular_2i2 clearfix">
+                                                <h5 class="mgt"><a href="/inicio/{{$QuartoAtive->idnow}}/quarto">{{ $QuartoAtive->Tipo }}</a></h5>
+                                            </div>
+                                        </div>
+                                        <div class="popular_2i3 clearfix">
+                                            <h5 class="mgt"><a href="/inicio/{{$QuartoAtive->idnow}}/quarto">{{ $QuartoAtive->Titulo }} <i class="fa fa-check-square col_1"></i></a></h5>
+                                            <h4 class="col_1">{{ $QuartoAtive->Preço }}€ / <span class="col_2">Month   </span></h4>
+                                            <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
+                                                @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
+                                            <h5 class="inline"><a class="button_1" href="/inicio/{{$QuartoAtive->idnow}}/quarto"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                                            <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                            @if(isset($resultadosCasa) && $resultadosCasa !=null)
+                                @foreach($resultadosCasa as $QuartoAtive)
+                                    <div class="col-sm-3">
+                                        <div class="popular_2i clearfix">
+                                            <div class="popular_2i1 clearfix">
+                                                <a href="/inicio/{{$QuartoAtive->idnow}}/casa"><img src="{{asset('storage/'.$QuartoAtive->Path)}}" class="iw" alt="abc"></a>	   </div>
+                                            <div class="popular_2i2 clearfix">
+                                                <h5 class="mgt"><a href="/inicio/{{$QuartoAtive->idnow}}/casa">{{ $QuartoAtive->Tipo }}</a></h5>
+                                            </div>
+                                        </div>
+                                        <div class="popular_2i3 clearfix">
+                                            <h5 class="mgt"><a href="/inicio/{{$QuartoAtive->idnow}}/casa">{{ $QuartoAtive->Titulo }} <i class="fa fa-check-square col_1"></i></a></h5>
+                                            <h4 class="col_1">{{ $QuartoAtive->Preço }}€ / <span class="col_2">Month</span></h4>
+                                            <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
+                                                @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
+                                            <h5 class="inline"><a class="button_1" href="/inicio/{{$QuartoAtive->idnow}}/casa"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                                            <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                        </div>
+
+                        <div class="product_1_last text-center clearfix">
+                            <div class="col-sm-12">
+                                <ul>
+                                    <li><a href="detail.html"><i class="fa fa-chevron-left"></i>..</a></li>
+                                    <li class="act"><a href="detail.html">1</a></li>
+                                    <li><a href="detail.html">2</a></li>
+                                    <li><a href="detail.html">3</a></li>
+                                    <li><a href="detail.html">4</a></li>
+                                    <li><a href="detail.html">5</a></li>
+                                    <li><a href="detail.html">6</a></li>
+                                    <li><a href="#">..<i class="fa fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @else
         <section id="popular">
             <div class="container">
                 <div class="row">
@@ -733,21 +810,19 @@
                             <p>Encontre quarto com melhor classificação para você.</p>
                         </div>
                     </div>
-
                     <div class="popular_2 clearfix">
-
-                        @if($DataQuartoAtive !=null)
+                        @if(isset($DataQuartoAtive) && $DataQuartoAtive !=null)
                             @foreach($DataQuartoAtive as $QuartoAtive)
                                 <div class="col-sm-3">
                                     <div class="popular_2i clearfix">
                                         <div class="popular_2i1 clearfix">
-                                            <a href="detail.html"><img src="{{asset('storage/'.$QuartoAtive->Path)}}" class="iw" alt="abc"></a>	   </div>
+                                            <a href="/inicio/{{$QuartoAtive->idnow}}/quarto"><img src="{{asset('storage/'.$QuartoAtive->Path)}}" class="iw" alt="abc"></a>	   </div>
                                         <div class="popular_2i2 clearfix">
-                                            <h5 class="mgt"><a href="detail.html">{{ $QuartoAtive->Tipo }}</a></h5>
+                                            <h5 class="mgt"><a href="/inicio/{{$QuartoAtive->idnow}}/quarto">{{ $QuartoAtive->Tipo }}</a></h5>
                                         </div>
                                     </div>
                                     <div class="popular_2i3 clearfix">
-                                        <h5 class="mgt"><a href="detail.html">{{ $QuartoAtive->Titulo }} <i class="fa fa-check-square col_1"></i></a></h5>
+                                        <h5 class="mgt"><a href="/inicio/{{$QuartoAtive->idnow}}/quarto">{{ $QuartoAtive->Titulo }} <i class="fa fa-check-square col_1"></i></a></h5>
                                         <h4 class="col_1">{{ $QuartoAtive->Preço }}€ / <span class="col_2">Month</span></h4>
                                         <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
                                             @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
@@ -757,22 +832,22 @@
                                 </div>
                             @endforeach
                         @endif
-                            @if($DataCasaAtive !=null)
+                            @if(isset($DataCasaAtive) && $DataCasaAtive !=null)
                                 @foreach($DataCasaAtive as $QuartoAtive)
                                     <div class="col-sm-3">
                                         <div class="popular_2i clearfix">
                                             <div class="popular_2i1 clearfix">
-                                                <a href="detail.html"><img src="{{asset('storage/'.$QuartoAtive->Path)}}" class="iw" alt="abc"></a>	   </div>
+                                                <a href="/inicio/{{$QuartoAtive->idnow}}/casa"><img src="{{asset('storage/'.$QuartoAtive->Path)}}" class="iw" alt="abc"></a>	   </div>
                                             <div class="popular_2i2 clearfix">
-                                                <h5 class="mgt"><a href="detail.html">{{ $QuartoAtive->Tipo }}</a></h5>
+                                                <h5 class="mgt"><a href="/inicio/{{$QuartoAtive->idnow}}/casa">{{ $QuartoAtive->Tipo }}</a></h5>
                                             </div>
                                         </div>
                                         <div class="popular_2i3 clearfix">
-                                            <h5 class="mgt"><a href="detail.html">{{ $QuartoAtive->Titulo }} <i class="fa fa-check-square col_1"></i></a></h5>
+                                            <h5 class="mgt"><a href="/inicio/{{$QuartoAtive->idnow}}/casa">{{ $QuartoAtive->Titulo }} <i class="fa fa-check-square col_1"></i></a></h5>
                                             <h4 class="col_1">{{ $QuartoAtive->Preço }}€ / <span class="col_2">Month</span></h4>
                                             <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
                                                 @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
-                                            <h5 class="inline"><a class="button_1" href="/inicio/detalhe/quarto"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
+                                            <h5 class="inline"><a class="button_1" href="/inicio/{{$QuartoAtive->idnow}}/casa"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
                                             <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
                                         </div>
                                     </div>
@@ -783,20 +858,16 @@
                     <div class="product_1_last text-center clearfix">
                         <div class="col-sm-12">
                             <ul>
-                                <li><a href="detail.html"><i class="fa fa-chevron-left"></i>..</a></li>
-                                <li class="act"><a href="detail.html">1</a></li>
-                                <li><a href="detail.html">2</a></li>
-                                <li><a href="detail.html">3</a></li>
-                                <li><a href="detail.html">4</a></li>
-                                <li><a href="detail.html">5</a></li>
-                                <li><a href="detail.html">6</a></li>
-                                <li><a href="#">..<i class="fa fa-chevron-right"></i></a></li>
+                                @for ($i = 1; $i <= $totalPaginas; $i++)
+                                    <li @if($i == $pagina) class="act" @endif><a href="{{ url('/pagina/' . $i) }}">{{ $i }}</a></li>
+                                @endfor
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        @endif
     </article>
 </main>
 <footer class="module module-site-footer">

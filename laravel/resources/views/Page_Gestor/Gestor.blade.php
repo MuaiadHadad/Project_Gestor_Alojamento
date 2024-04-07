@@ -746,7 +746,7 @@
                             </form>
                         </td>
                         <td>
-                            <i class="fa fa-eye fa-3x"></i>
+                            <a href="inicio/{{ $dadosCasa->idnow }}/casa"> <i class="fa fa-eye fa-2x"></i></a>
                         </td>
                     </tr>
                         @endforeach
@@ -769,7 +769,7 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <i class="fa fa-eye fa-3x"></i>
+                                    <a href="inicio/{{ $dadosQuartos->idnow }}/quarto"> <i class="fa fa-eye fa-2x"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -824,7 +824,7 @@
                         <td> {{ $dadosCasa->data_fim }} </td>
                         <td> <strong> {{ $dadosCasa->Preço }}€ </strong></td>
                         <td>
-                            <i class="fa fa-eye fa-3x"></i>
+                            <a href="inicio/{{ $dadosCasa->idnow }}/quarto"> <i class="fa fa-eye fa-2x"></i></a>
                         </td>
                         <td>
                             <i class="fa fa-check-square-o fa-3x"></i>
@@ -845,7 +845,7 @@
                                 <td> {{ $dadosCasa->Data_fim }} </td>
                                 <td> <strong> {{ $dadosCasa->Preço }}€ </strong></td>
                                 <td>
-                                    <i class="fa fa-eye fa-3x"></i>
+                                    <a href="inicio/{{ $dadosCasa->idnow }}/casa"> <i class="fa fa-eye fa-2x"></i></a>
                                 </td>
                                 <td>
                                     <i class="fa fa-check-square-o fa-3x"></i>

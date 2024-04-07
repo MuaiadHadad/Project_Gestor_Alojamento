@@ -597,7 +597,7 @@
 
 </header>
 <main id="primary" class="main-section">
-    <section class="module module-page--header site-header--image-bg " style="height: 280px ">
+    <section class="module module-page--header site-header--image-bg " style="height: 300px ">
         <div class="page-title">
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
@@ -624,20 +624,25 @@
         </div>
     </section>
     <article id="main" class="article-content">
-        <section id="center" class="clearfix center_detail">
+        <section id="center" class="clearfix center_detail" style="background: rgba(0,0,0,0.02)">
             <div class="center clearfix">
-                <div id="carousel" class="carousel slide carousel-fade">
-                    <!-- Carousel items -->
+                <div id="carousel" class="carousel slide carousel-fade" style="width: 80%; left: 10%;">
                     <div class="carousel-inner">
-                        <div data-slide-no="0" class="item carousel-item active">
-                            <img src="/Style_Page_1/img/21.jpg" alt="">
-                        </div>
-                        <div data-slide-no="1" class="item carousel-item">
-                            <img src="/Style_Page_1/img/22.jpg" alt="">
-                        </div>
-                        <div data-slide-no="2" class="item carousel-item">
-                            <img src="/Style_Page_1/img/23.jpg" alt="">
-                        </div>
+                        @if($PhotoCasa !=null)
+                            @php $slideNo = 0 @endphp
+                            @foreach($PhotoCasa as $pohtosquarto)
+                                @if($slideNo == 0)
+                                    <div data-slide-no="{{ $slideNo }}" class="item carousel-item active">
+                                        <img src="{{asset('storage/'.$pohtosquarto->Path)}}" alt="">
+                                    </div>
+                                @else
+                                    <div data-slide-no="{{ $slideNo }}" class="item carousel-item">
+                                        <img src="{{asset('storage/'.$pohtosquarto->Path)}}" alt="">
+                                    </div>
+                                @endif
+                                @php $slideNo++ @endphp
+                            @endforeach
+                        @endif
                     </div>
                     <!-- Carousel nav -->
                     <a class="left carousel-control kb_control_left" href="#carousel" role="button" data-slide="prev">
@@ -656,12 +661,14 @@
         <section id="list_detail" style="background: rgba(0,0,0,0.02)">
             <div class="container clearfix">
                 <div class="row">
+                    @if($DadosCasaAtive !=null)
+                        @foreach($DadosCasaAtive as $dadoscasa)
                     <div class="list_detail_1 clearfix" >
                         <div class="col-sm-16">
                             <div class="list_detail_1l clearfix" >
                                 <div class="list_detail_1l1 clearfix" >
-                                    <h3 class="mgt">2299€ / <span class="span_1">Por mês</span> <span class="span_2">Aluguel</span></h3>
-                                    <p><i class="fa fa-map-marker"></i> 538 Country St. Lorem City, GM 3220-201</p>
+                                    <h3 class="mgt">{{$dadoscasa->Preço}}€ / <span class="span_1">Por mês</span> <span class="span_2">Aluguel</span></h3>
+                                    <p><i class="fa fa-map-marker"></i> {{$dadoscasa->Endereco}}, {{$dadoscasa->Codigo_postal}}</p>
                                 </div>
                                 <div class="list_detail_1l2 clearfix">
                                     <h4 class="mgt">Informações da propriedade</h4>
@@ -669,107 +676,185 @@
                                     <div class="list_detail_1l2i clearfix">
                                         <div class="col-sm-3 space_left">
                                             <h5 class="mgt">Distância</h5>
-                                            <h6 class="col_1">3</h6>
+                                            <h6 class="col_1">{{$dadoscasa->Distancia}}</h6>
                                         </div>
                                         <div class="col-sm-3 space_left">
                                             <h5 class="mgt">Sexo</h5>
-                                            <h6 class="col_1">1</h6>
+                                            <h6 class="col_1">{{$dadoscasa->Genero}}</h6>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt">Área total</h5>
-                                            <h6 class="col_1">Yes</h6>
+                                            <h5 class="mgt">Área total do quarto</h5>
+                                            <h6 class="col_1">{{$dadoscasa->area}}</h6>
                                         </div>
                                         <div class="col-sm-3 space_left">
                                             <h5 class="mgt">Número de Quartos</h5>
-                                            <h6 class="col_1">Yes</h6>
+                                            <h6 class="col_1">{{$dadoscasa->N_quartos}}</h6>
                                         </div>
                                     </div>
                                 </div>
+                                @if($DadosQuartoCasa !=null)
+                                    @php $Nquarto = 1 @endphp
+                                    @foreach($DadosQuartoCasa as $dadosquartocasa)
                                 <div class="list_detail_1l2 clearfix">
                                     <div class="list_detail_1l2 clearfix">
-                                        <h4 class="mgt">Informações da propriedade</h4>
+                                        <h4 class="mgt">Informações da Quarto Nº {{$Nquarto}}</h4>
                                         <hr>
                                         <div class="list_detail_1l2i clearfix">
                                             <div class="col-sm-3 space_left">
                                                 <h5 class="mgt">Área total do quarto</h5>
-                                                <h6 class="col_1">3</h6>
+                                                <h6 class="col_1">{{$dadosquartocasa->area_quarto}}</h6>
                                             </div>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon roupa-cama col_1"><i class="icon no"></i></i> roupa de cama </h5>
+                                            <h5 class="mgt"><i class="icon roupa-cama col_1">
+                                                    @if($dadosquartocasa->roupa_de_cama==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> roupa de cama </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon cama col_1"></i> cama</h5>
+                                            <h5 class="mgt"><i class="icon cama col_1">
+                                                    @if($dadosquartocasa->cama==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i>  cama</h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon mesa-cama col_1"><i class="icon no"></i></i> mesa cabeceira </h5>
+                                            <h5 class="mgt"><i class="icon mesa-cama col_1">
+                                                    @if($dadosquartocasa->mesa_cabeceira==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> mesa cabeceira </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon lambada col_1"></i> Candeeiro</h5>
+                                            <h5 class="mgt"><i class="icon lambada col_1">
+                                                    @if($dadosquartocasa->Candeeiro_de_mesa_do_estudo==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Candeeiro</h5>
                                         </div>
                                     </div>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon mesa-estudo col_1"></i> Mesa do estudo </h5>
+                                            <h5 class="mgt"><i class="icon mesa-estudo col_1">
+                                                    @if($dadosquartocasa->Mesa_do_estudo==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Mesa do estudo </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Janelas col_1"></i> Janelas</h5>
+                                            <h5 class="mgt"><i class="icon Janelas col_1">
+                                                    @if($dadosquartocasa->Janelas==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Janelas</h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Varanda col_1"></i> Varanda </h5>
+                                            <h5 class="mgt"><i class="icon Varanda col_1">
+                                                    @if($dadosquartocasa->Varanda==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Varanda </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Cabinet col_1"></i> Armário  </h5>
+                                            <h5 class="mgt"><i class="icon Cabinet col_1">
+                                                    @if($dadosquartocasa->Armario==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Armário  </h5>
                                         </div>
                                     </div>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon banho col_1"></i> Casa de banho privativa </h5>
+                                            <h5 class="mgt"><i class="icon banho col_1">
+                                                    @if($dadosquartocasa->Casa_de_banho_privativa==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Casa de banho privativa </h5>
                                         </div>
                                     </div>
                                 </div>
+                                        @php $Nquarto++ @endphp
+                                    @endforeach
+                                @endif
                                 <div class="list_detail_1l2 clearfix">
                                     <h4 class="mgt">Descrição</h4>
                                     <hr>
-                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitursodales ligula in libero.Sed dignissim lacinia nunc.</p>
+                                    <p>{{$dadoscasa->description}}</p>
                                 </div>
                                 <div class="list_detail_1l2 clearfix">
                                     <h4 class="mgt">Cozinha</h4>
                                     <hr>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Forno col_1"></i> Forno </h5>
+                                            <h5 class="mgt"><i class="icon Forno col_1">
+                                                    @if($dadoscasa->Forno==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Forno </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Fogao col_1"></i> Fogão</h5>
+                                            <h5 class="mgt"><i class="icon Fogao col_1">
+                                                    @if($dadoscasa->Fogao==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Fogão</h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Caldeira col_1"></i> Caldeira de água </h5>
+                                            <h5 class="mgt"><i class="icon Caldeira col_1">
+                                                    @if($dadoscasa->Caldeira==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Caldeira de água </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon cafe col_1"></i>Máquina de café</h5>
+                                            <h5 class="mgt"><i class="icon cafe col_1">
+                                                    @if($dadoscasa->Maq_cafe==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i>Máquina de café</h5>
                                         </div>
                                     </div>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Placa col_1"></i> Placa </h5>
+                                            <h5 class="mgt"><i class="icon Placa col_1">
+                                                    @if($dadoscasa->Placa==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Placa </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Micro-ondas col_1"></i> Micro-ondas</h5>
+                                            <h5 class="mgt"><i class="icon Micro-ondas col_1">
+                                                    @if($dadoscasa->Micro==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Micro-ondas</h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Pratos col_1"></i> Pratos e talheres </h5>
+                                            <h5 class="mgt"><i class="icon Pratos col_1">
+                                                    @if($dadoscasa->Pratos==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Pratos e talheres </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Utensilios col_1"></i> Utensílios de cozinha  </h5>
+                                            <h5 class="mgt"><i class="icon Utensilios col_1">
+                                                    @if($dadoscasa->Utensilios==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Utensílios de cozinha  </h5>
                                         </div>
                                     </div>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon mesa-estudo col_1"></i> Frigorífico </h5>
+                                            <h5 class="mgt"><i class="icon mesa-estudo col_1">
+                                                    @if($dadoscasa->Frigorifico==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Frigorífico </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -778,16 +863,32 @@
                                     <hr>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon estar col_1"></i> Área de estar partilhada </h5>
+                                            <h5 class="mgt"><i class="icon estar col_1">
+                                                    @if($dadoscasa->estar_partilhada==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Área de estar partilhada </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Sofas col_1"></i> Sofás</h5>
+                                            <h5 class="mgt"><i class="icon Sofas col_1">
+                                                    @if($dadoscasa->Sofas==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Sofás</h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Televisao col_1"></i> Televisão </h5>
+                                            <h5 class="mgt"><i class="icon Televisao col_1">
+                                                    @if($dadoscasa->Televisao==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Televisão </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon jantar col_1"></i> Mesa de jantar com cadeiras  </h5>
+                                            <h5 class="mgt"><i class="icon jantar col_1">
+                                                    @if($dadoscasa->Mesa_jantar==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Mesa de jantar com cadeiras  </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -796,10 +897,18 @@
                                     <hr>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Chuveiro col_1"></i> Chuveiro </h5>
+                                            <h5 class="mgt"><i class="icon Chuveiro col_1">
+                                                    @if($dadoscasa->Chuveiro==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Chuveiro </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Toalhas col_1"></i> Toalhas</h5>
+                                            <h5 class="mgt"><i class="icon Toalhas col_1">
+                                                    @if($dadoscasa->Toalhas==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Toalhas</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -808,21 +917,41 @@
                                     <hr>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon lavar col_1"></i> Máquina de lavar roupa </h5>
+                                            <h5 class="mgt"><i class="icon lavar col_1">
+                                                    @if($dadoscasa->Maquina_lavar_roupa==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Máquina de lavar roupa </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon sacar col_1"></i> Máquina de sacar roupa</h5>
+                                            <h5 class="mgt"><i class="icon sacar col_1">
+                                                    @if($dadoscasa->Maquina_sacar_roupa==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Máquina de sacar roupa</h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon central col_1"></i> Aquecimento central </h5>
+                                            <h5 class="mgt"><i class="icon central col_1">
+                                                    @if($dadoscasa->Aquecimento_central==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Aquecimento central </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon passar col_1"></i> máquina passar Ferro</h5>
+                                            <h5 class="mgt"><i class="icon passar col_1">
+                                                    @if($dadoscasa->passar_Ferro==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> máquina passar Ferro</h5>
                                         </div>
                                     </div>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Aquecedor col_1"></i> Aquecedor elétrico </h5>
+                                            <h5 class="mgt"><i class="icon Aquecedor col_1">
+                                                    @if($dadoscasa->Aquecedor_eletrico==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Aquecedor elétrico </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -831,27 +960,77 @@
                                     <hr>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Wi-Fi col_1"><i class="icon no"></i></i> Wi-Fi </h5>
+                                            <h5 class="mgt"><i class="icon Wi-Fi col_1"><i class="icon no">
+                                                        @if($dadoscasa->wifi==0)
+                                                            <i class="icon no"></i>
+                                                        @endif
+                                                    </i></i> Wi-Fi </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Elevador col_1"></i> Elevador</h5>
+                                            <h5 class="mgt"><i class="icon Elevador col_1">
+                                                    @if($dadoscasa->Elevador==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Elevador</h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Despesas col_1"></i> Despesas incluídas </h5>
+                                            <h5 class="mgt"><i class="icon Despesas col_1">
+                                                    @if($dadoscasa->Despesas==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Despesas incluídas </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon Recibo col_1"></i> Recibo</h5>
+                                            <h5 class="mgt"><i class="icon Recibo col_1">
+                                                    @if($dadoscasa->Recibo==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Recibo</h5>
                                         </div>
                                     </div>
                                     <div class="home_inner_i clearfix">
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt"><i class="icon limpeza col_1"></i> limpeza </h5>
+                                            <h5 class="mgt"><i class="icon limpeza col_1">
+                                                    @if($dadoscasa->limpeza==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> limpeza </h5>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="list_detail_1l2 clearfix">
                                     <h4 class="mgt">Local</h4>
                                     <hr>
+                                    <script>
+                                        var letValue = "{{ $dadoscasa->let }}";
+                                        letValue = letValue.replace(/[()]/g, '');
+                                        var coordinates = letValue.split(',');
+                                        var lat = parseFloat(coordinates[0]);
+                                        var lng = parseFloat(coordinates[1]);
+                                        function initMap() {
+                                            const myLatLng = { lat: 40.35827117617252, lng: -7.8569972177657075 };
+                                            const map = new google.maps.Map(document.getElementById("map"), {
+                                                zoom: 15,
+                                                center: myLatLng,
+                                            });
+                                            const icon_escola = "https://img.icons8.com/emoji/55/school-emoji.png";
+                                            var estgoh = { lat: 40.361008858094266, lng: -7.861192556524104 };
+                                            new google.maps.Marker({
+                                                position: estgoh,
+                                                icon:icon_escola,
+                                                map: map,
+                                                title: "Hello World!",
+                                            });
+                                            const icon_casa = "https://img.icons8.com/plasticine/75/order-delivered.png";
+                                            var casa = { lat:lat,lng:lng };
+                                            new google.maps.Marker({
+                                                position: casa,
+                                                icon:icon_casa,
+                                                map: map,
+                                                title: "Hello World!",
+                                            });
+                                        }
+                                    </script>
                                     <div id="map" style="height: 400px; width: 100%;"></div>
                                 </div>
                                 <div class="list_detail_1l2 clearfix">
@@ -859,11 +1038,11 @@
                                     <hr>
                                     <div class="list_detail_1r clearfix">
                                         <div class="list_detail_1r1 clearfix">
-                                            <img src="/Style_Page_1/img/13.jpg" class="img-circle" alt="abc">
-                                            <h4 class="mgt"><a href="#">Mauris Massa</a></h4>
+                                            <img style="width: 60px;height: 60px" src="{{asset('storage/'.$dadoscasa->Avatar)}}" class="img-circle" alt="abc">
+                                            <h4 class="mgt"><a href="#">{{ $dadoscasa->UserName }}</a></h4>
                                             <h5>
-                                                <i class="fa fa-phone col_1"></i> (91) 123 456 7890 /
-                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>aeadhadad@gmai.com
+                                                <i class="fa fa-phone col_1"></i> {{$dadoscasa->Telefone}} /
+                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>{{$dadoscasa->EmailQuarto}}
                                             </h5>
                                             <h5 class="mgt"><a class="button mgt" href="#">Conectar</a></h5>
                                         </div>
@@ -873,6 +1052,8 @@
                         </div>
                     </div>
                 </div>
+            @endforeach
+            @endif
         </section>
     </article>
 </main>

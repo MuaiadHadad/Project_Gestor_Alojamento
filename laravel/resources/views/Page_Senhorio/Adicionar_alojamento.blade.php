@@ -934,7 +934,7 @@
                 <span class="span_1"><i class="fa fa-cloud-upload"></i></span>
                 <h5>Clique aqui ou solte os arquivos para fazer upload</h5>
             </div>
-            <input name="photos[]" multiple="multiple" type="file" id="fileInputQuarto" multiple style="display: none;">
+            <input name="photos[]" multiple="multiple" type="file" id="fileInputQuarto" style="display: none;">
 
             <hr>
             <div  id="fileList"></div>

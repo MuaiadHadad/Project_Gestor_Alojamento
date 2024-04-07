@@ -21,14 +21,6 @@ use App\Http\Controllers\SenhorioControllers;
 |
 */
 
-Route::get('/inicio/detalhe/quarto', function () {
-    return view('inicio\detalhe_quarto');
-});
-Route::get('/inicio/detalhe/casa', function () {
-    return view('inicio\detalhe_casa');
-});
-
-
     Route::get('/Senhorio/chat', function () {
         if(session('tipo_usuario')=="senhorio"){
             return view('Page_Senhorio\conversation');
@@ -40,12 +32,12 @@ Route::get('/inicio/detalhe/casa', function () {
 Route::get('/', [PaginaInicialControllers::class, 'GetPageInicial']);
 Route::get('/inicio', [PaginaInicialControllers::class, 'GetPageInicial']);
 Route::get('/inicio/{id}/quarto', [PaginaInicialControllers::class, 'GetPageDetalheQuarto']);
-Route::post('/inicio/{id}/casa', [PaginaInicialControllers::class, 'GetPageDetalheCasa']);
+Route::get('/inicio/{id}/casa', [PaginaInicialControllers::class, 'GetPageDetalheCasa']);
+Route::post('/inicio', [PaginaInicialControllers::class, 'Filtrar']);
+Route::get('/pagina/{pagina?}', [PaginaInicialControllers::class, 'index']);
 
 Route::post('/Senhorio/{id}/RemoverQuarto', [SenhorioControllers::class, 'RemoverQuarto']);
 Route::post('/Senhorio/{id}/RemoverCasa', [SenhorioControllers::class, 'RemoverCasa']);
-Route::post('/Senhorio/{id}/EstadoQuarto', [SenhorioControllers::class, 'MudarestadoQuarto']);
-Route::post('/Senhorio/{id}/EstadoCasa', [SenhorioControllers::class, 'MudarestadoCasa']);
 Route::post('/Senhorio/Adicionar/AddQuarto', [SenhorioControllers::class, 'AddQuarto']);
 Route::post('/Senhorio/Adicionar/AddCasa', [SenhorioControllers::class, 'AddCasa']);
 Route::get('/Senhorio/Adicionar', [SenhorioControllers::class, 'GetPageAddHome']);
