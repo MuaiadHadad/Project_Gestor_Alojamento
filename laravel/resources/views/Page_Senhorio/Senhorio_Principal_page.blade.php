@@ -673,15 +673,15 @@
                             </h5>
                         </td>
                         <td>
-                           <a href="inicio/{{ $dadosQuarto->idnow }}/quarto"> <i class="fa fa-eye fa-2x"></i></a>
+                           <a href="inicio/{{ $dadosQuarto->idnow }}/quarto" class="fa fa-eye fa-2x"></a>
                         </td>
                         <td>
-                            <a href="inicio/{{ $dadosQuarto->idnow }}/quarto"><i class="fa fa-edit fa-2x"></i></a>
+                            <a href="inicio/{{ $dadosQuarto->idnow }}/quarto" class="fa fa-edit fa-2x"></a>
                         </td>
                         <td>
-                            <form action="/Senhorio/{{ $dadosQuarto->idnow }}/RemoverQuarto" method="POST">
+                            <form action="/Senhorio/{{ $dadosQuarto->idnow }}/RemoverQuarto" method="POST" >
                                 @csrf
-                                <button type="submit" class="fa fa-trash fa-2x" style="top: 1px"></button>
+                                <button type="submit" class="fa fa-trash fa-2x"></button>
                             </form>
                         </td>
                     </tr>
@@ -703,15 +703,15 @@
                                 </td>
                                 <td>
 
-                                    <a href="inicio/{{ $dadosCasa->idnow }}/casa"> <i class="fa fa-eye fa-2x"></i></a>
+                                    <a href="inicio/{{ $dadosCasa->idnow }}/casa"  class="fa fa-eye fa-2x"></a>
                                 </td>
                                 <td>
-                                    <a href="inicio/{{ $dadosQuarto->idnow }}/quarto"> <i class="fa fa-edit fa-2x"></i></a>
+                                    <a href="inicio/{{ $dadosQuarto->idnow }}/quarto" class="fa fa-edit fa-2x"></a>
                                 </td>
                                 <td>
                                     <form action="/Senhorio/{{ $dadosCasa->idnow }}/RemoverCasa" method="POST">
                                         @csrf
-                                    <button type="submit" class="fa fa-trash fa-2x" style="top: 2px"></button>
+                                    <button type="submit" class="fa fa-trash fa-2x"></button>
                                     </form>
                                 </td>
 

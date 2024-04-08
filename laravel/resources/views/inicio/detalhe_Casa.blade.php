@@ -627,7 +627,7 @@
         <section id="center" class="clearfix center_detail" style="background: rgba(0,0,0,0.02)">
             <div class="center clearfix">
                 <div id="carousel" class="carousel slide carousel-fade" style="width: 80%; left: 10%;">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner" style="height: 80%"style="height: 80%">
                         @if($PhotoCasa !=null)
                             @php $slideNo = 0 @endphp
                             @foreach($PhotoCasa as $pohtosquarto)

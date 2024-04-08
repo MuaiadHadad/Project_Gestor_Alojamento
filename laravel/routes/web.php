@@ -44,6 +44,12 @@ Route::get('/Senhorio/Adicionar', [SenhorioControllers::class, 'GetPageAddHome']
 Route::get('/Senhorio/Profile', [SenhorioControllers::class, 'GetPageProfSenhorio']);
 Route::get('/Senhorio', [SenhorioControllers::class, 'GetPageSenhorio']);
 
+Route::get('/Gestor/{id}/quarto', [GestorControllers::class, 'GetPageDetalheQuarto']);
+Route::get('/Gestor/{id}/casa', [GestorControllers::class, 'GetPageDetalheCasa']);
+Route::get('/Gestor/{id}/AprovarQuarto', [GestorControllers::class, 'AprovarQuarto']);
+Route::get('/Gestor/{id}/ReprovarQuarto', [GestorControllers::class, 'ReprovarQuarto']);
+Route::get('/Gestor/{id}/AprovarCasa', [GestorControllers::class, 'AprovarCasa']);
+Route::get('/Gestor/{id}/ReprovarCasa', [GestorControllers::class, 'ReprovarCasa']);
 Route::post('/Gestor/{id}/EstadoQuarto', [GestorControllers::class, 'MudarestadoQuarto']);
 Route::post('/Gestor/{id}/EstadoCasa', [GestorControllers::class, 'MudarestadoCasa']);
 Route::post('/user/{id}/update', [GestorControllers::class, 'updateProfile']);
@@ -54,7 +60,7 @@ Route::post('/AddGestor', [GestorControllers::class, 'Adicionargestor']);
 Route::get('/Gestor', [GestorControllers::class, 'GetPageGestor']);
 Route::post('/Gestor/{id}/EstadoUser', [GestorControllers::class, 'mudarestado']);
 Route::post('/Gestor/{id}/RemoverUser', [GestorControllers::class, 'removerUser']);
-Route::get('/gestor', [GestorControllers::class, 'GetPageGestor']);
+Route::get('/gestor', [GestorControllers::class, 'GetPageGestor'])->name('/gestor');
 
 Route::get('/validation', [ValidationController::class, 'GetPagevalidation']);
 Route::get('/Login', [LoginController::class, 'GetPageLogin']);

@@ -1,5 +1,4 @@
 <html class="no-js" lang="pt-pt" prefix="og: https://ogp.me/ns#" data-lt-installed="true">
-<script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/content/location/location.js" id="nimlmejbmnecnaghgmbahmbaddhjbecg"></script><script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/libs/extend-native-history-api.js"></script><script src="chrome-extension://nimlmejbmnecnaghgmbahmbaddhjbecg/libs/requests.js"></script>
 <head>
     <style data-merge-styles="true"></style>
     <style data-merge-styles="true"></style>
@@ -40,17 +39,19 @@
     <meta name="generator" content="WPML ver:4.3.16 stt:1,41;">
     <link rel="shortcut icon" href="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2-1.svg">
     <!-- Css adicional -->
-    <link rel="stylesheet" href="/Style_Page_1/hr_style.css">
-    <link rel="stylesheet" href="/Style_Page_Gestor/Tabela.css">
     <link href="/Style_Page_1/bootstrap.min.css" rel="stylesheet">
     <link href="/Style_Page_1/global.css" rel="stylesheet">
     <link href="/Style_Page_1/list.css" rel="stylesheet">
     <link href="/Style_Page_1/element.css" rel="stylesheet">
-    <link href="css/agent.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/Style_Page_1/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
     <script src="/Style_Page_1/jquery-2.1.1.min.js"></script>
     <script src="/Style_Page_1/bootstrap.min.js"></script>
+    <link href="/Style_Page_1/detail.css" rel="stylesheet">
+    <link href="/Style_Page_1/Icons.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmzQm0wv8bboIXCkTqBzveXvra3oJJet0"></script>
+
+
     <!-- /Css adicional -->
     <style type="text/css" id="wp-custom-css">
         @media (max-width: 767px)
@@ -74,7 +75,7 @@
     <meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
     <style></style>
 </head>
-<body class="">
+<body class="" onload="initMap()">
 <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-edgeless cc-bottom cc-right cc-color-override-1074119104 cc-invisible" style="display: none;">
     <!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Este website utiliza cookies próprios e de terceiros para melhorar sua experiência de navegação. Ao continuar a navegação, assumimos sua aprovação. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="" rel="noopener noreferrer nofollow" target="_blank">Saber mais</a></span>
     <div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">✕</a></div>
@@ -84,9 +85,9 @@
     <div class="container">
         <div class="main-logo big">
             <a class="main-logo big" href="https://www.estgoh.ipc.pt">
-					<span>
-					<img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo">
-					</span>
+               <span>
+               <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo">
+               </span>
             </a>
         </div>
         <nav>
@@ -487,7 +488,6 @@
     <div class="sub-footer">
         <div class="container">
             <div class="logo-container">
-
             </div>
             <div class="links">
                 <a href="https://www.estgoh.ipc.pt/sugestoes/">Sugestões, elogios e reclamações</a>
@@ -519,24 +519,61 @@
         <div class="inner">
             <a class="main-logo small" href="https://www.estgoh.ipc.pt">
                 <img src="https://www.estgoh.ipc.pt/wp-content/uploads/2020/10/svg_logo-2.svg" class="logo" style="max-width: 45px; width: 45px;">
-                <div style="color: white !important;" class="title-sm-main">Escola Superior de<br>Tecnologia e Gestão<br>Politécnico de Coimbra</div>
+                <div style="color: white !important;" class="title-sm-main">Escola Superior de <br>Tecnologia e Gestão<br>Politécnico de Coimbra</div>
             </a>
-            <ul class="site-options">
-                <li class="dropdown-menu-user-div-container">
-                    @foreach($Data as $user)
-                        <img src="{{asset('storage/'.$user->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
-                         <i  class="fa fa-inverse">{{$user->Email}}</i>
-                    @endforeach
-                    <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
-                </li>
-                <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
-            </ul>
+            @if($DadosUser!=null)
+                <ul class="site-options">
+                    <li class="dropdown-menu-user-div-container">
+                        @foreach($DadosUser as $user)
+                            <img src="{{asset('storage/'.$user->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                            <i  class="fa fa-inverse">{{$user->Email}}</i>
+                        @endforeach
+                        <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
+                    </li>
+                    <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
+                </ul>
+            @else
+                <ul class="site-options">
+                    <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
+                    <li class="dropdown-menu-user-div-container">
+                        <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
+                        <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
+                    </li>
+                    <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
+                </ul>
+            @endif
         </div>
-        <div class="dropdown-menu-user-div" style="left: 76%">
-            <ul>
-                <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
-                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
-            </ul>
+        <div class="dropdown-menu-user-div">
+            @if($DadosUser!=null)
+                @foreach($DadosUser as $user)
+                    @if($user->Tipo=='senhorio')
+                        <ul>
+                            <li><a href="/Senhorio/Profile"><i class="fa fa-indent"></i> Profile</a></li>
+                            <li><a href="/Senhorio"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    @endif
+                    @if($user->Tipo=='gestor')
+                        <ul>
+                            <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
+                            <li><a href="/gestor"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    @endif
+                    @if($user->Tipo=='Aluno')
+                        <ul>
+                            <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
+                            <li><a href="/gestor"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    @endif
+                @endforeach
+            @else
+                <ul>
+                    <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
+                    <li><a href="/register"><i class="fa fa-user-plus"></i> Registar</a></li>
+                </ul>
+            @endif
         </div>
         <section class="module module-search module-layer-search">
             <div class="container">
@@ -557,9 +594,10 @@
             </div>
         </section>
     </div>
+
 </header>
 <main id="primary" class="main-section">
-    <section class="module module-page--header site-header--image-bg" style="height: 310px ">
+    <section class="module module-page--header site-header--image-bg " style="height: 300px ">
         <div class="page-title">
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
@@ -578,272 +616,455 @@
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Gestor</span></div>
+            <div class="breadcrumbs"><a href="/gestor" rel="v:url" property="v:title">Gestor</a> / <span class="current">detalhe</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
             <!--<div class="image" style="background-image: url(https://www.estgoh.ipc.pt/wp-content/uploads/2020/11/ESTGOH_26-scaled-aspect-ratio-720-480-720x480.jpg)"></div>-->
         </div>
-
     </section>
-
     <article id="main" class="article-content">
-        <div style="position: absolute; right: 40px;">
-            @if(session('error')!=null)
-                <div class="toast">
-                    <div class="toast-content">
-                        <i class="fa fa-solid fa-remove error"></i>
-                        <div class="message">
-                            <span class="text text-1">Error</span>
-                            <span class="text text-2">{{session('error')}}</span>
-                        </div>
+        <section id="center" class="clearfix center_detail" style="background: rgba(0,0,0,0.02)">
+            <div class="center clearfix">
+                <div id="carousel" class="carousel slide carousel-fade" style="width: 80%; left: 10%;">
+                    <div class="carousel-inner" style="height: 80%">
+                        @if($PohtosQuarto !=null)
+                            @php $slideNo = 0 @endphp
+                            @foreach($PohtosQuarto as $pohtosquarto)
+                                @if($slideNo == 0)
+                                    <div data-slide-no="{{ $slideNo }}" class="item carousel-item active">
+                                        <img src="{{asset('storage/'.$pohtosquarto->Path)}}" alt="">
+                                    </div>
+                                @else
+                                    <div data-slide-no="{{ $slideNo }}" class="item carousel-item">
+                                        <img src="{{asset('storage/'.$pohtosquarto->Path)}}" alt="">
+                                    </div>
+                                @endif
+                                @php $slideNo++ @endphp
+                            @endforeach
+                        @endif
                     </div>
-                    <i class="fa fa-solid fa-close close"></i>
-                    <div class="progress error active"></div>
-                </div>
-            @endif
-        </div>
-        <div style="position: absolute; right: 20px; width: 28%;">
-            @if(session('success')!=null)
-                <div class="toast" >
-                    <div class="toast-content" style="height: 100%">
-                        <i class="fa fa-solid fa-check check"></i>
-
-                        <div class="message">
-                            <span class="text text-1">Success</span>
-                            <span class="text text-2">{{session('success')}}</span>
-                        </div>
-                    </div>
-                    <i class="fa fa-solid fa-close close"></i>
-                    <div class="progress active"></div>
-                </div>
-            @endif
-        </div>
-        <section class="table__body">
-        <div class="center_home_1i1 clearfix" style="width: 25%;">
-            <select class="form-control" id="selector_list">
-                <option value="utilizadores">Lista de Utilizadores</option>
-                <option value="anuncios">Lista dos anúncios</option>
-                <option value="pedidos">Lista dos pedidos</option>
-            </select>
-        </div>
-            </section>
-        <section class="module module--list" id="lista_utilizadores">
-            <div class="popular_1 text-center clearfix">
-                <div class="col-sm-12">
-                    <h1 class="mgt"> Lista de Utilizadores</h1>
-                </div>
-                <div class="h-divider">
-                    <div class="shadow"></div>
+                    <!-- Carousel nav -->
+                    <a class="left carousel-control kb_control_left" href="#carousel" role="button" data-slide="prev">
+                        <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <!-- Right-Button -->
+                    <a class="right carousel-control kb_control_right" href="#carousel" role="button" data-slide="next">
+                        <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
-
-            <section class="table__header">
-
-                <div class="center_home_1i1 clearfix">
-                    <h5 class="mgt text-center">
-                        <a class="button_1 block mgt" href="/gestor/Adicionar_Gestor">
-                            <i class="fa fa-user-plus"></i>
-                            Adicionar Gestor
-                        </a>
-                    </h5>
-                </div>
-                <div class="input-group" id="search_Principal" style="right: 50%; left: -8%;">
-                    <input  type="search" placeholder="Pesquisar utilizadores...">
-                    <i class="fa fa-search fa-2x"></i>
-                </div>
-            </section>
-            <section class="table__body">
-                <table id="tabela_Principal">
-                    <thead>
-                    <tr>
-                        <th> ID <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Email <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Estado(ِAtivar/Inativar) <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Remover </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($utilizadores as $utilizador)
-                    <tr>
-                        <td>{{ $utilizador->id }}</td>
-                        <td>{{ $utilizador->UserName }}</td>
-                        <td>{{ $utilizador->Email }}</td>
-                        <td>
-                            <form action="/Gestor/{{ $utilizador->id }}/EstadoUser" method="POST">
-                                @csrf
-                                <button type="submit" style="left: 40px; top: 5px" class="status {{ $utilizador->Estado == 'Ativo' ? 'delivered' : ($utilizador->Estado == 'Desativo' ? 'cancelled' : 'pending') }}">
-                                {{ $utilizador->Estado == 'Ativo' ? 'Ativo' : ($utilizador->Estado == 'Desativo' ? 'Desativo' : 'Pending') }}
-                            </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/Gestor/{{ $utilizador->id }}/RemoverUser" method="POST">
-                                @csrf
-                                <button  type="submit"  class="fa fa-user-times fa-3x">
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-
-                    </tbody>
-                </table>
-            </section>
-
         </section>
 
-        <section class="module module--list" id="lista_anuncios" style="display: none;">
-            <div class="popular_1 text-center clearfix">
-                <div class="col-sm-12">
-                    <h1 class="mgt"> Lista dos anúncios</h1>
-                </div>
-                <div class="h-divider">
-                    <div class="shadow"></div>
-                </div>
+        <section id="list_detail" style="background: rgba(0,0,0,0.02)">
+            <div style="position: absolute; right: 40px;">
+                @if(session('error')!=null)
+                    <div class="toast">
+                        <div class="toast-content">
+                            <i class="fa fa-solid fa-remove error"></i>
+                            <div class="message">
+                                <span class="text text-1">Error</span>
+                                <span class="text text-2">{{session('error')}}</span>
+                            </div>
+                        </div>
+                        <i class="fa fa-solid fa-close close"></i>
+                        <div class="progress error active"></div>
+                    </div>
+                @endif
             </div>
-            <section class="table__header">
-                <div class="center_home_1i1 clearfix" style="visibility: hidden">
-                    <h5 class="mgt text-center"><a class="button_1 block mgt" href="detail.html"><i class="fa fa-user-plus"></i> Filtrar</a></h5>
-                </div>
-                <div class="input-group" id="search_tabela_List_anuncios" style="right: 50%; left: -8%;">
-                    <input  type="search" placeholder="Pesquisar anúncio...">
-                    <i class="fa fa-search fa-2x"></i>
-                </div>
-            </section>
-            <section class="table__body">
-                <table id="tabela_List_anuncios">
-                    <thead>
-                    <tr>
-                        <th> ID <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> proprietário <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Estado(Inativar/Reativar) <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Consultar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @if($Casa !=null)
-                        @foreach($Casa as $dadosCasa)
-                    <tr>
-                        <td>  {{ $dadosCasa->idnow }} </td>
-                        <td>  {{ $dadosCasa->Titulo }}</td>
-                        <td> {{ $dadosCasa->Endereco }}</td>
-                        <td> {{ $dadosCasa->UserName }} </td>
-                        <td> {{ $dadosCasa->Data_fim }} </td>
-                        <td> <strong>  {{ $dadosCasa->Preço }}€ </strong></td>
-                        <td>
-                            <form action="/Gestor/{{ $dadosCasa->idnow }}/EstadoCasa" method="POST">
-                                @csrf
-                                <button type="submit" style="left: 40px; top: 5px" class="status {{ $dadosCasa->estado == 'Ativo' ? 'delivered' : ($dadosCasa->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
-                                    {{ $dadosCasa->estado == 'Ativo' ? 'Ativo' : ($dadosCasa->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
-                                </button>
-                            </form>
-                        </td>
-                        <td>
-                            <a href="inicio/{{ $dadosCasa->idnow }}/casa" class="fa fa-eye fa-2x"></a>
-                        </td>
-                    </tr>
-                        @endforeach
-                    @endif
-                    @if($Quartos !=null)
-                        @foreach($Quartos as $dadosQuartos)
-                            <tr>
-                                <td>  {{ $dadosQuartos->idnow }} </td>
-                                <td>  {{ $dadosQuartos->Titulo }}</td>
-                                <td> {{ $dadosQuartos->Endereco }}</td>
-                                <td> {{ $dadosQuartos->UserName }} </td>
-                                <td> {{ $dadosQuartos->data_fim }} </td>
-                                <td> <strong>  {{ $dadosQuartos->Preço }}€ </strong></td>
-                                <td>
-                                    <form action="/Gestor/{{ $dadosQuartos->idnow }}/EstadoQuarto" method="POST">
-                                        @csrf
-                                        <button type="submit" style="left: 40px; top: 5px" class="status {{ $dadosQuartos->estado == 'Ativo' ? 'delivered' : ($dadosQuartos->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
-                                            {{ $dadosQuartos->estado == 'Ativo' ? 'Ativo' : ($dadosQuartos->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
-                                        </button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <a href="inicio/{{ $dadosQuartos->idnow }}/quarto"  class="fa fa-eye fa-2x"></a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @endif
-                    </tbody>
-                </table>
-            </section>
+            <div style="position: absolute; right: 20px; width: 28%;">
+                @if(session('success')!=null)
+                    <div class="toast" >
+                        <div class="toast-content" style="height: 100%">
+                            <i class="fa fa-solid fa-check check"></i>
 
-        </section>
-        <section class="module module--list" id="lista_pedidos" style="display: none;">
-            <div class="popular_1 text-center clearfix">
-                <div class="col-sm-12">
-                    <h1 class="mgt"> Lista dos pedidos</h1>
-                    <p>aprovaar ou reprovar dos anúncios</p>
-                </div>
-                <div class="h-divider">
-                    <div class="shadow"></div>
+                            <div class="message">
+                                <span class="text text-1">Success</span>
+                                <span class="text text-2">{{session('success')}}</span>
+                            </div>
+                        </div>
+                        <i class="fa fa-solid fa-close close"></i>
+                        <div class="progress active"></div>
+                    </div>
+                @endif
+            </div>
+            <div class="container clearfix">
+                <div class="row">
+                    @if($DadosQuarto !=null)
+                        @foreach($DadosQuarto as $dadosquarto)
+                    <div class="list_detail_1 clearfix" >
+                        <div class="col-sm-16">
+                            <div class="list_detail_1l clearfix" >
+                                <div class="list_detail_1l1 clearfix" >
+                                    <h3 class="mgt">{{$dadosquarto->Preço}}€ / <span class="span_1">Por mês</span> <span class="span_2">Aluguel</span></h3>
+                                    <p><i class="fa fa-map-marker"></i> {{$dadosquarto->Endereco}}, {{$dadosquarto->Codigo_postal}}</p>
+                                        <h5 STYLE="padding-right: 20px"  class="mgt"><a class="button mgt" href="Gestor/{{ $dadosquarto->idnow }}/AprovarQuarto">Aprovar</a></h5></form>
+                                        <h5 style="float: left; padding-left: 73%;" class="mgt"><a type="submit"  class="button mgt" href="#Gestor/{{ $dadosquarto->idnow }}/ReprovarQuarto">Reprovar</a></h5></form>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Informações da propriedade</h4>
+                                    <hr>
+                                    <div class="list_detail_1l2i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt">Distância</h5>
+                                            <h6 class="col_1">{{$dadosquarto->Distancia}}</h6>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt">Sexo</h5>
+                                            <h6 class="col_1">{{$dadosquarto->Genero}}</h6>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt">Área total do quarto</h5>
+                                            <h6 class="col_1">{{$dadosquarto->area}}</h6>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon roupa-cama col_1">
+                                            @if($dadosquarto->roupa_de_cama==0)
+                                              <i class="icon no"></i>
+                                            @endif
+                                            </i> roupa de cama </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon cama col_1">
+                                                @if($dadosquarto->cama==0)
+                                                    <i class="icon no"></i>
+                                                @endif
+                                                </i>  cama</h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon mesa-cama col_1">
+                                                @if($dadosquarto->mesa_cabeceira==0)
+                                                    <i class="icon no"></i>
+                                                @endif
+                                                </i> mesa cabeceira </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon lambada col_1">
+                                                @if($dadosquarto->Candeeiro_de_mesa_do_estudo==0)
+                                                    <i class="icon no"></i>
+                                                @endif
+                                                </i> Candeeiro</h5>
+                                        </div>
+                                    </div>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon mesa-estudo col_1">
+                                                    @if($dadosquarto->Mesa_do_estudo==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Mesa do estudo </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Janelas col_1">
+                                                    @if($dadosquarto->Janelas==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Janelas</h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Varanda col_1">
+                                                    @if($dadosquarto->Varanda==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Varanda </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Cabinet col_1">
+                                                    @if($dadosquarto->Armario==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Armário  </h5>
+                                        </div>
+                                    </div>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon banho col_1">
+                                                    @if($dadosquarto->Casa_de_banho_privativa==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Casa de banho privativa </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Descrição</h4>
+                                    <hr>
+                                    <p>{{$dadosquarto->description}}</p>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Cozinha</h4>
+                                    <hr>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Forno col_1">
+                                                    @if($dadosquarto->Forno==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Forno </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Fogao col_1">
+                                                    @if($dadosquarto->Fogao==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Fogão</h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Caldeira col_1">
+                                                    @if($dadosquarto->Caldeira==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Caldeira de água </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon cafe col_1">
+                                                    @if($dadosquarto->Maq_cafe==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i>Máquina de café</h5>
+                                        </div>
+                                    </div>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Placa col_1">
+                                                    @if($dadosquarto->Placa==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Placa </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Micro-ondas col_1">
+                                                    @if($dadosquarto->Micro==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Micro-ondas</h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Pratos col_1">
+                                                    @if($dadosquarto->Pratos==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Pratos e talheres </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Utensilios col_1">
+                                                    @if($dadosquarto->Utensilios==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Utensílios de cozinha  </h5>
+                                        </div>
+                                    </div>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon mesa-estudo col_1">
+                                                    @if($dadosquarto->Frigorifico==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Frigorífico </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Sala</h4>
+                                    <hr>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon estar col_1">
+                                                    @if($dadosquarto->estar_partilhada==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Área de estar partilhada </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Sofas col_1">
+                                                    @if($dadosquarto->Sofas==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Sofás</h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Televisao col_1">
+                                                    @if($dadosquarto->Televisao==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Televisão </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon jantar col_1">
+                                                    @if($dadosquarto->Mesa_jantar==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Mesa de jantar com cadeiras  </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Casa de banho</h4>
+                                    <hr>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Chuveiro col_1">
+                                                    @if($dadosquarto->Chuveiro==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Chuveiro </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Toalhas col_1">
+                                                    @if($dadosquarto->Toalhas==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Toalhas</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Outros</h4>
+                                    <hr>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon lavar col_1">
+                                                    @if($dadosquarto->Maquina_lavar_roupa==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Máquina de lavar roupa </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon sacar col_1">
+                                                    @if($dadosquarto->Maquina_sacar_roupa==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Máquina de sacar roupa</h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon central col_1">
+                                                    @if($dadosquarto->Aquecimento_central==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Aquecimento central </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon passar col_1">
+                                                    @if($dadosquarto->passar_Ferro==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> máquina passar Ferro</h5>
+                                        </div>
+                                    </div>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Aquecedor col_1">
+                                                    @if($dadosquarto->Aquecedor_eletrico==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Aquecedor elétrico </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Serviços</h4>
+                                    <hr>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Wi-Fi col_1"><i class="icon no">
+                                                        @if($dadosquarto->wifi==0)
+                                                            <i class="icon no"></i>
+                                                        @endif
+                                                    </i></i> Wi-Fi </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Elevador col_1">
+                                                    @if($dadosquarto->Elevador==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Elevador</h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Despesas col_1">
+                                                    @if($dadosquarto->Despesas==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Despesas incluídas </h5>
+                                        </div>
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon Recibo col_1">
+                                                    @if($dadosquarto->Recibo==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> Recibo</h5>
+                                        </div>
+                                    </div>
+                                    <div class="home_inner_i clearfix">
+                                        <div class="col-sm-3 space_left">
+                                            <h5 class="mgt"><i class="icon limpeza col_1">
+                                                    @if($dadosquarto->limpeza==0)
+                                                        <i class="icon no"></i>
+                                                    @endif
+                                                </i> limpeza </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Local</h4>
+                                    <hr>
+
+                                <script>
+                                    var letValue = "{{ $dadosquarto->let }}";
+                                    letValue = letValue.replace(/[()]/g, '');
+                                    var coordinates = letValue.split(',');
+                                    var lat = parseFloat(coordinates[0]);
+                                    var lng = parseFloat(coordinates[1]);
+                                    function initMap() {
+                                        const myLatLng = { lat: 40.35827117617252, lng: -7.8569972177657075 };
+                                        const map = new google.maps.Map(document.getElementById("map"), {
+                                            zoom: 15,
+                                            center: myLatLng,
+                                        });
+                                        const icon_escola = "https://img.icons8.com/emoji/55/school-emoji.png";
+                                        var estgoh = { lat: 40.361008858094266, lng: -7.861192556524104 };
+                                        new google.maps.Marker({
+                                            position: estgoh,
+                                            icon:icon_escola,
+                                            map: map,
+                                            title: "Hello World!",
+                                        });
+                                        const icon_casa = "https://img.icons8.com/plasticine/75/order-delivered.png";
+                                        var casa = { lat:lat,lng:lng };
+                                        new google.maps.Marker({
+                                            position: casa,
+                                            icon:icon_casa,
+                                            map: map,
+                                            title: "Hello World!",
+                                        });
+                                    }
+                                </script>
+                                <div id="map" style="height: 400px; width: 100%;"></div>
+                                </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <h4 class="mgt">Informação de contacto</h4>
+                                    <hr>
+                                    <div class="list_detail_1r clearfix">
+                                        <div class="list_detail_1r1 clearfix">
+                                            <img style="width: 60px;height: 60px" src="{{asset('storage/'.$dadosquarto->Avatar)}}" class="img-circle" alt="abc">
+                                            <h4 class="mgt"><a href="#">{{ $dadosquarto->UserName }}</a></h4>
+                                            <h5>
+                                                <i class="fa fa-phone col_1"></i> {{$dadosquarto->Telefone}} /
+                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>{{$dadosquarto->EmailQuarto}}
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        @endif
                 </div>
             </div>
-            <section class="table__header">
-                <div class="center_home_1i1 clearfix" style="visibility: hidden">
-                    <h5 class="mgt text-center"><a class="button_1 block mgt" href="detail.html"><i class="fa fa-user-plus"></i> Filtrar</a></h5>
-                </div>
-                <div class="input-group" id="search_tabela_List_pedidos" style="right: 50%; left: -8%;">
-                    <input  type="search" placeholder="Pesquisar pedido...">
-                    <i class="fa fa-search fa-2x"></i>
-                </div>
-            </section>
-            <section class="table__body">
-                <table id="tabela_List_pedidos">
-                    <thead>
-                    <tr>
-                        <th> ID <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> proprietário <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data expirou <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Preço <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Consultar</th>
-                        <tr>
-                    </thead>
-                    <tbody>
-                    @if($DataQuartoPending !=null)
-                        @foreach($DataQuartoPending as $dadosCasa)
-                    <tr>
-                        <td> {{ $dadosCasa->idnow }} </td>
-                        <td> {{ $dadosCasa->Titulo }}</td>
-                        <td>{{ $dadosCasa->Endereco }} </td>
-                        <td> {{ $dadosCasa->UserName }} </td>
-                        <td> {{ $dadosCasa->data_fim }} </td>
-                        <td> <strong> {{ $dadosCasa->Preço }}€ </strong></td>
-                        <td>
-                            <a href="Gestor/{{ $dadosCasa->idnow }}/quarto" class="fa fa-eye fa-2x"></a>
-                        </td>
-                    </tr>
-                        @endforeach
-                    @endif
-                    @if($DataCasaPending !=null)
-                        @foreach($DataCasaPending as $dadosCasa)
-                            <tr>
-                                <td> {{ $dadosCasa->idnow }} </td>
-                                <td> {{ $dadosCasa->Titulo }}</td>
-                                <td>{{ $dadosCasa->Endereco }} </td>
-                                <td> {{ $dadosCasa->UserName }} </td>
-                                <td> {{ $dadosCasa->Data_fim }} </td>
-                                <td> <strong> {{ $dadosCasa->Preço }}€ </strong></td>
-                                <td>
-                                    <a STYLE="left: 50%" href="Gestor/{{ $dadosCasa->idnow }}/casa" class="fa fa-eye fa-2x"></a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @endif
-                    </tbody>
-                </table>
-            </section>
         </section>
     </article>
 </main>
@@ -1036,22 +1257,22 @@
                     <li>
                         <span class="level-1-a title-lg ">Contactos</span>
                         <div>
-                            <p><strong>ESTGOH&nbsp;</strong><br>
+                            <a><strong>ESTGOH&nbsp;</strong><br>
                                 Escola Superior de Tecnologia e Gestão de Oliveira do Hospital<br>
                                 Rua General Santos Costa, n.º 4<br>
                                 3400-124 Oliveira do Hospital
-                            </p>
-                            <p><strong>Telefones/Telemóvel:</strong><br>
+                            </a>
+                            <a><strong>Telefones/Telemóvel:</strong><br>
                                 238 605 170 – Geral (<em>Chamada para a rede fixa nacional</em>)<br>
                                 238 605 176 – Serviços Académicos (<em>Chamada para a rede fixa nacional</em>)
-                            </p>
-                            <p><strong>E-mail:</strong><br>
+                            </a>
+                            <a><strong>E-mail:</strong><br>
                                 geral@estgoh.ipc.pt – Geral<br>
                                 academicos@estgoh.ipc.pt – Serviços Académicos
-                            </p>
-                            <p><strong>Localização:</strong><br>
+                            </a>
+                            <a><strong>Localização:</strong><br>
                                 Cordenadas: 40°21’39.8″N 7°51’39.9″W
-                            </p>
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -1135,7 +1356,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="/Style_Page_Gestor/Gestor.js"></script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/vendor.min.js?ver=1708280857" id="vendor-js"></script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/libs/custom-plugins.min.js?ver=1708280857" id="custom-plugins-js"></script>
     <script type="text/javascript" id="script-js-extra">
@@ -1144,8 +1364,27 @@
         /* ]]> */
     </script>
     <script type="text/javascript" src="https://www.estgoh.ipc.pt/wp-content/themes/ipc-multisite-theme-1.4/dist/scripts/app.min.js?ver=1708280857" id="script-js"></script>
+    <script src="/Style_Page_1/classie.js"></script>
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var userDropdown = document.querySelector('.dropdown-menu-user-div-container');
+            var dropdownMenu = document.querySelector('.dropdown-menu-user-div');
 
+            userDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // Fechar o menu quando clicar fora dele
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('show');
+            });
+
+            // Evitar que o menu feche quando se clica dentro dele
+            dropdownMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
         const  toast_valid = document.querySelector(".toast");
         const closeIcon_valid = document.querySelector(".close");
         const progress_valid = document.querySelector(".progress");
@@ -1175,7 +1414,7 @@
             });
         });
     </script>
-
+    <script src="/Style_Page_1/cbpAnimatedHeader.js"></script>
 </footer>
 </body>
 </html>

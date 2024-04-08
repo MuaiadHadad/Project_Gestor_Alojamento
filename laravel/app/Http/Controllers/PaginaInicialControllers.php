@@ -123,7 +123,7 @@ class PaginaInicialControllers extends Controller{
     }
     public function index($pagina = 1){
         $resultadosPorPagina = 8;
-        $indiceInicial = ($pagina - 1) * $resultadosPorPagina;
+        $indiceInicial = ($pagina - 1) * 4;
         if(session('ActivationToken')!=null) {
             $token = session('ActivationToken');
             $user = DB::table('user')->where('ActivationToken', $token)->get();
@@ -171,8 +171,8 @@ class PaginaInicialControllers extends Controller{
             if ($totalQuartos < 4) {
                 $quantoporCasa = 8 - $totalQuartos;
             }
-            $QuartosPaginados = $QuartosAtive->skip(max(0, $indiceInicial - $quantoporQuarto))->take($quantoporQuarto);
-            $CasasPaginadas = $CasaAtive->skip(max(0, $indiceInicial - $quantoporCasa))->take($quantoporCasa);
+            $QuartosPaginados = $QuartosAtive->skip(max(0, $indiceInicial ))->take($quantoporQuarto);
+            $CasasPaginadas = $CasaAtive->skip(max(0, $indiceInicial ))->take($quantoporCasa);
 
             return view('inicio\index', [
                 'DataCasaAtive' => $CasasPaginadas,
@@ -226,8 +226,8 @@ class PaginaInicialControllers extends Controller{
             if ($totalQuartos < 4) {
                 $quantoporCasa = 8 - $totalQuartos;
             }
-            $QuartosPaginados = $QuartosAtive->skip(max(0, $indiceInicial - $quantoporQuarto))->take($quantoporQuarto);
-            $CasasPaginadas = $CasaAtive->skip(max(0, $indiceInicial - $quantoporCasa))->take($quantoporCasa);
+            $QuartosPaginados = $QuartosAtive->skip(max(0, $indiceInicial ))->take($quantoporQuarto);
+            $CasasPaginadas = $CasaAtive->skip(max(0, $indiceInicial ))->take($quantoporCasa);
 
             return view('inicio\index', [
                 'DataCasaAtive' => $CasasPaginadas,
@@ -365,15 +365,15 @@ class PaginaInicialControllers extends Controller{
                 });
             if ($request->has('preco') && $request->input('preco')!=null) {
                 $preco = $request->input('preco');
-                $query->where('casa_completa.Preço', '>=', $preco);
-                $queryQuarto->where('quarto.Preço', '>=', $preco);
+                $query->where('casa_completa.Preço', '<=', $preco);
+                $queryQuarto->where('quarto.Preço', '<=', $preco);
             }
 
             if ($request->has('destance') && $request->input('destance')!=null) {
                 $distancia = $request->input('destance');
                 $distanciaKm = $distancia / 1000;
-                $query->where(DB::raw("REPLACE(SUBSTRING_INDEX(endreco.Distancia, ' ', 1), ',', '.')"), '>=', $distanciaKm);
-                $queryQuarto->where(DB::raw("REPLACE(SUBSTRING_INDEX(endreco.Distancia, ' ', 1), ',', '.')"), '>=', $distanciaKm);
+                $query->where(DB::raw("REPLACE(SUBSTRING_INDEX(endreco.Distancia, ' ', 1), ',', '.')"), '<=', $distanciaKm);
+                $queryQuarto->where(DB::raw("REPLACE(SUBSTRING_INDEX(endreco.Distancia, ' ', 1), ',', '.')"), '<=', $distanciaKm);
             }
 
             if ($request->has('Tipo') && $request->input('Tipo')!="Tipo") {
@@ -384,8 +384,8 @@ class PaginaInicialControllers extends Controller{
 
             if ($request->has('n_quartos') && $request->input('n_quartos')!="n_quartos") {
                 $n_quartos = $request->input('n_quartos');
-                $query->where('casa_completa.N_quartos', '>', $n_quartos);
-                $queryQuarto->where('quarto.N_quartos', '>', $n_quartos);
+                $query->where('casa_completa.N_quartos', '<=', $n_quartos);
+                $queryQuarto->where('quarto.N_quartos', '<=', $n_quartos);
             }
 
             if ($request->has('Sexo') && $request->input('Sexo')!="Sexo") {
@@ -397,7 +397,7 @@ class PaginaInicialControllers extends Controller{
             $queryQuarto->where('quarto.estado', '=', 'Ativo');
             $resultadosQuarto = $queryQuarto->select('midia_de_casa.*','quarto.*','quarto.id as idnow')->get();
             $resultadosCasa = $query->select('midia_de_casa.*','casa_completa.*','casa_completa.id as idnow')->get();
-        return view('inicio\index',['DadosUser' => $user,'resultadosCasa' => $resultadosCasa,'$resultadosQuarto'=>$resultadosQuarto]);
+        return view('inicio\index',['DadosUser' => $user,'resultadosCasa' => $resultadosCasa,'resultadosQuarto'=>$resultadosQuarto]);
 
         }else{
             $query = DB::table('casa_completa')
@@ -414,15 +414,15 @@ class PaginaInicialControllers extends Controller{
                 });
             if ($request->has('preco') && $request->input('preco')!=null) {
                 $preco = $request->input('preco');
-                $query->where('casa_completa.Preço', '>=', $preco);
-                $queryQuarto->where('quarto.Preço', '>=', $preco);
+                $query->where('casa_completa.Preço', '<=', $preco);
+                $queryQuarto->where('quarto.Preço', '<=', $preco);
             }
 
             if ($request->has('destance') && $request->input('destance')!=null) {
                 $distancia = $request->input('destance');
                 $distanciaKm = $distancia / 1000;
-                $query->where(DB::raw("REPLACE(SUBSTRING_INDEX(endreco.Distancia, ' ', 1), ',', '.')"), '>=', $distanciaKm);
-                $queryQuarto->where(DB::raw("REPLACE(SUBSTRING_INDEX(endreco.Distancia, ' ', 1), ',', '.')"), '>=', $distanciaKm);
+                $query->where(DB::raw("REPLACE(SUBSTRING_INDEX(endreco.Distancia, ' ', 1), ',', '.')"), '<=', $distanciaKm);
+                $queryQuarto->where(DB::raw("REPLACE(SUBSTRING_INDEX(endreco.Distancia, ' ', 1), ',', '.')"), '<=', $distanciaKm);
             }
 
             if ($request->has('Tipo') && $request->input('Tipo')!="Tipo") {
@@ -433,8 +433,8 @@ class PaginaInicialControllers extends Controller{
 
             if ($request->has('n_quartos') && $request->input('n_quartos')!="n_quartos") {
                 $n_quartos = $request->input('n_quartos');
-                $query->where('casa_completa.N_quartos', '>', $n_quartos);
-                $queryQuarto->where('quarto.N_quartos', '>', $n_quartos);
+                $query->where('casa_completa.N_quartos', '<', $n_quartos);
+                $queryQuarto->where('quarto.N_quartos', '<', $n_quartos);
             }
 
             if ($request->has('Sexo') && $request->input('Sexo')!="Sexo") {

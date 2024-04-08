@@ -199,7 +199,7 @@ class GestorControllers extends Controller{
         $Casa = DB::table('casa_completa')->where('id', $id)->first();
 
         if (!$Casa) {
-            return redirect()->back()->with('error',  'Quarto não encontrado');
+            return redirect()->back()->with('error',  'Propriedade não encontrado');
         }
         if($Casa->estado=='pending'){
             return redirect()->back()->with('error',  'Ainda não pode mudar o estado deste Propriedade');
@@ -209,5 +209,162 @@ class GestorControllers extends Controller{
         DB::table('casa_completa')->where('id', $id)->update(['estado' => $novoEstado]);
 
         return redirect()->back()->with('success', 'Estado do Casa alterado com sucesso!');
+    }
+    public function AprovarCasa($id){
+        $Casa = DB::table('casa_completa')->where('id', $id)->first();
+        if (!$Casa) {
+            return redirect()->route('/gestor')->with('error',  'Propriedade não encontrado');
+        }
+        if($Casa->estado=='pending'){
+            DB::table('casa_completa')->where('id', $id)->update(['estado' => 'Ativo']);
+            return redirect()->route('/gestor')->with('success',  'A Propriedade foi Aprovada com sucesso!');
+        }else{
+            return redirect()->route('/gestor')->with('error',  'A Propriedade já Estava Aprovada');
+        }
+    }
+    public function AprovarQuarto($id){
+        $quarto = DB::table('quarto')->where('id', $id)->first();
+        if (!$quarto) {
+            return redirect()->route('/gestor')->with('error',  'Propriedade não encontrado');
+        }
+        if($quarto->estado=='pending'){
+            DB::table('quarto')->where('id', $id)->update(['estado' => 'Ativo']);
+            return redirect()->route('/gestor')->with('success',  'A Propriedade foi Aprovada com sucesso!');
+        }else{
+            return redirect()->route('/gestor')->with('error',  'A Propriedade já Estava Aprovada');
+        }
+    }
+    public function ReprovarCasa($id){
+        $Casa = DB::table('casa_completa')->where('id', $id)->first();
+        if (!$Casa) {
+            return redirect()->route('/gestor')->with('error',  'Propriedade não encontrado');
+        }
+        if($Casa->estado=='pending'){
+            DB::table('casa_completa')->where('id', $id)->update(['estado' => 'Desativo']);
+            return redirect()->route('/gestor')->with('success',  'A Propriedade foi Reprovada com sucesso!');
+        }else{
+            return redirect()->route('/gestor')->with('error',  'A Propriedade já Estava Reprovada');
+        }
+    }
+    public function ReprovarQuarto($id){
+        $quarto = DB::table('quarto')->where('id', $id)->first();
+        if (!$quarto) {
+            return redirect()->route('/gestor')->with('error',  'Propriedade não encontrado');
+        }
+        if($quarto->estado=='pending'){
+            DB::table('quarto')->where('id', $id)->update(['estado' => 'Desativo']);
+            return redirect()->route('/gestor')->with('success',  'A Propriedade foi Reprovada com sucesso!');
+        }else{
+            return redirect()->route('/gestor')->with('error',  'A Propriedade já Estava Reprovada');
+        }
+    }
+    public function GetPageDetalheQuarto($id)
+    {
+        if (session('ActivationToken') != null) {
+            $token = session('ActivationToken');
+            $user = DB::table('user')->where('ActivationToken', $token)->get();
+            $QuartosAtive =DB::table('quarto')
+                ->join('banho', 'banho.id_quarto', '=', 'quarto.id')
+                ->join('contato', 'contato.id_quarto', '=', 'quarto.id')
+                ->join('cozinha', 'cozinha.id_quarto', '=', 'quarto.id')
+                ->join('endreco', 'endreco.id_quarto', '=', 'quarto.id')
+                ->join('quartos_de_casa', 'quartos_de_casa.id_quarto', '=', 'quarto.id')
+                ->join('sala', 'sala.id_quarto', '=', 'quarto.id')
+                ->join('servicos', 'servicos.id_quarto', '=', 'quarto.id')
+                ->join('outros', 'outros.id_quarto', '=', 'quarto.id')
+                ->join('user', 'user.id', '=', 'quarto.id_user')
+                ->where('quarto.id', $id)
+                ->select('contato.Email as EmailQuarto','user.*','cozinha.Micro-ondas as Micro','quarto.id as idnow','quarto.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'quartos_de_casa.*'
+                    , 'sala.*', 'servicos.*', 'outros.*','servicos.Wi-Fi as wifi')->get();
+            if(!$QuartosAtive){
+                abort(404, 'Bad Request.');
+            }
+            $PhotoQuarto =DB::table('quarto')
+                ->join('midia_de_casa', 'midia_de_casa.id_quarto', '=', 'quarto.id')
+                ->where('quarto.id', $id)
+                ->select('midia_de_casa.*')->get();
+
+            return view('Page_Gestor\detalhe_quarto_Gestor', ['DadosUser' => $user,'DadosQuarto'=>$QuartosAtive,'PohtosQuarto'=>$PhotoQuarto]);
+        }else{
+            $QuartosAtive =DB::table('quarto')
+                ->join('banho', 'banho.id_quarto', '=', 'quarto.id')
+                ->join('contato', 'contato.id_quarto', '=', 'quarto.id')
+                ->join('cozinha', 'cozinha.id_quarto', '=', 'quarto.id')
+                ->join('endreco', 'endreco.id_quarto', '=', 'quarto.id')
+                ->join('quartos_de_casa', 'quartos_de_casa.id_quarto', '=', 'quarto.id')
+                ->join('sala', 'sala.id_quarto', '=', 'quarto.id')
+                ->join('servicos', 'servicos.id_quarto', '=', 'quarto.id')
+                ->join('outros', 'outros.id_quarto', '=', 'quarto.id')
+                ->join('user', 'user.id', '=', 'quarto.id_user')
+                ->where('quarto.id', $id)
+                ->select('contato.Email as EmailQuarto','user.*','cozinha.Micro-ondas as Micro','quarto.id as idnow','quarto.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'quartos_de_casa.*'
+                    , 'sala.*', 'servicos.*', 'outros.*','servicos.Wi-Fi as wifi')->get();
+            if(!$QuartosAtive){
+                abort(404, 'Bad Request.');
+            }
+            $PhotoQuarto =DB::table('quarto')
+                ->join('midia_de_casa', 'midia_de_casa.id_quarto', '=', 'quarto.id')
+                ->where('quarto.id', $id)
+                ->select('midia_de_casa.*')->get();
+
+            return view('Page_Gestor\detalhe_quarto_Gestor', ['DadosUser' => null,'DadosQuarto'=>$QuartosAtive,'PohtosQuarto'=>$PhotoQuarto]);
+        }
+    }
+    public function GetPageDetalheCasa($id){
+        if (session('ActivationToken') != null) {
+            $token = session('ActivationToken');
+            $user = DB::table('user')->where('ActivationToken', $token)->get();
+            $CasaAtive =DB::table('casa_completa')
+                ->join('banho', 'banho.id_casa', '=', 'casa_completa.id')
+                ->join('contato', 'contato.id_casa', '=', 'casa_completa.id')
+                ->join('cozinha', 'cozinha.id_casa', '=', 'casa_completa.id')
+                ->join('endreco', 'endreco.id_casa', '=', 'casa_completa.id')
+                ->join('sala', 'sala.id_casa', '=', 'casa_completa.id')
+                ->join('servicos', 'servicos.id_casa', '=', 'casa_completa.id')
+                ->join('outros', 'outros.id_casa', '=', 'casa_completa.id')
+                ->join('user', 'user.id', '=', 'casa_completa.id_user')
+                ->where('casa_completa.id', $id)
+                ->select('contato.Email as EmailQuarto','user.*','cozinha.Micro-ondas as Micro','casa_completa.id as idnow','casa_completa.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'sala.*', 'servicos.*', 'outros.*','servicos.Wi-Fi as wifi')->get();
+            if(!$CasaAtive){
+                abort(404, 'Bad Request.');
+            }
+            $PhotoCasa =DB::table('casa_completa')
+                ->join('midia_de_casa', 'midia_de_casa.id_casa', '=', 'casa_completa.id')
+                ->where('casa_completa.id', $id)
+                ->select('midia_de_casa.*')->get();
+            $QuartosCasa =DB::table('casa_completa')
+                ->join('quartos_de_casa', 'quartos_de_casa.id_casa', '=', 'casa_completa.id')
+                ->where('casa_completa.id', $id)
+                ->select('quartos_de_casa.*')->get();
+            return view('Page_Gestor\detalhe_casa_Gestor', ['DadosUser' => $user,'DadosCasaAtive'=>$CasaAtive,'PhotoCasa'=>$PhotoCasa,'DadosQuartoCasa'=>$QuartosCasa]);
+        }else{
+            $CasaAtive =DB::table('casa_completa')
+                ->join('banho', 'banho.id_casa', '=', 'casa_completa.id')
+                ->join('contato', 'contato.id_casa', '=', 'casa_completa.id')
+                ->join('cozinha', 'cozinha.id_casa', '=', 'casa_completa.id')
+                ->join('endreco', 'endreco.id_casa', '=', 'casa_completa.id')
+                ->join('sala', 'sala.id_casa', '=', 'casa_completa.id')
+                ->join('servicos', 'servicos.id_casa', '=', 'casa_completa.id')
+                ->join('outros', 'outros.id_casa', '=', 'casa_completa.id')
+                ->join('user', 'user.id', '=', 'casa_completa.id_user')
+                ->where('casa_completa.id', $id)
+                ->select('contato.Email as EmailQuarto','user.*','cozinha.Micro-ondas as Micro','casa_completa.id as idnow','casa_completa.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'sala.*', 'servicos.*', 'outros.*','servicos.Wi-Fi as wifi')->get();
+            if(!$CasaAtive){
+                abort(404, 'Bad Request.');
+            }
+            $PhotoCasa =DB::table('casa_completa')
+                ->join('midia_de_casa', 'midia_de_casa.id_casa', '=', 'casa_completa.id')
+                ->where('casa_completa.id', $id)
+                ->select('midia_de_casa.*')->get();
+            $QuartosCasa =DB::table('casa_completa')
+                ->join('quartos_de_casa', 'quartos_de_casa.id_casa', '=', 'casa_completa.id')
+                ->where('casa_completa.id', $id)
+                ->select('quartos_de_casa.*')->get();
+            return view('Page_Gestor\detalhe_casa_Gestor', ['DadosUser' => null,'DadosCasaAtive'=>$CasaAtive,'PhotoCasa'=>$PhotoCasa,'DadosQuartoCasa'=>$QuartosCasa]);
+        }
     }
 }

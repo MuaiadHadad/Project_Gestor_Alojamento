@@ -736,9 +736,10 @@
                                 <p>Encontre quarto com melhor classificação para você.</p>
                             </div>
                         </div>
-
-                        <div class="popular_2 clearfix">
-                            @if(isset($resultadosQuarto) && $resultadosQuarto !=null)
+                            @if(isset($resultadosQuarto))
+                            <div class="popular_2 clearfix">
+                                <h2 class="mgt">Renda por Quarto</h2>
+                                <hr>
                                 @foreach($resultadosQuarto as $QuartoAtive)
                                     <div class="col-sm-3">
                                         <div class="popular_2i clearfix">
@@ -759,9 +760,14 @@
                                         </div>
                                     </div>
                                 @endforeach
+                            </div>
                             @endif
-                            @if(isset($resultadosCasa) && $resultadosCasa !=null)
+                            @if(isset($resultadosCasa))
+                            <div class="popular_2 clearfix">
+                                    <h2 class="mgt">Renda por Casa</h2>
+                                    <hr>
                                 @foreach($resultadosCasa as $QuartoAtive)
+
                                     <div class="col-sm-3">
                                         <div class="popular_2i clearfix">
                                             <div class="popular_2i1 clearfix">
@@ -780,23 +786,9 @@
                                         </div>
                                     </div>
                                 @endforeach
-                            @endif
-                        </div>
-
-                        <div class="product_1_last text-center clearfix">
-                            <div class="col-sm-12">
-                                <ul>
-                                    <li><a href="detail.html"><i class="fa fa-chevron-left"></i>..</a></li>
-                                    <li class="act"><a href="detail.html">1</a></li>
-                                    <li><a href="detail.html">2</a></li>
-                                    <li><a href="detail.html">3</a></li>
-                                    <li><a href="detail.html">4</a></li>
-                                    <li><a href="detail.html">5</a></li>
-                                    <li><a href="detail.html">6</a></li>
-                                    <li><a href="#">..<i class="fa fa-chevron-right"></i></a></li>
-                                </ul>
                             </div>
-                        </div>
+                            @endif
+
                     </div>
                 </div>
             </section>
@@ -810,8 +802,11 @@
                             <p>Encontre quarto com melhor classificação para você.</p>
                         </div>
                     </div>
-                    <div class="popular_2 clearfix">
+
                         @if(isset($DataQuartoAtive) && $DataQuartoAtive !=null)
+                        <div class="popular_2 clearfix">
+                            <h2 class="mgt">Renda por Quartos</h2>
+                            <hr>
                             @foreach($DataQuartoAtive as $QuartoAtive)
                                 <div class="col-sm-3">
                                     <div class="popular_2i clearfix">
@@ -831,8 +826,12 @@
                                     </div>
                                 </div>
                             @endforeach
+                        </div>
                         @endif
                             @if(isset($DataCasaAtive) && $DataCasaAtive !=null)
+                                    <div class="popular_2 clearfix">
+                                        <h2 class="mgt">Renda por Casa</h2>
+                                        <hr>
                                 @foreach($DataCasaAtive as $QuartoAtive)
                                     <div class="col-sm-3">
                                         <div class="popular_2i clearfix">
@@ -852,9 +851,8 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                    </div>
                             @endif
-                    </div>
-
                     <div class="product_1_last text-center clearfix">
                         <div class="col-sm-12">
                             <ul>
