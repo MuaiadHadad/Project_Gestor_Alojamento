@@ -43,6 +43,11 @@ Route::post('/Senhorio/Adicionar/AddCasa', [SenhorioControllers::class, 'AddCasa
 Route::get('/Senhorio/Adicionar', [SenhorioControllers::class, 'GetPageAddHome']);
 Route::get('/Senhorio/Profile', [SenhorioControllers::class, 'GetPageProfSenhorio']);
 Route::get('/Senhorio', [SenhorioControllers::class, 'GetPageSenhorio']);
+Route::get('/Senhorio/{id}/editQuarto', [SenhorioControllers::class, 'EditQuarto']);
+Route::get('/Senhorio/{id}/editCasa', [SenhorioControllers::class, 'EditCasa']);
+Route::Post('/Senhorio/{id}/editCasa', [SenhorioControllers::class, 'SubEditCasa']);
+Route::Post('/Senhorio/{id}/editCasaQ', [SenhorioControllers::class, 'SubEditCasaQ']);
+Route::Post('/Senhorio/{id}/editQuartoQ', [SenhorioControllers::class, 'SubEditQuarto']);
 
 Route::get('/Gestor/{id}/quarto', [GestorControllers::class, 'GetPageDetalheQuarto']);
 Route::get('/Gestor/{id}/casa', [GestorControllers::class, 'GetPageDetalheCasa']);

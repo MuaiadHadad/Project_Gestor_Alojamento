@@ -312,14 +312,297 @@ class SenhorioControllers extends Controller{
         DB::table('quarto')->where('id', $id)->delete();
         return redirect()->back()->with('success' , 'Casa removida a Propriedade com sucesso');
     }
-    public function enviarEmail($titulo,$nome,$pass,$email){
-        $subject = $titulo;
-        $contentData = [
-            'mensagem' => $pass,
-            'nome'=>$nome,
-            'Email'=>$email,
-        ];
+    public function EditCasa($id){
+        if(session('tipo_usuario')=="senhorio") {
+            $token = session('ActivationToken');
+            $user = DB::table('user')->where('ActivationToken', $token)->get();
+            $CasaAtive =DB::table('casa_completa')
+                ->join('banho', 'banho.id_casa', '=', 'casa_completa.id')
+                ->join('contato', 'contato.id_casa', '=', 'casa_completa.id')
+                ->join('cozinha', 'cozinha.id_casa', '=', 'casa_completa.id')
+                ->join('endreco', 'endreco.id_casa', '=', 'casa_completa.id')
+                ->join('sala', 'sala.id_casa', '=', 'casa_completa.id')
+                ->join('servicos', 'servicos.id_casa', '=', 'casa_completa.id')
+                ->join('outros', 'outros.id_casa', '=', 'casa_completa.id')
+                ->join('user', 'user.id', '=', 'casa_completa.id_user')
+                ->where('casa_completa.id', $id)
+                ->select('contato.Email as EmailQuarto','user.*','cozinha.Micro-ondas as Micro','casa_completa.id as idnow','casa_completa.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'sala.*', 'servicos.*', 'outros.*','servicos.Wi-Fi as wifi')->get();
+            if(!$CasaAtive){
+                abort(404, 'Bad Request.');
+            }
+            $PhotoCasa =DB::table('casa_completa')
+                ->join('midia_de_casa', 'midia_de_casa.id_casa', '=', 'casa_completa.id')
+                ->where('casa_completa.id', $id)
+                ->select('midia_de_casa.*')->get();
+            $QuartosCasa =DB::table('casa_completa')
+                ->join('quartos_de_casa', 'quartos_de_casa.id_casa', '=', 'casa_completa.id')
+                ->where('casa_completa.id', $id)
+                ->select('quartos_de_casa.*')->get();
+            return view('Page_Senhorio\EditCasa', ['Data' => $user,'DadosCasaAtive'=>$CasaAtive,'PhotoCasa'=>$PhotoCasa,'DadosQuartoCasa'=>$QuartosCasa]);
+        }else{
+            abort(403, 'Acesso não autorizado.');
+        }
+    }
+    public function SubEditCasa($id,Request $request){
+        if(session('tipo_usuario')=="senhorio") {
+            if (empty($request->input('title')) || empty($request->input('descricao')) || empty($request->input('Tipo')) || empty($request->input('sexo')) || empty($request->input('preco')) || empty($request->input('area'))) {
+                return redirect()->back()->with('error', 'Por favor, preencha todos os campos obrigatórios.');
+            }
 
-        Mail::to($email)->send(new EstadoEmail($subject, $contentData,'Page_Gestor\EmailRegistarGestor'));
+            $token=session('ActivationToken');
+            $user = DB::table('user')->where('ActivationToken', $token)->first();
+            DB::table('casa_completa')->where('id', $id)
+                ->update([
+                'Titulo' => $request->input('title'),
+                'description' => $request->input('descricao'),
+                'Tipo' => $request->input('Tipo'),
+                'Genero' => $request->input('sexo'),
+                'Preço' => $request->input('preco'),
+                'area' => $request->input('area'),
+                'estado' => 'pending',
+                'id_user'=>$user->id,
+            ]);
+
+
+            DB::table('cozinha')->where('id_casa', $id)
+                ->update([
+                'Forno' => $request->has('Forno') ? true : false,
+                'Fogao' => $request->has('Fogao') ? true : false,
+                'Caldeira' => $request->has('Caldeira') ? true : false,
+                'Maq_cafe' => $request->has('Maq_cafe') ? true : false,
+                'Placa' => $request->has('Placa') ? true : false,
+                'Micro-ondas' => $request->has('Micro-ondas') ? true : false,
+                'Pratos' => $request->has('Pratos') ? true : false,
+                'Utensilios' => $request->has('Utensilios') ? true : false,
+                'Frigorifico' => $request->has('Frigorifico') ? true : false,
+            ]);
+            DB::table('banho')->where('id_casa', $id)
+                ->update([
+                'Chuveiro' => $request->has('Chuveiro') ? true : false,
+                'Toalhas' => $request->has('Toalhas') ? true : false,
+            ]);
+            DB::table('contato')->where('id_casa', $id)
+                ->update([
+                'Nome' => $request->input('nome'),
+                'Email' => $request->input('email'),
+                'Telefone' => $request->input('title'),
+            ]);
+            DB::table('endreco')->where('id_casa', $id)
+                ->update([
+                'Endereco' => $request->input('Endereco'),
+                'N_andar' => $request->input('N_andar'),
+                'Codigo_postal' => $request->input('Codigo_postal'),
+                'Distancia' => $request->input('Distancia'),
+                'let' => $request->input('letLag'),
+            ]);
+            DB::table('midia_de_casa')->where('id_casa', $id)->delete();
+            if (!is_null($request->file('photos'))) {
+                foreach ($request->file('photos') as $photo) {
+                    $filename = $photo->store('upload1', 'public');
+                    DB::table('midia_de_casa')
+                        ->insert([
+                            'Path' => $filename,
+                            'id_casa'=> $id
+                        ]);
+                }
+            }
+
+                foreach ($request->input('existing_photos') as $photo) {
+                    DB::table('midia_de_casa')
+                        ->insert([
+                            'Path' => $photo,
+                            'id_casa'=> $id
+                        ]);
+                }
+
+            DB::table('outros')->where('id_casa', $id)
+                ->update([
+                'Maquina_lavar_roupa' => $request->has('Maquina_lavar_roupa') ? true : false,
+                'Maquina_sacar_roupa' => $request->has('Maquina_sacar_roupa') ? true : false,
+                'Aquecimento_central' =>$request->has('Aquecimento_central') ? true : false,
+                'passar_Ferro' => $request->has('passar_Ferro') ? true : false,
+                'Aquecedor_eletrico' => $request->has('Aquecedor_eletrico') ? true : false,
+            ]);
+            DB::table('sala')->where('id_casa', $id)
+                ->update([
+                'estar_partilhada' => $request->has('estar_partilhada') ? true : false,
+                'Sofas' => $request->has('Sofas') ? true : false,
+                'Televisao' => $request->has('Televisao') ? true : false,
+                'Mesa_jantar' => $request->has('Mesa_jantar') ? true : false,
+            ]);
+            DB::table('servicos')->where('id_casa', $id)
+                ->update([
+                'Wi-Fi' => $request->has('Wi-Fi') ? true : false,
+                'Elevador' => $request->has('Elevador') ? true : false,
+                'Despesas' => $request->has('Despesas') ? true : false,
+                'Recibo' => $request->has('Recibo') ? true : false,
+                'limpeza' => $request->has('limpeza') ? true : false,
+            ]);
+            return redirect()->back()->with('success', 'A sua propriedade foi Editada com sucesso!');
+        }else{
+            abort(403, 'Acesso não autorizado.');
+        }
+    }
+    public function SubEditCasaQ($id,Request $request){
+        if(session('tipo_usuario')=="senhorio") {
+                DB::table('quartos_de_casa')->where('id', $id)
+                    ->update([
+                        'area_quarto' => $request->input('area'),
+                        'roupa_de_cama' => $request->has('roupa_de_cama_') ? true : false,
+                        'cama' => $request->has('cama_') ? true : false,
+                        'mesa_cabeceira' => $request->has('mesa_cabeceira_') ? true : false,
+                        'Candeeiro_de_mesa_do_estudo' => $request->has('Candeeiro_de_mesa_do_estudo_') ? true : false,
+                        'Mesa_do_estudo' => $request->has('Mesa_do_estudo_') ? true : false,
+                        'Janelas' => $request->has('Janelas_') ? true : false,
+                        'Varanda' => $request->has('Varanda_') ? true : false,
+                        'Armario' => $request->has('Armario_') ? true : false,
+                        'Casa_de_banho_privativa' => $request->has('Casa_de_banho_privativa_') ? true : false,
+                    ]);
+            return redirect()->back()->with('success', 'A sua propriedade foi Editada com sucesso!');
+        }else{
+            abort(403, 'Acesso não autorizado.');
+        }
+    }
+    public function EditQuarto($id){
+        if(session('tipo_usuario')=="senhorio") {
+            $token = session('ActivationToken');
+            $user = DB::table('user')->where('ActivationToken', $token)->get();
+            $CasaAtive =DB::table('quarto')
+                ->join('banho', 'banho.id_quarto', '=', 'quarto.id')
+                ->join('contato', 'contato.id_quarto', '=', 'quarto.id')
+                ->join('cozinha', 'cozinha.id_quarto', '=', 'quarto.id')
+                ->join('endreco', 'endreco.id_quarto', '=', 'quarto.id')
+                ->join('sala', 'sala.id_quarto', '=', 'quarto.id')
+                ->join('servicos', 'servicos.id_quarto', '=', 'quarto.id')
+                ->join('outros', 'outros.id_quarto', '=', 'quarto.id')
+                ->join('user', 'user.id', '=', 'quarto.id_user')
+                ->join('quartos_de_casa', 'quartos_de_casa.id_quarto', '=', 'quarto.id')
+                ->where('quarto.id', $id)
+                ->select('quartos_de_casa.*','contato.Email as EmailQuarto','user.*','cozinha.Micro-ondas as Micro','quarto.id as idnow','quarto.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
+                    , 'sala.*', 'servicos.*', 'outros.*','servicos.Wi-Fi as wifi')->get();
+            if(!$CasaAtive){
+                abort(404, 'Bad Request.');
+            }
+            $PhotoCasa =DB::table('quarto')
+                ->join('midia_de_casa', 'midia_de_casa.id_quarto', '=', 'quarto.id')
+                ->where('quarto.id', $id)
+                ->select('midia_de_casa.*')->get();
+            return view('Page_Senhorio\EditQuarto', ['Data' => $user,'DadosCasaAtive'=>$CasaAtive,'PhotoCasa'=>$PhotoCasa]);
+        }else{
+            abort(403, 'Acesso não autorizado.');
+        }
+    }
+    public function SubEditQuarto($id,Request $request){
+        if(session('tipo_usuario')=="senhorio") {
+            if (empty($request->input('title')) || empty($request->input('descricao')) || empty($request->input('Tipo')) || empty($request->input('sexo')) || empty($request->input('preco')) || empty($request->input('area'))) {
+                return redirect()->back()->with('error', 'Por favor, preencha todos os campos obrigatórios.');
+            }
+
+            $token=session('ActivationToken');
+            $user = DB::table('user')->where('ActivationToken', $token)->first();
+            DB::table('quarto')->where('id', $id)
+                ->update([
+                    'Titulo' => $request->input('title'),
+                    'description' => $request->input('descricao'),
+                    'Tipo' => $request->input('Tipo'),
+                    'Genero' => $request->input('sexo'),
+                    'Preço' => $request->input('preco'),
+                    'area' => $request->input('area'),
+                    'estado' => 'pending',
+                    'id_user'=>$user->id,
+                ]);
+            DB::table('quartos_de_casa')->where('id_quarto', $id)
+                ->update([
+                    'area_quarto' => $request->input('area'),
+                    'roupa_de_cama' => $request->has('roupa_de_cama_') ? true : false,
+                    'cama' => $request->has('cama_') ? true : false,
+                    'mesa_cabeceira' => $request->has('mesa_cabeceira_') ? true : false,
+                    'Candeeiro_de_mesa_do_estudo' => $request->has('Candeeiro_de_mesa_do_estudo_') ? true : false,
+                    'Mesa_do_estudo' => $request->has('Mesa_do_estudo_') ? true : false,
+                    'Janelas' => $request->has('Janelas_') ? true : false,
+                    'Varanda' => $request->has('Varanda_') ? true : false,
+                    'Armario' => $request->has('Armario_') ? true : false,
+                    'Casa_de_banho_privativa' => $request->has('Casa_de_banho_privativa_') ? true : false,
+                ]);
+
+            DB::table('cozinha')->where('id_quarto', $id)
+                ->update([
+                    'Forno' => $request->has('Forno') ? true : false,
+                    'Fogao' => $request->has('Fogao') ? true : false,
+                    'Caldeira' => $request->has('Caldeira') ? true : false,
+                    'Maq_cafe' => $request->has('Maq_cafe') ? true : false,
+                    'Placa' => $request->has('Placa') ? true : false,
+                    'Micro-ondas' => $request->has('Micro-ondas') ? true : false,
+                    'Pratos' => $request->has('Pratos') ? true : false,
+                    'Utensilios' => $request->has('Utensilios') ? true : false,
+                    'Frigorifico' => $request->has('Frigorifico') ? true : false,
+                ]);
+            DB::table('banho')->where('id_quarto', $id)
+                ->update([
+                    'Chuveiro' => $request->has('Chuveiro') ? true : false,
+                    'Toalhas' => $request->has('Toalhas') ? true : false,
+                ]);
+            DB::table('contato')->where('id_quarto', $id)
+                ->update([
+                    'Nome' => $request->input('nome'),
+                    'Email' => $request->input('email'),
+                    'Telefone' => $request->input('title'),
+                ]);
+            DB::table('endreco')->where('id_quarto', $id)
+                ->update([
+                    'Endereco' => $request->input('Endereco'),
+                    'N_andar' => $request->input('N_andar'),
+                    'Codigo_postal' => $request->input('Codigo_postal'),
+                    'Distancia' => $request->input('Distancia'),
+                    'let' => $request->input('letLag'),
+                ]);
+            DB::table('midia_de_casa')->where('id_quarto', $id)->delete();
+            if (!is_null($request->file('photos'))) {
+                foreach ($request->file('photos') as $photo) {
+                    $filename = $photo->store('upload1', 'public');
+                    DB::table('midia_de_casa')
+                        ->insert([
+                            'Path' => $filename,
+                            'id_quarto'=> $id
+                        ]);
+                }
+            }
+        if($request->input('existing_photos')!=null){
+            foreach ($request->input('existing_photos') as $photo) {
+                DB::table('midia_de_casa')
+                    ->insert([
+                        'Path' => $photo,
+                        'id_quarto' => $id
+                    ]);
+            }
+        }
+            DB::table('outros')->where('id_quarto', $id)
+                ->update([
+                    'Maquina_lavar_roupa' => $request->has('Maquina_lavar_roupa') ? true : false,
+                    'Maquina_sacar_roupa' => $request->has('Maquina_sacar_roupa') ? true : false,
+                    'Aquecimento_central' =>$request->has('Aquecimento_central') ? true : false,
+                    'passar_Ferro' => $request->has('passar_Ferro') ? true : false,
+                    'Aquecedor_eletrico' => $request->has('Aquecedor_eletrico') ? true : false,
+                ]);
+            DB::table('sala')->where('id_quarto', $id)
+                ->update([
+                    'estar_partilhada' => $request->has('estar_partilhada') ? true : false,
+                    'Sofas' => $request->has('Sofas') ? true : false,
+                    'Televisao' => $request->has('Televisao') ? true : false,
+                    'Mesa_jantar' => $request->has('Mesa_jantar') ? true : false,
+                ]);
+            DB::table('servicos')->where('id_quarto', $id)
+                ->update([
+                    'Wi-Fi' => $request->has('Wi-Fi') ? true : false,
+                    'Elevador' => $request->has('Elevador') ? true : false,
+                    'Despesas' => $request->has('Despesas') ? true : false,
+                    'Recibo' => $request->has('Recibo') ? true : false,
+                    'limpeza' => $request->has('limpeza') ? true : false,
+                ]);
+            return redirect()->back()->with('success', 'A sua propriedade foi Editada com sucesso!');
+        }else{
+            abort(403, 'Acesso não autorizado.');
+        }
     }
 }

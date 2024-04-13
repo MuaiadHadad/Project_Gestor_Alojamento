@@ -86,16 +86,6 @@ function handleFiles(files) {
         img.title=files[i].name;
         img.className="img_upload";
         fileList.appendChild(img);
-
-        var removeIcon = document.createElement('i');
-        removeIcon.className = 'fa fa-close fa-x2';
-        removeIcon.style='padding-top: -50px; padding-bottom: 0px; position: absolute;';
-        removeIcon.addEventListener('click', function() {
-            fileList.removeChild(img);
-            fileList.removeChild(removeIcon);
-        });
-        fileList.appendChild(removeIcon);
-
     }
 }
 

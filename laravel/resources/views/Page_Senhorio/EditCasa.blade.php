@@ -47,9 +47,11 @@
     <link href="/Style_Page_1/element.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/Style_Page_1/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    <link href="/Style_Page_1/property.css" rel="stylesheet">
     <script src="/Style_Page_1/jquery-2.1.1.min.js"></script>
     <script src="/Style_Page_1/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/b5d62d4901.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_899lce4GPYTC8TqpsxiyHAobg-K8tKE"></script>
     <!-- /Css adicional -->
     <style type="text/css" id="wp-custom-css">
         @media (max-width: 767px)
@@ -73,7 +75,7 @@
     <meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
     <style></style>
 </head>
-<body class="">
+<body class="" onload="initMap()">
 <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-edgeless cc-bottom cc-right cc-color-override-1074119104 cc-invisible" style="display: none;">
     <!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Este website utiliza cookies próprios e de terceiros para melhorar sua experiência de navegação. Ao continuar a navegação, assumimos sua aprovação. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="" rel="noopener noreferrer nofollow" target="_blank">Saber mais</a></span>
     <div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">✕</a></div>
@@ -528,7 +530,6 @@
                         <img src="{{asset('storage/'.$user->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
                         <i style="color: white">{{$user->Email}}</i>
                     @endforeach
-
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
                 <li><a href="/Senhorio/chat"><i class="fa fa fa-comments-o fa-2x fa-inverse"></i></a></li>
@@ -562,7 +563,7 @@
     </div>
 </header>
 <main id="primary" class="main-section">
-    <section class="module module-page--header site-header--image-bg" style="height: 310px ">
+    <section class="module module-page--header site-header--image-bg" style="height: 280px ">
         <div class="page-title">
             <h1 class="title-lg">Alojamentos Estgoh</h1>
             <style>
@@ -581,7 +582,7 @@
                     color: white;
                 }
             </style>
-            <div class="breadcrumbs"><a href="/" rel="v:url" property="v:title">Alojamentos</a> / <span class="current">Senhorio</span></div>
+            <div class="breadcrumbs"><a href="/Senhorio" rel="v:url" property="v:title">Senhorio</a> / <span class="current">Editar propriedade</span></div>
             <!-- .breadcrumbs -->
         </div>
         <div class="image-bg" style="background-image: url(https://www.ipc.pt/wp-content/uploads/2020/06/DSC03228-site-aspect-ratio-1920x640-4-1920x640.jpg)">
@@ -591,10 +592,10 @@
     </section>
 
     <article id="main" class="article-content">
-        <div style="position: absolute; right: 10px; width: 28%">
+        <div style="position: absolute; right: 30px;">
             @if(session('error')!=null)
                 <div class="toast">
-                    <div class="toast-content" style="height: 100%">
+                    <div class="toast-content">
                         <i class="fa fa-solid fa-remove error"></i>
                         <div class="message">
                             <span class="text text-1">Error</span>
@@ -622,107 +623,435 @@
                 </div>
             @endif
         </div>
-        <br>
-        <section class="module module--list" id="Lista_apartamento">
-            <div class="popular_1 text-center clearfix">
-                <div class="col-sm-12">
-                    <h1 class="mgt"> Lista dos Propriedades</h1>
-                </div>
-                <div class="h-divider">
-                    <div class="shadow"></div>
+        <section id="prop">
+            <div class="container">
+                <div class="row">
+                    <!-------------------------------------Casa------------------------------------------>
+                    @if(isset($DadosCasaAtive))
+                        @foreach($DadosCasaAtive as $CasaEdit)
+                            <form action="/Senhorio/{{$CasaEdit->idnow}}/editCasa" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="submit_1 clearfix">
+                                    <h4 class="mgt col_1">Descrição e preço do imóvel</h4>
+                                    <hr>
+
+                                    <h5>Título da propriedade</h5>
+                                    <input value="{{$CasaEdit->Titulo}}" name="title" class="form-control" placeholder="Property Title" type="text" required>
+                                    <h5>Descrição da Propriedade</h5>
+                                    <textarea  name="descricao" placeholder="Property Description" class="form-control form_o">{{$CasaEdit->description}}</textarea>
+                                    <div class="submit_1i clearfix">
+                                        <div class="col-sm-6 space_all">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5>Tipo</h5>
+                                                <select class="form-control" name="Tipo" required>
+                                                    @if($CasaEdit->Tipo=='Casa')
+                                                        <option value="Apartamento">Selecione Tipo</option>
+                                                        <option selected value="Casa">Casa</option>
+                                                        <option value="Apartamento">Apartamento</option>
+                                                        <option value="Estúdio">Estúdio</option>
+                                                    @elseif($CasaEdit->Tipo=='Apartamento')
+                                                        <option value="Apartamento">Selecione Tipo</option>
+                                                        <option value="Casa">Casa</option>
+                                                        <option selected value="Apartamento">Apartamento</option>
+                                                        <option value="Estúdio">Estúdio</option>
+                                                    @elseif($CasaEdit->Tipo=='Estúdio')
+                                                        <option value="Apartamento">Selecione Tipo</option>
+                                                        <option value="Casa">Casa</option>
+                                                        <option value="Apartamento">Apartamento</option>
+                                                        <option selected value="Estúdio">Estúdio</option>
+                                                    @endif
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 space_right">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5>Género de residência</h5>
+                                                <select class="form-control" name="sexo" required>
+                                                    @if($CasaEdit->Genero=='Masculino')
+                                                        <option value="M/F">Selecione Sexo</option>
+                                                        <option selected value="Masculino">Masculino</option>
+                                                        <option value="Feminino">Feminino</option>
+                                                        <option value="M/F">Masculino e Feminino</option>
+                                                    @elseif($CasaEdit->Genero=='Feminino')
+                                                        <option value="M/F">Selecione Sexo</option>
+                                                        <option value="Masculino">Masculino</option>
+                                                        <option selected value="Feminino">Feminino</option>
+                                                        <option value="M/F">Masculino e Feminino</option>
+                                                    @elseif($CasaEdit->Genero=='M/F')
+                                                        <option value="M/F">Selecione Sexo</option>
+                                                        <option value="Masculino">Masculino</option>
+                                                        <option value="Feminino">Feminino</option>
+                                                        <option selected value="M/F">Masculino e Feminino</option>
+                                                    @endif
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="submit_1i clearfix">
+                                        <div class="col-sm-6 space_left">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5>Preço</h5>
+                                                <input value="{{$CasaEdit->Preço}}" name="preco" class="form-control" placeholder="EUR" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 space_right">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5>Area M<sub>2</sub> da Casa</h5>
+                                                <input value="{{$CasaEdit->area}}" name="area" class="form-control" placeholder="m2" type="text" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="submit_1 clearfix">
+                                    <h4 class="mgt col_1">Mídia de propriedade</h4>
+                                    <hr>
+                                    <div class="submit_1ii clearfix" id="uploadAreaQuarto">
+                                        <span class="span_1"><i class="fa fa-cloud-upload"></i></span>
+                                        <h5>Clique aqui para fazer upload</h5>
+                                    </div>
+                                    <input name="photos[]" multiple="multiple" type="file" id="fileInputQuarto" style="display: none;">
+                                    <hr>
+                                    <div id="fileList">
+                                        @foreach($PhotoCasa as $CasaPhotoEdit)
+                                            <div style="width: 175px; height: 110px; display: inline-block">
+                                                <button type="button" onclick="eliminarImagem(this.parentNode)" style="width: min-content; height: min-content;float: right">
+                                                    <i class="fa fa-close"></i>
+                                                </button>
+                                                <img id="img" style="width: 150px; height: 110px;" class="img_upload" src="{{ asset('storage/' . $CasaPhotoEdit->Path) }}" alt="Imagem da Casa">
+                                                <input type="hidden" name="existing_photos[]" value="{{ $CasaPhotoEdit->Path }}">
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <script>
+                                    var uploadArea = document.getElementById('uploadAreaQuarto');
+                                    var fileInput = document.getElementById('fileInputQuarto');
+                                    var fileList = document.getElementById('fileList');
+
+                                    function eliminarImagem(parentNode) {
+                                        parentNode.remove();
+                                    }
+                                    uploadArea.addEventListener('click', function() {
+                                        fileInput.click();
+                                    });
+                                    uploadArea.addEventListener('drop', function(e) {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+
+                                        var files = e.dataTransfer.files;
+                                        handleFiles(files);
+                                    });
+                                    fileInput.addEventListener('change', function() {
+                                        var files = this.files;
+                                        handleFiles(files);
+                                    });
+                                    function handleFiles(files) {
+                                        for (var i = 0; i < files.length; i++) {
+                                            fileList.innerHTML += `<div style="width: 175px; height: 110px; display: inline-block">
+                                            <button type="button" onclick="eliminarImagem(this.parentNode)" style="width: min-content; height: min-content;float: right">
+                                                <i class="fa fa-close"></i>
+                                            </button>
+                                            <img style="width: 150px; height: 110px;" class="img_upload" src="`+URL.createObjectURL(files[i])+`" alt="Imagem da Casa">
+                                        </div>`;
+                                        }
+                                    }
+                                </script>
+                                <div class="submit_1 clearfix">
+                                    <h4 class="mgt col_1">Localização da propriedade</h4>
+                                    <hr>
+                                    <div class="submit_1i clearfix">
+                                        <div class="col-sm-6 space_left">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5 class="mgt">Endereço</h5>
+                                                <input value="{{$CasaEdit->Endereco}}" name="Endereco" class="form-control" placeholder="Digite seu endereço" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 space_right">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5 class="mgt">Nº Andar</h5>
+                                                <input value="{{$CasaEdit->N_andar}}" name="N_andar" class="form-control" placeholder="Digite seu Nº Andar" type="text" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="submit_1i clearfix">
+                                        <div class="col-sm-6 space_left">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5 class="mgt">Código-postal</h5>
+                                                <input value="{{$CasaEdit->Codigo_postal}}" name="Codigo_postal" class="form-control" placeholder="Digite seu Código-postal" type="text" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="submit_1i clearfix">
+                                        <h5 class="mgt"><i class="fa fa-map-marker"></i> Distância </h5>
+                                        <select class="form-control" id="slectorDistncia">
+                                            <option value="distancia_por_map">Google MAP</option>
+                                            <option value="distancia_manual" >Manualmente</option>
+                                        </select>
+                                    </div>
+                                    <div style="display: none" id="distancia_manual">
+                                        <hr>
+                                        <div class="col-sm-6 space_left">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5 class="mgt">Distância por m</h5>
+                                                <input class="form-control" placeholder="2000" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="display: block" id="distancia_por_map">
+                                        <hr>
+                                        <div>
+                                            <label for="start">Clique no mapa para definir o local:</label>
+                                            <div id="distancia"></div>
+                                        </div>
+                                        <div id="map" style="height: 400px; width: 100%;"></div>
+                                        <hr>
+                                        <input type="hidden" id="Distancia_casa" name="Distancia" value="{{$CasaEdit->Distancia}}">
+                                        <input type="hidden" id="letLag_casa" name="letLag" value="{{$CasaEdit->let}}">
+                                        <h5 class="mgt"><i class="fa fa-map-marker"></i> Distância é <a id="local">{{ $CasaEdit->Distancia }}</a></h5>
+                                    </div>
+                                    <script>
+                                        var letValue = "{{ $CasaEdit->let }}";
+                                        letValue = letValue.replace(/[()]/g, '');
+                                        var coordinates = letValue.split(',');
+                                        var lat = parseFloat(coordinates[0]);
+                                        var lng = parseFloat(coordinates[1]);
+                                        var casa = { lat:lat,lng:lng };
+                                        var map;
+                                        var directionsService;
+                                        var directionsDisplay;
+                                        var originMarker;
+                                        const icon_casa_m = "https://img.icons8.com/plasticine/75/order-delivered.png";
+                                        async function initMap() {
+                                            var coimbra = {lat: 40.35827117617252, lng: -7.8569972177657075};
+                                            map = new google.maps.Map(document.getElementById('map'), {
+                                                center: coimbra,
+                                                zoom: 15
+                                            });
+                                            const icon_m = "https://img.icons8.com/emoji/48/school-emoji.png";
+                                            var estgoh_m = { lat: 40.361008858094266, lng: -7.861192556524104 };
+                                            new google.maps.Marker({
+                                                position: estgoh_m,
+                                                icon:icon_m,
+                                                map: map
+                                            });
+                                            directionsService =  new google.maps.DistanceMatrixService();
+                                            directionsDisplay = new google.maps.DirectionsRenderer();
+                                            directionsDisplay.setMap(map);
+                                            originMarker = new google.maps.Marker({
+                                                position: casa,
+                                                icon:icon_casa_m,
+                                                map: map
+                                            });
+                                            map.addListener('click', function(event) {
+                                                placeOriginMarker(event.latLng);
+                                            });
+                                        }
+
+                                        function placeOriginMarker(location) {
+                                            if (originMarker && originMarker.setMap) {
+                                                originMarker.setMap(null);
+                                            }
+
+                                            originMarker = new google.maps.Marker({
+                                                position: location,
+                                                icon:icon_casa_m,
+                                                map: map
+                                            });
+                                            calcularDistancia(originMarker.getPosition());
+                                        }
+
+                                        function calcularDistancia(origin) {
+                                            var estgoh = { lat: 40.361008858094266, lng: -7.861192556524104 };
+                                            let  infoWindow = new google.maps.InfoWindow({
+                                                position: origin,
+                                            });
+                                            directionsService.getDistanceMatrix(
+                                                {
+                                                    origins: [origin],
+                                                    destinations: [estgoh],
+                                                    travelMode: 'DRIVING',
+                                                    unitSystem: google.maps.UnitSystem.METRIC,
+                                                    avoidHighways: false,
+                                                    avoidTolls: false,
+                                                }, callback);
+
+                                            function callback(response, status) {
+                                                if (status == 'OK') {
+                                                    var origins = response.originAddresses;
+                                                    var destinations = response.destinationAddresses;
+
+                                                    for (var i = 0; i < origins.length; i++) {
+                                                        var results = response.rows[i].elements;
+                                                        for (var j = 0; j < results.length; j++) {
+                                                            var element = results[j];
+                                                            var distance = element.distance.text;
+                                                            document.getElementById('Distancia_casa').value = element.distance.text;
+                                                            document.getElementById('letLag_casa').value = origin;
+                                                            document.getElementById('local').innerHTML = distance;
+                                                        }
+                                                    }
+                                                } else {
+                                                    window.alert('Erro ao calcular a distância: ' + status);
+                                                }
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                                <div class="submit_2 clearfix">
+                                    <h4 class="mgt col_1">Características da Propriedade</h4>
+                                    <hr>
+                                    <br>
+                                    <h4 class="mgt col_1"><i class="fa fa-cutlery" aria-hidden="true"></i> Cozinha</h4>
+                                    <div class="submit_2i clearfix">
+                                        <h5><input  {{ $CasaEdit->Forno == 1 ? 'checked' : '' }} name="Forno" type="checkbox"> <span class="span_1">Forno</span></h5>
+                                        <h5><input  {{ $CasaEdit->Fogao == 1 ? 'checked' : '' }} name="Fogao" type="checkbox"> <span class="span_1">Fogão</span></h5>
+                                        <h5><input  {{ $CasaEdit->Caldeira == 1 ? 'checked' : '' }} name="Caldeira" type="checkbox"> <span class="span_1"> Caldeira de água</span></h5>
+                                        <h5><input  {{ $CasaEdit->Maq_cafe == 1 ? 'checked' : '' }} name="Maq_cafe" type="checkbox"> <span class="span_1">Máquina de café</span></h5>
+                                        <h5><input  {{ $CasaEdit->Placa == 1 ? 'checked' : '' }} name="Placa" type="checkbox"> <span class="span_1">Placa</span></h5>
+                                        <h5><input  {{ $CasaEdit->Micro == 1 ? 'checked' : '' }} name="Micro-ondas" type="checkbox"> <span class="span_1">Micro-ondas</span></h5>
+                                        <h5><input  {{ $CasaEdit->Pratos == 1 ? 'checked' : '' }} name="Pratos" type="checkbox"> <span class="span_1">Pratos e talheres</span></h5>
+                                        <h5><input  {{ $CasaEdit->Utensilios == 1 ? 'checked' : '' }} name="Utensilios" type="checkbox"> <span class="span_1">Utensílios de cozinha</span></h5>
+                                        <h5><input  {{ $CasaEdit->Frigorifico == 1 ? 'checked' : '' }} name="Frigorifico" type="checkbox"> <span class="span_1">Frigorífico</span></h5>
+                                    </div>
+                                    <hr>
+                                    <br>
+                                    <h4 class="mgt col_1"><i class="fa fa-television" aria-hidden="true"></i> Sala</h4>
+                                    <div class="submit_2i clearfix">
+                                        <h5><input {{ $CasaEdit->estar_partilhada == 1 ? 'checked' : '' }} name="estar_partilhada" type="checkbox"> <span class="span_1">Área de estar partilhada</span></h5>
+                                        <h5><input {{ $CasaEdit->Sofas == 1 ? 'checked' : '' }} name="Sofas" type="checkbox"> <span class="span_1">Sofás</span></h5>
+                                        <h5><input {{ $CasaEdit->Televisao == 1 ? 'checked' : '' }} name="Televisao" type="checkbox"> <span class="span_1"> Televisão</span></h5>
+                                        <h5><input {{ $CasaEdit->Mesa_jantar == 1 ? 'checked' : '' }} name="Mesa_jantar" type="checkbox"> <span class="span_1">Mesa de jantar com cadeiras</span></h5>
+                                    </div>
+                                    <hr>
+                                    <br>
+                                    <h4 class="mgt col_1"><i class="fa fa-bath" aria-hidden="true"></i> Casa de banho</h4>
+                                    <div class="submit_2i clearfix">
+                                        <h5><input {{ $CasaEdit->Chuveiro == 1 ? 'checked' : '' }} name="Chuveiro" type="checkbox"> <span class="span_1">Chuveiro</span></h5>
+                                        <h5><input {{ $CasaEdit->Toalhas == 1 ? 'checked' : '' }} name="Toalhas" type="checkbox"> <span class="span_1">Toalhas</span></h5>
+                                    </div>
+                                    <hr>
+                                    <br>
+                                    <h4 class="mgt col_1"><i class="fa fa-th" aria-hidden="true"></i> Outros</h4>
+                                    <div class="submit_2i clearfix">
+                                        <h5><input {{ $CasaEdit->Maquina_lavar_roupa == 1 ? 'checked' : '' }} name="Maquina_lavar_roupa" type="checkbox"> <span class="span_1">Máquina de lavar roupa</span></h5>
+                                        <h5><input {{ $CasaEdit->Maquina_sacar_roupa == 1 ? 'checked' : '' }} name="Maquina_sacar_roupa" type="checkbox"> <span class="span_1">Máquina de sacar roupa </span></h5>
+                                        <h5><input {{ $CasaEdit->Aquecimento_central == 1 ? 'checked' : '' }} name="Aquecimento_central" type="checkbox"> <span class="span_1"> Aquecimento central </span></h5>
+                                        <h5><input {{ $CasaEdit->passar_Ferro == 1 ? 'checked' : '' }} name="passar_Ferro" type="checkbox"> <span class="span_1">máquina passar Ferro </span></h5>
+                                        <h5><input {{ $CasaEdit->Aquecedor_eletrico == 1 ? 'checked' : '' }} name="Aquecedor_eletrico" type="checkbox"> <span class="span_1">Aquecedor elétrico </span></h5>
+                                    </div>
+                                    <hr>
+                                    <br>
+                                    <h4 class="mgt col_1"><i class="fa fa-wrench" aria-hidden="true"></i> Serviços</h4>
+                                    <div class="submit_2i clearfix">
+                                        <h5><input {{ $CasaEdit->wifi == 1 ? 'checked' : '' }} name="Wi-Fi" type="checkbox"> <span class="span_1">Wi-Fi </span></h5>
+                                        <h5><input {{ $CasaEdit->Elevador == 1 ? 'checked' : '' }} name="Elevador" type="checkbox"> <span class="span_1">Elevador </span></h5>
+                                        <h5><input {{ $CasaEdit->Despesas == 1 ? 'checked' : '' }} name="Despesas" type="checkbox"> <span class="span_1"> Despesas incluídas </span></h5>
+                                        <h5><input {{ $CasaEdit->Recibo == 1 ? 'checked' : '' }} name="Recibo" type="checkbox"> <span class="span_1">Recibo </span></h5>
+                                        <h5><input {{ $CasaEdit->limpeza == 1 ? 'checked' : '' }} name="limpeza" type="checkbox"> <span class="span_1">limpeza </span></h5>
+                                    </div>
+                                </div>
+                                <div class="submit_1 clearfix">
+                                    <h4 class="mgt col_1">Informações de contato</h4>
+                                    <hr>
+                                    <div class="submit_1i clearfix">
+                                        <div class="col-sm-6 space_left">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5 class="mgt">Nome</h5>
+                                                <input value="{{$CasaEdit->Nome}}" name="nome" class="form-control" placeholder="Digite seu nome" type="text"  required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 space_right">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5 class="mgt">Email</h5>
+                                                <input value="{{$CasaEdit->EmailQuarto}}" name="email" class="form-control" placeholder="Digite seu e-mail" type="text"  required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="submit_1i clearfix">
+                                        <div class="col-sm-6 space_left">
+                                            <div class="submit_1i1 clearfix">
+                                                <h5>Telefone</h5>
+                                                <input value="{{$CasaEdit->Telefone}}" name="tel" class="form-control" placeholder="Digite seu telefone" type="text"  required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="submit_3 clearfix">
+                                    <button style="float: right" type="submit" class="mgt"><a class="button mgt">Editar</a></button>
+                                </div>
+                            </form>
+                            @php $cont=1; @endphp
+                            @foreach($DadosQuartoCasa as $CasaQuartoEdit)
+                                <form action="/Senhorio/{{$CasaQuartoEdit->id}}/editCasaQ" method="POST">
+                                    <div class="submit_1 clearfix">
+                                        @csrf
+                                        <h4 class="mgt col_1">Dados do quarto #  {{$cont}}   </h4>
+                                        <hr>
+                                        <div class="submit_1i clearfix">
+                                            <div class="col-sm-6 space_right">
+                                                <div class="submit_1i1 clearfix">
+                                                    <h5>Area M<sub>2</sub></h5>
+                                                    <input name="area" value="{{$CasaQuartoEdit->area_quarto}}" class="form-control" placeholder="m2" type="text" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="submit_2i clearfix">
+                                            <h5>
+                                                <input {{ $CasaQuartoEdit->roupa_de_cama == 1 ? 'checked' : '' }} name="roupa_de_cama_" type="checkbox">
+                                                <span class="span_1">roupa de cama</span>
+                                            </h5>
+                                            <h5>
+                                                <input {{ $CasaQuartoEdit->cama == 1 ? 'checked' : '' }} name="cama_" type="checkbox">
+                                                <span class="span_1">cama</span>
+                                            </h5>
+                                            <h5>
+                                                <input {{ $CasaQuartoEdit->mesa_cabeceira == 1 ? 'checked' : '' }} name="mesa_cabeceira_" type="checkbox">
+                                                <span class="span_1">mesa cabeceira</span>
+                                            </h5>
+                                            <h5>
+                                                <input {{ $CasaQuartoEdit->Candeeiro_de_mesa_do_estudo == 1 ? 'checked' : '' }} name="Candeeiro_de_mesa_do_estudo_" type="checkbox">
+                                                <span class="span_1">Candeeiro de mesa do estudo</span>
+                                            </h5>
+                                            <h5>
+                                                <input {{ $CasaQuartoEdit->Mesa_do_estudo == 1 ? 'checked' : '' }} name="Mesa_do_estudo_" type="checkbox">
+                                                <span class="span_1">Mesa do estudo</span>
+                                            </h5>
+                                            <h5>
+                                                <input {{ $CasaQuartoEdit->Janelas == 1 ? 'checked' : '' }} name="Janelas_" type="checkbox">
+                                                <span class="span_1">Janelas</span>
+                                            </h5>
+                                            <h5>
+                                                <input {{ $CasaQuartoEdit->Varanda == 1 ? 'checked' : '' }} name="Varanda_" type="checkbox">
+                                                <span class="span_1">Varanda</span>
+                                            </h5>
+                                            <h5>
+                                                <input {{ $CasaQuartoEdit->Armario == 1 ? 'checked' : '' }} name="Armario_" type="checkbox">
+                                                <span class="span_1">Armário</span>
+                                            </h5>
+                                            <h5>
+                                                <input {{ $CasaQuartoEdit->Casa_de_banho_privativa == 1 ? 'checked' : '' }} name="Casa_de_banho_privativa_" type="checkbox">
+                                                <span class="span_1">Casa de banho privativa</span>
+                                            </h5>
+                                            <input name="n_quartos_cont" value="{{$DadosQuartoCasa->count()}}" type="hidden">
+                                        </div>
+                                        <br>
+                                        <button style="float: right" type="submit" class="mgt"><a class="button mgt">Editar</a></button>
+                                    </div>
+                                </form>
+                                @php $cont++; @endphp
+                            @endforeach
+                        @endforeach
+                    @else
+
+                    @endif
                 </div>
             </div>
-            <section class="table__header">
-                <div class="center_home_1i1 clearfix">
-                    <h5 class="mgt text-center"><a class="button_1 block mgt" href="/Senhorio/Adicionar"><i class="fa fa-home" aria-hidden="true"></i> Adicionar Propriedade</a></h5>
-                </div>
-                <div class="input-group" id="search_tabela_List_anuncios" style="right: 50%; left: -8%;">
-                    <input  type="search" placeholder="Pesquisar anúncio...">
-                    <i class="fa fa-search fa-2x"></i>
-                </div>
-            </section>
-            <section class="table__body">
-                <table id="tabela_List_anuncios">
-                    <thead>
-                    <tr>
-                        <th> ID<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Título<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Endereço<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Código-postal<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Data expirou<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Preço<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Estado(Inativar/Reativar)<span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Consultar</th>
-                        <th> Editar</th>
-                        <th> Remover</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @if($Quarto !=null)
-                    @foreach($Quarto as $dadosQuarto)
-                    <tr>
-                        <td> {{ $dadosQuarto->idnow }} </td>
-                        <td> {{ $dadosQuarto->Titulo }}</td>
-                        <td> {{ $dadosQuarto->Endereco }} </td>
-                        <td> {{ $dadosQuarto->Codigo_postal }} </td>
-                        <td> {{ $dadosQuarto->data_fim }}</td>
-                        <td> {{ $dadosQuarto->Preço }}€</td>
-                        <td>
-                            <h5  style="left: 40px;" class="status {{ $dadosQuarto->estado == 'Ativo' ? 'delivered' : ($dadosQuarto->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
-                                {{ $dadosQuarto->estado == 'Ativo' ? 'Ativo' : ($dadosQuarto->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
-                            </h5>
-                        </td>
-                        <td>
-                           <a href="inicio/{{ $dadosQuarto->idnow }}/quarto" class="fa fa-eye fa-2x"></a>
-                        </td>
-                        <td>
-                            <a href="Senhorio/{{ $dadosQuarto->idnow }}/editQuarto" class="fa fa-edit fa-2x"></a>
-                        </td>
-                        <td>
-                            <form action="/Senhorio/{{ $dadosQuarto->idnow }}/RemoverQuarto" method="POST" >
-                                @csrf
-                                <button type="submit" class="fa fa-trash fa-2x"></button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                    @endif
-                    @if($Casa !=null)
-                        @foreach($Casa as $dadosCasa)
-                            <tr>
-                                <td> {{ $dadosCasa->idnow }} </td>
-                                <td> {{ $dadosCasa->Titulo }}</td>
-                                <td> {{ $dadosCasa->Endereco }} </td>
-                                <td> {{ $dadosCasa->Codigo_postal }} </td>
-                                <td> {{ $dadosCasa->Data_fim }}</td>
-                                <td> {{ $dadosCasa->Preço }}€</td>
-                                <td>
-                                        <h5 style="left: 40px;" class="status {{ $dadosCasa->estado == 'Ativo' ? 'delivered' : ($dadosCasa->estado == 'Desativo' ? 'cancelled' : 'pending') }}">
-                                            {{ $dadosCasa->estado == 'Ativo' ? 'Ativo' : ($dadosCasa->estado == 'Desativo' ? 'Desativo' : 'Pending') }}
-                                        </h5>
-                                </td>
-                                <td>
-
-                                    <a href="inicio/{{ $dadosCasa->idnow }}/casa"  class="fa fa-eye fa-2x"></a>
-                                </td>
-                                <td>
-                                    <a href="Senhorio/{{ $dadosCasa->idnow }}/editCasa" class="fa fa-edit fa-2x"></a>
-                                </td>
-                                <td>
-                                    <form action="/Senhorio/{{ $dadosCasa->idnow }}/RemoverCasa" method="POST">
-                                        @csrf
-                                    <button type="submit" class="fa fa-trash fa-2x"></button>
-                                    </form>
-                                </td>
-
-                            </tr>
-                        @endforeach
-                    @endif
-                    </tbody>
-                </table>
-            </section>
+            </div>
         </section>
-
     </article>
 </main>
 <footer class="module module-site-footer">
