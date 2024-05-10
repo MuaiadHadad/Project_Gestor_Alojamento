@@ -52,7 +52,6 @@ main.table {
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: .2s;
 }
 
@@ -74,7 +73,6 @@ main.table {
     width: 85%;
     max-height: calc(89% - 1.6rem);
     background-color: #fffb;
-
     margin: .8rem auto;
     border-radius: .6rem;
     overflow: auto;
@@ -102,12 +100,11 @@ table {
     width: 100%;
 }
 
-td img {
+td button {
     width: 36px;
     height: 36px;
     margin-right: .5rem;
     border-radius: 50%;
-
     vertical-align: middle;
 }
 
@@ -119,6 +116,7 @@ table, th, td {
 
 thead th {
     position: sticky;
+    z-index: 2;
     top: 0;
     left: 0;
     height: 30px;
@@ -174,8 +172,8 @@ tbody i {
     border-radius: 100%;
     left: 15px;
     text-align: center;
-    position: relative; /* Definindo a posição como relativa */
-    transform: translateX(-20%); /* Corrigindo a posição para que o elemento fique centrado */
+    position: relative;
+    transform: translateX(-20%);
 
 }
 tbody i.fa-user-times {
@@ -209,8 +207,9 @@ tbody i.fa-eye {
     top: -10px;
     border-radius: 10px;
     text-align: center;
-    position: relative; /* Definindo a posição como relativa */
-    transform: translateX(-20%); /* Corrigindo a posição para que o elemento fique centrado */
+    z-index: 0;
+    position: relative;
+    transform: translateX(-20%);
 }
 
 .status.delivered {

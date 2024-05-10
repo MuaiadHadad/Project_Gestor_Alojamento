@@ -560,13 +560,13 @@
                             <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     @endif
-                    @if($user->Tipo=='Aluno')
-                        <ul>
-                            <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
-                            <li><a href="/gestor"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
-                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
-                        </ul>
-                    @endif
+                        @if($user->Tipo=='aluno')
+                            <ul>
+                                <li><a href="Aluno/Profile"><i class="fa fa-indent"></i> Profile</a></li>
+                                <li><a href="/Aluno"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                                <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                            </ul>
+                        @endif
                 @endforeach
             @else
                 <ul>
@@ -667,6 +667,15 @@
                         <div class="col-sm-16">
                             <div class="list_detail_1l clearfix" >
                                 <div class="list_detail_1l1 clearfix" >
+                                    @if(isset($feveritos) && $feveritos !=null &&count($feveritos)!=0)
+                                        @foreach($feveritos as $dadosfeveritos)
+                                            @if($dadosfeveritos->id_quarto==$dadosquarto->idnow)
+                                                <h5 style="float: right" class="inline"><a style="background: white" class="button_1" href="/Aluno/{{$dadosquarto->idnow}}/RemovefevorQuarto"><i class="fa fa-heart" style="color: red"></i></a></h5>
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        <h5 style="float: right" class="inline"><a style="background: black" class="button_1" href="/Aluno/{{$dadosquarto->idnow}}/addfevorQuarto"><i class="fa fa-heart" style="color: white"></i></a></h5>
+                                    @endif
                                     <h3 class="mgt">{{$dadosquarto->Preço}}€ / <span class="span_1">Por mês</span> <span class="span_2">Aluguel</span></h3>
                                     <p><i class="fa fa-map-marker"></i> {{$dadosquarto->Endereco}}, {{$dadosquarto->Codigo_postal}}</p>
                                 </div>
@@ -1023,7 +1032,7 @@
                                                 <i class="fa fa-phone col_1"></i> {{$dadosquarto->Telefone}} /
                                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>{{$dadosquarto->EmailQuarto}}
                                             </h5>
-                                            <h5 class="mgt"><a class="button mgt" href="#">Conectar</a></h5>
+                                            <h5 class="mgt"><a class="button mgt" href="/chat/{{$dadosquarto->idnow}}/criarchat">Conectar</a></h5>
                                         </div>
                                     </div>
                                 </div>

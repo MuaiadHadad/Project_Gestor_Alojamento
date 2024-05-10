@@ -238,11 +238,12 @@ class PaginaInicialControllers extends Controller{
             ]);
         }
 }
-    public function GetPageDetalheQuarto($id)
-    {
+    public function GetPageDetalheQuarto($id){
+        $feveritos=null;
         if (session('ActivationToken') != null) {
             $token = session('ActivationToken');
             $user = DB::table('user')->where('ActivationToken', $token)->get();
+
             $QuartosAtive =DB::table('quarto')
                 ->join('banho', 'banho.id_quarto', '=', 'quarto.id')
                 ->join('contato', 'contato.id_quarto', '=', 'quarto.id')
@@ -264,8 +265,18 @@ class PaginaInicialControllers extends Controller{
                 ->join('midia_de_casa', 'midia_de_casa.id_quarto', '=', 'quarto.id')
                 ->where('quarto.id', $id)
                 ->select('midia_de_casa.*')->get();
+            if (session('tipo_usuario') == "aluno") {
+                $userqu = DB::table('user')->where('ActivationToken', $token)->first();
+                $feveritos =DB::table('feveritos')
+                    ->join('quarto', 'quarto.id', '=', 'feveritos.id_quarto')
+                    ->where('feveritos.id_user', $userqu->id)
+                    ->where('feveritos.id_quarto', $id)
+                    ->select('quarto.id as idnow','quarto.*', 'feveritos.*')->get();
+            }
 
-            return view('inicio\detalhe_quarto', ['DadosUser' => $user,'DadosQuarto'=>$QuartosAtive,'PohtosQuarto'=>$PhotoQuarto]);
+            return view('inicio\detalhe_quarto', ['DadosUser' => $user,'DadosQuarto'=>$QuartosAtive,
+                'PohtosQuarto'=>$PhotoQuarto,
+                'feveritos'=>$feveritos]);
         }else{
             $QuartosAtive =DB::table('quarto')
                 ->join('banho', 'banho.id_quarto', '=', 'quarto.id')
@@ -293,6 +304,7 @@ class PaginaInicialControllers extends Controller{
         }
     }
     public function GetPageDetalheCasa($id){
+        $feveritos=null;
         if (session('ActivationToken') != null) {
             $token = session('ActivationToken');
             $user = DB::table('user')->where('ActivationToken', $token)->get();
@@ -319,7 +331,17 @@ class PaginaInicialControllers extends Controller{
                 ->join('quartos_de_casa', 'quartos_de_casa.id_casa', '=', 'casa_completa.id')
                 ->where('casa_completa.id', $id)
                 ->select('quartos_de_casa.*')->get();
-            return view('inicio\detalhe_casa', ['DadosUser' => $user,'DadosCasaAtive'=>$CasaAtive,'PhotoCasa'=>$PhotoCasa,'DadosQuartoCasa'=>$QuartosCasa]);
+            if (session('tipo_usuario') == "aluno") {
+                $userqu = DB::table('user')->where('ActivationToken', $token)->first();
+                $feveritos =DB::table('feveritos')
+                    ->join('casa_completa', 'casa_completa.id', '=', 'feveritos.id_casa')
+                    ->where('feveritos.id_user', $userqu->id)
+                    ->where('feveritos.id_casa', $id)
+                    ->select('casa_completa.id as idcasa', 'casa_completa.*', 'feveritos.*')->get();
+            }
+            return view('inicio\detalhe_casa', ['DadosUser' => $user,'DadosCasaAtive'=>$CasaAtive,
+                'PhotoCasa'=>$PhotoCasa,'DadosQuartoCasa'=>$QuartosCasa,
+                'feveritos'=>$feveritos]);
         }else{
             $CasaAtive =DB::table('casa_completa')
                 ->join('banho', 'banho.id_casa', '=', 'casa_completa.id')

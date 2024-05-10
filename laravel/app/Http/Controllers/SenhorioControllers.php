@@ -605,4 +605,13 @@ class SenhorioControllers extends Controller{
             abort(403, 'Acesso não autorizado.');
         }
     }
+    public function GetPageChat(){
+        if(session('tipo_usuario')=="senhorio"){
+            $token=session('ActivationToken');
+            $user = DB::table('user')->where('ActivationToken', $token)->get();
+            return view('Page_Senhorio\conversation', ['Data'=>$user]);
+        }else{
+            abort(403, 'Acesso não autorizado.');
+        }
+    }
 }

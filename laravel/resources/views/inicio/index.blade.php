@@ -570,7 +570,6 @@
             </ul>
             @else
             <ul class="site-options">
-                <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
                 <li class="dropdown-menu-user-div-container">
                     <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
@@ -596,10 +595,10 @@
                             <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     @endif
-                    @if($user->Tipo=='Aluno')
+                    @if($user->Tipo=='aluno')
                         <ul>
-                            <li><a href="gestor/profile"><i class="fa fa-indent"></i> Profile</a></li>
-                            <li><a href="/gestor"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
+                            <li><a href="Aluno/Profile"><i class="fa fa-indent"></i> Profile</a></li>
+                            <li><a href="/Aluno"><i class="fa fa-sign-out"></i>Área pessoal</a></li>
                             <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
                         </ul>
                     @endif
@@ -611,24 +610,6 @@
             </ul>
             @endif
         </div>
-        <section class="module module-search module-layer-search">
-            <div class="container">
-                <div class="inner">
-                    <h2 class="title-lg">Pesquisa</h2>
-                    <form id="searchform" method="get" action="https://www.estgoh.ipc.pt/">
-                        <div class="form-row">
-                            <div class="form-group form-search is-enable">
-                                <i class="icon icon-search"></i>
-                                <input type="text" name="s" placeholder="Pesquisar" >
-                                <input type="hidden" name="sentence" value="1">
-                                <button type="submit" class="btn btn-full" >Pesquisar</button>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
     </div>
 
 </header>
@@ -822,7 +803,6 @@
                                         <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
                                             @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
                                         <h5 class="inline"><a class="button_1" href="/inicio/{{$QuartoAtive->idnow}}/quarto"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
-                                        <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
                                     </div>
                                 </div>
                             @endforeach
@@ -847,7 +827,15 @@
                                             <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
                                                 @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
                                             <h5 class="inline"><a class="button_1" href="/inicio/{{$QuartoAtive->idnow}}/casa"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
-                                            <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
+                                            @if(isset($feveritos) && $feveritos !=null)
+                                                @foreach($feveritos as $dadosfeveritos)
+                                                    @if($dadosfeveritos->id_aprt==$QuartoAtive->idcasa)
+                                                        <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
+                                                    @else
+                                                        <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: white"></i></a></h5>
+                                                    @endif
+                                                @endforeach
+                                            @endif
                                         </div>
                                     </div>
                                 @endforeach

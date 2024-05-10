@@ -31,7 +31,7 @@ class LoginController extends Controller
             session(['tipo_usuario' => $user->Tipo]);
             session(['Email' => $user->Email]);
             if ($user->Tipo == 'aluno') {
-                return redirect('/aluno');
+                return redirect('/Aluno');
             }
             if ($user->Tipo == 'senhorio') {
                 return redirect('/Senhorio');

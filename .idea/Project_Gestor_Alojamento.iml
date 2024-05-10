@@ -247,6 +247,16 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/alexpechkarev/google-maps" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/jbroadway/urlify" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/voku/stop-words" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/beyondcode/laravel-er-diagram-generator" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/phpdocumentor/graphviz" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/paragonie/sodium_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/pusher/pusher-php-server" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

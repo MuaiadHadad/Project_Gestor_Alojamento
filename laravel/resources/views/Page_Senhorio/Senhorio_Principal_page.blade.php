@@ -531,7 +531,7 @@
 
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
-                <li><a href="/Senhorio/chat"><i class="fa fa fa-comments-o fa-2x fa-inverse"></i></a></li>
+                <li><a href="/Senhorio/ChatSenhorio"><i class="fa fa fa-comments-o fa-2x fa-inverse"></i></a></li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
             </ul>
         </div>

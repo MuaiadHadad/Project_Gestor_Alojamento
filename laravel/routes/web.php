@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\AlunoContoller;
+use App\Http\Controllers\ControllerChat;
+use App\Http\Controllers\ControllerChatSenhorio;
 use App\Http\Controllers\GestorControllers;
 use App\Http\Controllers\PaginaInicialControllers;
-use App\Http\Middleware\CheckGestor;
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistarController;
@@ -21,13 +22,21 @@ use App\Http\Controllers\SenhorioControllers;
 |
 */
 
-    Route::get('/Senhorio/chat', function () {
-        if(session('tipo_usuario')=="senhorio"){
-            return view('Page_Senhorio\conversation');
-        }else{
-            abort(403, 'Acesso não autorizado.');
-        }
-    });
+Route::get('/chat/{id}/GetChat', [ControllerChat::class, 'GetChat']);
+Route::post('/chat/{id}/send-message', [ControllerChat::class, 'sendMessage']);
+Route::get('/chat/{id}/criarchat', [ControllerChat::class, 'CriarChatQuarto']);
+Route::get('/chat/{id}/criarchatC', [ControllerChat::class, 'CriarChatCasa']);
+Route::get('/Senhorio/ChatSenhorio', [ControllerChatSenhorio::class, 'GetPageChat']);
+Route::get('/Senhorio/{id}/GetChatSenhorio', [ControllerChatSenhorio::class, 'GetChat']);
+Route::post('/chat/{id}/messageSenhorio', [ControllerChatSenhorio::class, 'sendMessage']);
+
+Route::get('/Aluno/ChatAluno', [AlunoContoller::class, 'GetPageChat'])->name('/Aluno/ChatAluno');
+Route::get('/Aluno', [AlunoContoller::class, 'GetPageAluno']);
+Route::get('/Aluno/Profile', [AlunoContoller::class, 'GetPageProfAluno']);
+Route::get('/Aluno/{id}/addfevorQuarto', [AlunoContoller::class, 'AddfevorQuarto']);
+Route::get('/Aluno/{id}/RemovefevorQuarto', [AlunoContoller::class, 'RemoverQuarto']);
+Route::get('/Aluno/{id}/addfevorCasa', [AlunoContoller::class, 'AddfevorCasa']);
+Route::get('/Aluno/{id}/RemovefevorCasa', [AlunoContoller::class, 'RemoverCasa']);
 
 Route::get('/', [PaginaInicialControllers::class, 'GetPageInicial']);
 Route::get('/inicio', [PaginaInicialControllers::class, 'GetPageInicial']);

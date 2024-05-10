@@ -660,6 +660,7 @@
                         <th> ID <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Email <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Tipo<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Estado(ِAtivar/Inativar) <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Remover </th>
                     </tr>
@@ -670,6 +671,7 @@
                         <td>{{ $utilizador->id }}</td>
                         <td>{{ $utilizador->UserName }}</td>
                         <td>{{ $utilizador->Email }}</td>
+                        <td>{{ $utilizador->Tipo }}</td>
                         <td>
                             <form action="/Gestor/{{ $utilizador->id }}/EstadoUser" method="POST">
                                 @csrf
@@ -715,7 +717,7 @@
             <section class="table__body">
                 <table id="tabela_List_anuncios">
                     <thead>
-                    <tr>
+                    <tr >
                         <th> ID <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Nome <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Endereço <span class="icon-arrow">&UpArrow;</span></th>

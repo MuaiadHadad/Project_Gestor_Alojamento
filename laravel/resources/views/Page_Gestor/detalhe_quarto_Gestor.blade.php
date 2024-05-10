@@ -700,8 +700,7 @@
                                 <div class="list_detail_1l1 clearfix" >
                                     <h3 class="mgt">{{$dadosquarto->Preço}}€ / <span class="span_1">Por mês</span> <span class="span_2">Aluguel</span></h3>
                                     <p><i class="fa fa-map-marker"></i> {{$dadosquarto->Endereco}}, {{$dadosquarto->Codigo_postal}}</p>
-                                        <h5 STYLE="padding-right: 20px"  class="mgt"><a class="button mgt" href="Gestor/{{ $dadosquarto->idnow }}/AprovarQuarto">Aprovar</a></h5></form>
-                                        <h5 style="float: left; padding-left: 73%;" class="mgt"><a type="submit"  class="button mgt" href="#Gestor/{{ $dadosquarto->idnow }}/ReprovarQuarto">Reprovar</a></h5></form>
+
                                 </div>
                                 <div class="list_detail_1l2 clearfix">
                                     <h4 class="mgt">Informações da propriedade</h4>
@@ -1059,6 +1058,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="list_detail_1l2 clearfix">
+                                    <div class="list_detail_1r clearfix">
+                                        <div class="list_detail_1r1 clearfix">
+                                            <h5 STYLE="padding-right: 20px"  class="mgt"><a class="button mgt" href="/Gestor/{{ $dadosquarto->idnow }}/AprovarQuarto">Aprovar</a></h5></form>
+                                            <h5 style="float: left; padding-left: 73%;" class="mgt"><a type="submit"  class="button mgt" href="/Gestor/{{ $dadosquarto->idnow }}/ReprovarQuarto">Reprovar</a></h5></form>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         @endforeach

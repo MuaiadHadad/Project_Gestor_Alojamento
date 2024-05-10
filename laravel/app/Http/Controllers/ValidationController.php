@@ -37,7 +37,7 @@ class ValidationController extends Controller{
         if($update){
             $this->enviarEmail('Codigo de ativação de sua aconta', $estado,$email);
             return back()->with([
-                'success'=> 'Código reenviado com sucesso para ' . $email,
+                'success'=> 'Códi0go reenviado com sucesso para ' . $email,
                 'Email' => $email
             ]);
         }else{

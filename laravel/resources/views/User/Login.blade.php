@@ -520,7 +520,6 @@ Politécnico de Coimbra</div>
             </a>
 
             <ul class="site-options">
-                <li><a class="js-layerSearchToggle"><i class="fa fa-search fa-2x fa-inverse"></i></a></li>
                 <li class="dropdown-menu-user-div-container">
                     <a class="dropdown-menu-user"><i class="fa fa-user fa-2x fa-inverse"></i></a>
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
@@ -534,24 +533,6 @@ Politécnico de Coimbra</div>
                 <li><a href="/register"><i class="fa fa-user-plus"></i> Registar</a></li>
             </ul>
         </div>
-        <section class="module module-search module-layer-search">
-            <div class="container">
-                <div class="inner">
-                    <h2 class="title-lg">Pesquisa</h2>
-                    <form id="searchform" method="get" action="https://www.estgoh.ipc.pt/">
-                        <div class="form-row">
-                            <div class="form-group form-search is-enable">
-                                <i class="icon icon-search"></i>
-                                <input type="text" name="s" placeholder="Pesquisar" >
-                                <input type="hidden" name="sentence" value="1">
-                                <button type="submit" class="btn btn-full" >Pesquisar</button>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
     </div>
 
 </header>

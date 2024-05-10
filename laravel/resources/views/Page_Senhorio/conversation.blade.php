@@ -525,8 +525,10 @@
             <ul class="site-options">
 
                 <li class="dropdown-menu-user-div-container">
-                    <img src="/Style_Page_1/img/13.jpg" class="img-circle" alt="abc" style="width: 45px; height: 45px">
-                    <i style="color: white">Muaiad Hadad</i>
+                    @foreach($Data as $user)
+                        <img src="{{asset('storage/'.$user->Avatar)}}" class="img-circle" alt="abc" style="width: 45px; height: 45px">
+                        <i style="color: white">{{$user->Email}}</i>
+                    @endforeach
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
@@ -595,98 +597,133 @@
                         <div class="card_chat chat-app">
                             <div id="plist" class="people-list">
                                 <div class="input-group" >
-                                    <label>
+
+                                    <label class="input-group" >
                                         <i class="fa fa-search" style="left: 90%"></i>
-                                        <input type="text" placeholder="search..." id="searchInput">
+                                        <input style="border-bottom-right-radius: 20%" type="search" placeholder="search..." id="searchInput">
                                     </label>
                                 </div>
-                                <ul class="list-unstyled chat-list mt-2 mb-0">
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Vincent Porter</div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix active">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Aiden Chavez</div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Mike Thomas</div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Christian Kelly</div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
-                                        <div class="about">
-                                            <div class="name">Monica Ward</div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar" >
-                                        <div class="about">
-                                            <div  class="name">Dean Henry <i class="fa fa-bell red" aria-hidden="true"></i></div>
-
-                                        </div>
-                                    </li>
+                                <ul class="list-unstyled chat-list mt-2 mb-0" style="height: 100%">
+                                    @if(isset($chats) && $chats !=null && isset($sinal))
+                                        @foreach($sinal as $dadosgeral)
+                                            @foreach($chats as $dadosconversas)
+                                                @if($dadosconversas->idchat== $dadosgeral->idchat)
+                                                    <form action="/Senhorio/{{ $dadosconversas->idchat }}/GetChatSenhorio" method="Get" enctype="multipart/form-data">
+                                                        <button type="submit" style="width: 100%;border: 0.2px solid black;box-shadow: 3px 6px rgba(0,0,0,0.55)">
+                                                            <li class="clearfix">
+                                                                <img src="{{asset('storage/'.$dadosconversas->Avatar)}}" alt="avatar" >
+                                                                <div class="about">
+                                                                    <div  class="name">{{$dadosconversas->UserName}} </div>
+                                                                </div>
+                                                            </li>
+                                                        </button>
+                                                    </form>
+                                                @else
+                                                    <form action="/chat/{{ $dadosconversas->idchat }}/GetChat" method="Get" enctype="multipart/form-data">
+                                                        <button type="submit" style="width: 100%">
+                                                            <li class="clearfix">
+                                                                <img src="{{asset('storage/'.$dadosconversas->Avatar)}}" alt="avatar" >
+                                                                <div class="about">
+                                                                    <div  class="name">{{$dadosconversas->UserName}}  </div>
+                                                                </div>
+                                                            </li>
+                                                        </button>
+                                                    </form>
+                                                @endif
+                                            @endforeach
                                 </ul>
                             </div>
                             <div class="chat">
                                 <div class="chat-header clearfix">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar" style="padding-top: 20px">
+                                            <img src="{{asset('storage/'.$dadosgeral->Avatar)}}" alt="avatar" style="padding-top: 20px">
                                             <div class="chat-about">
-                                                <h2 class="m-b-0">Aiden Chavez</h2>
+                                                <h2 class="m-b-0">{{$dadosgeral->UserName}}</h2>
                                             </div>
                                         </div>
-                                        <a href="#">
-                                            <i class="fa fa-trash fa-2x" aria-hidden="true" style="color: #610707;float:right;padding: 20px"></i>
-                                        </a>
+
                                     </div>
                                 </div>
                                 <div class="chat-history">
                                     <ul class="m-b-0">
-                                        <li class="clearfix">
-                                            <div class="message-data text-right">
-                                                <small class="message-data-time"><i class="fa fa-eye" aria-hidden="true"></i>
-                                                     10:10 AM, Today
+                                        @foreach($chat as $Sinal)
+                                            @if($Sinal->origem=='aluno')
+                                                @if($Sinal->alu!="")
+                                                    @php
+                                                        $data_envio = \Carbon\Carbon::parse($Sinal->time_envio)->setTimezone('Europe/Lisbon');
 
-                                                </small>
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                                            </div>
-                                            <div class="message other-message float-right"> Hi Aiden, how are you? How is the project coming along? </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <div class="message-data">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
-                                                <small class="message-data-time">10:12 AM, Today
-                                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                                                </small>
-                                            </div>
-                                            <div class="message my-message">Are we meeting today?</div>
+                                                        if ($data_envio->isToday()) {
+                                                            $formato = '\h\o\j\e \à\s H:iA';
+                                                        } elseif ($data_envio->isYesterday()) {
+                                                            $formato = '\o\n\t\e\m \à\s H:iA';
+                                                        } else {
+                                                            $formato = 'Y-m-d \à\s H:iA';
+                                                        }
+                                                        $formatted_time_envio = $data_envio->format($formato);
+                                                    @endphp
+                                                    <li class="clearfix">
+                                                        <div class="message-data">
+                                                            <img src="{{asset('storage/'.$dadosgeral->Avatar)}}" alt="avatar">
+                                                            <small class="message-data-time">{{$formatted_time_envio}}
+                                                            </small>
+                                                        </div>
+                                                        <div class="message my-message">{{$Sinal->alu}}</div>
+                                                    </li>
+                                                @endif
+                                                @elseif($Sinal->origem=='senhorio')
+                                                        @if($Sinal->alu!="")
+                                                            <li class="clearfix">
+                                                                <div class="message-data text-right">
+                                                                    <small class="message-data-time">
+                                                                        @if($Sinal->estado=='1')
+                                                                            <i class="fa fa-eye" aria-hidden="true"> </i>
+                                                                        @else
+                                                                            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                                                        @endif
+                                                                            @php
+                                                                                $data_envio = \Carbon\Carbon::parse($Sinal->time_envio)->setTimezone('Europe/Lisbon');
 
-                                        </li>
+                                                                                if ($data_envio->isToday()) {
+                                                                                    $formato = '\h\o\j\e \à\s H:iA';
+                                                                                } elseif ($data_envio->isYesterday()) {
+                                                                                    $formato = '\o\n\t\e\m \à\s H:iA';
+                                                                                } else {
+                                                                                    $formato = 'Y-m-d \à\s H:iA';
+                                                                                }
+                                                                                $formatted_time_envio = $data_envio->format($formato);
+                                                                            @endphp
+                                                                        {{$formatted_time_envio }}
+
+                                                                    </small>
+                                                                    @foreach($Data as $user)
+                                                                        <img src="{{asset('storage/'.$user->Avatar)}}" alt="avatar">
+                                                                    @endforeach
+                                                                </div>
+
+                                                                <div class="message other-message float-right"> {{$Sinal->alu}} </div>
+
+                                                            </li>
+                                                        @endif
+                                                @endif
+
+                                        @endforeach
                                     </ul>
                                 </div>
-                                <div class="chat-message clearfix" >
+                                <form action="/chat/{{ $dadosgeral->idchat }}/messageSenhorio" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="chat-message clearfix" >
                                         <div class="input-group mb-0" >
                                             <label>
-                                                <button class="button_send"> <i class="fa fa-send fa-inverse"></i></button>
-                                                <input style="width: 810px; height: 50px" type="text" placeholder="Enter text here...">
+                                                <button type="submit" style="border-radius: 10%" class="button_send"> <i class="fa fa-send fa-inverse"></i></button>
+                                                <input name="message" style="width: 810px; height: 50px" type="text" placeholder="Enter text here...">
                                             </label>
                                         </div>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
+                            @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
