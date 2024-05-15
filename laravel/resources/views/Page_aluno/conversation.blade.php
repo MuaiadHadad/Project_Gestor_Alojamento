@@ -559,6 +559,12 @@
             </div>
         </section>
     </div>
+    <script>
+        // Defina o tempo de intervalo em milissegundos (3 minutos = 180000 ms)
+        setInterval(function() {
+            window.location.reload();
+        }, 180000); // 180000 ms = 3 minutos
+    </script>
 </header>
 <main id="primary" class="main-section">
     <section class="module module-page--header site-header--image-bg" style="height: 280px ">

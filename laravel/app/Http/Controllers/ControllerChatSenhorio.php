@@ -54,7 +54,7 @@ class ControllerChatSenhorio extends Controller{
         }
     }
     public function GetChat($id){
-        if(session('tipo_usuario')=="aluno"||session('tipo_usuario')=="senhorio"){
+        if(session('tipo_usuario')=="aluno" || session('tipo_usuario')=="senhorio"){
             $token=session('ActivationToken');
             $user = DB::table('user')->where('ActivationToken', $token)->get();
             $userqu = DB::table('user')->where('ActivationToken', $token)->first();
@@ -106,5 +106,25 @@ class ControllerChatSenhorio extends Controller{
             abort(403, 'Acesso não autorizado.');
         }
     }
-
+    public function novamenss(){
+        $token=session('ActivationToken');
+        $userqu = DB::table('user')->where('ActivationToken', $token)->first();
+        $con = DB::table('chat')
+            ->join('user', 'user.id', '=', 'chat.id_aluno')
+            ->where('chat.id_senhorio', $userqu->id)
+            ->orderBy('chat.id', 'desc')
+            ->select('chat.*','chat.id as idchat','user.*')
+            ->first();
+        $sinal=DB::table('chat')
+            ->join('chat_senhorio', 'chat_senhorio.id_chat', '=', 'chat.id')
+            ->join('chat_aluno', 'chat_aluno.id_chat', '=', 'chat.id')
+            ->join('user', 'user.id', '=', 'chat.id_aluno')
+            ->select('user.*','chat.*','chat.id as idchat',
+                'chat_aluno.masseg as senhmasseg','chat_senhorio.masseg as alunomasseg'
+                ,'chat_aluno.Estado as massestado')
+            ->limit(1)
+            ->where('chat.id', $con->idchat)
+            ->where('chat_aluno.Estado', '0')
+            ->get();
+    }
 }

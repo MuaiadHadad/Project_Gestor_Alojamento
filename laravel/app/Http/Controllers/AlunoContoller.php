@@ -22,7 +22,18 @@ class AlunoContoller extends Controller{
                 ->join('casa_completa', 'casa_completa.id', '=', 'feveritos.id_casa')
                 ->where('feveritos.id_user', $userqu->id)
                 ->select('casa_completa.id as idcasa', 'casa_completa.*', 'feveritos.*')->get();
-            return view('Page_Aluno\Aluno_Principal_page', ['Data'=>$user, 'favoritos'=>$feveritosQuartos,'feveritosCasa'=>$feveritosCasa]);
+            $con = DB::table('chat')
+                ->join('user', 'user.id', '=', 'chat.id_senhorio')
+                ->where('chat.id_aluno', $userqu->id)
+                ->orderBy('chat.id', 'desc')
+                ->select('chat.*','chat.id as idchat','user.*')
+                ->first();
+            $sinal=DB::table('chat')
+                ->join('chat_senhorio', 'chat_senhorio.id_chat', '=', 'chat.id')
+                ->where('chat.id', $con->idchat)
+                ->where('chat_senhorio.Estado', '0')
+                ->get();
+            return view('Page_Aluno\Aluno_Principal_page', ['Data'=>$user, 'favoritos'=>$feveritosQuartos,'feveritosCasa'=>$feveritosCasa,'sinal'=>$sinal]);
         }
     }
     public function GetPageProfAluno(){

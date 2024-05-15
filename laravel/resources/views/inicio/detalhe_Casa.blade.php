@@ -692,7 +692,7 @@
                                             <h6 class="col_1">{{$dadoscasa->Genero}}</h6>
                                         </div>
                                         <div class="col-sm-3 space_left">
-                                            <h5 class="mgt">Área total do quarto</h5>
+                                            <h5 class="mgt">Área total da Casa</h5>
                                             <h6 class="col_1">{{$dadoscasa->area}}</h6>
                                         </div>
                                         <div class="col-sm-3 space_left">

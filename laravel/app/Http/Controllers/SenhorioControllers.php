@@ -38,7 +38,18 @@ class SenhorioControllers extends Controller{
                 ->where('id_user', $userqu->id)
                 ->select('casa_completa.id as idnow','casa_completa.*', 'banho.*', 'contato.*', 'cozinha.*', 'endreco.*'
                     , 'sala.*', 'servicos.*', 'outros.*')->get();
-            return view('Page_Senhorio\Senhorio_Principal_page', ['Data'=>$user, 'Quarto'=>$quartos,'Casa'=>$Casa]);
+            $con = DB::table('chat')
+                ->join('user', 'user.id', '=', 'chat.id_aluno')
+                ->where('chat.id_senhorio', $userqu->id)
+                ->orderBy('chat.id', 'desc')
+                ->select('chat.*','chat.id as idchat','user.*')
+                ->first();
+            $sinal=DB::table('chat')
+                ->join('chat_aluno', 'chat_aluno.id_chat', '=', 'chat.id')
+                ->where('chat.id', $con->idchat)
+                ->where('chat_aluno.Estado', '0')
+                ->get();
+            return view('Page_Senhorio\Senhorio_Principal_page', ['Data'=>$user, 'Quarto'=>$quartos,'Casa'=>$Casa,'sinal'=>$sinal]);
         }else{
             abort(403, 'Acesso não autorizado.');
         }

@@ -531,7 +531,11 @@
 
                     <a class="dropdown-menu-user"><i class="fa fa-angle-down fa-inverse"></i></a>
                 </li>
-                <li><a href="/Aluno/ChatAluno"><i class="fa fa fa-comments-o fa-2x fa-inverse"></i></a></li>
+                <li><a href="/Aluno/ChatAluno"><i class="fa fa fa-comments-o fa-2x fa-inverse"></i>
+                        @if(isset($sinal)&& count($sinal)>0)
+                            <i style="z-index: 1;color: white; position: absolute;top: 70%;right: 9%" class="fa">{{count($sinal)}}</i>
+                        @endif
+                    </a></li>
                 <li><a class="js-fullMenuOpen"><i class="fa fa-bars fa-2x fa-inverse"></i></a></li>
             </ul>
         </div>

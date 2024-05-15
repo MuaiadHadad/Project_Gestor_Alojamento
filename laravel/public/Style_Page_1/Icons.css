@@ -1,8 +1,8 @@
 .icon{
     position: relative;
     display: inline-block;
-    width: 42px;
-    height: 42px;
+    width: 72px;
+    height: 72px;
 }
 .cama {
     background-image: url("https://img.icons8.com/ios-filled/100/empty-bed.png");
@@ -108,9 +108,9 @@
 }
 .no {
     position: relative;
-    background-image: url('https://cdn.iconfinder.com/stored_data/1637375/128/png?token=1713100289-NDhw7UsPfi6BpxJoDkCvJMQl2AjVFWxHag8DRepYdKI%3D');
-    width: 250px;
-    height: 250px;
+    background-image: url('https://img.icons8.com/ios-filled/100/line-filled.png');
+    width: 100%;
+    height: 100%;
     z-index: 1;
-    backdrop-filter:invert();
+    backdrop-filter: blur(1px);
 }

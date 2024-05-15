@@ -737,7 +737,6 @@
                                             <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
                                                 @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
                                             <h5 class="inline"><a class="button_1" href="/inicio/{{$QuartoAtive->idnow}}/quarto"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
-                                            <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
                                         </div>
                                     </div>
                                 @endforeach
@@ -763,7 +762,6 @@
                                             <h6>@if($QuartoAtive->Genero =='Masculino')<i class="fa fa-male col_2"></i>@elseif($QuartoAtive->Genero =='Feminino')<i class="fa fa-female col_2"></i>@else<i class="fa fa-venus-mars col_2"></i>
                                                 @endif  {{ $QuartoAtive->Genero }} <span><i class="fa fa-university col_2"></i>{{ $QuartoAtive->area }} m</span></h6>
                                             <h5 class="inline"><a class="button_1" href="/inicio/{{$QuartoAtive->idnow}}/casa"><i class="fa fa-info-circle"></i> Detalhes</a></h5>
-                                            <h5 class="inline"><a class="button_1" href="detail.html"><i class="fa fa-heart" style="color: red"></i></a></h5>
                                         </div>
                                     </div>
                                 @endforeach
