@@ -676,7 +676,7 @@
                                     @else
                                         <h5 style="float: right" class="inline"><a style="background: black" class="button_1" href="/Aluno/{{$dadoscasa->idnow}}/addfevorCasa"><i class="fa fa-heart" style="color: white"></i></a></h5>
                                     @endif
-                                    <h3 class="mgt">{{$dadoscasa->Preço}}€ / <span class="span_1">Por mês</span> <span class="span_2">Aluguel</span></h3>
+                                    <h3 class="mgt">{{$dadoscasa->Preço}}€ / <span class="span_1">Por mês</span> <span class="span_2">Renda</span></h3>
                                     <p><i class="fa fa-map-marker"></i> {{$dadoscasa->Endereco}}, {{$dadoscasa->Codigo_postal}}</p>
                                 </div>
                                 <div class="list_detail_1l2 clearfix">
@@ -752,7 +752,7 @@
                                                     @if($dadosquartocasa->Mesa_do_estudo==0)
                                                         <i class="icon no"></i>
                                                     @endif
-                                                </i> Mesa do estudo </h5>
+                                                </i> Mesa de estudo </h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
                                             <h5 class="mgt"><i class="icon Janelas col_1">
@@ -937,7 +937,7 @@
                                                     @if($dadoscasa->Maquina_sacar_roupa==0)
                                                         <i class="icon no"></i>
                                                     @endif
-                                                </i> Máquina de sacar roupa</h5>
+                                                </i> Máquina de secar roupa</h5>
                                         </div>
                                         <div class="col-sm-3 space_left">
                                             <h5 class="mgt"><i class="icon central col_1">
@@ -951,7 +951,7 @@
                                                     @if($dadoscasa->passar_Ferro==0)
                                                         <i class="icon no"></i>
                                                     @endif
-                                                </i> máquina passar Ferro</h5>
+                                                </i> máquina de passar Ferro</h5>
                                         </div>
                                     </div>
                                     <div class="home_inner_i clearfix">

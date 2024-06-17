@@ -653,7 +653,7 @@
                                             <br>
                                             <div  class="center_home_1i1 clearfix" style="width: 30%">
                                                 <h5 class="mgt text-center"><a id="Edit" class="button_1 block mgt" onclick="toggleEdit()">
-                                                        <i class="fa fa-pencil" ></i> Editar perfil</a></h5>
+                                                        <i class="fa fa-pencil" ></i> Editar profile</a></h5>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -668,14 +668,14 @@
                                                     <label>
                                                         <input value="{{ $utilizador->Email }}" class="form-control" name="Email" type="text">
                                                     </label>
-                                                    <h5><i class="fa fa-key"></i> Antigo password:</h5>
-                                                    <label>
-                                                        <input name="passwordold" type="password" class="form-control" placeholder="Antigo password">
-                                                    </label>
                                                 </div>
                                             </div>
                                             <div id="div_edit_part2" style="display: none; width: 100%;">
                                                 <div class="col-md-6">
+                                                    <h5><i class="fa fa-key"></i> Antigo password:</h5>
+                                                    <label>
+                                                        <input name="passwordold" type="password" class="form-control" placeholder="Antigo password">
+                                                    </label>
                                                     <h5><i class="fa fa-keyboard-o"></i> Novo password:</h5>
                                                     <label>
                                                         <input name="passwordnovo" type="password" class="form-control" placeholder="Novo password" >
@@ -688,7 +688,7 @@
                                                     <div id="Edit_Sub" class="center_home_1i1 clearfix" style="width: 50%;">
                                                         <br>
                                                         <h5 class="mgt text-center">
-                                                            <button type="submit" class="button_1 block mgt"><i class="fa fa-check"></i> Editar perfil</button>
+                                                            <button type="submit" class="button_1 block mgt"><i class="fa fa-check"></i> Editar profile</button>
                                                         </h5>
                                                     </div>
                                                 </div>

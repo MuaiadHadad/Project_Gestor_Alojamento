@@ -593,7 +593,7 @@ Politécnico de Coimbra</div>
                     <div class="input-group-login ">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" required>
-                        <a href="/Forget"><i class="fa fa-send"></i> Forget Password</a>
+                        <a href="/Forget"><i class="fa fa-send"></i> Forgot Password</a>
 
                     </div>
                     <button type="submit">Login</button>

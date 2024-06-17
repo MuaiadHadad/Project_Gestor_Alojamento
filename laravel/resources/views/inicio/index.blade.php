@@ -714,7 +714,7 @@
                         <div class="popular_1 text-center clearfix">
                             <div class="col-sm-12">
                                 <h1 class="mgt"> Lista de Propriedades Filtrada</h1>
-                                <p>Encontre quarto com melhor classificação para você.</p>
+                                <p>Encontre quartos com melhore classificação para você.</p>
                             </div>
                         </div>
                             @if(isset($resultadosQuarto))
@@ -778,13 +778,13 @@
                     <div class="popular_1 text-center clearfix">
                         <div class="col-sm-12">
                             <h1 class="mgt"> Lista de Propriedades</h1>
-                            <p>Encontre quarto com melhor classificação para você.</p>
+                            <p>Encontre quartos com melhor classificação para você.</p>
                         </div>
                     </div>
 
                         @if(isset($DataQuartoAtive) && $DataQuartoAtive !=null)
                         <div class="popular_2 clearfix">
-                            <h2 class="mgt">Renda por Quartos</h2>
+                            <h2 class="mgt">Renda por Quarto</h2>
                             <hr>
                             @foreach($DataQuartoAtive as $QuartoAtive)
                                 <div class="col-sm-3">

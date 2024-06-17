@@ -630,7 +630,7 @@
         <section class="module module--list" id="Lista_apartamento">
             <div class="popular_1 text-center clearfix">
                 <div class="col-sm-12">
-                    <h1 class="mgt"> Lista dos Propriedades Favoritos</h1>
+                    <h1 class="mgt"> Lista das Propriedades Favoritos</h1>
                 </div>
                 <div class="h-divider">
                     <div class="shadow"></div>
@@ -649,7 +649,6 @@
                 <table id="tabela_List_anuncios">
                     <thead>
                     <tr>
-                        <th> ID<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Título<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Área<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Gênero<span class="icon-arrow">&UpArrow;</span></th>
@@ -663,7 +662,6 @@
                     @if($favoritos !=null)
                         @foreach($favoritos as $dadosfavoritos)
                             <tr>
-                                <td> {{ $dadosfavoritos->idnow }} </td>
                                 <td> {{ $dadosfavoritos->Titulo }}</td>
                                 <td> {{ $dadosfavoritos->area }} </td>
                                 <td> {{ $dadosfavoritos->Genero }} </td>
@@ -680,7 +678,6 @@
                     @if($feveritosCasa !=null)
                         @foreach($feveritosCasa as $dadosfavoritosC)
                             <tr>
-                                <td> {{ $dadosfavoritosC->idcasa }} </td>
                                 <td> {{ $dadosfavoritosC->Titulo }}</td>
                                 <td> {{ $dadosfavoritosC->area }} </td>
                                 <td> {{ $dadosfavoritosC->Genero }} </td>
