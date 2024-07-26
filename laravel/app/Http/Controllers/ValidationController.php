@@ -37,7 +37,7 @@ class ValidationController extends Controller{
         if($update){
             $this->enviarEmail('Codigo de ativação de sua aconta', $estado,$email);
             return back()->with([
-                'success'=> 'Códi0go reenviado com sucesso para ' . $email,
+                'success'=> 'Código reenviado com sucesso para ' . $email,
                 'Email' => $email
             ]);
         }else{
@@ -51,9 +51,10 @@ class ValidationController extends Controller{
         $subject = $titulo;
         $contentData = [
             'mensagem' => $mass,
+            'nome'=>$email
         ];
 
-        Mail::to($email)->send(new EstadoEmail($subject, $mass,'User\Email'));
+        Mail::to($email)->send(new EstadoEmail($subject,$contentData,'User\Email'));
     }
 
 }

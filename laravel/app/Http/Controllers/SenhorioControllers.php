@@ -304,6 +304,7 @@ class SenhorioControllers extends Controller{
         DB::table('servicos')->where('id_casa', $id)->delete();
         DB::table('outros')->where('id_casa', $id)->delete();
         DB::table('casa_completa')->where('id', $id)->delete();
+        DB::table('feveritos')->where('id_casa', $id)->delete();
         return redirect()->back()->with('success' , 'Casa removida a Propriedade com sucesso');
     }
     public function RemoverQuarto($id){
@@ -321,6 +322,7 @@ class SenhorioControllers extends Controller{
         DB::table('servicos')->where('id_quarto', $id)->delete();
         DB::table('outros')->where('id_quarto', $id)->delete();
         DB::table('quarto')->where('id', $id)->delete();
+        DB::table('feveritos')->where('id_quarto', $id)->delete();
         return redirect()->back()->with('success' , 'Casa removida a Propriedade com sucesso');
     }
     public function EditCasa($id){

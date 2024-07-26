@@ -78,7 +78,22 @@ class GestorControllers extends Controller{
         DB::table('user')
             ->where('id', $id)
             ->update(['Estado' => $novoEstado]);
-
+        if($novoEstado=='Desativo'){
+            DB::table('casa_completa')
+                ->where('id_user', $id)
+                ->update(['estado' => 'Desativo']);
+            DB::table('quarto')
+                ->where('id_user', $id)
+                ->update(['estado' => 'Desativo']);
+        }
+        if($novoEstado=='Ativo'){
+            DB::table('casa_completa')
+                ->where('id_user', $id)
+                ->update(['estado' => 'Ativo']);
+            DB::table('quarto')
+                ->where('id_user', $id)
+                ->update(['estado' => 'Ativo']);
+        }
         return redirect()->back()->with('success', 'Estado do utilizador alterado com sucesso!');
     }
     public function removerUser($id){
@@ -88,7 +103,12 @@ class GestorControllers extends Controller{
             return redirect()->back()->with('error', 'Não foi possível remover o utilizador!');
         }
         DB::table('user')->where('id', $id)->delete();
-
+        DB::table('casa_completa')
+            ->where('id_user', $id)
+            ->update(['estado' => 'Desativo']);
+        DB::table('quarto')
+            ->where('id_user', $id)
+            ->update(['estado' => 'Desativo']);
         return redirect()->back()->with('success', 'utilizador foi removido com sucesso!');
     }
     public function GetPageAddGestor(){
@@ -190,7 +210,7 @@ class GestorControllers extends Controller{
             return redirect()->back()->with('error',  'Ainda não pode mudar o estado deste Propriedade');
         }
         $novoEstado = $quarto->estado == 'Ativo' ? 'Desativo' : ($quarto->estado == 'Desativo' ? 'Ativo' : 'Ativo');
-
+        DB::table('feveritos')->where('id_quarto', $id)->delete();
         DB::table('quarto')->where('id', $id)->update(['estado' => $novoEstado]);
 
         return redirect()->back()->with('success', 'Estado do Quarto alterado com sucesso!');
@@ -205,6 +225,7 @@ class GestorControllers extends Controller{
             return redirect()->back()->with('error',  'Ainda não pode mudar o estado deste Propriedade');
         }
         $novoEstado = $Casa->estado == 'Ativo' ? 'Desativo' : ($Casa->estado == 'Desativo' ? 'Ativo' : 'Ativo');
+        DB::table('feveritos')->where('id_casa', $id)->delete();
 
         DB::table('casa_completa')->where('id', $id)->update(['estado' => $novoEstado]);
 
